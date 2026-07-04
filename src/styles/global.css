@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+html{scroll-behavior:smooth} body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.65;letter-spacing:-.011em;background:#fefce8;color:#0f172a}
+::selection{background:#eab30855} :focus-visible{outline:2px solid #eab308;outline-offset:2px}
+}
+@layer components {
+.container{@apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8}
+.btn{@apply inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold rounded-xl transition-all duration-150 ease-out}
+.btn-primary{background:#422006;@apply text-white shadow-lg} .btn-primary:hover{background:#713f12}
+.btn-secondary{@apply bg-white border text-slate-800 hover:bg-slate-50}
+.card{@apply rounded-3xl border bg-white p-6 shadow-sm transition; border-color:#713f1222; box-shadow:0 12px 40px #713f120f} .card:hover{transform:translateY(-2px)}
+.badge{@apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold; color:#713f12; background:#fefce8; border-color:#713f1233}
+.hero-title{font-family:'Instrument Serif',Georgia,serif;@apply text-5xl md:text-7xl font-normal tracking-tight text-slate-950}
+.muted{@apply text-slate-600}
+.data-table{@apply w-full text-sm}
+.data-table th{@apply px-4 py-3 text-left text-xs font-bold uppercase tracking-wide; color:#422006; background:#fefce8}
+.data-table td{@apply border-t px-4 py-3 text-slate-700; border-color:#713f1222}
+.prose-shopify h2{@apply mt-10 text-3xl font-bold tracking-tight text-slate-950}
+.prose-shopify h3{@apply mt-7 text-xl font-bold text-slate-950}
+.prose-shopify p{@apply mt-4 text-slate-700}
+.prose-shopify ul{@apply mt-4 list-disc space-y-2 pl-6 text-slate-700}
+.link{font-weight:700;color:#713f12} .link:hover{color:#422006}
+}
