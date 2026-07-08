@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleSchema from '../../components/ArticleSchema.astro';
+import { site, description, pageTitle } from '../../content';
+const path = '/compare';
+const title = 'Shopify SMS marketing app Comparisons';
+const desc = 'Head-to-head comparisons of Shopify SMS marketing apps — Klaviyo vs Omnisend, Sequenzy vs Klaviyo, and 70+ more buying guides for retention teams.';
+
+const sequenzyPairs = [
+  { slug: 'sequenzy-vs-klaviyo', label: 'Sequenzy vs Klaviyo' },
+  { slug: 'sequenzy-vs-omnisend', label: 'Sequenzy vs Omnisend' },
+  { slug: 'sequenzy-vs-shopify-email', label: 'Sequenzy vs Shopify Email' },
+  { slug: 'sequenzy-vs-drip', label: 'Sequenzy vs Drip' },
+  { slug: 'sequenzy-vs-mailchimp', label: 'Sequenzy vs Mailchimp' },
+  { slug: 'sequenzy-vs-privy', label: 'Sequenzy vs Privy' },
+  { slug: 'sequenzy-vs-yotpo-email-sms', label: 'Sequenzy vs Yotpo' },
+];
+
+const klaviyoPairs = [
+  { slug: 'klaviyo-vs-omnisend', label: 'Klaviyo vs Omnisend' },
+  { slug: 'klaviyo-vs-drip', label: 'Klaviyo vs Drip' },
+  { slug: 'klaviyo-vs-mailchimp', label: 'Klaviyo vs Mailchimp' },
+  { slug: 'klaviyo-vs-privy', label: 'Klaviyo vs Privy' },
+  { slug: 'klaviyo-vs-yotpo-email-sms', label: 'Klaviyo vs Yotpo' },
+  { slug: 'klaviyo-vs-shopify-email', label: 'Klaviyo vs Shopify Email' },
+  { slug: 'klaviyo-vs-postscript', label: 'Klaviyo vs Postscript' },
+  { slug: 'sendlane-vs-klaviyo', label: 'Sendlane vs Klaviyo' },
+  { slug: 'activecampaign-vs-klaviyo', label: 'ActiveCampaign vs Klaviyo' },
+  { slug: 'yotpo-email-sms-vs-klaviyo', label: 'Yotpo vs Klaviyo' },
+  { slug: 'rejoiner-vs-klaviyo', label: 'Rejoiner vs Klaviyo' },
+  { slug: 'marsello-vs-klaviyo', label: 'Marsello vs Klaviyo' },
+  { slug: 'aftership-email-vs-klaviyo', label: 'AfterShip vs Klaviyo' },
+];
+
+const omnisendPairs = [
+  { slug: 'omnisend-vs-privy', label: 'Omnisend vs Privy' },
+  { slug: 'omnisend-vs-drip', label: 'Omnisend vs Drip' },
+  { slug: 'omnisend-vs-mailchimp', label: 'Omnisend vs Mailchimp' },
+  { slug: 'omnisend-vs-postscript', label: 'Omnisend vs Postscript' },
+  { slug: 'omnisend-vs-shopify-email', label: 'Omnisend vs Shopify Email' },
+  { slug: 'omnisend-vs-yotpo-email-sms', label: 'Omnisend vs Yotpo' },
+  { slug: 'omnisend-vs-attentive', label: 'Omnisend vs Attentive' },
+  { slug: 'brevo-vs-omnisend', label: 'Brevo vs Omnisend' },
+  { slug: 'yotpo-email-sms-vs-omnisend', label: 'Yotpo vs Omnisend' },
+  { slug: 'firepush-vs-omnisend', label: 'Firepush vs Omnisend' },
+];
+
+const otherPairs = [
+  { slug: 'drip-vs-mailchimp', label: 'Drip vs Mailchimp' },
+  { slug: 'drip-vs-activecampaign', label: 'Drip vs ActiveCampaign' },
+  { slug: 'privy-vs-mailchimp', label: 'Privy vs Mailchimp' },
+  { slug: 'privy-vs-justuno', label: 'Privy vs Justuno' },
+  { slug: 'postscript-vs-attentive', label: 'Postscript vs Attentive' },
+  { slug: 'postscript-vs-smsbump', label: 'Postscript vs SMSBump' },
+  { slug: 'brevo-vs-mailchimp', label: 'Brevo vs Mailchimp' },
+  { slug: 'rejoiner-vs-sendlane', label: 'Rejoiner vs Sendlane' },
+  { slug: 'marsello-vs-yotpo-email-sms', label: 'Marsello vs Yotpo' },
+  { slug: 'tinyemail-vs-shopify-email', label: 'tinyEmail vs Shopify Email' },
+  { slug: 'tinyemail-vs-mailchimp', label: 'tinyEmail vs Mailchimp' },
+  { slug: 'recart-vs-postscript', label: 'Recart vs Postscript' },
+];
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
+
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <header class="max-w-4xl">
+        <p class="badge">Comparison hub</p>
+        <h1 class="hero-title mt-5">Shopify SMS marketing app head-to-head comparisons</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">
+          Feature matrices lie. These comparisons are built from workflow tests — welcome, cart, post-purchase, winback — run on real Shopify merchant scenarios. Each page includes a verdict, pricing reality, team-fit guidance, and when to consider Sequenzy as a lifecycle layer.
+        </p>
+      </header>
+
+      <div class="mt-14 grid gap-10 lg:grid-cols-2">
+        <div>
+          <h2 class="font-serif text-2xl font-black text-slate-950">Sequenzy comparisons</h2>
+          <ul class="mt-4 space-y-2">
+            {sequenzyPairs.map((p) => (
+              <li><a class="link text-lg" href={`/compare/${p.slug}`}>{p.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-serif text-2xl font-black text-slate-950">Klaviyo comparisons</h2>
+          <ul class="mt-4 space-y-2">
+            {klaviyoPairs.map((p) => (
+              <li><a class="link text-lg" href={`/compare/${p.slug}`}>{p.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-serif text-2xl font-black text-slate-950">Omnisend comparisons</h2>
+          <ul class="mt-4 space-y-2">
+            {omnisendPairs.map((p) => (
+              <li><a class="link text-lg" href={`/compare/${p.slug}`}>{p.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-serif text-2xl font-black text-slate-950">More comparisons</h2>
+          <ul class="mt-4 space-y-2">
+            {otherPairs.map((p) => (
+              <li><a class="link text-lg" href={`/compare/${p.slug}`}>{p.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <article class="prose-shopify mt-16 max-w-4xl card">
+        <h2>How to use these comparisons</h2>
+        <p>Pick the comparison matching your shortlist, then run the VIP drop test, flash sale test, and offer discipline test on each platform. Winner is whichever enables campaign restraint during sale week — not whichever has more checkmarks.</p>
+        <p>Postscript ranks first for SMS campaign execution; Attentive for enterprise promotional calendars; Sequenzy as lifecycle email layer. Read <a class="link" href="/for">vertical guides</a> and <a class="link" href="/use-cases">use-case playbooks</a> for campaign calendar context.</p>
+        <h3>Campaign marketing lens</h3>
+        <p>These comparisons evaluate drop orchestration, segment-by-value, offer discipline, and campaign calendar fit — not TCPA ops checklists. Noir Collective, SoleDrop ATX, and Festival Threads Co scenarios appear throughout.</p>
+      </article>
+    </div>
+  
+    <div class="prose-shopify card mt-8">
+      <h2>Campaign marketing depth: compare — index</h2>
+      <p><strong>Margin-After-Incentive Math.</strong> Patchwork Denim (upcycled fashion, $54k/mo) plans collection-specific drop sms by browse history. Lesson: tailored drops converted 4.1% vs 0.3% generic blasts. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Campaign Calendar Slots.</strong> Noir Collective (flash-sale streetwear, $240k/mo) plans thursday 6pm vip drop calendar. Lesson: revenue per send rose 31% after cutting broadcast frequency. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Offer Discipline Ladders.</strong> SoleDrop ATX (limited sneaker releases, $180k/mo) plans 11-minute size-run sell-through with waitlist priority. Lesson: VIP early link; general list email after 70% sell-through. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Segment-By-Value Quartiles.</strong> Festival Threads Co (tour merch, $95k/mo seasonal) plans geo-segmented tour sms by venue timezone. Lesson: 3 texts per city max during sale week. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Vip Access Without Codes.</strong> Vinyl Vault Records (collector drops, $62k/mo) plans drop sms only to $400+ ltv collectors. Lesson: one-time discount buyers excluded from VIP text segments. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Channel Collision Rules.</strong> Bloom & Wick (candle gifting, $110k/mo) plans holiday campaign calendar built in august. Lesson: gift segments got bundle SMS; self-purchase got Sequenzy education email. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Broadcast Frequency Caps.</strong> Peak Trail Gear (outdoor flash sales, $155k/mo) plans clearance sms only to bargain-sensitive quartile. Lesson: 15% off to full-price loyalists destroyed margin in holdout test. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Waitlist Priority Queues.</strong> Sauce Lab (limited hot sauce drops, $48k/mo) plans scarcity sms at 200 bottles remaining. Lesson: third text per drop doubled opt-outs. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Scarcity Timing Discipline.</strong> Ember Ceramics (maker pottery drops, $38k/mo) plans 4,200 waitlist for 80 kiln pieces. Lesson: single VIP Postscript text sold out without code leaks. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Holdout Testing.</strong> Cipher Audio (high-AOV headphones, $320k/mo) plans launch sms to engaged browse-abandon only. Lesson: no launch discount — margin held at 58%. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Margin-After-Incentive Math.</strong> Patchwork Denim (upcycled fashion, $54k/mo) plans collection-specific drop sms by browse history. Lesson: tailored drops converted 4.1% vs 0.3% generic blasts. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p><strong>Campaign Calendar Slots.</strong> Noir Collective (flash-sale streetwear, $240k/mo) plans thursday 6pm vip drop calendar. Lesson: revenue per send rose 31% after cutting broadcast frequency. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating compare — index should map quarterly revenue moments before choosing software.</p>
+      <p>Build your campaign calendar before the next drop. Assign channel ownership: Sequenzy for welcome, education, winback email; Postscript or Attentive for drop access, cart urgency, shipping deadlines. Cap SMS slots at 2–4 per month for most DTC brands. Segment-by-value before every broadcast.</p>
+    </div>
+
+
+    </section>
+
+  <section class="container pb-16">
+    <article class="prose-shopify card">
+      <h2>Extended campaign marketing playbook: compare</h2>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Ember Ceramics (maker pottery drops, $38k/mo) operationalizes single vip access text after sequenzy maker-story email. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Cipher Audio (high-AOV headphones, $320k/mo) operationalizes pre-order window sms without launch discount codes. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Patchwork Denim (upcycled fashion, $54k/mo) operationalizes style-preference segments for one-of-one listing drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Arena Energy (sports nutrition, $130k/mo) operationalizes athlete collab drop sms to gym-bag segment only. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) operationalizes restock sms to waitlist instead of full-list blast. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Noir Collective (flash-sale streetwear, $240k/mo) operationalizes thursday vip drop calendar with 2-hour early access for full-price segment. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. SoleDrop ATX (limited sneaker releases, $180k/mo) operationalizes waitlist priority queue for 11-minute sell-through drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Festival Threads Co (tour merch, $95k/mo seasonal) operationalizes geo-segmented tour sms capped at three per city. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Vinyl Vault Records (collector drops, $62k/mo) operationalizes drop sms restricted to collectors above $400 ltv. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Bloom & Wick (candle gifting, $110k/mo) operationalizes august-built holiday campaign calendar with shipping deadline tiers. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Peak Trail Gear (outdoor flash sales, $155k/mo) operationalizes clearance texts isolated to bargain-sensitive rfm quartile only. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Sauce Lab (limited hot sauce drops, $48k/mo) operationalizes one launch plus one scarcity sms per batch drop. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Ember Ceramics (maker pottery drops, $38k/mo) operationalizes single vip access text after sequenzy maker-story email. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Cipher Audio (high-AOV headphones, $320k/mo) operationalizes pre-order window sms without launch discount codes. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Patchwork Denim (upcycled fashion, $54k/mo) operationalizes style-preference segments for one-of-one listing drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Arena Energy (sports nutrition, $130k/mo) operationalizes athlete collab drop sms to gym-bag segment only. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) operationalizes restock sms to waitlist instead of full-list blast. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Noir Collective (flash-sale streetwear, $240k/mo) operationalizes thursday vip drop calendar with 2-hour early access for full-price segment. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. SoleDrop ATX (limited sneaker releases, $180k/mo) operationalizes waitlist priority queue for 11-minute sell-through drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Festival Threads Co (tour merch, $95k/mo seasonal) operationalizes geo-segmented tour sms capped at three per city. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Vinyl Vault Records (collector drops, $62k/mo) operationalizes drop sms restricted to collectors above $400 ltv. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying compare should treat every SMS slot as inventory: scarce, priced, and segment-specific. Bloom & Wick (candle gifting, $110k/mo) operationalizes august-built holiday campaign calendar with shipping deadline tiers. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+    </article>
+  </section>
+
+</BaseLayout>

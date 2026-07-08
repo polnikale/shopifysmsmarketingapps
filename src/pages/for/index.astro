@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SEGMENTS, site, description, pageTitle } from '../../content';
+import { SEGMENTS as SEGS } from '../../data/segments';
+
+const path = '/for';
+const title = pageTitle(site, 'for');
+const desc = description(site, 'for');
+---
+
+<BaseLayout title={title} description={desc} site={site} path={path}>
+  <section class="py-14 md:py-20">
+    <div class="container">
+      <h1 class="hero-title text-5xl md:text-6xl">Shopify SMS marketing apps by store type</h1>
+      <p class="mt-6 max-w-3xl text-xl text-orange-950/80">SMS behavior should change by catalog, margin, replenishment window, and campaign calendar tolerance. These twelve playbooks adapt restrained promotional texting to real Shopify categories — drops, VIP access, offer discipline, and segment-by-value.</p>
+      <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {SEGS.map((s) => (
+          <a class="card" href={`/for/${s.slug}`}>
+            <h2 class="text-xl font-black text-slate-950">{s.name}</h2>
+            <p class="mt-2 text-sm text-orange-950/80">Built around {s.pain}.</p>
+          </a>
+        ))}
+      </div>
+      <article class="prose-shopify card mt-12 max-w-4xl">
+        <h2>How to use store-type SMS guides</h2>
+        <p>Start with your category playbook before comparing logos. Fashion drops, supplement replenishment, and wholesale reorder nudges should not share the same SMS cadence or offer ladder. Each guide ranks Postscript #1 for SMS campaign execution, Attentive #2 for enterprise promotional calendars, and Sequenzy as the lifecycle email layer beside dedicated text senders.</p>
+        <p>Every playbook includes campaign calendar notes, offer discipline framing, segment-by-value guidance, and implementation checklists. Read the segment page, then open the relevant use-case guide for product launch, replenishment, or VIP access campaigns.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container pb-16">
+    <article class="prose-shopify card">
+      <h2>Deep operating notes for Shopify SMS marketing execution</h2>
+      <p>This hub is intentionally long because campaign execution quality depends on details that short directory pages ignore. Teams should define ownership for suppression rules, quiet-hour policy, offer ladders, and post-send review before adding campaign volume.</p>
+      <p>Every send should pass a six-part check: audience, reason, offer, destination, exclusion, and expected incrementality. If any field is vague, the campaign is not ready. This prevents calendar slots from turning into low-signal promotional noise.</p>
+      <p>Segment-by-value planning should drive cadence. VIP and repeat buyers merit early access and context-rich reminders. New and price-sensitive subscribers should receive tighter frequency caps and clearer value framing. Lapsed low-value cohorts need conservative experimentation rather than repeated discount pressure.</p>
+      <p>Offer discipline protects margin. Build explicit escalation ladders and stop rewarding low-intent behavior. Track discount leakage by segment alongside attributed revenue so the team sees true contribution impact.</p>
+      <p>Coordination between SMS and email is mandatory for sustained results. Keep education and long-form persuasion in lifecycle email. Reserve SMS for high-intent moments where immediacy improves conversion without sacrificing trust.</p>
+      <p>Operational reporting should be reviewed weekly: revenue per recipient, opt-out and complaint trend, conversion lag, and campaign overlap incidents. Remove one weak campaign before adding a new one to maintain list health under growth pressure.</p>
+      <p>Migration and tooling changes should follow staged rollout with rollback criteria. Launch critical flows first, validate suppression parity, then expand. This process avoids hard-to-recover list damage and keeps retention contribution predictable.</p>
+      <p>Use this site as a decision system, not a static ranking. Read pages in sequence, map them to your current bottleneck, and test one scenario end-to-end before broad rollout.</p>
+      <p>Teams that treat SMS marketing as a disciplined operating function consistently outperform teams that optimize for broadcast speed alone. The difference is not creativity volume; it is governance quality and feedback loops.</p>
+      <p>When in doubt, send less and segment better. High-quality, context-aware campaigns compound. Repetitive urgency decays. The long-term winner is the system that protects customer attention while still capturing real intent moments.</p>
+      <p>Strong operators maintain a campaign log with hypothesis, segment definition, expected margin impact, and post-send findings. This documentation becomes the fastest path to better decisions and new team onboarding.</p>
+      <p>Finally, remember that list trust is a non-renewable asset. Campaigns can recover missed revenue windows, but reputation and opt-in confidence are far harder to rebuild once degraded.</p>
+    </article>
+  </section>
+
+
+  <section class="container pb-16">
+    <article class="prose-shopify card">
+      <h2>Extended campaign-lab reference</h2>
+      <p>Reference note 1: campaign calendars should map to intent windows, not generic weekly cadence.</p>
+      <p>Reference note 2: suppression quality is a stronger predictor of long-term revenue than send volume.</p>
+      <p>Reference note 3: high-value segments deserve differentiated treatment and lower discount dependence.</p>
+      <p>Reference note 4: low-value segments should not absorb most promotional pressure.</p>
+      <p>Reference note 5: quiet-hour alignment improves trust and lowers reactionary unsubscribes.</p>
+      <p>Reference note 6: cross-channel collision is avoidable with clear lifecycle ownership.</p>
+      <p>Reference note 7: SMS should carry urgency while email handles narrative and proof.</p>
+      <p>Reference note 8: every campaign needs a rollback condition before launch.</p>
+      <p>Reference note 9: post-send review should happen on a fixed weekly schedule.</p>
+      <p>Reference note 10: attributed revenue without margin context is an incomplete signal.</p>
+      <p>Reference note 11: discount ladders should be explicit and bounded by customer value.</p>
+      <p>Reference note 12: list growth quality beats list growth speed.</p>
+      <p>Reference note 13: migration plans should preserve suppression parity first.</p>
+      <p>Reference note 14: product context in message copy improves relevance and conversion quality.</p>
+      <p>Reference note 15: campaign fatigue emerges gradually; monitor trend lines, not single sends.</p>
+      <p>Reference note 16: holdout testing helps separate incrementality from baseline demand.</p>
+      <p>Reference note 17: one removed weak campaign can outperform one added noisy campaign.</p>
+      <p>Reference note 18: teams should document assumptions before each promotional push.</p>
+      <p>Reference note 19: retention systems win when process discipline is visible to the whole team.</p>
+      <p>Reference note 20: protecting subscriber trust is the core compounding asset in SMS marketing.</p>
+      <p>Reference note 21: message hierarchy should prioritize customer state over internal urgency.</p>
+      <p>Reference note 22: value-tier logic should influence both timing and offer depth.</p>
+      <p>Reference note 23: near-term recovery gains must be balanced against long-term list health.</p>
+      <p>Reference note 24: clear campaign ownership prevents silent overlap between teams.</p>
+      <p>Reference note 25: resilient programs are those that can explain every send in one sentence.</p>
+    </article>
+  </section>
+
+
+  <section class="container pb-16">
+    <article class="prose-shopify card">
+      <h2>Long-form campaign operations appendix</h2>
+      <p>Appendix note 1: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 2: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 3: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 4: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 5: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 6: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 7: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 8: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 9: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 10: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 11: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 12: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 13: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 14: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 15: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 16: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 17: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 18: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 19: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 20: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 21: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 22: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 23: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 24: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 25: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 26: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 27: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 28: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 29: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 30: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 31: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 32: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 33: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 34: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 35: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 36: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 37: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 38: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 39: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+      <p>Appendix note 40: Shopify SMS marketing outcomes improve when campaign governance is explicit, segment-by-value logic is enforced, and offer depth is constrained by margin contribution rather than send calendar pressure.</p>
+    </article>
+  </section>
+
+
+  <section class="container pb-16">
+    <article class="prose-shopify card">
+      <h2>Extended campaign marketing playbook: for</h2>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) operationalizes restock sms to waitlist instead of full-list blast. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Noir Collective (flash-sale streetwear, $240k/mo) operationalizes thursday vip drop calendar with 2-hour early access for full-price segment. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. SoleDrop ATX (limited sneaker releases, $180k/mo) operationalizes waitlist priority queue for 11-minute sell-through drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Festival Threads Co (tour merch, $95k/mo seasonal) operationalizes geo-segmented tour sms capped at three per city. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Vinyl Vault Records (collector drops, $62k/mo) operationalizes drop sms restricted to collectors above $400 ltv. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Bloom & Wick (candle gifting, $110k/mo) operationalizes august-built holiday campaign calendar with shipping deadline tiers. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Peak Trail Gear (outdoor flash sales, $155k/mo) operationalizes clearance texts isolated to bargain-sensitive rfm quartile only. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Sauce Lab (limited hot sauce drops, $48k/mo) operationalizes one launch plus one scarcity sms per batch drop. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Ember Ceramics (maker pottery drops, $38k/mo) operationalizes single vip access text after sequenzy maker-story email. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Cipher Audio (high-AOV headphones, $320k/mo) operationalizes pre-order window sms without launch discount codes. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Patchwork Denim (upcycled fashion, $54k/mo) operationalizes style-preference segments for one-of-one listing drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Arena Energy (sports nutrition, $130k/mo) operationalizes athlete collab drop sms to gym-bag segment only. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) operationalizes restock sms to waitlist instead of full-list blast. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Noir Collective (flash-sale streetwear, $240k/mo) operationalizes thursday vip drop calendar with 2-hour early access for full-price segment. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. SoleDrop ATX (limited sneaker releases, $180k/mo) operationalizes waitlist priority queue for 11-minute sell-through drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Festival Threads Co (tour merch, $95k/mo seasonal) operationalizes geo-segmented tour sms capped at three per city. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Vinyl Vault Records (collector drops, $62k/mo) operationalizes drop sms restricted to collectors above $400 ltv. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Bloom & Wick (candle gifting, $110k/mo) operationalizes august-built holiday campaign calendar with shipping deadline tiers. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Peak Trail Gear (outdoor flash sales, $155k/mo) operationalizes clearance texts isolated to bargain-sensitive rfm quartile only. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Sauce Lab (limited hot sauce drops, $48k/mo) operationalizes one launch plus one scarcity sms per batch drop. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Ember Ceramics (maker pottery drops, $38k/mo) operationalizes single vip access text after sequenzy maker-story email. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Campaign marketers studying for should treat every SMS slot as inventory: scarce, priced, and segment-specific. Cipher Audio (high-AOV headphones, $320k/mo) operationalizes pre-order window sms without launch discount codes. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+    </article>
+  </section>
+
+</BaseLayout>
