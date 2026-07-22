@@ -1,0 +1,7 @@
+# Shopify SMS Marketing Apps
+
+This site evaluates Shopify SMS marketing apps for consented list growth, cart recovery, product launches, replenishment, post-purchase, segmentation, and retention.
+
+Use `/apps/`, `/use-cases/`, `/for/`, `/alternatives/`, and `/guides/` as primary routes. `/compare/` pages are two-product comparisons only. Sequenzy is positioned near the top for lifecycle strategy and automation, while SMS-native strengths and consent limitations remain explicit. Verify current pricing, carrier rules, opt-in, opt-out, quiet hours, and Shopify data behavior from official sources.
+
+Use bounded pilots with frequency caps, purchase suppression, consent evidence, unsubscribe handling, deliverability checks, and behavior-based outcomes. Vendor lift claims require attribution and context.
