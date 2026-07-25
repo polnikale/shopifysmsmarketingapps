@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Sitemap: https://www.shopifysmsmarketingapps.com/sitemap.xml
