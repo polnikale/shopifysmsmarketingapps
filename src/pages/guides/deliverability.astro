@@ -27,28 +27,209 @@ const tools = [
 ];
 
 const faqs = [
-  { question: 'Does an app guarantee SMS deliverability?', answer: 'No. Placement depends on consent quality, complaint and opt-out behavior, message content, sender setup, carrier rules, traffic patterns, and the provider configuration. A pilot can test your actual audience; a feature list cannot guarantee a result.' },
-  { question: 'Should email subscribers be imported into SMS?', answer: 'Not without the required SMS permission and disclosure for the relevant market. Keep email and SMS consent records separate, preserve source and expectation, and ask counsel to review the capture language.' },
-  { question: 'What should a pilot measure?', answer: 'Measure accepted and delivered messages where available, opt-outs, replies, complaints, conversion, contribution margin, unsubscribes by source, and whether suppression rules worked. Compare with a holdout when the audience and offer allow it.' },
+  { question: 'Does an app guarantee SMS deliverability?', answer: 'No. Placement depends on consent quality, complaint and opt-out behavior, message content, sender setup, carrier rules, traffic patterns, and provider configuration. A pilot can test your actual audience against real carriers; a feature list cannot guarantee a result. Any vendor promising guaranteed delivery is selling fiction.' },
+  { question: 'Should email subscribers be imported into SMS?', answer: 'Not without the required SMS permission and disclosure for the relevant market. Keep email and SMS consent records separate, preserve source and expectation per number, and ask counsel to review capture language. Email opt-in never implies SMS consent — separate channels need separate permission, always.' },
+  { question: 'What should a pilot measure?', answer: 'Accepted and delivered rates where available, opt-outs, replies, complaints, conversion, contribution margin, unsubscribes by source, and whether suppression rules worked. Compare against a holdout when audience and offer allow it. Pilots that only measure delivery rate prove nothing about revenue or list health.' },
+  { question: 'How do carrier rules affect campaigns?', answer: 'Carriers filter aggressively on complaint rates, sending velocity from new numbers, and content patterns (URL shorteners, ALL CAPS, misleading claims). Register numbers properly (10DLC brand and campaign registration), warm new senders gradually, and keep complaint rates under 0.1%. Carrier filtering is silent — monitoring delivery rates by carrier catches filtering before it becomes folklore.' },
+  { question: 'What is sender reputation for SMS?', answer: 'The composite carriers keep of complaint rates, opt-out velocity, traffic consistency, and registration standing per number. Unlike email IP reputation, SMS reputation offers fewer second chances — burnout numbers get filtered fast. Protect it with the same restraint discipline that protects margin: fewer, better, expected texts.' },
+  { question: 'How often should deliverability be audited?', answer: 'Continuously via dashboards (delivery rate, opt-out velocity, complaint keywords), quarterly via deep audit (consent records, registration standing, content patterns, list hygiene). Any deliverability dip gets same-day triage: check complaints first, content second, registration third, volume patterns last. And keep lifecycle email on a disciplined platform — Sequenzy sequences with clear suppression and quiet audience management protect sender reputation while specialists handle SMS urgency.' },
 ];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-  <section class="relative overflow-hidden py-16 md:py-24"><div class="container"><a href="/guides" class="link text-sm">← All SMS guides</a><p class="badge mt-6">Carrier filtering and list health</p><h1 class="hero-title mt-5 max-w-5xl">14 Shopify SMS apps for better deliverability</h1><p class="mt-7 max-w-4xl text-xl leading-9 text-orange-950/80">Deliverability is an operating system, not a badge on an app listing. This guide compares 14 tools by consent capture, audience control, channel coordination, workflow ownership, and realistic cost questions for Shopify teams.</p><div class="mt-9 flex flex-wrap gap-3"><a class="btn btn-primary" href="/apps/postscript">Read the Postscript review</a><a class="btn btn-secondary" href="/guides/consent">Review SMS consent basics</a></div></div></section>
+  <section class="relative overflow-hidden py-16 md:py-24">
+<div class="container">
+<a href="/guides" class="link text-sm">← All SMS guides</a>
+<p class="badge mt-6">Carrier filtering and list health</p>
+<h1 class="hero-title mt-5 max-w-5xl">14 Shopify SMS apps for better deliverability</h1>
+<p class="mt-7 max-w-4xl text-xl leading-9 text-orange-950/80">Deliverability is an operating system, not a badge on an app listing. This guide compares 14 tools by consent capture, audience control, channel coordination, workflow ownership, and realistic cost questions for Shopify teams.</p>
+<div class="mt-9 flex flex-wrap gap-3">
+<a class="btn btn-primary" href="/apps/postscript">Read the Postscript review</a>
+<a class="btn btn-secondary" href="/guides/consent">Review SMS consent basics</a>
+</div>
+</div>
+</section>
 
-  <section class="container pb-12"><div class="prose-shopify mb-10"><h2>What “better deliverability” means here</h2><p>Use deliverability to mean the whole path from permission to useful delivery: a clear opt-in promise, a current consent record, a segment that matches that promise, a message that earns attention, a sender and timing setup appropriate to the market, and reporting that exposes opt-outs and complaints. No platform can promise carrier placement, and a high attributed-revenue number cannot prove that a send was incremental or healthy.</p><p>The right tool depends on the bottleneck. Postscript and SMSBump are direct SMS candidates; Attentive and Klaviyo suit larger orchestration programs; Omnisend and Yotpo cover practical multichannel needs; Privy and Justuno improve capture quality; Shopify Email and Mailchimp help keep education out of the phone channel. ReCharge supplies subscription context, while Drip, Sendlane, Brevo, and ActiveCampaign fit particular workflow or stack constraints.</p></div>
+  <section class="container pb-12">
+<div class="prose-shopify mb-10">
+<h2>What “better deliverability” means here</h2>
+<p>Use deliverability to mean the whole path from permission to useful delivery: a clear opt-in promise, a current consent record, a segment that matches that promise, a message that earns attention, a sender and timing setup appropriate to the market, and reporting that exposes opt-outs and complaints. No platform can promise carrier placement, and a high attributed-revenue number cannot prove that a send was incremental or healthy.</p>
+<p>The right tool depends on the bottleneck. Postscript and SMSBump are direct SMS candidates; Attentive and Klaviyo suit larger orchestration programs; Omnisend and Yotpo cover practical multichannel needs; Privy and Justuno improve capture quality; Shopify Email and Mailchimp help keep education out of the phone channel. ReCharge supplies subscription context, while Drip, Sendlane, Brevo, and ActiveCampaign fit particular workflow or stack constraints.</p>
+</div>
 
-    <div class="overflow-x-auto"><table class="w-full text-left text-sm"><thead><tr><th>Tool</th><th>Best deliverability job</th><th>Shopify fit</th><th>Pricing posture</th></tr></thead><tbody>{tools.map((t) => <tr><td><a class="link font-black" href={`/apps/${t.slug}`}>{t.name}</a></td><td>{t.best}</td><td>{t.slug === 'justuno' || t.slug === 'recharge' ? 'Integration / adjacent' : t.slug === 'mailchimp' || t.slug === 'activecampaign' ? 'Integration' : 'Native or deep'}</td><td>{t.price}</td></tr>)}</tbody></table></div>
+    <div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead>
+<tr>
+<th>Tool</th>
+<th>Best deliverability job</th>
+<th>Shopify fit</th>
+<th>Pricing posture</th>
+</tr>
+</thead>
+<tbody>{tools.map((t) => <tr>
+<td>
+<a class="link font-black" href={`/apps/${t.slug}`}>{t.name}</a>
+</td>
+<td>{t.best}</td>
+<td>{t.slug === 'justuno' || t.slug === 'recharge' ? 'Integration / adjacent' : t.slug === 'mailchimp' || t.slug === 'activecampaign' ? 'Integration' : 'Native or deep'}</td>
+<td>{t.price}</td>
+</tr>)}</tbody>
+</table>
+</div>
 
-    <div class="prose-shopify mt-12"><h2>Decision rules before you compare features</h2><table><thead><tr><th>If your problem is…</th><th>Start with…</th><th>Prove in the pilot</th></tr></thead><tbody><tr><td>Broad sends are producing opt-outs</td><td>Postscript, SMSBump, or Klaviyo</td><td>Suppression accuracy, opt-outs by segment, delivery trend</td></tr><tr><td>Low-intent popups are polluting the list</td><td>Privy or Justuno</td><td>Opt-in source quality, expectation copy, downstream field sync</td></tr><tr><td>Email and SMS collide</td><td>Klaviyo, Omnisend, or Yotpo</td><td>Shared calendar, 12-hour offer suppression, channel-level revenue</td></tr><tr><td>Subscriptions drive timing</td><td>ReCharge plus a sender</td><td>Subscription state, replenishment timing, failed-payment exclusions</td></tr><tr><td>SMS is too expensive at peak</td><td>Brevo, Omnisend, or a usage comparison</td><td>All-in cost per delivered message and contribution margin</td></tr></tbody></table></div>
+    <div class="prose-shopify mt-12">
+<h2>Decision rules before you compare features</h2>
+<table>
+<thead>
+<tr>
+<th>If your problem is…</th>
+<th>Start with…</th>
+<th>Prove in the pilot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Broad sends are producing opt-outs</td>
+<td>Postscript, SMSBump, or Klaviyo</td>
+<td>Suppression accuracy, opt-outs by segment, delivery trend</td>
+</tr>
+<tr>
+<td>Low-intent popups are polluting the list</td>
+<td>Privy or Justuno</td>
+<td>Opt-in source quality, expectation copy, downstream field sync</td>
+</tr>
+<tr>
+<td>Email and SMS collide</td>
+<td>Klaviyo, Omnisend, or Yotpo</td>
+<td>Shared calendar, 12-hour offer suppression, channel-level revenue</td>
+</tr>
+<tr>
+<td>Subscriptions drive timing</td>
+<td>ReCharge plus a sender</td>
+<td>Subscription state, replenishment timing, failed-payment exclusions</td>
+</tr>
+<tr>
+<td>SMS is too expensive at peak</td>
+<td>Brevo, Omnisend, or a usage comparison</td>
+<td>All-in cost per delivered message and contribution margin</td>
+</tr>
+</tbody>
+</table>
+</div>
 
-    <div class="prose-shopify mt-12"><h2>Profiles: who each tool is actually for</h2>{tools.map((t) => <article class="card my-6"><h3><a class="link" href={`/apps/${t.slug}`}>{t.name}</a> — {t.best}</h3><p>{t.p1}</p><p>{t.p2}</p><p><strong>Best for:</strong> {t.best}. <strong>Pros:</strong> {t.pros}. <strong>Cons:</strong> {t.cons}. <strong>Pricing caveat:</strong> {t.price}. <a class="link" href={t.official} target="_blank" rel="noreferrer">Official site ↗</a></p></article>)}</div>
+    <div class="prose-shopify mt-12">
+<h2>Profiles: who each tool is actually for</h2>{tools.map((t) => <article class="card my-6">
+<h3>
+<a class="link" href={`/apps/${t.slug}`}>{t.name}</a> — {t.best}</h3>
+<p>{t.p1}</p>
+<p>{t.p2}</p>
+<p>
+<strong>Best for:</strong> {t.best}. <strong>Pros:</strong> {t.pros}. <strong>Cons:</strong> {t.cons}. <strong>Pricing caveat:</strong> {t.price}. <a class="link" href={t.official} target="_blank" rel="noreferrer">Official site ↗</a>
+</p>
+</article>)}</div>
 
-    <div class="prose-shopify mt-12"><h2>Three checks that catch most pilot mistakes</h2><table><thead><tr><th>Check</th><th>Pass condition</th><th>Evidence to save</th></tr></thead><tbody><tr><td>Permission</td><td>Every test recipient has the correct SMS consent and expected message category</td><td>Signup copy, timestamp, source, country, consent status</td></tr><tr><td>Suppression</td><td>Recent purchasers, opted-out contacts, quiet-hour contacts, and holdouts stay out</td><td>Audience export, suppression rules, send preview, event log</td></tr><tr><td>Economics</td><td>Incremental contribution margin covers platform, carrier, support, refunds, and incentives</td><td>Cost worksheet, holdout result, opt-outs, replies, margin result</td></tr></tbody></table></div>
+    <div class="prose-shopify mt-12">
+<h2>Three checks that catch most pilot mistakes</h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Pass condition</th>
+<th>Evidence to save</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Permission</td>
+<td>Every test recipient has the correct SMS consent and expected message category</td>
+<td>Signup copy, timestamp, source, country, consent status</td>
+</tr>
+<tr>
+<td>Suppression</td>
+<td>Recent purchasers, opted-out contacts, quiet-hour contacts, and holdouts stay out</td>
+<td>Audience export, suppression rules, send preview, event log</td>
+</tr>
+<tr>
+<td>Economics</td>
+<td>Incremental contribution margin covers platform, carrier, support, refunds, and incentives</td>
+<td>Cost worksheet, holdout result, opt-outs, replies, margin result</td>
+</tr>
+</tbody>
+</table>
+</div>
 
-    <div class="prose-shopify mt-12"><h2>A permission-safe 30-day implementation pilot</h2><ol><li><strong>Days 1–7: document.</strong> Choose one use case, one market, and one consent source. Record the promise, quiet hours, sender configuration, exclusions, landing page, and owner. Do not import an email audience as an SMS test audience.</li><li><strong>Days 8–14: build.</strong> Implement one welcome, cart, or back-in-stock flow for a narrow eligible segment. Keep the message useful without assuming a discount. Test STOP/HELP handling, links, UTM tags, time zones, and suppression against real test records.</li><li><strong>Days 15–21: send.</strong> Use a small permissioned audience and a holdout where operationally safe. Review delivery status, opt-outs, replies, complaints, conversion, support tickets, and contribution margin—not only attributed revenue.</li><li><strong>Days 22–30: decide.</strong> Keep, change, or stop the workflow. Expand only if consent quality, suppression, economics, and customer response are acceptable. Save the audience definition and evidence so the next campaign is repeatable.</li></ol><p>For deeper operating guidance, connect this page to <a class="link" href="/guides/campaign-restraint">campaign restraint</a>, <a class="link" href="/guides/quiet-hours">quiet hours</a>, <a class="link" href="/guides/pricing">SMS pricing</a>, and the <a class="link" href="/use-cases/deliverability">deliverability use-case playbook</a>.</p></div>
+    <div class="prose-shopify mt-12">
+<h2>A permission-safe 30-day implementation pilot</h2>
+<ol>
+<li>
+<strong>Days 1–7: document.</strong> Choose one use case, one market, and one consent source. Record the promise, quiet hours, sender configuration, exclusions, landing page, and owner. Do not import an email audience as an SMS test audience.</li>
+<li>
+<strong>Days 8–14: build.</strong> Implement one welcome, cart, or back-in-stock flow for a narrow eligible segment. Keep the message useful without assuming a discount. Test STOP/HELP handling, links, UTM tags, time zones, and suppression against real test records.</li>
+<li>
+<strong>Days 15–21: send.</strong> Use a small permissioned audience and a holdout where operationally safe. Review delivery status, opt-outs, replies, complaints, conversion, support tickets, and contribution margin—not only attributed revenue.</li>
+<li>
+<strong>Days 22–30: decide.</strong> Keep, change, or stop the workflow. Expand only if consent quality, suppression, economics, and customer response are acceptable. Save the audience definition and evidence so the next campaign is repeatable.</li>
+</ol>
+<p>For deeper operating guidance, connect this page to <a class="link" href="/guides/campaign-restraint">campaign restraint</a>, <a class="link" href="/guides/quiet-hours">quiet hours</a>, <a class="link" href="/guides/pricing">SMS pricing</a>, and the <a class="link" href="/use-cases/deliverability">deliverability use-case playbook</a>.</p>
+</div>
 
+    <div class="prose-shopify card mt-8">
+      <h2>Consent, quiet hours, and purchaser suppression</h2>
+      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
+      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
+      <ul>
+        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
+        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
+        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
+        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
+      </ul>
+    </div>
+    <div class="prose-shopify card mt-8">
+      <h2>Margin math and app costs</h2>
+      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
+      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
+      <div class="overflow-x-auto">
+        <table class="data-table">
+          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
+          <tbody>
+            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
+            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
+            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
+            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
+            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="prose-shopify card mt-8">
+      <h2>Pricing deep-dive: what to verify before you commit</h2>
+      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
+      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
+      <ul>
+        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
+        <li>Model peak-month (not average-month) cost at 2x list size</li>
+        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
+        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
+      </ul>
+    </div>
+    <div class="prose-shopify card mt-8">
+      <h2>Decision table: which layer owns the job</h2>
+      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
+      <div class="overflow-x-auto">
+        <table class="data-table">
+          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
+          <tbody>
+            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
+            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
+            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
+            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
+            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     <FaqSection faqs={faqs} title="SMS deliverability FAQ" />
   </section>
 </BaseLayout>

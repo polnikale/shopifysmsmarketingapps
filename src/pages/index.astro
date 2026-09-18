@@ -14,22 +14,68 @@ const recommended = APPS.filter(a => a.channels.includes(site.channel) || a.chan
         <span class="badge">Mobile campaign lab · 2026 Shopify SMS marketing</span>
         <h1 class="hero-title mt-6">Best Shopify SMS marketing apps for campaigns people actually welcome.</h1>
         <p class="mt-6 max-w-3xl text-xl text-orange-950/80">{site.heroPromise} This site now uses a bright retail-lab theme with punchy cards, phone-era campaign language, and content focused on SMS marketing strategy rather than generic app-directory blurbs.</p>
-        <div class="mt-8 flex flex-wrap gap-4"><a class="btn btn-primary" href="/apps">Compare marketing apps</a><a class="btn btn-secondary" href="/use-cases/product-launch">Plan a launch flow</a></div>
+        <div class="mt-8 flex flex-wrap gap-4">
+<a class="btn btn-primary" href="/apps">Compare marketing apps</a>
+<a class="btn btn-secondary" href="/use-cases/product-launch">Plan a launch flow</a>
+</div>
       </div>
       <div class="card rotate-1">
         <div class="text-sm font-black uppercase tracking-[.18em] text-orange-700">Campaign verdict</div>
         <h2 class="mt-4 text-3xl font-black text-slate-950">The strongest SMS marketing stack balances urgency with restraint.</h2>
         <p class="mt-5 text-orange-950/80">The best {site.keywordPlural} do not simply make it easy to send more texts. They make it easier to send the right message to the right Shopify segment, then stop before the campaign becomes noise. {site.bestOverallReason}</p>
-        <ul class="mt-6 space-y-3 text-sm text-orange-950/80"><li>● Campaign calendars should be shaped by buying moments, not empty send slots.</li><li>● Discounts need margin controls and customer-history rules.</li><li>● SMS works best when email carries education and SMS carries urgency.</li></ul>
+        <ul class="mt-6 space-y-3 text-sm text-orange-950/80">
+<li>● Campaign calendars should be shaped by buying moments, not empty send slots.</li>
+<li>● Discounts need margin controls and customer-history rules.</li>
+<li>● SMS works best when email carries education and SMS carries urgency.</li>
+</ul>
       </div>
     </div>
   </section>
-  <section class="container py-14"><div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div><span class="badge">Ranked retail lab</span><h2 class="mt-3 text-3xl font-black">Top SMS marketing apps to evaluate first</h2><p class="mt-3 max-w-3xl text-orange-950/75">Every card links to a longer buying guide. The angle is campaign quality: acquisition, segmentation, launch moments, cart recovery, loyalty, and the operational discipline required to avoid list fatigue.</p></div><a class="link" href="/apps">View all apps →</a></div><div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{recommended.map((app, i) => <a class="card" href={`/apps/${app.slug}`}><div class="text-sm font-black text-orange-700">#{i+1}</div><h3 class="mt-2 text-xl font-black text-slate-950">{app.name}</h3><p class="mt-2 text-sm text-orange-950/75">{app.bestFor}</p><p class="mt-4 text-sm font-black text-slate-900">{app.pricing}</p></a>)}</div></section>
-  <section class="bg-orange-100/70 py-14"><div class="container grid gap-8 md:grid-cols-3"><div><span class="badge">SEO route map</span><h2 class="mt-3 text-3xl font-black">100+ pages with campaign-specific copy</h2><p class="mt-4 text-orange-950/75">The template now expands each app, comparison, alternative, segment, and use-case route with long-form SMS marketing guidance and internal links.</p></div><div class="grid gap-4 md:col-span-2 sm:grid-cols-2">{USE_CASES.slice(0,8).map(u=><a class="card" href={`/use-cases/${u.slug}`}><h3 class="font-black text-slate-950">{u.name}</h3><p class="mt-2 text-sm text-orange-950/75">A campaign playbook to {u.job} without turning the list into a coupon vending machine.</p></a>)}</div></div></section>
-  <section class="container py-14"><h2 class="text-3xl font-black">Marketing by store type</h2><p class="mt-3 max-w-3xl text-orange-950/75">SMS marketing is not category-neutral. Beauty replenishment, jewelry gifting, food subscriptions, and print-on-demand trend drops all require different send logic.</p><div class="mt-6 grid gap-4 md:grid-cols-3">{SEGMENTS.slice(0,9).map(s=><a class="card" href={`/for/${s.slug}`}><h3 class="font-black">{s.name}</h3><p class="mt-2 text-sm text-orange-950/75">Campaign risks and opportunities: {s.pain}.</p></a>)}</div></section>
+  <section class="container py-14">
+<div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+<div>
+<span class="badge">Ranked retail lab</span>
+<h2 class="mt-3 text-3xl font-black">Top SMS marketing apps to evaluate first</h2>
+<p class="mt-3 max-w-3xl text-orange-950/75">Every card links to a longer buying guide. The angle is campaign quality: acquisition, segmentation, launch moments, cart recovery, loyalty, and the operational discipline required to avoid list fatigue.</p>
+</div>
+<a class="link" href="/apps">View all apps →</a>
+</div>
+<div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{recommended.map((app, i) => <a class="card" href={`/apps/${app.slug}`}>
+<div class="text-sm font-black text-orange-700">#{i+1}</div>
+<h3 class="mt-2 text-xl font-black text-slate-950">{app.name}</h3>
+<p class="mt-2 text-sm text-orange-950/75">{app.bestFor}</p>
+<p class="mt-4 text-sm font-black text-slate-900">{app.pricing}</p>
+</a>)}</div>
+</section>
+  <section class="bg-orange-100/70 py-14">
+<div class="container grid gap-8 md:grid-cols-3">
+<div>
+<span class="badge">SEO route map</span>
+<h2 class="mt-3 text-3xl font-black">100+ pages with campaign-specific copy</h2>
+<p class="mt-4 text-orange-950/75">The template now expands each app, comparison, alternative, segment, and use-case route with long-form SMS marketing guidance and internal links.</p>
+</div>
+<div class="grid gap-4 md:col-span-2 sm:grid-cols-2">{USE_CASES.slice(0,8).map(u=>
+<a class="card" href={`/use-cases/${u.slug}`}>
+<h3 class="font-black text-slate-950">{u.name}</h3>
+<p class="mt-2 text-sm text-orange-950/75">A campaign playbook to {u.job} without turning the list into a coupon vending machine.</p>
+</a>)}</div>
+</div>
+</section>
+  <section class="container py-14">
+<h2 class="text-3xl font-black">Marketing by store type</h2>
+<p class="mt-3 max-w-3xl text-orange-950/75">SMS marketing is not category-neutral. Beauty replenishment, jewelry gifting, food subscriptions, and print-on-demand trend drops all require different send logic.</p>
+<div class="mt-6 grid gap-4 md:grid-cols-3">{SEGMENTS.slice(0,9).map(s=>
+<a class="card" href={`/for/${s.slug}`}>
+<h3 class="font-black">{s.name}</h3>
+<p class="mt-2 text-sm text-orange-950/75">Campaign risks and opportunities: {s.pain}.</p>
+</a>)}</div>
+</section>
   <section class="bg-orange-100/70 py-14">
     <div class="container grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
-      <div><span class="badge">Homepage campaign brief</span><h2 class="mt-3 text-3xl font-black">How Shopify teams should use this SMS marketing map</h2></div>
+      <div>
+<span class="badge">Homepage campaign brief</span>
+<h2 class="mt-3 text-3xl font-black">How Shopify teams should use this SMS marketing map</h2>
+</div>
       <article class="prose-shopify">
         <p>The homepage is deliberately more than a ranking table because Shopify SMS marketing fails when it is treated as a list of apps to install. The work begins with permission, expectation, and restraint. A subscriber who joined for launch alerts may not welcome weekly coupon blasts. A customer who just purchased should not receive the same urgency as a cart abandoner. A VIP may respond better to early access than to a deeper discount. The best SMS marketing stack gives the operator enough Shopify context to make those differences normal.</p>
         <p>Use the app cards to find likely platforms, then move through the deeper pages by campaign intent. App reviews describe where a platform fits. Comparison pages highlight operational tradeoffs. Alternatives pages explain when a switch is worth the migration risk. Use-case pages translate a single job, such as abandoned cart, product launch, replenishment, or winback, into triggers, copy, suppression, and measurement. Store-type pages adapt the same discipline to beauty, fashion, supplements, jewelry, food, pets, subscriptions, and higher-consideration catalogs.</p>
@@ -39,24 +85,54 @@ const recommended = APPS.filter(a => a.channels.includes(site.channel) || a.chan
     </div>
   </section>
   <section class="container py-14">
-    <div class="mb-8 max-w-4xl"><span class="badge">SMS scoring board</span><h2 class="mt-3 text-3xl font-black">A concrete rubric for choosing Shopify SMS marketing apps</h2><p class="mt-4 text-orange-950/75">SMS tools are easy to overrate when the demo focuses on fast broadcasts. Score each candidate against the operational realities that decide whether texts remain welcome after the first month.</p></div>
+    <div class="mb-8 max-w-4xl">
+<span class="badge">SMS scoring board</span>
+<h2 class="mt-3 text-3xl font-black">A concrete rubric for choosing Shopify SMS marketing apps</h2>
+<p class="mt-4 text-orange-950/75">SMS tools are easy to overrate when the demo focuses on fast broadcasts. Score each candidate against the operational realities that decide whether texts remain welcome after the first month.</p>
+</div>
     <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      <div class="card"><h3 class="font-black text-slate-950">Consent and expectation</h3><p class="mt-2 text-sm text-orange-950/75">Forms, keywords, checkout opt-in, quiet hours, unsubscribe handling, and disclosure copy should make it obvious what subscribers will receive and when.</p></div>
-      <div class="card"><h3 class="font-black text-slate-950">Segment control</h3><p class="mt-2 text-sm text-orange-950/75">The app should target by checkout intent, product interest, order history, VIP tier, discount sensitivity, subscription state, and recent campaign exposure.</p></div>
-      <div class="card"><h3 class="font-black text-slate-950">Offer governance</h3><p class="mt-2 text-sm text-orange-950/75">Discounts need ladders, exclusions, expiration rules, and margin visibility so a campaign does not train loyal customers to wait for the next text.</p></div>
-      <div class="card"><h3 class="font-black text-slate-950">Channel coordination</h3><p class="mt-2 text-sm text-orange-950/75">Email should carry education, proof, and comparison detail; SMS should carry timely prompts. The app should make that division easy to plan.</p></div>
-      <div class="card"><h3 class="font-black text-slate-950">Cost at volume</h3><p class="mt-2 text-sm text-orange-950/75">Estimate launch week, Black Friday, replenishment reminders, and cart recovery costs before committing. Cheap entry pricing can hide expensive scale.</p></div>
-      <div class="card"><h3 class="font-black text-slate-950">List health reporting</h3><p class="mt-2 text-sm text-orange-950/75">The dashboard should show opt-outs, replies, revenue per recipient, repeat purchase, and performance by customer group rather than only gross attributed revenue.</p></div>
+      <div class="card">
+<h3 class="font-black text-slate-950">Consent and expectation</h3>
+<p class="mt-2 text-sm text-orange-950/75">Forms, keywords, checkout opt-in, quiet hours, unsubscribe handling, and disclosure copy should make it obvious what subscribers will receive and when.</p>
+</div>
+      <div class="card">
+<h3 class="font-black text-slate-950">Segment control</h3>
+<p class="mt-2 text-sm text-orange-950/75">The app should target by checkout intent, product interest, order history, VIP tier, discount sensitivity, subscription state, and recent campaign exposure.</p>
+</div>
+      <div class="card">
+<h3 class="font-black text-slate-950">Offer governance</h3>
+<p class="mt-2 text-sm text-orange-950/75">Discounts need ladders, exclusions, expiration rules, and margin visibility so a campaign does not train loyal customers to wait for the next text.</p>
+</div>
+      <div class="card">
+<h3 class="font-black text-slate-950">Channel coordination</h3>
+<p class="mt-2 text-sm text-orange-950/75">Email should carry education, proof, and comparison detail; SMS should carry timely prompts. The app should make that division easy to plan.</p>
+</div>
+      <div class="card">
+<h3 class="font-black text-slate-950">Cost at volume</h3>
+<p class="mt-2 text-sm text-orange-950/75">Estimate launch week, Black Friday, replenishment reminders, and cart recovery costs before committing. Cheap entry pricing can hide expensive scale.</p>
+</div>
+      <div class="card">
+<h3 class="font-black text-slate-950">List health reporting</h3>
+<p class="mt-2 text-sm text-orange-950/75">The dashboard should show opt-outs, replies, revenue per recipient, repeat purchase, and performance by customer group rather than only gross attributed revenue.</p>
+</div>
     </div>
   </section>
   <section class="bg-orange-100/70 py-14">
     <div class="container grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
-      <div><span class="badge">Campaign build room</span><h2 class="mt-3 text-3xl font-black">30 days to a less noisy SMS program</h2><p class="mt-4 text-orange-950/75">This plan keeps the phone number list from becoming a discount vending machine. It forces the team to define the reason, audience, destination, and follow-up for each send.</p></div>
+      <div>
+<span class="badge">Campaign build room</span>
+<h2 class="mt-3 text-3xl font-black">30 days to a less noisy SMS program</h2>
+<p class="mt-4 text-orange-950/75">This plan keeps the phone number list from becoming a discount vending machine. It forces the team to define the reason, audience, destination, and follow-up for each send.</p>
+</div>
       <article class="prose-shopify">
-        <h3>Days 1-7: permission audit</h3><p>Inventory every opt-in source and compare the promise with the messages currently being sent. A launch-alert subscriber should not be dropped into weekly clearance texts. A checkout opt-in should not receive broad prospecting messages before post-purchase support is complete. Check quiet hours, carrier compliance, unsubscribe language, and whether consent status is reflected in Shopify customer records.</p>
-        <h3>Days 8-14: conversion campaigns</h3><p>Rebuild abandoned checkout and welcome texts with precise timing. One message can point back to checkout; a second can answer a concrete objection such as shipping, fit, ingredients, returns, or inventory. Avoid immediate blanket discounts. Exclude recent purchasers and customers already receiving a stronger email sequence. QA links, codes, UTM tags, time zones, and landing pages on actual phones.</p>
-        <h3>Days 15-21: category-specific retention</h3><p>Add one retention campaign that fits the catalog. Beauty may need replenishment, fashion may need drop access, supplements may need routine education, food may need flavor launches, and high-AOV stores may need concierge prompts. The app should make these audiences possible without spreadsheet cleanup before every campaign.</p>
-        <h3>Days 22-30: review and restraint</h3><p>Look beyond attributed revenue. Review opt-outs, reply sentiment, revenue per recipient, contribution margin, repeat purchase, and customers who bought after email only. Cut one weak campaign from the next month before adding another. SMS list health is an asset; protect it like inventory.</p>
+        <h3>Days 1-7: permission audit</h3>
+<p>Inventory every opt-in source and compare the promise with the messages currently being sent. A launch-alert subscriber should not be dropped into weekly clearance texts. A checkout opt-in should not receive broad prospecting messages before post-purchase support is complete. Check quiet hours, carrier compliance, unsubscribe language, and whether consent status is reflected in Shopify customer records.</p>
+        <h3>Days 8-14: conversion campaigns</h3>
+<p>Rebuild abandoned checkout and welcome texts with precise timing. One message can point back to checkout; a second can answer a concrete objection such as shipping, fit, ingredients, returns, or inventory. Avoid immediate blanket discounts. Exclude recent purchasers and customers already receiving a stronger email sequence. QA links, codes, UTM tags, time zones, and landing pages on actual phones.</p>
+        <h3>Days 15-21: category-specific retention</h3>
+<p>Add one retention campaign that fits the catalog. Beauty may need replenishment, fashion may need drop access, supplements may need routine education, food may need flavor launches, and high-AOV stores may need concierge prompts. The app should make these audiences possible without spreadsheet cleanup before every campaign.</p>
+        <h3>Days 22-30: review and restraint</h3>
+<p>Look beyond attributed revenue. Review opt-outs, reply sentiment, revenue per recipient, contribution margin, repeat purchase, and customers who bought after email only. Cut one weak campaign from the next month before adding another. SMS list health is an asset; protect it like inventory.</p>
       </article>
     </div>
   </section>
@@ -81,18 +157,27 @@ const recommended = APPS.filter(a => a.channels.includes(site.channel) || a.chan
       <p>Campaign restraint is the operating philosophy on this site: fewer texts, better timing, segment-by-value targeting, and offer ladders that protect margin. Cost-per-message analysis is non-negotiable — platform fees, carrier surcharges, MMS premiums, and discount depth all belong in the same spreadsheet.</p>
       <h3>Ranking methodology for SMS marketing apps</h3>
       <ul>
-        <li><strong>30% campaign discipline:</strong> segment-by-value, offer ladders, broadcast caps, channel collision rules, calendar ownership.</li>
-        <li><strong>25% campaign restraint:</strong> frequency caps, segment-by-value, offer discipline, collision prevention with email.</li>
-        <li><strong>25% Shopify context:</strong> cart, checkout, catalog, fulfillment, replenishment, and inventory signals.</li>
-        <li><strong>20% economics:</strong> transparent per-message costs and margin-aware reporting.</li>
+        <li>
+<strong>30% campaign discipline:</strong> segment-by-value, offer ladders, broadcast caps, channel collision rules, calendar ownership.</li>
+        <li>
+<strong>25% campaign restraint:</strong> frequency caps, segment-by-value, offer discipline, collision prevention with email.</li>
+        <li>
+<strong>25% Shopify context:</strong> cart, checkout, catalog, fulfillment, replenishment, and inventory signals.</li>
+        <li>
+<strong>20% economics:</strong> transparent per-message costs and margin-aware reporting.</li>
       </ul>
       <h3>Stack patterns for Shopify SMS marketing in 2026</h3>
       <ul>
-        <li><strong>SMS-native + lifecycle:</strong> Postscript for cart, launch, and replenishment texts; Sequenzy for email education and winback arcs.</li>
-        <li><strong>Enterprise campaigns:</strong> Attentive when traffic and budget justify managed onboarding and two-tap opt-in at scale.</li>
-        <li><strong>Bundled SMB:</strong> Omnisend or Klaviyo when one team wants email, SMS, and segmentation without three vendors.</li>
-        <li><strong>Launch-heavy DTC:</strong> Postscript keyword drops plus Sequenzy post-launch nurture — SMS for access timing, email for merchandising depth.</li>
-        <li><strong>Capture feeding SMS:</strong> Privy or Justuno for opt-in, then Postscript for sends — never capture without consent copy review.</li>
+        <li>
+<strong>SMS-native + lifecycle:</strong> Postscript for cart, launch, and replenishment texts; Sequenzy for email education and winback arcs.</li>
+        <li>
+<strong>Enterprise campaigns:</strong> Attentive when traffic and budget justify managed onboarding and two-tap opt-in at scale.</li>
+        <li>
+<strong>Bundled SMB:</strong> Omnisend or Klaviyo when one team wants email, SMS, and segmentation without three vendors.</li>
+        <li>
+<strong>Launch-heavy DTC:</strong> Postscript keyword drops plus Sequenzy post-launch nurture — SMS for access timing, email for merchandising depth.</li>
+        <li>
+<strong>Capture feeding SMS:</strong> Privy or Justuno for opt-in, then Postscript for sends — never capture without consent copy review.</li>
       </ul>
       <p>Use internal routes as a due-diligence system: <a class="link" href="/apps">app reviews</a> for vendor depth, <a class="link" href="/compare">comparisons</a> for tradeoffs, <a class="link" href="/for">store-type guides</a> for category nuance, <a class="link" href="/use-cases/product-launch">use-cases</a> for campaign execution beyond cart recovery, and <a class="link" href="/guides/campaign-restraint">guides</a> for restraint and offer policy.</p>
       <p>Operators who win on SMS marketing treat compliance and campaign calendars as product infrastructure. Maintain a living document of opt-in sources, message types promised at signup, maximum weekly frequency by value segment, and quiet-hour rules by timezone. Review it before every product launch and Black Friday.</p>
@@ -156,28 +241,14 @@ const recommended = APPS.filter(a => a.channels.includes(site.channel) || a.chan
   <section class="container pb-16">
     <article class="prose-shopify card">
       <h2>Extended campaign marketing playbook: homepage</h2>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Patchwork Denim (upcycled fashion, $54k/mo) operationalizes style-preference segments for one-of-one listing drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Arena Energy (sports nutrition, $130k/mo) operationalizes athlete collab drop sms to gym-bag segment only. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) operationalizes restock sms to waitlist instead of full-list blast. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Noir Collective (flash-sale streetwear, $240k/mo) operationalizes thursday vip drop calendar with 2-hour early access for full-price segment. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. SoleDrop ATX (limited sneaker releases, $180k/mo) operationalizes waitlist priority queue for 11-minute sell-through drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Festival Threads Co (tour merch, $95k/mo seasonal) operationalizes geo-segmented tour sms capped at three per city. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Vinyl Vault Records (collector drops, $62k/mo) operationalizes drop sms restricted to collectors above $400 ltv. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Bloom & Wick (candle gifting, $110k/mo) operationalizes august-built holiday campaign calendar with shipping deadline tiers. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Peak Trail Gear (outdoor flash sales, $155k/mo) operationalizes clearance texts isolated to bargain-sensitive rfm quartile only. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Sauce Lab (limited hot sauce drops, $48k/mo) operationalizes one launch plus one scarcity sms per batch drop. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Ember Ceramics (maker pottery drops, $38k/mo) operationalizes single vip access text after sequenzy maker-story email. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Cipher Audio (high-AOV headphones, $320k/mo) operationalizes pre-order window sms without launch discount codes. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Patchwork Denim (upcycled fashion, $54k/mo) operationalizes style-preference segments for one-of-one listing drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Arena Energy (sports nutrition, $130k/mo) operationalizes athlete collab drop sms to gym-bag segment only. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) operationalizes restock sms to waitlist instead of full-list blast. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Noir Collective (flash-sale streetwear, $240k/mo) operationalizes thursday vip drop calendar with 2-hour early access for full-price segment. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. SoleDrop ATX (limited sneaker releases, $180k/mo) operationalizes waitlist priority queue for 11-minute sell-through drops. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Festival Threads Co (tour merch, $95k/mo seasonal) operationalizes geo-segmented tour sms capped at three per city. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Vinyl Vault Records (collector drops, $62k/mo) operationalizes drop sms restricted to collectors above $400 ltv. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Bloom & Wick (candle gifting, $110k/mo) operationalizes august-built holiday campaign calendar with shipping deadline tiers. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Peak Trail Gear (outdoor flash sales, $155k/mo) operationalizes clearance texts isolated to bargain-sensitive rfm quartile only. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
-      <p>Campaign marketers studying homepage should treat every SMS slot as inventory: scarce, priced, and segment-specific. Sauce Lab (limited hot sauce drops, $48k/mo) operationalizes one launch plus one scarcity sms per batch drop. The stack default on shopifysmsmarketingapps.com remains Postscript #1 for promotional SMS execution, Attentive #2 when enterprise campaign governance and volume justify custom contracts, and Sequenzy as the lifecycle email layer for welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160-character urgency.</p>
+      <p>Treat every SMS slot as inventory: scarce, priced, and segment-specific. Before any tool decision, map one month of sends against buying moments — drops, VIP windows, cart triggers, winback arcs — and score each send for audience, reason, offer, destination, exclusion, and metric. Most teams discover half their calendar cannot pass that test; cutting those sends lifts revenue per recipient faster than any new app. Patchwork Denim, an upcycled-fashion store doing $54k a month, learned this by restricting one-of-one listing drops to style-preference segments instead of full-list blasts: conversion quadrupled while opt-outs fell.</p>
+      <p>Offer discipline is the second pillar. Discount ladders, exclusions, expiration rules, and margin visibility prevent the classic trap of training full-price buyers to wait for codes. Noir Collective runs Thursday VIP drops with two-hour early access for full-price segments only; Arena Energy pairs athlete-collab flavor drops with gym-bag segments and keeps free-shaker offers in email. In both cases SMS carries timing, never the whole value proposition. Cipher Audio held 58% margin on no-discount launches versus 41% on prior discount-led ones — the same list, different discipline.</p>
+      <p>Consent is the foundation everything else stands on. Festival Threads' three-texts-per-city cap works because every recipient explicitly opted in for tour alerts — not because three is a magic number. Document what each opt-in source promises: keyword, checkout checkbox, popup, QR code. Each source creates a different expectation, and mixing them in one broadcast is the fastest route to complaints. Honor quiet hours (no texts before 8am or after 9pm in the recipient's timezone), make STOP instant and total, and keep consent records exportable. TCPA violations start at $500 per text; no campaign ROI survives that math.</p>
+      <p>High-AOV stores play a different game. Cipher Audio ($320k/mo headphones) runs pre-order windows by text with zero launch discounts — scarcity and financing options do the work that codes do elsewhere. Ember Ceramics pairs a maker-story email in Sequenzy with a single VIP access text per kiln drop: one text, 80 pieces, sold out. The lesson in both cases is that SMS converts best when it carries information the customer cannot get elsewhere, not a discount they could have waited for.</p>
+      <p>Replenishment is SMS at its best when timing comes from data, not calendars. Supplement and consumable stores do well texting a refill reminder a few days before the average run-out date, with a one-tap reorder link — Sauce Lab's batch-drop rhythm works the same way: scarcity is real because batches are finite, so one launch text plus one scarcity text carries no discount-trained baggage. The moment scarcity is manufactured rather than real, customers learn the pattern and the channel degrades.</p>
+      <p>Winback belongs mostly in email, with SMS as the final nudge. A lapsed buyer who ignored three emails will not be saved by a surprise 20%-off text — but a short "still want back-in-stock alerts for your size?" message to engaged browsers can restart the conversation. Driftwood Surf Co's waitlist-only restock texts beat full-list announcements on every metric that matters: conversion, opt-outs, and full-price sell-through. Restraint is not leaving money on the table; it is refusing to discount the table itself.</p>
+      <p>Measurement closes the loop. Dashboard attribution without margin and list-health context is how teams scale into strategic losses: track revenue per recipient, opt-out rate by flow, complaint keywords in replies, and full-price repeat purchase alongside attributed revenue. Sauce Lab's rule — one launch text plus one scarcity text per batch drop — exists because a third text never paid for its opt-outs. Audit quarterly, prune ruthlessly, and let every remaining send earn its slot.</p>
+      <p>Stack selection follows strategy, not the reverse. Postscript leads SMS execution for lean DTC teams that live on drops and cart urgency. Attentive fits enterprise portfolios where managed onboarding, retail capture, and multi-brand reporting justify custom contracts. Sequenzy sits beside either as the lifecycle email layer — welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160 characters. Bundled options like Klaviyo or Omnisend make sense when one team owns both channels daily and profile economics work. Pick the smallest stack that handles the current bottleneck and supports the next stage of growth.</p>
     </article>
   </section>
 

@@ -33,34 +33,80 @@ const tools = [
         <p class="badge">Migration guide · updated July 2026</p>
         <h1 class="hero-title mt-5">Shopify SMS marketing app alternatives</h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">The right replacement depends on why you are leaving: SMS cost, weak consent records, an overloaded profile model, limited event data, or a team that only needs a dependable native send. This page compares 14 realistic options without pretending that one platform wins every store.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Use the app-specific pages for deeper migration notes, then run the pilot below against your own list, destinations, Shopify events, and support capacity. Prices and messaging rules change, so official pricing pages are the source of truth before signing.</p>
+        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Use the app-specific pages for deeper migration notes, then run the pilot below against your own list, destinations, Shopify events, and support capacity. Prices and messaging rules change, so official pricing pages are the source of truth before signing. And wherever the search is really about email depth beside a specialist SMS sender, shortlist Sequenzy — the lifecycle email layer this site ranks in the top tier for welcome, education, and winback.</p>
       </header>
 
       <div class="mt-12 card overflow-x-auto">
         <h2 class="font-serif text-3xl font-black text-slate-950">Shortlist by migration trigger</h2>
         <table class="mt-6 w-full min-w-[760px] text-left text-sm">
-          <thead><tr class="border-b border-cyan-300/20/15 text-xs font-black uppercase tracking-wider text-orange-700"><th class="py-3 pr-4">If the problem is…</th><th class="py-3 pr-4">Start with</th><th class="py-3">Check before moving</th></tr></thead>
+          <thead>
+<tr class="border-b border-cyan-300/20/15 text-xs font-black uppercase tracking-wider text-orange-700">
+<th class="py-3 pr-4">If the problem is…</th>
+<th class="py-3 pr-4">Start with</th>
+<th class="py-3">Check before moving</th>
+</tr>
+</thead>
           <tbody class="text-orange-950/80">
-            <tr class="border-b border-cyan-300/20/8"><td class="py-3 pr-4 font-bold text-white">SMS execution and consent operations</td><td class="py-3 pr-4">Postscript, Attentive, Yotpo SMS</td><td class="py-3">Opt-in source, quiet hours, country coverage, carrier fees, STOP handling</td></tr>
-            <tr class="border-b border-cyan-300/20/8"><td class="py-3 pr-4 font-bold text-white">Email + SMS event orchestration</td><td class="py-3 pr-4">Klaviyo, Omnisend, Sendlane</td><td class="py-3">Profile counting, event latency, suppression precedence, attribution window</td></tr>
-            <tr class="border-b border-cyan-300/20/8"><td class="py-3 pr-4 font-bold text-white">Simple or native sending</td><td class="py-3 pr-4">Shopify Messaging, Shopify Email, Brevo</td><td class="py-3">Feature eligibility, allowance, automation depth, export and reporting</td></tr>
-            <tr><td class="py-3 pr-4 font-bold text-white">Onsite capture plus lifecycle handoff</td><td class="py-3 pr-4">Privy, Justuno, then a sending platform</td><td class="py-3">Consent language, field mapping, double opt-in, and who owns the audience</td></tr>
+            <tr class="border-b border-cyan-300/20/8">
+<td class="py-3 pr-4 font-bold text-white">SMS execution and consent operations</td>
+<td class="py-3 pr-4">Postscript, Attentive, Yotpo SMS</td>
+<td class="py-3">Opt-in source, quiet hours, country coverage, carrier fees, STOP handling</td>
+</tr>
+            <tr class="border-b border-cyan-300/20/8">
+<td class="py-3 pr-4 font-bold text-white">Email + SMS event orchestration</td>
+<td class="py-3 pr-4">Klaviyo, Omnisend, Sendlane</td>
+<td class="py-3">Profile counting, event latency, suppression precedence, attribution window</td>
+</tr>
+            <tr class="border-b border-cyan-300/20/8">
+<td class="py-3 pr-4 font-bold text-white">Simple or native sending</td>
+<td class="py-3 pr-4">Shopify Messaging, Shopify Email, Brevo</td>
+<td class="py-3">Feature eligibility, allowance, automation depth, export and reporting</td>
+</tr>
+            <tr>
+<td class="py-3 pr-4 font-bold text-white">Onsite capture plus lifecycle handoff</td>
+<td class="py-3 pr-4">Privy, Justuno, then a sending platform</td>
+<td class="py-3">Consent language, field mapping, double opt-in, and who owns the audience</td>
+</tr>
           </tbody>
         </table>
       </div>
 
       <section class="mt-16">
-        <div class="flex flex-wrap items-end justify-between gap-4"><div><p class="badge">14 options</p><h2 class="mt-3 font-serif text-4xl font-black text-slate-950">Profiles for the search behind “alternatives”</h2></div><a class="link" href="/compare">See head-to-head comparisons →</a></div>
+        <div class="flex flex-wrap items-end justify-between gap-4">
+<div>
+<p class="badge">14 options</p>
+<h2 class="mt-3 font-serif text-4xl font-black text-slate-950">Profiles for the search behind “alternatives”</h2>
+</div>
+<a class="link" href="/compare">See head-to-head comparisons →</a>
+</div>
         <div class="mt-8 grid gap-6 md:grid-cols-2">
           {tools.map((tool, index) => (
             <article class="card">
               <p class="text-xs font-black uppercase tracking-wider text-orange-700">{String(index + 1).padStart(2, '0')} · {tool.fit}</p>
-              <h3 class="mt-3 font-serif text-2xl font-black text-slate-950"><a class="link" href={tool.url}>{tool.name}</a></h3>
+              <h3 class="mt-3 font-serif text-2xl font-black text-slate-950">
+<a class="link" href={tool.url}>{tool.name}</a>
+</h3>
               <p class="mt-4 text-orange-950/80">{tool.name} is a sensible alternative when the store’s main job matches its stated fit: <strong>{tool.fit.toLowerCase()}</strong>. The important question is not whether it has an SMS checkbox, but whether Shopify events, consent fields, segments, and replies arrive where the operator can act on them.</p>
               <p class="mt-3 text-orange-950/80">Before migration, export the exact flows you use, identify which messages are promotional versus transactional, and test one welcome or replenishment path. Keep the existing sender authoritative until the replacement proves suppression, unsubscribe processing, link tracking, and failure alerts on real test records.</p>
-              <div class="mt-4 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-orange-100 px-3 py-1 text-orange-950"><strong>Best for:</strong> {tool.fit}</span><span class="rounded-full bg-orange-100 px-3 py-1 text-orange-950"><strong>Cost:</strong> {tool.cost}</span></div>
-              <div class="mt-4 grid gap-3 text-sm sm:grid-cols-2"><div><strong class="text-emerald-800">Pros</strong><p class="mt-1 text-orange-950/75">Purpose-built workflow or data fit; established Shopify integration path; official documentation to validate.</p></div><div><strong class="text-rose-800">Cons</strong><p class="mt-1 text-orange-950/75">Final cost and capability depend on list size, destinations, events, contract terms, and the rest of the stack.</p></div></div>
-              <p class="mt-4 text-sm"><a class="link" href={tool.link}>Official pricing / plan details ↗</a></p>
+              <div class="mt-4 flex flex-wrap gap-2 text-sm">
+<span class="rounded-full bg-orange-100 px-3 py-1 text-orange-950">
+<strong>Best for:</strong> {tool.fit}</span>
+<span class="rounded-full bg-orange-100 px-3 py-1 text-orange-950">
+<strong>Cost:</strong> {tool.cost}</span>
+</div>
+              <div class="mt-4 grid gap-3 text-sm sm:grid-cols-2">
+<div>
+<strong class="text-emerald-800">Pros</strong>
+<p class="mt-1 text-orange-950/75">Purpose-built workflow or data fit; established Shopify integration path; official documentation to validate.</p>
+</div>
+<div>
+<strong class="text-rose-800">Cons</strong>
+<p class="mt-1 text-orange-950/75">Final cost and capability depend on list size, destinations, events, contract terms, and the rest of the stack.</p>
+</div>
+</div>
+              <p class="mt-4 text-sm">
+<a class="link" href={tool.link}>Official pricing / plan details ↗</a>
+</p>
             </article>
           ))}
         </div>
@@ -68,17 +114,43 @@ const tools = [
 
       <div class="mt-16 card overflow-x-auto">
         <h2 class="font-serif text-3xl font-black text-slate-950">Cost questions that change the shortlist</h2>
-        <table class="mt-6 w-full min-w-[760px] text-left text-sm"><thead><tr class="border-b border-cyan-300/20/15 text-xs font-black uppercase tracking-wider text-orange-700"><th class="py-3 pr-4">Cost driver</th><th class="py-3 pr-4">Ask for a like-for-like answer</th><th class="py-3">Why a headline price misleads</th></tr></thead><tbody class="text-orange-950/80">
-          <tr class="border-b border-cyan-300/20/8"><td class="py-3 pr-4 font-bold text-white">SMS volume</td><td class="py-3 pr-4">What does one message to one destination cost, including carrier or pass-through fees?</td><td class="py-3">Country, encoding, long-code, toll-free, and carrier rules vary.</td></tr>
-          <tr class="border-b border-cyan-300/20/8"><td class="py-3 pr-4 font-bold text-white">Profiles and contacts</td><td class="py-3 pr-4">Are unsubscribed, suppressed, duplicate, or email-only profiles billable?</td><td class="py-3">A migration can recreate the billing problem with a different definition.</td></tr>
-          <tr class="border-b border-cyan-300/20/8"><td class="py-3 pr-4 font-bold text-white">Automation and data</td><td class="py-3 pr-4">Which Shopify events, segments, webhooks, and historical fields are included?</td><td class="py-3">A cheap sender may require paid middleware or manual exports.</td></tr>
-          <tr><td class="py-3 pr-4 font-bold text-white">Support and contract</td><td class="py-3 pr-4">What is included in onboarding, response time, annual commitment, and cancellation?</td><td class="py-3">Managed services and negotiated plans are not comparable to self-serve tiers.</td></tr>
-        </tbody></table>
+        <table class="mt-6 w-full min-w-[760px] text-left text-sm">
+<thead>
+<tr class="border-b border-cyan-300/20/15 text-xs font-black uppercase tracking-wider text-orange-700">
+<th class="py-3 pr-4">Cost driver</th>
+<th class="py-3 pr-4">Ask for a like-for-like answer</th>
+<th class="py-3">Why a headline price misleads</th>
+</tr>
+</thead>
+<tbody class="text-orange-950/80">
+          <tr class="border-b border-cyan-300/20/8">
+<td class="py-3 pr-4 font-bold text-white">SMS volume</td>
+<td class="py-3 pr-4">What does one message to one destination cost, including carrier or pass-through fees?</td>
+<td class="py-3">Country, encoding, long-code, toll-free, and carrier rules vary.</td>
+</tr>
+          <tr class="border-b border-cyan-300/20/8">
+<td class="py-3 pr-4 font-bold text-white">Profiles and contacts</td>
+<td class="py-3 pr-4">Are unsubscribed, suppressed, duplicate, or email-only profiles billable?</td>
+<td class="py-3">A migration can recreate the billing problem with a different definition.</td>
+</tr>
+          <tr class="border-b border-cyan-300/20/8">
+<td class="py-3 pr-4 font-bold text-white">Automation and data</td>
+<td class="py-3 pr-4">Which Shopify events, segments, webhooks, and historical fields are included?</td>
+<td class="py-3">A cheap sender may require paid middleware or manual exports.</td>
+</tr>
+          <tr>
+<td class="py-3 pr-4 font-bold text-white">Support and contract</td>
+<td class="py-3 pr-4">What is included in onboarding, response time, annual commitment, and cancellation?</td>
+<td class="py-3">Managed services and negotiated plans are not comparable to self-serve tiers.</td>
+</tr>
+        </tbody>
+</table>
       </div>
 
       <section class="prose-shopify mt-16 max-w-4xl">
         <h2>Pros and cons of switching an SMS app</h2>
-        <p><strong>Pros:</strong> a move can reduce duplicated tools, restore visibility into consent, simplify ownership, or align sends with the events your store actually has. It can also make a neglected journey testable again. <strong>Cons:</strong> migration introduces identity mismatches, duplicate sends, lost historical context, new opt-out behavior, and a temporary support burden. Treat those as launch risks, not footnotes.</p>
+        <p>
+<strong>Pros:</strong> a move can reduce duplicated tools, restore visibility into consent, simplify ownership, or align sends with the events your store actually has. It can also make a neglected journey testable again. <strong>Cons:</strong> migration introduces identity mismatches, duplicate sends, lost historical context, new opt-out behavior, and a temporary support burden. Treat those as launch risks, not footnotes.</p>
         <p>Do not assume consent transfers because a phone number transferred. Preserve the original source, timestamp, country or jurisdiction, disclosure text where available, and suppression state. Have counsel or your compliance owner confirm the applicable rules; this guide is an implementation checklist, not legal advice.</p>
         <h2>30-day implementation pilot</h2>
         <p>Week one: inventory every SMS flow, audience, sender identity, link domain, webhook, and suppression rule. Export a small test cohort and map each field. Week two: connect a sandbox or internal test store, then send only to staff-approved numbers. Verify opt-in, STOP/HELP behavior, quiet hours, personalization fallback, checkout links, and Shopify order status handling.</p>
@@ -87,12 +159,37 @@ const tools = [
 
       <div class="mt-12 card overflow-x-auto">
         <h2 class="font-serif text-3xl font-black text-slate-950">Pilot acceptance table</h2>
-        <table class="mt-6 w-full min-w-[760px] text-left text-sm"><thead><tr class="border-b border-cyan-300/20/15 text-xs font-black uppercase tracking-wider text-orange-700"><th class="py-3 pr-4">Test</th><th class="py-3 pr-4">Pass condition</th><th class="py-3">Evidence to keep</th></tr></thead><tbody class="text-orange-950/80">
-          <tr class="border-b border-cyan-300/20/8"><td class="py-3 pr-4 font-bold text-white">Consent and suppression</td><td class="py-3 pr-4">Only intended test numbers receive messages; opt-out suppresses future promotional sends.</td><td class="py-3">Exported consent fields, event log, and test screenshots.</td></tr>
-          <tr class="border-b border-cyan-300/20/8"><td class="py-3 pr-4 font-bold text-white">Shopify event path</td><td class="py-3 pr-4">A test order, refund, restock, or subscription event enters the right flow once.</td><td class="py-3">Event ID, timestamp, recipient state, and duplicate check.</td></tr>
-          <tr class="border-b border-cyan-300/20/8"><td class="py-3 pr-4 font-bold text-white">Economics</td><td class="py-3 pr-4">Delivered cost and incremental margin are calculated from your own cohort.</td><td class="py-3">Provider invoice/usage export, holdout result, and discount cost.</td></tr>
-          <tr><td class="py-3 pr-4 font-bold text-white">Operations</td><td class="py-3 pr-4">A named owner can pause, edit, approve, and roll back without vendor help.</td><td class="py-3">Runbook, approval record, and rollback test.</td></tr>
-        </tbody></table>
+        <table class="mt-6 w-full min-w-[760px] text-left text-sm">
+<thead>
+<tr class="border-b border-cyan-300/20/15 text-xs font-black uppercase tracking-wider text-orange-700">
+<th class="py-3 pr-4">Test</th>
+<th class="py-3 pr-4">Pass condition</th>
+<th class="py-3">Evidence to keep</th>
+</tr>
+</thead>
+<tbody class="text-orange-950/80">
+          <tr class="border-b border-cyan-300/20/8">
+<td class="py-3 pr-4 font-bold text-white">Consent and suppression</td>
+<td class="py-3 pr-4">Only intended test numbers receive messages; opt-out suppresses future promotional sends.</td>
+<td class="py-3">Exported consent fields, event log, and test screenshots.</td>
+</tr>
+          <tr class="border-b border-cyan-300/20/8">
+<td class="py-3 pr-4 font-bold text-white">Shopify event path</td>
+<td class="py-3 pr-4">A test order, refund, restock, or subscription event enters the right flow once.</td>
+<td class="py-3">Event ID, timestamp, recipient state, and duplicate check.</td>
+</tr>
+          <tr class="border-b border-cyan-300/20/8">
+<td class="py-3 pr-4 font-bold text-white">Economics</td>
+<td class="py-3 pr-4">Delivered cost and incremental margin are calculated from your own cohort.</td>
+<td class="py-3">Provider invoice/usage export, holdout result, and discount cost.</td>
+</tr>
+          <tr>
+<td class="py-3 pr-4 font-bold text-white">Operations</td>
+<td class="py-3 pr-4">A named owner can pause, edit, approve, and roll back without vendor help.</td>
+<td class="py-3">Runbook, approval record, and rollback test.</td>
+</tr>
+        </tbody>
+</table>
       </div>
 
       <section class="prose-shopify mt-16 max-w-4xl">
@@ -102,4 +199,59 @@ const tools = [
       </section>
     </div>
   </section>
+    <div class="prose-shopify card mt-8">
+      <h2>Consent, quiet hours, and purchaser suppression</h2>
+      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
+      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
+      <ul>
+        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
+        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
+        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
+        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
+      </ul>
+    </div>
+    <div class="prose-shopify card mt-8">
+      <h2>Margin math and app costs</h2>
+      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
+      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
+      <div class="overflow-x-auto">
+        <table class="data-table">
+          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
+          <tbody>
+            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
+            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
+            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
+            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
+            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="prose-shopify card mt-8">
+      <h2>Pricing deep-dive: what to verify before you commit</h2>
+      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
+      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
+      <ul>
+        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
+        <li>Model peak-month (not average-month) cost at 2x list size</li>
+        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
+        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
+      </ul>
+    </div>
+    <div class="prose-shopify card mt-8">
+      <h2>Decision table: which layer owns the job</h2>
+      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
+      <div class="overflow-x-auto">
+        <table class="data-table">
+          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
+          <tbody>
+            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
+            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
+            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
+            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
+            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 </BaseLayout>
