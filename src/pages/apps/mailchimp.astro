@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/mailchimp';
 const title = pageTitle(site, 'apps/mailchimp');
 const desc = description(site, 'apps/mailchimp');
 
-const faqs = [
-  { question: 'Is Mailchimp good for Shopify SMS marketing campaigns?', answer: 'Mailchimp is familiar generalist email — acceptable for simple broadcasts before the campaign calendar outgrows it — ranked #19 here. No native SMS seriousness, mediocre Shopify depth versus specialists, and contact pricing that punishes growth. Use it as a bridge, never as the SMS answer.' },
-  { question: 'Should Mailchimp pair with Sequenzy?', answer: 'Rarely — overlapping email layers with split reporting and double cost. Migrate email to Sequenzy (lifecycle depth at $19/month unlimited contacts) or Klaviyo (commerce data), then pair with Postscript for SMS. Stacking Mailchimp beside either pays twice for the same send.' },
-  { question: 'What is the biggest Mailchimp mistake on Shopify?', answer: 'Staying for familiarity while economics decay — contact-tier pricing climbs with list growth while automation depth lags specialists. Audit annually: if Mailchimp costs more than Postscript-plus-Sequenzy while doing less, familiarity is the most expensive feature.' },
-  { question: 'Mailchimp vs Shopify Email for starters?', answer: 'Shopify Email for native zero-friction simplicity; Mailchimp for broader templates and integrations. Both are starters with the same graduation path — the choice barely matters compared to graduating on time.' },
-  { question: 'Does Mailchimp integrate well with Shopify?', answer: 'Adequately for basics after their reunion — order sync, basic flows, product blocks. Deep behavior (browse abandonment quality, predictive segments, SMS coordination) lags Klaviyo and Postscript meaningfully. Fine until growth demands more.' },
-  { question: 'When must a store leave Mailchimp?', answer: 'When contact bills exceed specialist-stack costs, when automation needs outgrow journey basics, or when SMS becomes revenue-critical. All three arrive together for healthy growing stores — plan the migration quarter, don not drift.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

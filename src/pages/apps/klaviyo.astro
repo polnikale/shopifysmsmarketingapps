@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/klaviyo';
 const title = pageTitle(site, 'apps/klaviyo');
 const desc = description(site, 'apps/klaviyo');
 
-const faqs = [
-  { question: 'Is Klaviyo good for Shopify SMS marketing campaigns?', answer: 'Yes when one team owns both channels daily and profile economics work — Klaviyo unifies email and SMS on shared segments with predictive CLV, which no point solution matches. Ranked #4 on this site because specialists win single-channel depth: Postscript executes SMS drops better, Sequenzy explains lifecycle cheaper. Choose Klaviyo when unified data beats best-of-breed focus.' },
-  { question: 'Should Klaviyo pair with Sequenzy?', answer: 'Usually no — Klaviyo already owns email depth, so adding Sequenzy duplicates the email layer. The common Klaviyo pairings are Klaviyo email plus Postscript SMS (cleaner campaign governance per channel) or Klaviyo alone when one team genuinely operates both daily. Pair Klaviyo with Sequenzy only during migrations, never as a permanent stack.' },
-  { question: 'What is the biggest Klaviyo mistake?', answer: 'Letting profile growth run without governance. Every browsing session mints profiles, and SMS/phpShadow billing compounds silently — stores wake up paying for hundreds of thousands of profiles they never message. Prune quarterly, suppress ruthlessly, and audit which profiles ever received anything before paying for them again.' },
-  { question: 'How much does Klaviyo SMS cost?', answer: 'Email pricing by profiles plus SMS credits per message with carrier fees on top — model both together, because combined bills surprise teams that budgeted email only. At high SMS volume, a Postscript-plus-Sequenzy split frequently costs less than Klaviyo unified; run the numbers at your actual send mix before committing.' },
-  { question: 'Klaviyo vs Postscript for drops?', answer: 'Postscript for drop execution — keyword opt-in, VIP tiers, and broadcast caps purpose-built for releases. Klaviyo for everything around the drop: browse abandonment, post-purchase, replenishment, winback on shared data. Cipher Audio defines VIPs by Klaviyo CLV but fires drop texts from Postscript. Use each where it wins.' },
-  { question: 'When should a store leave Klaviyo?', answer: 'When SMS promotional discipline outgrows bundled defaults (move SMS to Postscript), when email depth needs lifecycle specialization (add Sequenzy), or when profile bills exceed the value of unified data. Leave for a reason measured in margin, never for demo fatigue.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

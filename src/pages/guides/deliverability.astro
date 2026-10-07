@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description } from '../../content';
 
 const path = '/guides/deliverability';
@@ -26,14 +25,6 @@ const tools = [
   { name: 'ActiveCampaign', slug: 'activecampaign', best: 'B2B, wholesale, or high-consideration stores with CRM logic', p1: 'ActiveCampaign is worth considering when Shopify activity must sit beside sales follow-up, wholesale conversations, or lead scoring. Its conditional automation can help keep promotional SMS away from customers in a service or sales sequence, provided those states are modeled correctly.', p2: 'It may be overbuilt for a pure DTC broadcast program and its Shopify depth is not the only implementation concern. Establish ownership for CRM fields, consent, and suppression before connecting a high-volume SMS provider.', pros: 'Conditional automation; CRM context; useful for mixed sales journeys', cons: 'More setup than a specialist DTC tool; SMS may require a separate layer', price: 'Tiered by contacts/features; verify current plan, CRM, integrations, and SMS-provider costs', official: 'https://www.activecampaign.com/' },
 ];
 
-const faqs = [
-  { question: 'Does an app guarantee SMS deliverability?', answer: 'No. Placement depends on consent quality, complaint and opt-out behavior, message content, sender setup, carrier rules, traffic patterns, and provider configuration. A pilot can test your actual audience against real carriers; a feature list cannot guarantee a result. Any vendor promising guaranteed delivery is selling fiction.' },
-  { question: 'Should email subscribers be imported into SMS?', answer: 'Not without the required SMS permission and disclosure for the relevant market. Keep email and SMS consent records separate, preserve source and expectation per number, and ask counsel to review capture language. Email opt-in never implies SMS consent — separate channels need separate permission, always.' },
-  { question: 'What should a pilot measure?', answer: 'Accepted and delivered rates where available, opt-outs, replies, complaints, conversion, contribution margin, unsubscribes by source, and whether suppression rules worked. Compare against a holdout when audience and offer allow it. Pilots that only measure delivery rate prove nothing about revenue or list health.' },
-  { question: 'How do carrier rules affect campaigns?', answer: 'Carriers filter aggressively on complaint rates, sending velocity from new numbers, and content patterns (URL shorteners, ALL CAPS, misleading claims). Register numbers properly (10DLC brand and campaign registration), warm new senders gradually, and keep complaint rates under 0.1%. Carrier filtering is silent — monitoring delivery rates by carrier catches filtering before it becomes folklore.' },
-  { question: 'What is sender reputation for SMS?', answer: 'The composite carriers keep of complaint rates, opt-out velocity, traffic consistency, and registration standing per number. Unlike email IP reputation, SMS reputation offers fewer second chances — burnout numbers get filtered fast. Protect it with the same restraint discipline that protects margin: fewer, better, expected texts.' },
-  { question: 'How often should deliverability be audited?', answer: 'Continuously via dashboards (delivery rate, opt-out velocity, complaint keywords), quarterly via deep audit (consent records, registration standing, content patterns, list hygiene). Any deliverability dip gets same-day triage: check complaints first, content second, registration third, volume patterns last. And keep lifecycle email on a disciplined platform — Sequenzy sequences with clear suppression and quiet audience management protect sender reputation while specialists handle SMS urgency.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -70,7 +61,7 @@ const faqs = [
 </thead>
 <tbody>{tools.map((t) => <tr>
 <td>
-<a class="link font-black" href={`/apps/${t.slug}`}>{t.name}</a>
+<a class="link font-black" href={t.slug === 'recharge' ? t.official : `/apps/${t.slug}`} rel={t.slug === 'recharge' ? 'noopener' : undefined}>{t.name}</a>
 </td>
 <td>{t.best}</td>
 <td>{t.slug === 'justuno' || t.slug === 'recharge' ? 'Integration / adjacent' : t.slug === 'mailchimp' || t.slug === 'activecampaign' ? 'Integration' : 'Native or deep'}</td>
@@ -122,7 +113,7 @@ const faqs = [
     <div class="prose-shopify mt-12">
 <h2>Profiles: who each tool is actually for</h2>{tools.map((t) => <article class="card my-6">
 <h3>
-<a class="link" href={`/apps/${t.slug}`}>{t.name}</a> — {t.best}</h3>
+<a class="link" href={t.slug === 'recharge' ? t.official : `/apps/${t.slug}`} rel={t.slug === 'recharge' ? 'noopener' : undefined}>{t.name}</a> — {t.best}</h3>
 <p>{t.p1}</p>
 <p>{t.p2}</p>
 <p>
@@ -230,6 +221,5 @@ const faqs = [
         </table>
       </div>
     </div>
-    <FaqSection faqs={faqs} title="SMS deliverability FAQ" />
   </section>
 </BaseLayout>

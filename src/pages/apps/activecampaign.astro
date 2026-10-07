@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/activecampaign';
 const title = pageTitle(site, 'apps/activecampaign');
 const desc = description(site, 'apps/activecampaign');
 
-const faqs = [
-  { question: 'Is ActiveCampaign good for Shopify SMS marketing campaigns?', answer: 'ActiveCampaign is CRM-heavy automation for journeys overlapping sales pipelines and B2B wholesale — ranked #13 here, not an SMS platform. For B2B wholesale it handles approved-account email onboarding well; SMS rarely fits except MOQ deadlines to opted-in reps. Do not buy ActiveCampaign for SMS execution.' },
-  { question: 'Should ActiveCampaign pair with Sequenzy?', answer: 'Rarely — both cover email automation with different philosophies, so stacking duplicates cost and splits reporting. Choose ActiveCampaign for CRM-plus-automation depth or Sequenzy for lifecycle sequences at $19/month with unlimited contacts. Pair the winner with Postscript for SMS, not with each other.' },
-  { question: 'What is the biggest ActiveCampaign mistake on Shopify?', answer: 'Importing B2B complexity into DTC simplicity — scoring models, deal pipelines, and conditional branches nobody maintains, obscuring the three flows that actually drive revenue. Start with cart, welcome, and winback; add sophistication only with measured payoff.' },
-  { question: 'ActiveCampaign for B2B wholesale on Shopify?', answer: 'Genuinely strong fit: account approval workflows, tiered pricing communication, rep-assigned follow-up, and MOQ deadline reminders. This is the one Shopify context where ActiveCampaign beats simpler tools. Keep DTC promotional logic in Postscript/Sequenzy and wholesale logic here, with clean separation.' },
-  { question: 'How much does ActiveCampaign cost at scale?', answer: 'Contact-based pricing that climbs with list size plus automation add-ons — model at current count plus 12 months growth. For pure DTC email, Sequenzy or Klaviyo usually deliver more per dollar; ActiveCampaign earns its premium only where CRM depth gets used daily.' },
-  { question: 'Does ActiveCampaign do SMS?', answer: 'Via add-ons and integrations, not as a native campaign channel — plan on Postscript or Attentive for SMS with shared suppression. Any workflow needing text urgency should hand off explicitly.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

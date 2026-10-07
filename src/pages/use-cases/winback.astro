@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/winback';
 const title = pageTitle(site, 'use-cases/winback');
 const desc = description(site, 'use-cases/winback');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for winback campaigns?', answer: 'Postscript for winback urgency to qualified dormants with segment controls. Attentive at enterprise scale with managed programs. Sequenzy for lifecycle email beside SMS — winback education, proof refreshes, and preference-respecting arcs that texts cannot carry.' },
-  { question: 'How should winback campaigns fit in a campaign calendar?', answer: 'As quarterly reactivation pushes plus always-on dormant triggers, never calendar filler: define dormancy windows by purchase cycle (30/60/90 days by vertical), fire winback at threshold crossings, and suppress aggressively on return. Driftwood-style content calendars tie winback to real moments, not quarterly quotas.' },
-  { question: 'Should SMS be part of winback campaigns?', answer: 'For the final nudge only — one well-timed text after email attempts fail, with genuine reason to return (back-in-stock, new collection, personal offer). Education and proof refreshes belong in Sequenzy email. Winback SMS without prior email attempts feels ambush-like; sequence channels with escalating commitment.' },
-  { question: 'How do you define dormancy by vertical?', answer: 'Consumables: 1.5x average reorder cycle. Fashion: 2 seasons without purchase. Durables: 12+ months post-purchase without engagement. Subscriptions: paused plus 60 days. One-size windows misfire — calibrate to purchase cycles or winback targets the wrong people at the wrong time.' },
-  { question: 'What winback offers work without margin damage?', answer: 'Early access, new-arrival previews, preference refreshes ("still want these alerts?"), and winback-exclusive bundles — everything before blanket discounts. Discounts enter only for price-sensitive segments with margin math, as the last resort they are. Most winback failures are offer-strategy failures, not channel failures.' },
-  { question: 'When should dormants be suppressed permanently?', answer: 'After 3–4 winback attempts across 6–12 months with zero engagement: suppress from campaigns, keep transactional only, revisit annually. Permanent non-responders cost sends, skew metrics, and risk complaints. Letting go is list hygiene, not defeat.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="winback campaigns FAQ" />
   </section>
 </BaseLayout>

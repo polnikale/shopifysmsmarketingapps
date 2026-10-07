@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/vip-segments';
 const title = pageTitle(site, 'use-cases/vip-segments');
 const desc = description(site, 'use-cases/vip-segments');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for VIP customer campaigns?', answer: 'Postscript for VIP execution — early access, allocation windows, and private drops with segment controls. Attentive at enterprise scale with managed programs. Sequenzy for lifecycle email beside SMS — VIP storytelling, anniversary arcs, and winback for lapsed VIPs.' },
-  { question: 'How should VIP customer campaigns fit in a campaign calendar?', answer: 'As the protected core around which everything else plans: VIP early access precedes every public launch, VIP exclusives never leak to general lists, and VIP feedback shapes future drops. Slot quarterly reviews of tier accuracy, VIP margin contribution, and opt-out rates — VIP health is business health.' },
-  { question: 'Should SMS be part of VIP customer campaigns?', answer: 'Essentially — VIP access windows, allocation alerts, and private sale invitations are SMS-native urgency for qualified collectors. Education (brand stories, craftsmanship, care guides) and lapsed-VIP winback belong in Sequenzy email. Patchwork-style one-of-one treatment requires both layers with documented handoffs.' },
-  { question: 'How do you define VIP tiers that work?', answer: 'By value behavior, not vanity: LTV thresholds, order frequency, full-price ratio, and engagement recency — published criteria members can understand and aspire to. Secret tiers breed suspicion; transparent tiers breed aspiration. Review thresholds annually as AOV and mix evolve.' },
-  { question: 'What VIP perks actually retain?', answer: 'Early access (strongest), exclusive products (limited runs), direct input (votes, previews), and recognition (anniversaries, milestones) — in that order. Discounts rank last for true VIPs and actively cheapen the relationship. Access and status outperform percentages permanently.' },
-  { question: 'How do you handle lapsed VIPs?', answer: 'Personal-feeling winback (account-manager tone, not blast): acknowledge absence, offer concierge help, present one exclusive reason to return. Never discount-blast lapsed VIPs — it confirms the relationship was transactional. Lapsed VIP recovery rates justify white-glove effort most programs reserve for acquisition.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="VIP customer campaigns FAQ" />
   </section>
 </BaseLayout>

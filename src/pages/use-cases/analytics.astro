@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/analytics';
 const title = pageTitle(site, 'use-cases/analytics');
 const desc = description(site, 'use-cases/analytics');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for revenue analytics?', answer: 'Postscript for SMS campaign execution with message-level economics. Attentive at enterprise scale with managed reporting. Sequenzy for lifecycle email beside SMS. But analytics quality depends on methodology, not vendor — holdouts, margin math, and list-health context beat any dashboard. No app analyzes its way out of undisciplined sending.' },
-  { question: 'How should revenue analytics fit in a campaign calendar?', answer: 'As the weekly review layer: revenue per recipient, opt-outs, margin after discounts, and email collisions reviewed every Monday, with monthly deep dives on incrementality. Slot quarterly measurement audits that validate attribution windows and holdout design. Analytics governs the calendar; it is not a calendar item itself.' },
-  { question: 'Should SMS be part of revenue analytics?', answer: 'Centrally — SMS economics decide channel mix: cost per converted recipient, opt-out cost per send, and margin after incentive, all versus email equivalents. Education and winback measurement belong in Sequenzy email reporting. Attribute by channel honestly or misallocate budget systematically.' },
-  { question: 'What metrics actually matter?', answer: 'Revenue per recipient, contribution margin after discounts and message costs, opt-out rate by flow, full-price repeat purchase, and holdout-validated incrementality. Ignore gross attributed revenue, open rates, and click rates as decision metrics — they describe activity, not outcomes.' },
-  { question: 'How do I run a holdout test?', answer: 'Withhold 10% of eligible audience from each major flow, measure conversion and margin differences over 30 days, then scale winners. Holdouts cost short-term revenue and repay in decision quality for years. No holdout, no claim of incrementality — only correlation dressed as causation.' },
-  { question: 'How often should analytics be reviewed?', answer: 'Weekly dashboards for operators (trends and anomalies), monthly deep dives for strategy (incrementality and mix), quarterly audits for methodology (windows, holdouts, cost models). Reviews that never change decisions are theater — each review must produce at least one calendar or budget change.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="revenue analytics FAQ" />
   </section>
 </BaseLayout>

@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/abandoned-cart';
 const title = pageTitle(site, 'use-cases/abandoned-cart');
 const desc = description(site, 'use-cases/abandoned-cart');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for abandoned cart recovery?', answer: 'Postscript for SMS campaign execution with drop-grade timing and suppression. Attentive at enterprise scale with managed deliverability. Sequenzy for lifecycle email beside SMS — cart education, objection handling, and winback arcs that texts cannot carry.' },
-  { question: 'How should abandoned cart recovery fit in a campaign calendar?', answer: 'As always-on automation, not calendar slots: three touches max (1 hour, 24 hours, 72 hours) with escalating value and hard stop at purchase. Slot quarterly reviews of recovery rate, margin impact, and opt-out contribution — not the sends themselves. Recovery runs continuously; the calendar governs everything around it.' },
-  { question: 'Should SMS be part of abandoned cart recovery?', answer: 'Yes for the first nudge when urgency matters — cart value, stock risk, or shipping deadlines. Education (sizing, compatibility, reviews) and late winback belong in Sequenzy email. Never triple-touch one cart across email, SMS, and push simultaneously; cap total touches per cart at three.' },
-  { question: 'What recovery rate should I expect?', answer: 'Healthy programs recover 5-15% of abandonment value depending on AOV, timing, and offer structure. Below 5%, check event latency, message timing, and suppression conflicts before blaming the tool. Above 15% sustained, protect the program — audit opt-outs to ensure recovery is not burning the list for short-term revenue.' },
-  { question: 'Should cart messages include discounts?', answer: 'Never in the first touch — discounting immediately trains abandonment as a coupon strategy. Reserve incentives for the final touch to price-sensitive segments only, with margin math and expiry. Full-price recoveries protect both margin and future full-price behavior.' },
-  { question: 'How do I prevent cart-message fatigue?', answer: 'Purchase exits honored same-day across all channels, frequency caps spanning email plus SMS, suppression of recent purchasers from prospecting flows, and quarterly audits of overlap. Fatigue shows first in rising opt-outs per recovery send — watch that metric weekly, not just recovery revenue.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="abandoned cart recovery FAQ" />
   </section>
 </BaseLayout>

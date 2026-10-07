@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/aftership-email';
 const title = pageTitle(site, 'apps/aftership-email');
 const desc = description(site, 'apps/aftership-email');
 
-const faqs = [
-  { question: 'Is AfterShip Email good for Shopify SMS marketing campaigns?', answer: 'AfterShip Email ties campaigns to delivery and tracking moments — shipping-deadline urgency beside a broader calendar — ranked #20 here. It complements Postscript promotional SMS rather than replacing it: AfterShip wins shipping-triggered timing, Postscript wins drops and flash. Buy it for post-purchase, not promotions.' },
-  { question: 'Should AfterShip Email pair with Sequenzy?', answer: 'Yes cleanly — AfterShip owns shipping-triggered moments (shipped, out-for-delivery, delivered, delay) while Sequenzy builds post-purchase education and winback on order data. Distinct jobs with a documented handoff: tracking events trigger AfterShip, lifecycle states trigger Sequenzy.' },
-  { question: 'What is the biggest AfterShip Email mistake?', answer: 'Promotional creep — letting marketing blasts ride tracking-email open rates. Customers open shipping emails from necessity; exploiting that attention for promotions trains them to ignore tracking entirely. Protect transactional trust ruthlessly.' },
-  { question: 'Which post-purchase emails matter most?', answer: 'Order confirmation (anxiety killer), shipping with tracking, out-for-delivery, delivered plus review ask, and delay notifications with honest timelines. Nail these five before any promotional post-purchase series — operational excellence funds marketing permission.' },
-  { question: 'How do tracking emails affect SMS strategy?', answer: 'They reduce WISMO load and create SMS opportunities: delay notifications and delivery exceptions justify texts customers welcome. Coordinate so tracking email sends first, SMS only for exceptions — never duplicate the same update on both channels simultaneously.' },
-  { question: 'AfterShip vs Klaviyo for post-purchase?', answer: 'AfterShip for tracking-moment excellence; Klaviyo for data-rich post-purchase flows. Many stores run both: AfterShip owns shipment updates, Klaviyo owns education and cross-sell. Define the boundary explicitly to avoid duplicate sends.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

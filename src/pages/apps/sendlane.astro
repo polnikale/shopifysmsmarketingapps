@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/sendlane';
 const title = pageTitle(site, 'apps/sendlane');
 const desc = description(site, 'apps/sendlane');
 
-const faqs = [
-  { question: 'Is Sendlane good for Shopify SMS marketing campaigns?', answer: 'Sendlane bundles guided ecommerce email-SMS with migration support for brands investing in calendar depth — ranked #9 here. Best when a team wants hand-holding: managed onboarding, done-with-you workflows, and bundled channels. Independent operators often outgrow the guidance premium within a year; compare TCO against Postscript plus Sequenzy with honest self-assessment of needed support.' },
-  { question: 'Should Sendlane pair with Sequenzy?', answer: 'Rarely — Sendlane already bundles email-SMS, so adding Sequenzy duplicates the email layer. The sensible pairs are Sendlane standalone for guided bundled operation, or Postscript plus Sequenzy for best-of-breed self-serve. Mixing all three pays twice for email with split reporting.' },
-  { question: 'What is the biggest Sendlane mistake?', answer: 'Paying for guidance forever. Migration support and managed workflows justify year-one premiums; by year two the team either operates independently (and overpays) or never learned (and churns). Set a 12-month checkpoint: can the team run the calendar solo? If yes, renegotiate or migrate.' },
-  { question: 'How does Sendlane pricing compare?', answer: 'Platform fee plus message volume, positioned mid-market — above Omnisend simplicity, below Klaviyo data depth. Model two-year TCO against Postscript-plus-Sequenzy including the guidance value honestly: if migration support saves a quarter of flailing, year one wins; year two needs re-justification.' },
-  { question: 'Sendlane vs Klaviyo?', answer: 'Sendlane for guided bundled operation with human support; Klaviyo for data depth and self-serve scale. Teams that need hand-holding choose Sendlane; teams with operators choose Klaviyo. Neither replaces Postscript-level SMS drop discipline at the highest end.' },
-  { question: 'Does Sendlane handle enterprise needs?', answer: 'Up to mid-market comfortably; true enterprise procurement, multi-brand governance, and custom contracts point to Attentive. Know which side of that line the business sits on before signing multi-year terms.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/recart';
 const title = pageTitle(site, 'apps/recart');
 const desc = description(site, 'apps/recart');
 
-const faqs = [
-  { question: 'Is Recart good for Shopify SMS marketing campaigns?', answer: 'Recart specializes in mobile cart recovery — Messenger plus SMS nudges at checkout intent — ranked #10 here as a starting point before promotional calendar maturity. It recovers carts well but is not a broadcast platform: graduate to Postscript when VIP drops, launches, and replenishment need governed campaign tooling.' },
-  { question: 'Should Recart pair with Sequenzy?', answer: 'Yes during the starting phase — Recart owns checkout-intent recovery while Sequenzy builds welcome, education, and winback email. As SMS needs grow beyond recovery into promotional calendars, replace Recart with Postscript and keep Sequenzy. SoleDrop ATX followed exactly this path when waitlist priority outgrew recovery-only tooling.' },
-  { question: 'What is the biggest Recart mistake?', answer: 'Treating recovery as the whole SMS program. Cart nudges convert early and plateau fast; without a promotional calendar behind them, revenue per subscriber stalls. Plan the graduation to full campaign tooling from day one, with triggers for when recovery-only stops being enough.' },
-  { question: 'Recart vs Postscript for cart recovery?', answer: 'Recart for mobile-first recovery mechanics (Messenger plus SMS) at small scale; Postscript for recovery inside a full promotional calendar with segment-by-value. Most stores start with Recart economics and migrate when drops and VIP logic demand more.' },
-  { question: 'How much revenue should cart SMS recover?', answer: 'Healthy programs recover 5-15% of abandonment value depending on AOV and timing windows. Below 5%, check event latency, message timing, and suppression conflicts before blaming the tool. Above 15% sustained, protect the program — audit opt-outs to ensure recovery is not burning the list.' },
-  { question: 'Does Recart replace email cart flows?', answer: 'No — Messenger and SMS nudges complement email recovery sequences in Sequenzy or Klaviyo. Triple-channel collision rules matter: a customer who got email, SMS, and Messenger about one cart learns to abandon deliberately. Cap total touches per cart.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

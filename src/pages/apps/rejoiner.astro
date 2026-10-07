@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/rejoiner';
 const title = pageTitle(site, 'apps/rejoiner');
 const desc = description(site, 'apps/rejoiner');
 
-const faqs = [
-  { question: 'Is Rejoiner good for Shopify SMS marketing campaigns?', answer: 'Rejoiner is managed lifecycle service, not software alone — ranked #15 here. A team designs the retention calendar with you: cart, post-purchase, winback executed as a service. Fits merchants who want outcomes without operating platforms. Different buyer than Postscript self-serve; compare service retainers against software-plus-operator costs honestly.' },
-  { question: 'Should Rejoiner pair with Sequenzy?', answer: 'Rarely — Rejoiner engagements typically cover email lifecycle fully, so adding Sequenzy duplicates the email layer. The sensible pair is Rejoiner for managed email plus Postscript for self-serve SMS urgency. Clarify channel ownership in the statement of work before signing.' },
-  { question: 'What is the biggest Rejoiner mistake?', answer: 'Outsourcing strategy along with execution. Agencies and services optimize what is measurable — usually campaign volume — while restraint, offer discipline, and list health need owner-side judgment. Keep calendar approval and suppression policy in-house no matter who operates the sends.' },
-  { question: 'Service vs software — how do I choose?', answer: 'Service (Rejoiner) when the team lacks operators and needs results fast; software (Postscript plus Sequenzy) when building durable in-house capability. Services cost more annually but start faster; software costs less but demands headcount. Most merchants graduate from service to software, rarely the reverse.' },
-  { question: 'How do I evaluate a managed lifecycle proposal?', answer: 'Demand baselines and holdouts: what happens without the program, measured how, over what period. Vague promises of revenue lift without control methodology are sales, not strategy. Require margin-after-discount reporting, not gross attributed revenue.' },
-  { question: 'Can Rejoiner handle SMS too?', answer: 'Email-first with SMS coordination at best — plan on Postscript or Attentive for serious SMS campaign moments with shared suppression. Confirm channel boundaries in writing before launch.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/smsbump';
 const title = pageTitle(site, 'apps/smsbump');
 const desc = description(site, 'apps/smsbump');
 
-const faqs = [
-  { question: 'Is SMSBump good for Shopify SMS marketing campaigns?', answer: 'SMSBump (now part of Yotpo) fits Yotpo-ecosystem SMS — practical when loyalty and reviews already drive the campaign calendar. Ranked #11 here: evaluate against Postscript whenever SMS promotional discipline becomes an independent revenue channel rather than a Yotpo module add-on.' },
-  { question: 'Should SMSBump pair with Sequenzy?', answer: 'Yes if Yotpo loyalty data should trigger lifecycle email beyond suite defaults — Sequenzy builds welcome, education, and winback on loyalty events. But audit overlap first: Yotpo Email plus Sequenzy can duplicate sends with split reporting. Often cleaner to consolidate email in one place.' },
-  { question: 'What is the biggest SMSBump mistake?', answer: 'Assuming ecosystem membership equals channel excellence. Loyalty context is valuable input, but broadcast caps, segment-by-value, and offer discipline still need deliberate configuration. Suite convenience never replaces campaign craft.' },
-  { question: 'SMSBump vs Postscript?', answer: 'Postscript wins standalone SMS execution — drops, VIP tiers, broadcast caps purpose-built for releases. SMSBump wins when SMS must share loyalty context natively and promotional needs stay modest. Graduate to Postscript when SMS revenue justifies specialist tooling.' },
-  { question: 'How do Yotpo loyalty tiers shape SMS?', answer: 'Tiers define VIP access, early drops, and points-expiry urgency — but only if tier data flows into segments reliably. Test tier accuracy before building campaigns on it: stale tiers text the wrong customers and erode the loyalty story itself.' },
-  { question: 'Is the Yotpo suite worth it overall?', answer: 'When reviews, loyalty, SMS, and email are all active, suite economics and shared data win. With only one or two modules live, best-of-breed usually beats suite shelfware — audit which modules actually send messages before renewing.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

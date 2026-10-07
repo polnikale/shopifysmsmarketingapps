@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/reviews-and-ugc';
 const title = pageTitle(site, 'use-cases/reviews-and-ugc');
 const desc = description(site, 'use-cases/reviews-and-ugc');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for reviews and UGC?', answer: 'Postscript for review-request timing with direct links and segment controls. Attentive at enterprise scale with managed programs. Sequenzy for lifecycle email beside SMS — detailed review education, UGC showcases, and winback for non-responders.' },
-  { question: 'How should reviews and UGC fit in a campaign calendar?', answer: 'As post-delivery automation, not calendar slots: review asks after confirmed delivery plus usage windows, UGC contests quarterly, showcase content monthly. Festival-grade event tie-ins work for seasonal categories; evergreen review engines work for everything. Slot quarterly reviews of response rates and content quality.' },
-  { question: 'Should SMS be part of reviews and UGC?', answer: 'For the ask itself — short review requests with direct links convert far better by text than email. Education (how to review well, photo tips) and showcases belong in Sequenzy email. Never gatekeep: ask every delivered order once, remind once, then silence.' },
-  { question: 'How do you get photo and video reviews?', answer: 'Ask specifically (not "leave a review" but "show us your setup"), make upload frictionless (direct link, no login), and feature submitters publicly with permission. UGC contests quarterly with real prizes beat perpetual small incentives. Showcase submissions in email to close the loop — contributors who see their content buy again.' },
-  { question: 'Should you incentivize reviews?', answer: 'Carefully: loyalty points or entry draws, never cash-for-stars or review-gated discounts. Incentivized floods read fake to future buyers and violate most platform policies. Authentic velocity (steady real reviews) beats incentivized spikes every time.' },
-  { question: 'How do negative reviews help?', answer: 'Enormously — handled publicly within 48 hours, they convert skeptics better than perfect scores. Respond to every negative review with specifics, fix patterns visibly, and update product pages with learned improvements. A 4.6 with thoughtful responses outsells a suspicious 5.0.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="reviews and UGC FAQ" />
   </section>
 </BaseLayout>

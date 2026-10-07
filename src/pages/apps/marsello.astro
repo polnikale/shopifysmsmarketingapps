@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/marsello';
 const title = pageTitle(site, 'apps/marsello');
 const desc = description(site, 'apps/marsello');
 
-const faqs = [
-  { question: 'Is Marsello good for Shopify SMS marketing campaigns?', answer: 'Marsello ties loyalty tier triggers to the campaign calendar — POS plus Shopify omnichannel retention — ranked #12 here. Best for omnichannel retailers where in-store and online loyalty must share segments. Pure-play DTC brands usually do better with Postscript for SMS plus a dedicated loyalty tool, since Marsello breadth trades against campaign depth.' },
-  { question: 'Should Marsello pair with Sequenzy?', answer: 'Yes for lifecycle depth: VIP tier celebration email in Sequenzy with Postscript SMS reserved for points-expiry urgency is the pattern this site recommends. Marsello supplies tier events; Sequenzy builds education and winback on them. Keep loyalty as segment input, never as blast excuse.' },
-  { question: 'What is the biggest Marsello mistake?', answer: 'Blasting the whole loyalty base because points exist. Tiers should restrict access (VIP early drops) and trigger urgency (points expiring) — never justify full-list promotional blasts. Loyalty data sharpens targeting; it does not bless spamming members.' },
-  { question: 'Marsello vs Yotpo for loyalty SMS?', answer: 'Marsello for omnichannel POS-plus-Shopify retailers; Yotpo for reviews-plus-loyalty-plus-UGC suites. Choose by which ecosystem already runs the business — loyalty migrations are painful, so ecosystem gravity usually decides.' },
-  { question: 'How do loyalty points affect SMS economics?', answer: 'Points liability is real cost: model breakage rates, redemption margins, and message costs together. Expiry-urgency SMS recovers liability profitably when targeted; blanket points blasts just accelerate redemptions at full margin cost. Segment by tier and recency always.' },
-  { question: 'Does omnichannel data complicate SMS compliance?', answer: 'Yes — POS-captured numbers need the same documented consent as online opt-ins, with source logged per number. Audit in-store scripts quarterly: verbal promises at checkout rarely match the fine print, and complaints trace back to the capture moment.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

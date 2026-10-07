@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/shopify-email';
 const title = pageTitle(site, 'apps/shopify-email');
 const desc = description(site, 'apps/shopify-email');
 
-const faqs = [
-  { question: 'Is Shopify Email good for Shopify SMS marketing campaigns?', answer: 'Shopify Email is zero-friction native newsletters — first campaign calendar before lifecycle graduation — ranked #18 here. Basic sale announcements and product drops from admin cost almost nothing. It is not VIP segmentation or SMS execution; treat it as the starter layer, not the destination.' },
-  { question: 'Should Shopify Email pair with Sequenzy?', answer: 'Yes as a graduation path — Shopify Email for simple broadcasts while validating the channel, Sequenzy for welcome depth, education arcs, and winback when lifecycle needs outgrow native tooling. Migrate automations first (highest ROI), broadcasts last. Keep branding consistent across the transition.' },
-  { question: 'What is the biggest Shopify Email mistake?', answer: 'Staying too long. Native tooling caps segmentation, automation depth, and reporting exactly when growth demands them — teams notice stalled revenue per recipient months before admitting the tool is the ceiling. Set a quarterly review: if two consecutive quarters need workarounds, graduate.' },
-  { question: 'When should a store graduate from Shopify Email?', answer: 'When any of these turn true: need for behavior-triggered flows beyond basics, segment-by-value targeting, SMS coordination, or revenue attribution per flow. Most healthy stores graduate between $50-200k annual revenue depending on catalog complexity.' },
-  { question: 'Shopify Email vs Mailchimp for starters?', answer: 'Shopify Email for zero-friction native simplicity; Mailchimp for broader templates and integrations. Both are starters — the real decision is what you graduate to (Postscript plus Sequenzy, or Klaviyo/Omnisend bundled).' },
-  { question: 'Does Shopify Email do SMS?', answer: 'No — plan on Postscript or Attentive for SMS with shared suppression from day one of texting. Native email plus specialist SMS beats waiting for a unified native solution that may never arrive.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

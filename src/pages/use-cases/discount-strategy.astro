@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/discount-strategy';
 const title = pageTitle(site, 'use-cases/discount-strategy');
 const desc = description(site, 'use-cases/discount-strategy');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for discount strategy?', answer: 'Postscript for disciplined discount execution with segment controls and broadcast caps. Attentive at enterprise scale with managed governance. Sequenzy for lifecycle email beside SMS — full-price education and winback that reduce discount dependence structurally.' },
-  { question: 'How should discount strategy fit in a campaign calendar?', answer: 'As a budgeted margin line, not a habit: quarterly discount budget with segment allocation, VIP access without codes as default, graduated incentives for warm segments, deep cuts only with margin math. Noir Collective runs Thursday VIP drops with two-hour early access — full-price energy that makes discounts unnecessary.' },
-  { question: 'Should SMS be part of discount strategy?', answer: 'Minimally — SMS for VIP early access and expiring offers to qualified segments, never blanket codes. Education about value belongs in Sequenzy email. Every blanket discount text trains the list to wait; every targeted early-access text trains it to stay engaged.' },
-  { question: 'How do you measure discount damage?', answer: 'Holdout tests comparing full-price repeat rates between discounted and non-discounted cohorts over 90 days. Peak Trail Gear proved 15% blanket texts destroy loyalist margin; Cipher Audio held 58% margin on no-discount launches versus 41% on discount-led ones. Numbers persuade where philosophy fails.' },
-  { question: 'What replaces discounts for conversion?', answer: 'Early access, exclusivity, bundles, free gifts with purchase, extended guarantees, and loyalty points — value-adds that preserve reference prices. Discounts should be the last lever pulled, never the first, and always expiring with documented margin.' },
-  { question: 'How do you retrain a discount-addicted list?', answer: 'Gradually: shrink discount depth quarterly while growing non-discount value (access, content, service), segment bargain hunters away from full-price buyers, and accept short-term revenue dips for long-term margin health. Retraining takes quarters; the alternative is permanent margin erosion.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="discount strategy FAQ" />
   </section>
 </BaseLayout>

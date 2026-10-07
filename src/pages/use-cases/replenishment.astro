@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/replenishment';
 const title = pageTitle(site, 'use-cases/replenishment');
 const desc = description(site, 'use-cases/replenishment');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for replenishment reminders?', answer: 'Postscript for run-out timing with one-tap reorder links and segment controls. Attentive at enterprise scale with managed programs. Sequenzy for lifecycle email beside SMS — usage education that extends product life honestly, plus winback for lapsed replenishers.' },
-  { question: 'How should replenishment reminders fit in a campaign calendar?', answer: 'As automated triggers, not calendar slots: fire at 80% of average run-out by product with variant-aware targeting, then review quarterly for timing accuracy and margin impact. Loom-style scarcity discipline applies — replenishment texts work because timing is real, not manufactured.' },
-  { question: 'Should SMS be part of replenishment reminders?', answer: 'Absolutely — run-out timing is SMS-native urgency with the highest welcome rate in DTC messaging. Education (usage tips, routine guides) and lapsed winback belong in Sequenzy email. Never waste replenishment goodwill on promotional upsells in the same message.' },
-  { question: 'How do you calculate run-out timing?', answer: 'Median days between repeat orders per SKU, segmented by purchase quantity, minus a 3–5 day buffer. Recompute quarterly — formulas change with seasons, household changes, and product reformulations. Wrong timing trains customers to ignore reminders entirely.' },
-  { question: 'What about subscription versus reminder models?', answer: 'Subscriptions for predictable consumables with skip/pause flexibility; reminders for variable usage or commitment-shy buyers. Offer both paths at checkout and in every reminder — forced subscriptions churn angrily while reminders alone leave money unclaimed.' },
-  { question: 'How do you measure replenishment success?', answer: 'Refill-rate lift against holdouts, subscription conversion from reminder cohorts, opt-out contribution per send, and margin after any incentive. Healthy programs show rising repeat rates with flat complaint curves — growth without goodwill cost.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="replenishment reminders FAQ" />
   </section>
 </BaseLayout>

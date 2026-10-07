@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/brevo';
 const title = pageTitle(site, 'apps/brevo');
 const desc = description(site, 'apps/brevo');
 
-const faqs = [
-  { question: 'Is Brevo good for Shopify SMS marketing campaigns?', answer: 'Brevo is volume-priced practical email and SMS for budget-conscious stores — ranked #14 here. Campaigns, automation, transactional email, and SMS under one roof at honest prices. Best when budget discipline matters more than channel depth; pair with Postscript when SMS promotional rigor exceeds bundled defaults.' },
-  { question: 'Should Brevo pair with Sequenzy?', answer: 'Sometimes — Brevo for cheap bulk sends and transactional, Sequenzy for lifecycle depth. But audit overlap first: both cover email adequately for SMB needs, so stacking can duplicate cost with split reporting. Often cleaner to consolidate email in one and add Postscript for SMS.' },
-  { question: 'What is the biggest Brevo mistake?', answer: 'Assuming bundled SMS equals disciplined SMS. Brevo sends texts fine, but drop orchestration, VIP tiers, and broadcast caps need deliberate configuration that suite defaults do not provide. Build the same restraint controls Postscript specialists get out of the box.' },
-  { question: 'How far does Brevo scale on Shopify?', answer: 'Comfortably into mid-market for email plus light SMS. It strains at drop culture (no native VIP drop tooling), predictive segmentation depth, and high-volume SMS economics — graduate SMS to Postscript and email depth to Sequenzy or Klaviyo when those become load-bearing.' },
-  { question: 'Brevo vs Omnisend?', answer: 'Brevo for price-to-volume honesty and transactional breadth; Omnisend for faster ecommerce-specific workflows and push inclusion. Budget-first teams choose Brevo; speed-first teams choose Omnisend. Both graduate to Postscript-plus-Sequenzy at scale.' },
-  { question: 'Does Brevo handle compliance?', answer: 'Yes for basics — opt-in tools, STOP handling, quiet hours, and EU data residency that matters for GDPR-conscious stores. Operator-owned policy still required: document frequency promises, enforce timezone quiet hours, audit consent quarterly.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

@@ -2,21 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description } from '../../content';
 
 const path = '/guides/campaign-restraint';
 const title = 'Campaign Restraint for SMS Marketing | Shopify SMS Marketing';
 const desc = description(site, 'guides/campaign-restraint');
 
-const faqs = [
-  { question: 'How does campaign restraint affect SMS campaigns?', answer: 'Restraint means fewer SMS slots on the calendar — each tied to a revenue moment, not filler promos. SoleDrop ATX runs waitlist priority with VIP early links and general email only after 70% inventory moves; unsubscribes dropped 40%. Every cut send lifts revenue per recipient across the survivors. Restraint compounds like interest while volume compounds opt-outs.' },
-  { question: 'Which apps support this playbook?', answer: 'Postscript for SMS campaign execution with broadcast caps and suppression. Attentive at enterprise scale with managed governance. Sequenzy as lifecycle email layer beside dedicated SMS senders. All three enforce caps; none enforce judgment — restraint remains an operator discipline supported by tooling, never replaced by it.' },
-  { question: 'What is the first step?', answer: 'Cap SMS campaigns per month with documented calendar slots: assign each send an audience, reason, offer, destination, exclusion, and metric before it earns a slot. Most teams discover half their calendar cannot pass that test; cutting those sends is the entire first step.' },
-  { question: 'How often to review?', answer: 'Weekly during active campaign seasons (revenue per recipient, opt-outs, margin after discounts, collisions); monthly at steady state. Audit before every product drop. Reviews that never cut anything are theater — each review must remove at least one weak send.' },
-  { question: 'How do I convince stakeholders to send less?', answer: 'With margin math: show revenue per recipient rising as frequency falls, plus opt-out and complaint trends. SoleDrop and Noir Collective numbers persuade where philosophy fails. Frame restraint as yield management — same list producing more dollars per message.' },
-  { question: 'What is the biggest restraint failure?', answer: 'Exception creep — every launch becomes exceptional, every segment becomes VIP, every week becomes peak season. Exceptions need written criteria and expiry dates, or the cap system collapses within a quarter. Audit exception rates alongside send rates.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -208,6 +199,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="Campaign restraint FAQ" />
   </section>
 </BaseLayout>

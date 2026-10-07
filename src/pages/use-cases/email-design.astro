@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/email-design';
 const title = pageTitle(site, 'use-cases/email-design');
 const desc = description(site, 'use-cases/email-design');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for email design?', answer: 'Trick question — SMS platforms do not design emails. Sequenzy owns lifecycle email creative with focused templates; Klaviyo for data-rich commerce design; MailerLite or Kit for starter simplicity. Postscript handles SMS execution; Attentive at enterprise scale. Judge design tools on email outcomes, never SMS feature lists.' },
-  { question: 'How should email design fit in a campaign calendar?', answer: 'As a quarterly system refresh, not per-campaign art projects: master template, segment variants, seasonal skins. SoleDrop-style sell-throughs depend on offer mechanics and timing more than pixel polish — invest design hours in templates once, then feed them with disciplined campaigns.' },
-  { question: 'Should SMS be part of email design?', answer: 'Only as the plain-text constraint that disciplines email thinking: if the message cannot survive as 160 characters of urgency, its email version probably buries the lede too. Education and winback design belong in Sequenzy email; SMS carries timing, never layouts.' },
-  { question: 'What actually lifts email conversion?', answer: 'Offer clarity, single CTA above the fold, mobile-first single column, load speed under two seconds, and honest subject lines. Design polish ranks below offer, timing, and audience in every test this site has seen. Fix strategy before fonts.' },
-  { question: 'How do you test email designs?', answer: 'A/B test one element at a time against holdouts with conversion (not click) as the metric: layout, CTA placement, image density, copy length. Most design tests show null results because strategy dominates — run fewer, bigger tests on offers and audiences instead.' },
-  { question: 'Dark mode and accessibility?', answer: 'Non-negotiable basics: test rendering in dark mode, maintain 4.5:1 contrast ratios, use semantic HTML with alt text, keep font sizes legible. Accessibility failures cost conversions silently across 15%+ of audiences. Litmus or Email on Acid for verification before major template launches.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="email design FAQ" />
   </section>
 </BaseLayout>

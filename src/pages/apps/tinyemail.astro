@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/tinyemail';
 const title = pageTitle(site, 'apps/tinyemail');
 const desc = description(site, 'apps/tinyemail');
 
-const faqs = [
-  { question: 'Is tinyEmail good for Shopify SMS marketing campaigns?', answer: 'tinyEmail is AI-assisted quick email drafts for young stores — ranked #21 here, a starting layer before lifecycle and SMS maturity. Fast first campaigns with minimal learning curve. Graduate to Sequenzy for lifecycle depth and Postscript for SMS when drop culture, VIP access, and segment-by-value become revenue-critical.' },
-  { question: 'Should tinyEmail pair with Sequenzy?', answer: 'As a graduation path, yes — tinyEmail for fast AI-drafted starts, Sequenzy when lifecycle logic outgrows drafts. Do not run both permanently: migrate sends fully once Sequenzy sequences prove out, keeping tinyEmail only if AI drafting remains uniquely valuable.' },
-  { question: 'What is the biggest tinyEmail mistake?', answer: 'Trusting AI drafts without brand review. Generic AI copy converts worse than specific human copy with real product detail — use drafts as starting points, then inject store voice, proof, and offers before sending. Unreviewed AI output trains customers to ignore you.' },
-  { question: 'Can AI write my whole email program?', answer: 'No — AI accelerates drafting, not strategy. Segments, offers, timing, suppression, and brand judgment remain human jobs. Stores that automate strategy along with copywriting converge on identical generic programs competitors match instantly.' },
-  { question: 'When should a store outgrow tinyEmail?', answer: 'When behavior-triggered flows, segment-by-value targeting, or SMS coordination become necessary — typically with consistent revenue and a defined best-customer profile. Graduate deliberately with mapped flows, not reactively after plateauing.' },
-  { question: 'tinyEmail vs Mailchimp for starters?', answer: 'tinyEmail for AI-assisted speed; Mailchimp for ecosystem familiarity. Both are starters with the same graduation path toward Postscript-plus-Sequenzy or Klaviyo. Choose by which team operates daily.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/holiday-gifting';
 const title = pageTitle(site, 'use-cases/holiday-gifting');
 const desc = description(site, 'use-cases/holiday-gifting');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for holiday gifting?', answer: 'Postscript for shipping-deadline tiers and gift-guide urgency with segment controls. Attentive at enterprise scale with managed deliverability under holiday load. Sequenzy for lifecycle email beside SMS — gift education, comparison content, and January winback that texts cannot carry.' },
-  { question: 'How should holiday gifting fit in a campaign calendar?', answer: 'Built starting August: audience warming September–October, gift-guide education November, shipping-deadline tiers through December, winback January. Driftwood-style content calendars tie messaging to real moments rather than generic holiday noise. Holiday success is planned in summer, not improvised in December.' },
-  { question: 'Should SMS be part of holiday gifting?', answer: 'Essentially — shipping cutoffs, gift-guide drops, and last-chance alerts are SMS-native urgency. Education (sizing, comparison, care guides) and post-holiday winback belong in Sequenzy email. Gift buyers need timing plus confidence; channels split accordingly.' },
-  { question: 'How do you handle shipping deadlines?', answer: 'Publish cutoff dates early, tier reminders by shipping method (standard, expedited, overnight), escalate urgency by text as dates approach, and stop promotions the moment cutoffs pass. Missed-delivery apologies cost more than any campaign earns — set expectations conservatively.' },
-  { question: 'How do you avoid January churn after holiday blasts?', answer: 'Immediate hygiene: suppress discount-only holiday buyers from full-price flows, survey new subscribers for preferences, run value-first January content, and audit opt-out spikes by source. Holiday-acquired bargain hunters need separate tracks or they poison full-price economics all year.' },
-  { question: 'What about gift returns and exchanges?', answer: 'Proactive exchange flows beat reactive support: size guides pre-purchase, easy-exchange messaging post-delivery, and gift-receipt experiences that convert recipients into customers. Returns handled gracefully createJanuary buyers; handled poorly, they create reviews.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="holiday gifting FAQ" />
   </section>
 </BaseLayout>

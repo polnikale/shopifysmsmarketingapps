@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/loyalty';
 const title = pageTitle(site, 'use-cases/loyalty');
 const desc = description(site, 'use-cases/loyalty');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for loyalty campaigns?', answer: 'Postscript for tier-triggered urgency (points expiry, VIP access) with segment controls. Attentive at enterprise scale with managed programs. Sequenzy for lifecycle email beside SMS — tier education, milestone celebration, and winback. Loyalty data sharpens targeting; it never justifies blasting members indiscriminately.' },
-  { question: 'How should loyalty campaigns fit in a campaign calendar?', answer: 'Around member moments, not marketing whims: tier upgrades, points milestones, anniversaries, and exclusive access windows — planned quarterly with SMS rationed to genuine urgency. Patchwork-style one-of-one treatment for top tiers beats generic points blasts on every metric that matters.' },
-  { question: 'Should SMS be part of loyalty campaigns?', answer: 'Selectively — points-expiry urgency, VIP early access, and tier milestone alerts earn texts; newsletters and education belong in Sequenzy email. Loyalty members opted into rewards, not unlimited promotions. Every loyalty text must pass the same audience-reason-offer test as any other send.' },
-  { question: 'How do you structure tiers that drive behavior?', answer: 'Three tiers maximum with clear, achievable thresholds and visibly better perks per tier. Publish qualification criteria, celebrate upgrades publicly (with permission), and never devalue tiers retroactively. Tier integrity compounds trust; tier inflation destroys it.' },
-  { question: 'Points expiry — nudge or stay silent?', answer: 'Nudge once with clear value restatement, then let expire gracefully with a winback path. Aggressive expiry pressure trains members to game the system; respectful reminders reinforce program value. Expiry revenue is short-term gain against long-term trust.' },
-  { question: 'How do you measure loyalty program health?', answer: 'Repeat purchase rate by tier, tier progression velocity, points breakage versus redemption balance, and member versus non-member margin. Healthy programs show rising tier engagement with stable margins; programs that discount their way to activity are loyalty theater.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="loyalty campaigns FAQ" />
   </section>
 </BaseLayout>

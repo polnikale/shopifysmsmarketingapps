@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/browse-abandonment';
 const title = pageTitle(site, 'use-cases/browse-abandonment');
 const desc = description(site, 'use-cases/browse-abandonment');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for browse abandonment?', answer: 'Postscript for high-intent browse nudges with product context. Attentive at enterprise scale with managed deliverability. Sequenzy for lifecycle email beside SMS — browse education, comparison content, and category winback that texts cannot carry.' },
-  { question: 'How should browse abandonment fit in a campaign calendar?', answer: 'As always-on automation with strict intent thresholds, not calendar slots: category browses with depth signals trigger nudges; casual views never do. Slot quarterly reviews of threshold accuracy, conversion lift, and opt-out contribution — tune sensitivity rather than adding volume.' },
-  { question: 'Should SMS be part of browse abandonment?', answer: 'Sparingly — only for high-intent signals (repeat views, high-AOV products, waitlist-adjacent categories) where timing changes outcomes. Most browse behavior deserves email nurture, not texts. Vinyl-style collector logic applies: intent depth decides channel, never the reverse.' },
-  { question: 'How do you avoid creepy targeting?', answer: 'Delay nudges (hours, not minutes), reference categories rather than exact viewed items in SMS, and cap browse touches per week. Email can show exact products viewed; SMS should feel helpful, never surveilled. One uncanny message undoes months of trust.' },
-  { question: 'Browse versus cart abandonment — what differs?', answer: 'Intent strength: cart abandoners showed purchase intent deserving urgency (SMS appropriate), browsers showed curiosity deserving nurture (email appropriate). Conflating the two spams the curious and underserves the committed. Separate flows, separate thresholds, separate channels by default.' },
-  { question: 'How do you measure browse program success?', answer: 'Incremental browse-to-cart and browse-to-purchase lift against holdouts, opt-out contribution per send, and full-price versus discount mix. Vanity metrics (browse emails sent) mean nothing; only behavior change with margin context counts.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="browse abandonment FAQ" />
   </section>
 </BaseLayout>

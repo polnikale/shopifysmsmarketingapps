@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/product-launch';
 const title = pageTitle(site, 'use-cases/product-launch');
 const desc = description(site, 'use-cases/product-launch');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for product launch campaigns?', answer: 'Postscript for launch execution — VIP early access, waitlist fulfillment, and scarcity alerts with broadcast caps. Attentive at enterprise scale with managed launch operations. Sequenzy for lifecycle email beside SMS — teaser education, comparison content, and post-launch winback that texts cannot carry.' },
-  { question: 'How should product launch campaigns fit in a campaign calendar?', answer: 'Built like Bloom & Wick holiday calendars: teaser phase (email education, waitlist building), launch window (VIP SMS early access, general email after momentum), scarcity phase (inventory-truth alerts), and post-launch winback. Planned quarterly, executed on daily war-room cadence during launch weeks.' },
-  { question: 'Should SMS be part of product launch campaigns?', answer: 'Essentially — VIP early access, launch moment alerts, and scarcity updates are SMS-native urgency. Education (lookbooks, comparison guides, use cases) and post-launch nurture belong in Sequenzy email. Launch success needs both layers with documented handoffs, never email-only or SMS-only blasts.' },
-  { question: 'How do you structure VIP early access?', answer: 'Tiered windows by value: top collectors first (no offer, pure access), engaged segments second (early link with context), general list last via email after momentum proves out. SoleDrop-style 70%-moved email triggers protect margin while rewarding loyalty visibly.' },
-  { question: 'What kills product launches most often?', answer: 'Inventory mismatch (oversell chaos or dead stock), simultaneous channel collisions (email and SMS firing identical urgency), and discount-trained audiences waiting out launch pricing. Pre-mortem all three before launch day; war-room authority to pause any send instantly.' },
-  { question: 'How do you measure launch success?', answer: 'Sell-through velocity by tier, full-price mix (discounts should be near zero at launch), list growth quality from launch traffic, and opt-out contribution. Launch revenue without margin and list-health context is vanity — Cipher Audio 58% margin discipline is the benchmark.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="product launch campaigns FAQ" />
   </section>
 </BaseLayout>

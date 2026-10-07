@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/deliverability';
 const title = pageTitle(site, 'use-cases/deliverability');
 const desc = description(site, 'use-cases/deliverability');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for deliverability?', answer: 'Postscript for compliant sending infrastructure with carrier relationships. Attentive at enterprise scale with managed deliverability. Sequenzy for lifecycle email beside SMS. But deliverability is 80% practices, 20% platform: consent quality, complaint rates, and sending discipline decide outcomes more than vendor logos.' },
-  { question: 'How should deliverability fit in a campaign calendar?', answer: 'As continuous monitoring, not a calendar item: delivery rates by carrier, opt-out velocity, complaint keywords reviewed weekly; deep audits quarterly. Driftwood-style content calendars assume deliverability holds — verify the assumption with data before scaling sends on reputation already declining.' },
-  { question: 'Should SMS be part of deliverability?', answer: 'SMS deliverability means carrier compliance and reputation: registered numbers, honest content, honored opt-outs, sane velocity. Education about deliverability (why messages matter, what changed) belongs in Sequenzy email or operator docs — never in customer-facing texts.' },
-  { question: 'What kills SMS deliverability fastest?', answer: 'Complaint spikes from irrelevant blasts, velocity surges from new numbers, URL shorteners tripping carrier filters, and STOP failures. Each compounds: complaints trigger filtering which lowers engagement which triggers more filtering. Prevention (targeting, caps, consent) beats remediation every time.' },
-  { question: 'How do you monitor SMS deliverability?', answer: 'Delivery rate by carrier, opt-out rate per send, complaint keywords in replies, STOP velocity trends, and registration standing. Same-day triage on anomalies; quarterly deep audits on patterns. Silent degradation is the norm — active monitoring is the only defense.' },
-  { question: 'When should you change numbers or providers?', answer: 'Numbers: when reputation damage is isolated and documented (rarely — usually the practices need changing, not the number). Providers: when deliverability gaps persist after practices are verified clean. Never switch providers to escape complaint-driven filtering; carriers remember across vendors.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="deliverability FAQ" />
   </section>
 </BaseLayout>

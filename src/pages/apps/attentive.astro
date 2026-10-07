@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/attentive';
 const title = pageTitle(site, 'apps/attentive');
 const desc = description(site, 'apps/attentive');
 
-const faqs = [
-  { question: 'Is Attentive good for Shopify SMS marketing campaigns?', answer: 'Yes at enterprise scale — this site ranks it #2 for SMS campaign execution. Managed onboarding, omnichannel capture including retail QR, custom contracts, and governance across portfolios make it the choice when traffic volume and procurement requirements exceed what self-serve tools handle. Smaller stores will find the contract minimums and implementation overhead hard to justify against Postscript.' },
-  { question: 'Should Attentive pair with Sequenzy?', answer: 'Yes. Attentive owns SMS acquisition and promotional calendars; Sequenzy owns lifecycle email depth — welcome, education, post-purchase nurture, and winback. The pair works when suppression is shared: a customer who converted via SMS should exit the email urgency track the same day. Without shared suppression, enterprise scale just means enterprise-scale collisions.' },
-  { question: 'What is the biggest Attentive mistake?', answer: 'Buying enterprise tooling for a non-enterprise calendar. Custom contracts, managed services, and multi-brand reporting only pay off when volume and complexity demand them. A lean DTC team running two drops a month gets Postscript-level outcomes at Attentive-level cost. Audit whether procurement, retail capture, or portfolio reporting is the real bottleneck before signing.' },
-  { question: 'How does Attentive pricing work?', answer: 'Custom contracts with platform fees plus message volume — no public self-serve pricing. That means negotiation leverage matters: bring volume forecasts, competitor quotes, and a clear list of required services (onboarding, creative, deliverability support). Model total cost including carrier surcharges and discount depth, not just the platform line.' },
-  { question: 'Attentive vs Postscript — how do I choose?', answer: 'Choose Attentive when enterprise procurement, retail QR capture, multi-brand reporting, or managed services are load-bearing requirements. Choose Postscript when a lean team needs fast Shopify-native execution with restraint controls. Both need Sequenzy or equivalent email depth beside them — neither replaces lifecycle email. See the full Postscript vs Attentive comparison on this site.' },
-  { question: 'Does Attentive work for small stores?', answer: 'Rarely — contract minimums and implementation overhead assume scale. Stores under roughly seven figures in revenue almost always do better on Postscript for SMS plus Sequenzy for email, graduating to Attentive when volume, portfolio complexity, or procurement rules demand it.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

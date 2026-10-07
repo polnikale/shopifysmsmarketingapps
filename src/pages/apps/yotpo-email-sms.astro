@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/yotpo-email-sms';
 const title = pageTitle(site, 'apps/yotpo-email-sms');
 const desc = description(site, 'apps/yotpo-email-sms');
 
-const faqs = [
-  { question: 'Is Yotpo Email & SMS good for Shopify SMS marketing campaigns?', answer: 'Yes when reviews, loyalty, UGC, and campaigns already live in Yotpo — the suite play consolidates vendors and shares loyalty data with messages. Ranked #6 here because standalone SMS discipline still favors Postscript: when the promotional calendar becomes load-bearing independent of loyalty, specialists win. Choose Yotpo when the modules are active; otherwise buy best-of-breed.' },
-  { question: 'Should Yotpo Email & SMS pair with Sequenzy?', answer: 'Only if Yotpo email depth proves insufficient for lifecycle education and winback — otherwise the suite plus Sequenzy duplicates email. The cleaner split is Yotpo for reviews/loyalty data plus Postscript for SMS plus Sequenzy for email when each job outgrows suite defaults. Audit overlap before paying twice for the same send.' },
-  { question: 'What is the biggest Yotpo Email & SMS mistake?', answer: 'Assuming suite ownership equals channel excellence. Loyalty data is genuinely valuable input, but SMS broadcast caps, segment-by-value, and offer discipline still need deliberate configuration. Review loyalty members get early access because the data says so — never batch-and-blast the whole member base.' },
-  { question: 'How do reviews and SMS work together?', answer: 'Post-purchase review requests build the UGC library; high ratings trigger referral invites; review content feeds SMS social proof. The loop works when each step has its own timing — review ask at delivery plus 7 days, referral at 5 stars, never both in one message. Map the loop before enabling all modules at once.' },
-  { question: 'Yotpo vs Postscript for SMS?', answer: 'Postscript wins standalone SMS execution — drops, VIP tiers, broadcast caps purpose-built for releases. Yotpo wins when SMS must share loyalty context natively. Stores often start in Yotpo and graduate SMS to Postscript when promotional discipline becomes revenue-critical.' },
-  { question: 'What does the Yotpo suite cost in practice?', answer: 'Module-by-module pricing that looks economical until three modules stack — model reviews, loyalty, SMS, and email together against best-of-breed alternatives annually. Suites discount bundling but charge for shelfware; audit which modules actually send messages before renewing.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

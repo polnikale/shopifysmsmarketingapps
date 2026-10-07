@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/omnisend';
 const title = pageTitle(site, 'apps/omnisend');
 const desc = description(site, 'apps/omnisend');
 
-const faqs = [
-  { question: 'Is Omnisend good for Shopify SMS marketing campaigns?', answer: 'Yes for SMB multichannel speed — email, SMS, and push live in one builder with prebuilt ecommerce workflows, so a small team launches cart, welcome, and replenishment journeys in days. Ranked #5 here because specialists outgun it per channel at scale: Postscript for SMS discipline, Sequenzy for email depth. Choose Omnisend when one generalist runs everything.' },
-  { question: 'Should Omnisend pair with Sequenzy?', answer: 'Rarely as a permanent stack — Omnisend already covers email adequately for SMB needs. Graduate to Postscript for SMS plus Sequenzy for email when volume or discipline demands specialization; Sauce Lab followed exactly that path. Until then, Omnisend alone is the economical choice.' },
-  { question: 'What is the biggest Omnisend mistake?', answer: 'Treating prebuilt workflows as strategy. Launching every default flow at once means overlapping messages, conflicting discounts, and no suppression map. Enable cart and welcome first, measure for a month, then add replenishment or winback — one journey at a time with exclusions mapped.' },
-  { question: 'How much does Omnisend cost at scale?', answer: 'Contact-plus-message pricing that stays friendly at SMB volume but steepens as both grow — model email sends and SMS credits separately, because SMS is where bills jump. Compare against Postscript-plus-Sequenzy TCO annually; the bundled discount shrinks as sophistication needs grow.' },
-  { question: 'Omnisend vs Klaviyo?', answer: 'Omnisend for speed and simplicity at SMB scale; Klaviyo for data depth, predictive segmentation, and unified profiles at growth scale. Migrate when Omnisend segments cannot express RFM tiers, predictive churn, or catalog-driven logic the calendar needs.' },
-  { question: 'Does Omnisend handle compliance?', answer: 'Yes for basics — opt-in tools, STOP handling, and quiet hours are built in. But the operator still owns policy: document frequency promises per source, enforce timezone-aware quiet hours, and audit consent quarterly. Tooling enables compliance; only process delivers it.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

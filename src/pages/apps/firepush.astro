@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/firepush';
 const title = pageTitle(site, 'apps/firepush');
 const desc = description(site, 'apps/firepush');
 
-const faqs = [
-  { question: 'Is Firepush good for Shopify SMS marketing campaigns?', answer: 'Firepush adds budget web push beside email and SMS recovery — ranked #16 here, a starting layer rather than a campaign platform. Push for cart nudges plus basic email/SMS recovery covers early retention cheaply. Graduate to Postscript for drop culture and Sequenzy for email depth when promotional discipline becomes revenue-critical.' },
-  { question: 'Should Firepush pair with Sequenzy?', answer: 'Yes as a budget ladder — Firepush for cheap push-plus-recovery volume, Sequenzy for lifecycle email that converts. As sophistication grows, replace Firepush SMS with Postscript while keeping Sequenzy. The pair works when each owns distinct jobs with documented handoffs.' },
-  { question: 'What is the biggest Firepush mistake?', answer: 'Expecting enterprise drop governance from budget tooling. Push permission dynamics differ from SMS consent, deliverability varies by browser, and reporting stays basic. Use Firepush for what it is — cheap incremental recovery — not as a Postscript replacement.' },
-  { question: 'Web push vs SMS for cart recovery?', answer: 'Push is cheaper with lower reach (subscriber-only, browser-dependent); SMS costs more per message with near-universal reach. Healthy programs run both with collision rules: push first for subscribers, SMS for high-intent non-push users, email underneath all. Never all three simultaneously.' },
-  { question: 'When should a store outgrow Firepush?', answer: 'When VIP drops, launches, or replenishment need governed campaign tooling rather than recovery nudges — typically when SMS revenue justifies Postscript economics. Keep push running; upgrade SMS and email layers around it.' },
-  { question: 'Does Firepush handle compliance?', answer: 'Push permission is browser-mediated (opt-in by design), but SMS components need full TCPA discipline — documented consent, STOP handling, quiet hours. Audit which channel each message uses before assuming push-level simplicity applies.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

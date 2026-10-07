@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/segmentation';
 const title = pageTitle(site, 'use-cases/segmentation');
 const desc = description(site, 'use-cases/segmentation');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for Shopify segmentation?', answer: 'Postscript for segment execution with VIP tiers and broadcast caps. Attentive at enterprise scale with predictive tiers. Sequenzy for lifecycle email beside SMS — education and winback arcs that run on the same segments. Segmentation strategy itself is operator-owned; platforms execute what operators design.' },
-  { question: 'How should Shopify segmentation fit in a campaign calendar?', answer: 'As the quarterly foundation everything else books against: rebuild RFM tiers, refresh preference segments, audit suppression lists, then plan campaigns onto segments — never campaigns searching for audiences. Patchwork-style one-of-one treatment for top tiers starts with segments accurate enough to trust.' },
-  { question: 'Should SMS be part of Shopify segmentation?', answer: 'As the highest-stakes application of segments — SMS mistakes cost opt-outs permanently, so segment accuracy matters more here than anywhere. Education about segmentation (why customers get grouped) belongs in operator docs and Sequenzy internal flows, never customer-facing texts.' },
-  { question: 'What segments does every store need?', answer: 'VIPs by LTV, engaged non-buyers, one-time buyers, bargain-only buyers, lapsed champions, and new subscribers — six segments minimum before any advanced modeling. Each gets distinct channel mix, offer ceilings, and frequency caps. Start here; add predictive layers only with measured payoff.' },
-  { question: 'How often should segments rebuild?', answer: 'Behavioral segments continuously (nightly minimum), value tiers monthly, preference segments on change events. Stale segments misfire silently — quarterly audits comparing segment definitions against current behavior catch drift before it costs revenue.' },
-  { question: 'When do predictive segments pay off?', answer: 'Above mid-market complexity with operators who act on predictions — churn-risk winback, LTV-based VIP tiers, replenishment forecasting. Below that scale, RFM rules capture 80% of the value at 10% of the complexity. Buy predictions last, not first.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="Shopify segmentation FAQ" />
   </section>
 </BaseLayout>

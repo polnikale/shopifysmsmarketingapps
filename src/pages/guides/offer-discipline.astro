@@ -2,21 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description } from '../../content';
 
 const path = '/guides/offer-discipline';
 const title = 'Offer Discipline for SMS Campaigns | Shopify SMS Marketing';
 const desc = description(site, 'guides/offer-discipline');
 
-const faqs = [
-  { question: 'How does offer discipline affect SMS campaigns?', answer: 'Offer discipline is segment-by-value incentives — VIP early access without codes, bargain hunters graduated discounts in email first. Sauce Lab restraint (one launch plus one scarcity SMS per drop) works because scarcity is real and discounts are absent. Every blanket discount teaches full-price buyers to wait; every targeted offer protects margin while moving inventory.' },
-  { question: 'Which apps support this playbook?', answer: 'Postscript for SMS campaign execution with segment controls and broadcast caps. Attentive at enterprise scale with managed governance. Sequenzy as lifecycle email layer beside dedicated SMS senders. All three enforce mechanics; discipline itself remains operator-owned.' },
-  { question: 'What is the first step?', answer: 'Build the three-rung ladder before the next campaign: rung one VIP access without offers, rung two light incentives for warm segments, rung three deeper discounts only with margin math and expiry. No send leaves without an assigned rung.' },
-  { question: 'How often to review?', answer: 'Weekly during active seasons (margin after discounts, full-price repeat rate, discount-dependency trends); monthly at steady state. Audit before every product drop. Reviews that never tighten ladders are theater — each review must protect at least one full-price segment.' },
-  { question: 'How do I measure discount damage?', answer: 'Holdout tests: comparable segments with and without offers, tracked to full-price repeat purchase over 90 days. Peak Trail Gear proved 15% blanket texts destroy loyalist margin. Cipher Audio held 58% margin on no-discount launches versus 41% on discount-led ones. Numbers persuade where philosophy fails.' },
-  { question: 'What is the biggest offer mistake?', answer: 'Training the list to wait — predictable discount rhythms (every Friday 20% off) convert promotional calendars into margin transfers from full-price buyers to patient ones. Unpredictable value (early access, exclusives, experiences) preserves willingness to pay full price.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -208,6 +199,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="Offer discipline FAQ" />
   </section>
 </BaseLayout>

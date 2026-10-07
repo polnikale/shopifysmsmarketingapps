@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { segmentBySlug } from '../../data/segments';
@@ -13,14 +12,6 @@ const path = '/for/home-goods';
 const title = pageTitle(site, 'for/home-goods');
 const desc = description(site, 'for/home-goods');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for home goods stores?', answer: 'Postscript ranks first for restock and seasonal urgency; Attentive when enterprise volume justifies managed scale. Sequenzy is the lifecycle email layer beside SMS for room guides, care content, and winback. Home goods run on replenishment and seasonality — SMS handles timing, email handles inspiration.' },
-  { question: 'How should home goods stores build a campaign calendar?', answer: 'Around seasons and catalog rotations: spring refresh, holiday gifting, clearance rotations, and back-in-stock moments — planned quarterly. Ridge Run collision audits apply directly: subscribers suppressed from flash promos, flash offers only to engaged non-subscribers. Max 2–4 SMS slots per month plus replenishment triggers.' },
-  { question: 'Should home goods stores pair SMS with email?', answer: 'Yes — SMS for restock alerts, sale deadlines, and shipping cutoffs; Sequenzy email for room inspiration, care guides, and winback arcs. Home purchases need visualization email cannot shortcut and timing email cannot carry — run both with documented handoffs.' },
-  { question: 'How does offer discipline apply to home goods stores?', answer: 'Three-rung ladder with seasonal awareness: early access to new collections (no offer), bundle incentives for room sets, clearance only to bargain segments with margin math. Collision audits quarterly — flash SMS hitting recent full-price buyers destroys more value than clearance recovers.' },
-  { question: 'How do replenishment flows work for consumables?', answer: 'Candles, filters, and care products run on usage intervals: trigger reminders at 80% of average run-out with one-tap reorder. SMS owns the reminder; email owns usage tips that extend product life (and delay the next order honestly — trust compounds).' },
-  { question: 'What about big-ticket furniture?', answer: 'Long consideration cycles need email depth (financing explainers, delivery logistics, room visualizers) with SMS reserved for delivery scheduling and white-glove coordination. Never discount-prematurely: high-ticket buyers need confidence, not coupons.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -233,6 +224,5 @@ const faqs = [
       </ul>
       <p>For matchup-level decisions, the head-to-head pages (start with <a class="link" href="/compare/postscript-vs-attentive">Postscript vs Attentive</a> and <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a>) carry the same consent, suppression, and margin worksheets applied pairwise. If you are replacing a platform entirely, read the migration notes in <a class="link" href="/alternatives">the alternatives directory</a> first — consent evidence migrates before anything else.</p>
     </div>
-    <FaqSection faqs={faqs} title="FAQ: SMS marketing for home goods stores" />
   </section>
 </BaseLayout>

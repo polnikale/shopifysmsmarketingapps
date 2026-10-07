@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/postscript';
 const title = pageTitle(site, 'apps/postscript');
 const desc = description(site, 'apps/postscript');
 
-const faqs = [
-  { question: 'Is Postscript good for Shopify SMS marketing campaigns?', answer: 'Yes — it is the benchmark this site ranks #1 for SMS campaign execution. Keyword opt-in, VIP drop access, launch broadcasts, cart urgency, and replenishment texts are all first-class, with quiet hours, suppression, and segment controls that make broadcast caps enforceable. Pair it with Sequenzy for lifecycle email depth: welcome, education, and winback arcs belong in the inbox, not in 160 characters.' },
-  { question: 'Should Postscript pair with Sequenzy?', answer: 'Yes, that is the default stack recommended across this site. Postscript owns moments where timing is urgent — drop access, cart recovery, replenishment windows, shipping deadlines — while Sequenzy owns education, proof, post-purchase nurture, and winback. Keep shared suppression between them so a customer who just bought never gets urgency from both channels on the same afternoon.' },
-  { question: 'What is the biggest Postscript mistake?', answer: 'Broadcasting without segment-by-value. Full-list blasts train full-price buyers to wait for codes, spike opt-outs, and destroy the margin that SMS should protect. Cap weekly sends per segment, exclude recent purchasers from prospecting blasts, and isolate clearance texts to bargain-sensitive quartiles. Noir Collective cut broadcast frequency from 4x to 2x per week and saw revenue per send rise 31%.' },
-  { question: 'How much does Postscript cost at scale?', answer: 'Platform fee plus per-message carrier charges, with MMS premiums for images and GIFs. Model launch week, Black Friday, and replenishment volume before committing — cheap entry pricing hides real scale cost. Build one spreadsheet with platform fees, carrier surcharges, MMS premiums, and discount depth so cost per converted recipient is visible before the first blast.' },
-  { question: 'Does Postscript handle compliance and quiet hours?', answer: 'Yes — keyword opt-in flows, STOP handling, quiet-hour enforcement, and disclosure copy are built in. But the operator still owns the policy: document what each opt-in source promises, enforce 8am–9pm recipient-time quiet hours, and keep consent records exportable. TCPA violations start at $500 per text, so treat compliance as infrastructure, not a checkbox.' },
-  { question: 'When should a store outgrow Postscript?', answer: 'Rarely for pure SMS execution — most outgrows are really needs for enterprise procurement, multi-brand reporting, or managed services, which point to Attentive. If the need is deeper email lifecycle rather than bigger SMS, add Sequenzy beside Postscript instead of replacing it. Only migrate SMS platforms when consent, suppression, and segment logic are mapped first.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

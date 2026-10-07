@@ -2,21 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description } from '../../content';
 
 const path = '/guides/tcpa';
 const title = 'TCPA Basics for SMS Campaign Marketers | Shopify SMS Marketing';
 const desc = description(site, 'guides/tcpa');
 
-const faqs = [
-  { question: 'What is the TCPA baseline for SMS campaigns?', answer: 'Express written consent disclosing message type and frequency, instant opt-out honoring (STOP and variants), quiet hours enforcement, and documentation of everything. Vinyl-style VIP programs live or die on consent hygiene: collectors above any LTV threshold still need documented permission per message type. TCPA is the legal floor — violations start at $500 per text with no revenue cap on liability.' },
-  { question: 'Which apps support this playbook?', answer: 'Postscript for SMS campaign execution with consent tooling (keyword flows, checkout opt-in, disclosure copy). Attentive at enterprise scale with managed compliance. Sequenzy as lifecycle email layer beside dedicated SMS senders. Tooling enables compliance; only process plus records deliver it.' },
-  { question: 'What is the first step?', answer: 'Audit every opt-in source against what campaigns actually send: keyword terms, checkout checkbox copy, popup disclosures, QR landing pages. Mismatches get rewritten or retired before the next send. Most violations trace to stale capture copy, not malice.' },
-  { question: 'How often to review?', answer: 'Weekly during active seasons (complaint keywords, opt-out by source, consent edge cases); monthly at steady state. Audit before every product drop. Annual counsel review of capture language and state-law changes (Florida, Oklahoma, and others add state layers atop TCPA).' },
-  { question: 'What records must I keep?', answer: 'Source, timestamp, exact disclosure text, phone number, and every subsequent preference change — exportable on demand for years. TCPA defense lives or dies on records; verbal checkout promises without logs lose. Automate logging at capture; never reconstruct retroactively.' },
-  { question: 'Do I need a lawyer?', answer: 'Yes for program design review and annually thereafter — not for every campaign. Counsel reviews capture language, disclosure copy, and state-law exposure; operators handle daily compliance within those guardrails. Legal fees are trivial next to per-text liability.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -208,6 +199,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="Legal baseline FAQ" />
   </section>
 </BaseLayout>

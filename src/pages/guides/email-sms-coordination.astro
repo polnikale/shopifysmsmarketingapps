@@ -2,21 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description } from '../../content';
 
 const path = '/guides/email-sms-coordination';
 const title = 'Email + SMS Campaign Coordination | Shopify SMS Marketing';
 const desc = description(site, 'guides/email-sms-coordination');
 
-const faqs = [
-  { question: 'How should email and SMS divide campaign work?', answer: 'Email owns education, proof, and multi-product merchandising; SMS owns moments where immediacy changes outcomes — checkout recovery within hours, VIP access windows, replenishment timing, shipping deadlines. Peak Trail Gear holdout tests prove the split matters: 15% blanket texts to full-price loyalists destroyed margin that channel-separated calendars would have protected.' },
-  { question: 'Which apps support this playbook?', answer: 'Postscript for SMS campaign execution, Attentive at enterprise scale, Sequenzy as lifecycle email layer beside dedicated SMS senders. Klaviyo or Omnisend where one team owns both channels daily. The stack matters less than written channel ownership per journey.' },
-  { question: 'What is the first step?', answer: 'Map every active journey to exactly one primary channel with documented handoffs: cart recovery starts email then escalates to SMS; winback runs email with SMS final nudge; launches tease by email and fire by text. No journey fires both simultaneously without an explicit collision rule.' },
-  { question: 'How often to review?', answer: 'Weekly during active seasons (collision incidents, duplicate-offer complaints, channel overlap reports); monthly at steady state. Audit before every product drop. Each review must confirm suppression lists sync same-day across platforms.' },
-  { question: 'What is the 12-hour rule?', answer: 'Never duplicate the same offer within 12 hours across channels — a customer who got the email does not need the text. Exceptions require documented urgency (cart expiring, drop closing). The rule prevents the most common collision: eager automation double-tapping buyers.' },
-  { question: 'How do I measure coordination success?', answer: 'Collision incidents (should trend to zero), revenue per recipient per channel, opt-outs by journey, and full-price repeat purchase from coordinated buyers. Dashboard attribution per channel lies; coordinated measurement tells the truth about combined incrementality.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -208,6 +199,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="Channel coordination FAQ" />
   </section>
 </BaseLayout>

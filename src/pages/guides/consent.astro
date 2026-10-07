@@ -2,21 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description } from '../../content';
 
 const path = '/guides/consent';
 const title = 'SMS Consent for Marketing Campaigns | Shopify SMS Marketing';
 const desc = description(site, 'guides/consent');
 
-const faqs = [
-  { question: 'How does consent shape SMS campaigns?', answer: 'Consent enables campaign segments — documented opt-in source determines which offers and frequency each subscriber expects. Bloom & Wick segments gift buyers for bundle SMS while self-purchasers get scent education email; the source promise governs everything downstream. Consent is not paperwork; it is the targeting contract.' },
-  { question: 'Which apps support this playbook?', answer: 'Postscript for SMS campaign execution with consent tooling (keyword flows, checkout opt-in, disclosure copy). Attentive at enterprise scale with managed compliance. Sequenzy as lifecycle email layer beside dedicated SMS senders. All three enforce mechanics; policy ownership stays with the operator.' },
-  { question: 'What is the first step?', answer: 'Inventory every opt-in source and compare the promise with messages currently sent: keyword, checkout checkbox, popup, QR code. Each source creates different expectations — document them before the next campaign. Mismatched promises are the most common complaint root cause.' },
-  { question: 'How often to review?', answer: 'Weekly during active campaign seasons (complaint keywords, opt-out by source); monthly at steady state. Audit before every product drop. Quarterly, re-verify capture copy against actual campaigns — stale promises are the top TCPA exposure for growing stores.' },
-  { question: 'What records must I keep?', answer: 'Source, timestamp, exact disclosure text, phone number, and every subsequent preference change — exportable on demand. TCPA defense lives or dies on records; verbal checkout promises without logs lose. Automate logging at capture; never reconstruct retroactively.' },
-  { question: 'Do quiet hours really matter?', answer: 'Legally and commercially: no texts before 8am or after 9pm recipient-time, enforced by timezone-aware sending. Beyond compliance, off-hour texts generate the angriest complaints and fastest opt-outs. Quiet hours protect revenue as much as liability.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -208,6 +199,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="Consent for campaigns FAQ" />
   </section>
 </BaseLayout>

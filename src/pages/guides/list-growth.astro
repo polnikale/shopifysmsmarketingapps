@@ -2,21 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description } from '../../content';
 
 const path = '/guides/list-growth';
 const title = 'SMS List Growth for Campaign Marketers | Shopify SMS Marketing';
 const desc = description(site, 'guides/list-growth');
 
-const faqs = [
-  { question: 'How should list growth feed SMS campaigns?', answer: 'Growth feeds segments, not blasts — keyword opt-in from drops qualifies intent far better than generic popups. Bloom & Wick pairs gift-segment capture with bundle SMS while self-purchasers get scent education email; the source promise governs everything downstream. Measure revenue per capture source, not just subscriber counts.' },
-  { question: 'Which apps support this playbook?', answer: 'Postscript for SMS campaign execution with capture tooling (keywords, checkout opt-in). Attentive at enterprise scale with retail capture. Sequenzy as lifecycle email layer beside dedicated SMS senders. Privy or Justuno where capture needs dedicated qualification depth.' },
-  { question: 'What is the first step?', answer: 'Audit every capture unit for promise-to-campaign match: what did the subscriber expect, and what do they actually receive? Mismatches get rewritten or retired before the next send. Then cap monthly SMS slots with documented calendar slots so growth converts to revenue, not noise.' },
-  { question: 'How often to review?', answer: 'Weekly during active seasons (source quality, opt-out by source, revenue per captured cohort); monthly at steady state. Audit before every product drop. Kill capture units whose cohorts never convert — junk subscribers cost sends forever.' },
-  { question: 'Popups, keywords, or checkout — what converts best?', answer: 'Intent-matched capture wins: drop keywords for hype buyers, quizzes for considered purchases, checkout opt-in for buyers with wallets open. Generic 10%-off popups recruit discount hunters who poison SMS economics. Match capture mechanics to buyer intent, never maximize raw counts.' },
-  { question: 'How do I keep list quality high while growing?', answer: 'Double opt-in for SMS where required, preference questions at capture (not later), suppression of prize-only subscribers from VIP campaigns until purchase intent proves out, and quarterly source audits. Growth and quality compound together only with deliberate design.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -208,6 +199,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="List growth FAQ" />
   </section>
 </BaseLayout>

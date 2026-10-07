@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/black-friday';
 const title = pageTitle(site, 'use-cases/black-friday');
 const desc = description(site, 'use-cases/black-friday');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for Black Friday campaigns?', answer: 'Postscript for drop-grade execution under load — VIP early access, doorbusters, and shipping-deadline tiers with broadcast caps. Attentive at enterprise scale with managed deliverability and volume testing. Sequenzy for lifecycle email beside SMS — gift guides, education, and winback arcs that texts cannot carry.' },
-  { question: 'How should Black Friday campaigns fit in a campaign calendar?', answer: 'Built starting August: audience warming September–October, VIP early access before public sales, doorbuster windows with inventory caps, shipping-deadline tiers through December. Slot quarterly planning for strategy but execute on daily war-room cadence during peak. BFCM rewards preparation, not improvisation.' },
-  { question: 'Should SMS be part of Black Friday campaigns?', answer: 'Essentially — VIP early access, doorbuster alerts, and shipping cutoffs are SMS-native urgency. Education (gift guides, comparison content) and post-purchase winback belong in Sequenzy email. Loom-style edition discipline (quantities disclosed, collector-only texts) prevents the blast fatigue that kills January lists.' },
-  { question: 'How do you protect margin during BFCM?', answer: 'Tiered offers by segment (VIP access without codes, engaged modest incentives, clearance only to bargain cohorts), doorbuster quantity caps, and holdout-validated discount depths. Peak Trail Gear proved blanket 15%-off texts destroy full-price loyalty value — BFCM amplifies every margin mistake yearly.' },
-  { question: 'What breaks most often on Black Friday?', answer: 'Inventory oversell (sync lag under load), support overload (staff for 3x ticket volume), SMS throttling (carrier limits on blast day), and site speed (each second costs conversion). Load-test in October, freeze code mid-November, and staff a war room with kill-switch authority.' },
-  { question: 'How do you recover the list in January?', answer: 'Immediate hygiene: suppress discount-only buyers from full-price flows, survey new subscribers for preferences, run value-first (non-promotional) January content, and audit opt-out spikes by source. BFCM-acquired discount hunters need separate tracks or they poison full-price economics all year.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="Black Friday campaigns FAQ" />
   </section>
 </BaseLayout>

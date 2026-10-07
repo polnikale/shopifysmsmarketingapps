@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/justuno';
 const title = pageTitle(site, 'apps/justuno');
 const desc = description(site, 'apps/justuno');
 
-const faqs = [
-  { question: 'Is Justuno good for Shopify SMS marketing campaigns?', answer: 'Justuno qualifies subscriber intent with quizzes and onsite targeting — ranked #17 here as top-of-funnel for campaign marketers. Quiz data feeds Postscript VIP tiers and Sequenzy welcome branches, so capture quality compounds downstream. It does not send campaigns itself; judge it on lead quality and consent hygiene, never on message features.' },
-  { question: 'Should Justuno pair with Sequenzy?', answer: 'Yes — quiz answers should shape Sequenzy welcome content (style preferences, fit concerns, budget signals) while Postscript handles SMS urgency to qualified segments. The trio works when data flows documented: quiz field to segment rule to message variant, mapped explicitly.' },
-  { question: 'What is the biggest Justuno mistake?', answer: 'Collecting data nobody uses. Quizzes with twelve questions feed segments nobody built; popups promise what campaigns never deliver. Every captured field needs a named downstream consumer — segment, branch, or suppression — reviewed quarterly. Dead fields get deleted.' },
-  { question: 'Justuno vs Privy?', answer: 'Justuno for targeting rules and quiz depth; Privy for promo execution simplicity. Merchandising-led teams favor Justuno; generalists favor Privy. Both must feed clean segments to Postscript and Sequenzy — capture quality decides downstream economics.' },
-  { question: 'Do quizzes actually convert?', answer: 'Yes when short (3-5 questions), value-matched (recommendation or discount tier), and mobile-fast. Long interrogations tank completion; irrelevant questions poison data. Measure revenue per quiz start, not completion rate alone — completions that never buy are vanity.' },
-  { question: 'How does capture affect SMS compliance?', answer: 'Every unit must state message type and frequency, log source with timestamps, and sync consent to Shopify records. Audit copy quarterly against actual campaigns — stale capture promises are the most common TCPA exposure for growing stores.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

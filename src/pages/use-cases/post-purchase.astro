@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/post-purchase';
 const title = pageTitle(site, 'use-cases/post-purchase');
 const desc = description(site, 'use-cases/post-purchase');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for post-purchase education?', answer: 'Postscript for shipping-critical moments and delivery exceptions with segment controls. Attentive at enterprise scale with managed programs. Sequenzy for lifecycle email beside SMS — setup guides, usage education, review asks, and replenishment arcs that texts cannot carry.' },
-  { question: 'How should post-purchase education fit in a campaign calendar?', answer: 'As always-on automation triggered by fulfillment events, not calendar slots: confirmation, shipping, delivery, setup, review ask, replenishment — each firing on order truth with exit conditions. Slot quarterly reviews of completion rates and support-deflection impact, not the sends themselves.' },
-  { question: 'Should SMS be part of post-purchase education?', answer: 'Minimally — shipping exceptions, delivery confirmations requiring action, and replenishment timing. Education itself belongs in Sequenzy email where depth lives. Arena-style separation applies: free value in email, timing-only in SMS. Post-purchase texts that sell rather than serve train customers to ignore operational messages.' },
-  { question: 'How do you reduce WISMO tickets with messaging?', answer: 'Proactive tracking updates at every fulfillment milestone cut where-is-my-order volume dramatically: label created, shipped with tracking, out-for-delivery, delivered with photo proof. Each update must arrive before the customer wonders — timing beats copy quality here.' },
-  { question: 'When should you ask for reviews?', answer: 'After confirmed delivery plus usage window (days for consumables, weeks for durables) — never at shipment. Single ask with direct link, one reminder maximum, then silence. Review velocity matters less than review authenticity; incentivized floods read fake to future buyers.' },
-  { question: 'How does post-purchase drive repeat revenue?', answer: 'Replenishment triggers at run-out dates, cross-sell after satisfaction signals (reviews, repeat visits), and winback at lapsed intervals. Post-purchase education that genuinely helps creates the trust repeat purchases require — selling too early burns the relationship the confirmation just built.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="post-purchase education FAQ" />
   </section>
 </BaseLayout>

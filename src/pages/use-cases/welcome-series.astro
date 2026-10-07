@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { useCaseBySlug } from '../../data/use-cases';
@@ -13,14 +12,6 @@ const path = '/use-cases/welcome-series';
 const title = pageTitle(site, 'use-cases/welcome-series');
 const desc = description(site, 'use-cases/welcome-series');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for welcome series?', answer: 'Postscript for welcome SMS moments (first-purchase nudges, VIP invitations) with segment controls. Attentive at enterprise scale. Sequenzy for lifecycle email beside SMS — the welcome education arc itself lives in email, with texts firing only genuine urgency.' },
-  { question: 'How should welcome series fit in a campaign calendar?', answer: 'As always-on automation, not calendar slots: new subscribers enter immediately with preference capture, brand story, and first-purchase incentive sequenced over 7–14 days. Slot quarterly reviews of activation rates, first-order timing, and opt-out contribution — tune the machine, never blast through it.' },
-  { question: 'Should SMS be part of welcome series?', answer: 'Minimally — one welcome text with first-order incentive for SMS opt-ins, then silence until behavior triggers urgency. Noir-style restraint applies from day one: newcomers who get blasted in week one churn by month two. Education and proof belong in Sequenzy email; SMS earns its place only with timing.' },
-  { question: 'What belongs in a welcome series?', answer: 'Brand story (why you exist), social proof (reviews, press, numbers), preference capture (categories, frequency), first-order incentive with expiry, and product education for bestsellers. Five touches maximum over two weeks, then graduate to normal nurture. Every touch must earn the next open.' },
-  { question: 'How do you measure welcome performance?', answer: 'Activation rate (second action within 30 days), first-order timing and value, 90-day retention of welcomed cohorts versus unwelcomed baselines, and opt-out contribution. Welcome quality predicts lifecycle value more reliably than any later campaign metric.' },
-  { question: 'What is the biggest welcome mistake?', answer: 'Discount-first welcomes that recruit bargain hunters instead of brand buyers — 20%-off popups followed by more discounts train every newcomer to wait. Lead with story and value, reserve incentives for engaged non-converters, and never apologize for full pricing from day one.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -207,6 +198,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="welcome series FAQ" />
   </section>
 </BaseLayout>

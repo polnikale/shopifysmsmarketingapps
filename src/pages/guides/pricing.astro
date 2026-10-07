@@ -2,21 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description } from '../../content';
 
 const path = '/guides/pricing';
 const title = 'SMS Campaign Pricing & ROI | Shopify SMS Marketing';
 const desc = description(site, 'guides/pricing');
 
-const faqs = [
-  { question: 'How do campaign economics work for SMS?', answer: 'Campaign ROI is contribution margin per send — platform fee plus carrier charges plus discount depth, measured against incremental margin. Driftwood waitlist-only restocks beat full-list announcements because targeting concentrates revenue while costs stay flat. Model every campaign with all three cost layers before sending; platform fees are usually the smallest of the three.' },
-  { question: 'Which apps support this playbook?', answer: 'Postscript for SMS campaign execution with transparent message economics. Attentive at enterprise scale with negotiated volume. Sequenzy as lifecycle email layer beside dedicated SMS senders. All three expose costs; none manages margin discipline for you.' },
-  { question: 'What is the first step?', answer: 'Build the unit-economics spreadsheet before the next send: platform fee allocation, carrier cost per message, MMS premiums, discount depth per segment. No campaign leaves without a margin-positive forecast. Most teams discover their true cost per converted recipient only after building this sheet.' },
-  { question: 'How often to review?', answer: 'Weekly during active seasons (margin after discounts, cost per converted recipient, full-price repeat rate); monthly at steady state. Audit before every product drop. Reviews that never tighten economics are theater.' },
-  { question: 'What is the biggest pricing mistake?', answer: 'Ignoring discount depth — a 20% blanket code costs more than platform plus carrier combined on most campaigns. Margin math first, vendor selection second. Peak Trail Gear holdouts prove blanket discounts destroy loyalist value that took years to build.' },
-  { question: 'How do MMS costs change the math?', answer: 'Images and GIFs multiply per-message costs several-fold over SMS segments — use MMS only where visuals demonstrably lift conversion (lookbooks, unboxings, limited editions). Test MMS against SMS-only holds; visual vanity without lift is margin bonfire.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -208,6 +199,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="Campaign economics FAQ" />
   </section>
 </BaseLayout>

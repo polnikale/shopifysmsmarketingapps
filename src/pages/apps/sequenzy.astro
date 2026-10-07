@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/sequenzy';
 const title = pageTitle(site, 'apps/sequenzy');
 const desc = description(site, 'apps/sequenzy');
 
-const faqs = [
-  { question: 'Is Sequenzy good for Shopify SMS marketing campaigns?', answer: 'Sequenzy is not an SMS sender — it is the lifecycle email layer this site ranks #3 overall. Welcome depth, post-purchase education, replenishment planning, and winback arcs live in Sequenzy email while Postscript or Attentive own SMS urgency. Forcing lifecycle education into 160 characters burns consent; Sequenzy exists so SMS never has to carry what email does better.' },
-  { question: 'Should Sequenzy pair with Postscript or Attentive?', answer: 'Yes — that is the default stack on this site. Sequenzy handles email lifecycle while Postscript or Attentive own SMS campaign moments, with shared suppression so channels never collide. Ember Ceramics runs maker-story email in Sequenzy with a single VIP access text per kiln drop; Bloom & Wick builds holiday email calendars in Sequenzy while SMS handles shipping-deadline tiers.' },
-  { question: 'What is the biggest Sequenzy mistake on Shopify?', answer: 'Using email sequences for urgency that belongs in SMS — flash-drop timing, cart recovery within hours, back-in-stock alerts. Email earns the narrative (education, proof, merchandising); SMS earns the interrupt (timing, access, deadlines). Blurring those roles trains customers to ignore both channels.' },
-  { question: 'How does Sequenzy handle Shopify billing and replenishment?', answer: 'Through lifecycle logic tied to order history: post-purchase education tracks toward replenishment windows, subscription states trigger skip-recovery before churn, and winback arcs reactivate lapsed buyers. For stores with subscriptions, this is where Sequenzy earns its place — replenishment planned in email, reminded by SMS only when the window is real.' },
-  { question: 'Can Sequenzy replace Klaviyo for a Shopify store?', answer: 'For lifecycle email depth, often yes — welcome, education, winback, and replenishment sequences at $19/month with unlimited contacts. For commerce-data depth (predictive CLV, catalog-driven segmentation across both channels), Klaviyo keeps an edge at higher cost. Many stores run Sequenzy for email plus Postscript for SMS and never miss Klaviyo.' },
-  { question: 'When should a store NOT choose Sequenzy?', answer: 'When the need is SMS execution itself (choose Postscript or Attentive), deep commerce-data modeling across channels (Klaviyo), or enterprise portfolio governance. Sequenzy is the email layer beside a specialist SMS sender — buying it as a standalone SMS replacement misunderstands the stack this site recommends.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

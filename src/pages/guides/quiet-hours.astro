@@ -2,21 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description } from '../../content';
 
 const path = '/guides/quiet-hours';
 const title = 'Quiet Hours for Campaign Sends | Shopify SMS Marketing';
 const desc = description(site, 'guides/quiet-hours');
 
-const faqs = [
-  { question: 'How does send timing affect SMS campaigns?', answer: 'Quiet hours protect performance and compliance — geo-segmented sends by venue timezone, never HQ time. No texts before 8am or after 9pm recipient-time, enforced automatically with manual override audits. Off-hour texts generate the angriest complaints and fastest opt-outs; timing discipline is revenue protection, not just legal box-ticking.' },
-  { question: 'Which apps support this playbook?', answer: 'Postscript for SMS campaign execution with timezone-aware quiet hours. Attentive at enterprise scale with managed governance. Sequenzy as lifecycle email layer beside dedicated SMS senders. All three enforce mechanics; policy ownership stays with the operator.' },
-  { question: 'What is the first step?', answer: 'Enable timezone-aware quiet hours on every sender before the next campaign, then audit the last 30 days of sends for violations. Most teams discover embarrassing off-hour blasts in their own history — fix the setting, apologize never needed if caught early.' },
-  { question: 'How often to review?', answer: 'Weekly during active seasons (send-time distribution, complaint timestamps, timezone coverage gaps); monthly at steady state. Audit before every product drop. Daylight-saving transitions deserve explicit checks twice yearly.' },
-  { question: 'What are the best send windows?', answer: 'Late morning (10am–12pm) and early evening (5–7pm) recipient-time for most DTC verticals; lunch hours for food-adjacent; never mornings for West Coast from East Coast schedulers. Test windows per segment — VIPs tolerate evenings, bargain segments prefer midday. Data beats convention.' },
-  { question: 'How do timezones complicate flash drops?', answer: 'National drops need rolling sends by timezone or a single window that respects all zones (typically 12–5pm ET coverage). Never fire one national blast at 9am ET — West Coast recipients get a 6am wake-up and remember it at opt-out time.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -208,6 +199,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="Send timing FAQ" />
   </section>
 </BaseLayout>

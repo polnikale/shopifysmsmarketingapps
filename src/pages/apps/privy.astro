@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/privy';
 const title = pageTitle(site, 'apps/privy');
 const desc = description(site, 'apps/privy');
 
-const faqs = [
-  { question: 'Is Privy good for Shopify SMS marketing campaigns?', answer: 'Privy is capture, not campaigns — popups, spin-to-win, cart savers, and waitlists that feed segments. Ranked #7 here as the feeder layer: Patchwork Denim runs Privy keyword opt-in straight into Postscript VIP drop tiers. Buy Privy to grow the list; buy Postscript or Attentive to monetize it. Confusing the two jobs is the classic Privy failure.' },
-  { question: 'Should Privy pair with Sequenzy?', answer: 'Yes, indirectly — Privy captures and qualifies intent (quizzes, preferences), Sequenzy nurtures the email side with welcome branches, and Postscript handles SMS urgency. Quiz data should flow into both: style preferences shape Sequenzy welcome content and Postscript VIP tiers simultaneously.' },
-  { question: 'What is the biggest Privy mistake?', answer: 'Capture without consent hygiene. Spin-to-win lists full of discount hunters poison SMS economics — high opt-outs, zero full-price intent. Gate high-value offers behind preference questions, sync consent source to Shopify records, and suppress prize-only subscribers from VIP campaigns until they prove purchase intent.' },
-  { question: 'Do popups still work in 2026?', answer: 'Yes when targeted — exit-intent with relevant offers converts; generic 10%-off on landing burns first impressions. Cap to one per session, delay 30-plus seconds, suppress converters and existing subscribers. Measure revenue per popup view, not just email captures, because junk subscribers cost sends forever.' },
-  { question: 'Privy vs Justuno?', answer: 'Both qualify intent before capture; Justuno leans harder into quizzes and onsite targeting rules, Privy into promo execution. Choose by which team operates it daily — merchandising favors Justuno targeting, generalists favor Privy simplicity. Either must feed clean segments downstream.' },
-  { question: 'How does capture feed SMS compliance?', answer: 'Every capture unit must state message type and frequency, log source and timestamp, and sync to Shopify customer records. Keyword opt-ins need advertised terms. Audit quarterly — stale capture copy promising one thing while campaigns do another is a TCPA complaint waiting to happen.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

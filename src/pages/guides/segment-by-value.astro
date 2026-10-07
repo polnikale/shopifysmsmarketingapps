@@ -2,21 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description } from '../../content';
 
 const path = '/guides/segment-by-value';
 const title = 'Segment by Value for SMS Marketing | Shopify SMS Marketing';
 const desc = description(site, 'guides/segment-by-value');
 
-const faqs = [
-  { question: 'How does segment-by-value work for SMS campaigns?', answer: 'Segment-by-value sends different offers through different channels by customer worth: full-price loyalists get early access without codes, engaged prospects get light incentives, bargain-sensitive cohorts get controlled discounts in email first. Arena-style affinity logic applies — SMS to the segment where timing matters, email where education matters. Same product, three treatments, zero margin leakage between them.' },
-  { question: 'Which apps support this playbook?', answer: 'Postscript for SMS campaign execution with segment controls and broadcast caps. Attentive at enterprise scale with predictive tiers. Sequenzy as lifecycle email layer beside dedicated SMS senders. All three execute segments; the segmentation strategy itself is operator-owned.' },
-  { question: 'What is the first step?', answer: 'Build three segments from order history today: full-price repeat buyers (protect), engaged non-buyers (nurture), discount-only buyers (contain). Assign each a channel mix and offer ceiling before the next campaign. Most teams discover their list was one segment wearing three costumes.' },
-  { question: 'How often to review?', answer: 'Weekly during active seasons (segment migration, margin by tier, opt-out by tier); monthly at steady state. Audit before every product drop. Segments drift as behavior changes — quarterly rebuilds keep targeting honest.' },
-  { question: 'What is RFM and do I need it?', answer: 'Recency, Frequency, Monetary value — the classic trio for value tiers. Full RFM modeling pays off above mid-market complexity; below that, simple rules (orders count, days since last order, total spend) capture 80% of the value. Start simple, model later.' },
-  { question: 'How do I stop discount-trained buyers?', answer: 'Gradually: move bargain segments to email-first offers with shrinking depth, reserve SMS for non-discount urgency (restocks, access, deadlines), and never broadcast codes store-wide. Retraining takes quarters; the alternative is permanent margin erosion.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -208,6 +199,5 @@ const faqs = [
       <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
       <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
     </div>
-    <FaqSection faqs={faqs} title="Segment by value FAQ" />
   </section>
 </BaseLayout>

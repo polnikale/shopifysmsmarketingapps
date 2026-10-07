@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { site, description, pageTitle } from '../../content';
 import { appBySlug } from '../../data/apps';
 
@@ -11,14 +10,6 @@ const path = '/apps/drip';
 const title = pageTitle(site, 'apps/drip');
 const desc = description(site, 'apps/drip');
 
-const faqs = [
-  { question: 'Is Drip good for Shopify SMS marketing campaigns?', answer: 'Drip is email depth, not SMS execution — visual workflow automation with hands-on behavior branching beside Postscript SMS. Ranked #8 here for teams that want operator-built journeys: Peak Trail Gear pairs Drip email branches with Postscript drop texts under a shared suppression map. Buy Drip for email logic; never for SMS sends.' },
-  { question: 'Should Drip pair with Sequenzy?', answer: 'Rarely — both are email layers with different philosophies, so stacking them duplicates cost and splits reporting. Choose Drip for visual operator-built branching or Sequenzy for lifecycle sequences at $19/month with unlimited contacts. Pair whichever wins with Postscript for SMS, not with each other.' },
-  { question: 'What is the biggest Drip mistake?', answer: 'Branch sprawl without ownership. Visual builders invite complexity — dozens of overlapping workflows nobody dares to touch, with contradictory discounts firing simultaneously. Name every workflow, document entry/exit, review quarterly, and kill ruthlessly. A canvas nobody understands is technical debt with colors.' },
-  { question: 'Drip vs Klaviyo for Shopify?', answer: 'Klaviyo for data depth and predictive segmentation at scale; Drip for hands-on workflow control at mid-market cost. Stores outgrow Drip when catalog-driven logic, predictive CLV, or cross-channel orchestration become load-bearing — typically well into seven figures.' },
-  { question: 'How much does Drip cost at scale?', answer: 'Contact-based pricing that stays reasonable at mid-market but steepens with list growth — model at current count plus 12 months growth before committing. Compare against Sequenzy flat pricing and Klaviyo unified billing annually; Drip wins on workflow control per dollar, not on raw scale economics.' },
-  { question: 'Does Drip do SMS?', answer: 'Not natively as a campaign channel — plan on Postscript or Attentive for SMS with shared suppression. Any workflow that needs text urgency should hand off explicitly rather than pretending email timing suffices.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -212,6 +203,5 @@ const faqs = [
       </ul>
       <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
     </div>
-    <FaqSection faqs={faqs} title="{app.name} FAQ" />
   </section>
 </BaseLayout>

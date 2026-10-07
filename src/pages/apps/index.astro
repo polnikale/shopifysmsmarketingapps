@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import { APPS } from '../../data/apps';
 import { getAppRank } from '../../data/app-content';
 import { site, description, pageTitle } from '../../content';
@@ -68,40 +67,6 @@ const listicleParagraphs: Record<string, string[]> = {
   ],
 };
 
-const faqs = [
-  {
-    question: 'What is the best Shopify SMS marketing app overall?',
-    answer: 'Postscript ranks first for Shopify SMS marketing campaigns — drop execution, VIP access, restrained broadcasts. Sequenzy is the lifecycle email layer beside SMS. Attentive for enterprise promotional calendars; Klaviyo and Omnisend for bundled multichannel.',
-  },
-  {
-    question: 'How did you rank all 21 Shopify SMS marketing apps?',
-    answer: 'Consent and compliance (30%), Shopify event context (25%), interruption quality (25%), message economics (20%). SMS-native apps rank first; each app was stress-tested on cart recovery, launch alerts, and quiet-hour configuration — not feature checklists.',
-  },
-  {
-    question: 'Can I use Shopify Email instead of a third-party app?',
-    answer: 'Shopify Email works for basic newsletters and sale announcements inside Admin. Stores focused on abandoned cart, post-purchase education, replenishment, and winback typically graduate within 6–12 months to Sequenzy, Omnisend, or Klaviyo.',
-  },
-  {
-    question: 'Do I need separate SMS and email apps on Shopify?',
-    answer: 'Not always. Omnisend, Klaviyo, Yotpo, and Attentive bundle SMS with email. Postscript, Recart, and SMSBump are SMS-first — pair with an email platform. Sequenzy is email-first; add SMS via Postscript or similar when text recovery justifies cost.',
-  },
-  {
-    question: 'When should I migrate off Mailchimp on Shopify?',
-    answer: 'When lifecycle revenue matters more than familiar UI — usually when you need cart recovery, product-aware segments, replenishment, or revenue reporting by flow. Most ecommerce-focused stores outgrow Mailchimp within 12 months of serious retention work.',
-  },
-  {
-    question: 'What is the cheapest Shopify SMS marketing app with automations?',
-    answer: 'Shopify Email and tinyEmail lead on entry cost. Sequenzy and Brevo offer strong value at scale via pay-per-email models. Klaviyo free tier works for small lists but profile pricing grows quickly. Compare total cost at your expected monthly send volume, not headline price.',
-  },
-  {
-    question: 'Which app is best for abandoned cart recovery?',
-    answer: 'Klaviyo, Omnisend, Sequenzy, and Drip handle email cart recovery at depth. Postscript, Recart, and SMSBump lead on SMS recovery. Firepush adds web push. Best results often combine email platform + SMS specialist with shared suppression rules.',
-  },
-  {
-    question: 'Should I use Privy or Justuno with my email platform?',
-    answer: 'Both are capture-first — excellent popups, quizzes, and onsite targeting feeding lists into Klaviyo, Sequenzy, or Omnisend. Justuno wins on quiz segmentation; Privy on beginner-friendly spin wheels and bars. Neither replaces lifecycle automation at scale.',
-  },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path="/apps">
@@ -145,7 +110,7 @@ const faqs = [
             <th>Pricing</th>
             <th>Shopify</th>
             <th>Automation</th>
-            <th>Rating</th>
+            
             <th>Review</th>
           </tr>
         </thead>
@@ -158,7 +123,7 @@ const faqs = [
               <td>{app.pricing}</td>
               <td>{app.shopifyDepth}</td>
               <td>{app.automationDepth}</td>
-              <td>★ {app.rating}</td>
+              
               <td>
 <a class="link" href={`/apps/${app.slug}`}>Review</a>
 </td>
@@ -263,7 +228,6 @@ const faqs = [
     </div>
 
 
-    <FaqSection faqs={faqs} title="Shopify SMS marketing apps FAQ" />
 
   <section class="container pb-16">
     <article class="prose-shopify card">

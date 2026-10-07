@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import ToolReview from '../../components/ToolReview.astro';
 import { site, description, pageTitle } from '../../content';
 import { segmentBySlug } from '../../data/segments';
@@ -13,14 +12,6 @@ const path = '/for/food-and-beverage';
 const title = pageTitle(site, 'for/food-and-beverage');
 const desc = description(site, 'for/food-and-beverage');
 
-const faqs = [
-  { question: 'What is the best Shopify SMS marketing app for food and beverage brands?', answer: 'Postscript ranks first for flavor-drop timing and replenishment urgency. Attentive when enterprise volume justifies managed scale. Sequenzy is the lifecycle email layer beside SMS for recipes, subscriptions, and winback. Consumables live on timing — run-out windows and batch drops are SMS-native moments.' },
-  { question: 'How should food and beverage brands build a campaign calendar?', answer: 'Around flavor launches, seasonal peaks, and replenishment cycles planned quarterly. Vinyl-style scarcity applies: limited batches disclosed upfront with texts only to waitlists and repeat buyers. Max 2–4 SMS slots per month plus replenishment reminders driven by actual run-out data.' },
-  { question: 'Should food and beverage brands pair SMS with email?', answer: 'Yes — SMS for drop timing, restock alerts, and subscription windows; Sequenzy email for recipes, brand story, and winback arcs. Taste cannot be texted; timing can. Split accordingly with documented handoffs.' },
-  { question: 'How does offer discipline apply to food and beverage brands?', answer: 'Three-rung ladder: no-offer early access for subscribers, light incentive (free sample with order) for warm segments, deeper discount only with margin math. Segment by value — high-LTV subscribers get first access, bargain hunters get clearance. Never invert the two.' },
-  { question: 'How do subscriptions change SMS strategy?', answer: 'Subscribers need skip/pause reminders before boxes ship (retention gold) and suppression from all acquisition promos — texting discounts to full-price subscribers manufactures churn. Ridge Run audits apply directly: collision checks between subscription flows and flash blasts, quarterly.' },
-  { question: 'What about perishability and shipping windows?', answer: 'Heat-sensitive and fresh products make shipping deadlines SMS-worthy: order-by texts before cutoff dates convert reliably and reduce support load. Build the calendar around fulfillment realities, not marketing wishes.' },
-];
 ---
 
 <BaseLayout title={title} description={desc} site={site} path={path}>
@@ -233,6 +224,5 @@ const faqs = [
       </ul>
       <p>For matchup-level decisions, the head-to-head pages (start with <a class="link" href="/compare/postscript-vs-attentive">Postscript vs Attentive</a> and <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a>) carry the same consent, suppression, and margin worksheets applied pairwise. If you are replacing a platform entirely, read the migration notes in <a class="link" href="/alternatives">the alternatives directory</a> first — consent evidence migrates before anything else.</p>
     </div>
-    <FaqSection faqs={faqs} title="FAQ: SMS marketing for food and beverage brands" />
   </section>
 </BaseLayout>
