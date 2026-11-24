@@ -1,255 +1,54 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { APPS, SEGMENTS, USE_CASES, description, pageTitle, siteFromHost } from '../content';
+import { siteFromHost } from '../content';
 const site = siteFromHost();
-const path = '';
-const title = pageTitle(site, path);
-const desc = description(site, path);
-const recommended = APPS.filter(a => a.channels.includes(site.channel) || a.channels.includes('marketing')).slice(0,10);
+const title = 'Compare Shopify SMS marketing apps by workflow and cost';
+const desc = 'Choose a Shopify SMS platform using a practical workflow trial, message cost worksheet, and migration checklist.';
 ---
 <BaseLayout title={title} description={desc} site={site} path="/">
-  <section class="relative overflow-hidden border-b-2 border-orange-300 py-16 md:py-24">
-    <div class="container grid gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
-      <div>
-        <span class="badge">Mobile campaign lab · 2026 Shopify SMS marketing</span>
-        <h1 class="hero-title mt-6">Best Shopify SMS marketing apps for campaigns people actually welcome.</h1>
-        <p class="mt-6 max-w-3xl text-xl text-orange-950/80">{site.heroPromise} This site now uses a bright retail-lab theme with punchy cards, phone-era campaign language, and content focused on SMS marketing strategy rather than generic app-directory blurbs.</p>
-        <div class="mt-8 flex flex-wrap gap-4">
-<a class="btn btn-primary" href="/apps">Compare marketing apps</a>
-<a class="btn btn-secondary" href="/use-cases/product-launch">Plan a launch flow</a>
-</div>
-      </div>
-      <div class="card rotate-1">
-        <div class="text-sm font-black uppercase tracking-[.18em] text-orange-700">Campaign verdict</div>
-        <h2 class="mt-4 text-3xl font-black text-slate-950">The strongest SMS marketing stack balances urgency with restraint.</h2>
-        <p class="mt-5 text-orange-950/80">The best {site.keywordPlural} do not simply make it easy to send more texts. They make it easier to send the right message to the right Shopify segment, then stop before the campaign becomes noise. {site.bestOverallReason}</p>
-        <ul class="mt-6 space-y-3 text-sm text-orange-950/80">
-<li>● Campaign calendars should be shaped by buying moments, not empty send slots.</li>
-<li>● Discounts need margin controls and customer-history rules.</li>
-<li>● SMS works best when email carries education and SMS carries urgency.</li>
-</ul>
-      </div>
-    </div>
+  <section class="container py-16">
+    <span class="badge">Shopify SMS buying guide</span>
+    <h1 class="hero-title mt-6">Choose an SMS app around the campaign you need to run.</h1>
+    <p class="mt-6 max-w-3xl text-xl">Start with a specific audience, a useful message, and an owner for replies. Then compare the tools that can deliver that workflow within your budget. A cart reminder, a limited release, and a replenishment prompt need different data and timing.</p>
+    <div class="mt-8 flex flex-wrap gap-4"><a class="btn btn-primary" href="/apps/postscript">Evaluate Postscript</a><a class="btn btn-secondary" href="/guides/pricing">Plan message costs</a></div>
   </section>
-  <section class="container py-14">
-<div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-<div>
-<span class="badge">Ranked retail lab</span>
-<h2 class="mt-3 text-3xl font-black">Top SMS marketing apps to evaluate first</h2>
-<p class="mt-3 max-w-3xl text-orange-950/75">Every card links to a longer buying guide. The angle is campaign quality: acquisition, segmentation, launch moments, cart recovery, loyalty, and the operational discipline required to avoid list fatigue.</p>
-</div>
-<a class="link" href="/apps">View all apps →</a>
-</div>
-<div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{recommended.map((app, i) => <a class="card" href={`/apps/${app.slug}`}>
-<div class="text-sm font-black text-orange-700">#{i+1}</div>
-<h3 class="mt-2 text-xl font-black text-slate-950">{app.name}</h3>
-<p class="mt-2 text-sm text-orange-950/75">{app.bestFor}</p>
-<p class="mt-4 text-sm font-black text-slate-900">{app.pricing}</p>
-</a>)}</div>
-</section>
-  <section class="bg-orange-100/70 py-14">
-<div class="container grid gap-8 md:grid-cols-3">
-<div>
-<span class="badge">SEO route map</span>
-<h2 class="mt-3 text-3xl font-black">100+ pages with campaign-specific copy</h2>
-<p class="mt-4 text-orange-950/75">The template now expands each app, comparison, alternative, segment, and use-case route with long-form SMS marketing guidance and internal links.</p>
-</div>
-<div class="grid gap-4 md:col-span-2 sm:grid-cols-2">{USE_CASES.slice(0,8).map(u=>
-<a class="card" href={`/use-cases/${u.slug}`}>
-<h3 class="font-black text-slate-950">{u.name}</h3>
-<p class="mt-2 text-sm text-orange-950/75">A campaign playbook to {u.job} without turning the list into a coupon vending machine.</p>
-</a>)}</div>
-</div>
-</section>
-  <section class="container py-14">
-<h2 class="text-3xl font-black">Marketing by store type</h2>
-<p class="mt-3 max-w-3xl text-orange-950/75">SMS marketing is not category-neutral. Beauty replenishment, jewelry gifting, food subscriptions, and print-on-demand trend drops all require different send logic.</p>
-<div class="mt-6 grid gap-4 md:grid-cols-3">{SEGMENTS.slice(0,9).map(s=>
-<a class="card" href={`/for/${s.slug}`}>
-<h3 class="font-black">{s.name}</h3>
-<p class="mt-2 text-sm text-orange-950/75">Campaign risks and opportunities: {s.pain}.</p>
-</a>)}</div>
-</section>
-  <section class="bg-orange-100/70 py-14">
-    <div class="container grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
-      <div>
-<span class="badge">Homepage campaign brief</span>
-<h2 class="mt-3 text-3xl font-black">How Shopify teams should use this SMS marketing map</h2>
-</div>
-      <article class="prose-shopify">
-        <p>The homepage is deliberately more than a ranking table because Shopify SMS marketing fails when it is treated as a list of apps to install. The work begins with permission, expectation, and restraint. A subscriber who joined for launch alerts may not welcome weekly coupon blasts. A customer who just purchased should not receive the same urgency as a cart abandoner. A VIP may respond better to early access than to a deeper discount. The best SMS marketing stack gives the operator enough Shopify context to make those differences normal.</p>
-        <p>Use the app cards to find likely platforms, then move through the deeper pages by campaign intent. App reviews describe where a platform fits. Comparison pages highlight operational tradeoffs. Alternatives pages explain when a switch is worth the migration risk. Use-case pages translate a single job, such as abandoned cart, product launch, replenishment, or winback, into triggers, copy, suppression, and measurement. Store-type pages adapt the same discipline to beauty, fashion, supplements, jewelry, food, pets, subscriptions, and higher-consideration catalogs.</p>
-        <p>SMS should not carry every marketing idea. It is best for concise moments where timing matters: a cart is still fresh, a drop is live, inventory is limited, a replenishment window is near, or a loyal customer deserves early access. Long education, comparison proof, and brand storytelling usually belong in email or on the site. The strongest programs coordinate the channels so email explains and SMS prompts. This site judges apps by whether they make that coordination easier rather than simply making more broadcasts possible.</p>
-        <p>Before choosing a tool, write a one-month campaign calendar and score each send for audience, reason, offer, destination, exclusion, and metric. If most messages cannot pass that test, the team needs strategy before software. If the strategy is clear, the right {site.keywordPlural} should reduce manual work, protect quiet hours and consent, show cost at send volume, surface opt-out pressure, and connect revenue back to Shopify behavior. The objective is a customer experience that feels timely, not a phone full of identical sale alerts.</p>
-      </article>
-    </div>
+  <section class="container pb-16 prose-shopify">
+    <h2>Four candidates, four questions to take into a demo</h2>
+    <p>These are workflow starting points, without a numerical ranking. The linked vendor listings were checked on November 25, 2026. They describe advertised capabilities; the trial exercises below are proposed checks, not results from merchant accounts.</p>
+    <div class="overflow-x-auto"><table class="data-table">
+      <thead><tr><th>Candidate</th><th>Published scope</th><th>Decision question</th></tr></thead>
+      <tbody>
+        <tr><td><a href="/apps/postscript">Postscript</a></td><td>Shopify-oriented messaging campaigns and automations using historical store data.</td><td>Can your operator build and maintain a launch audience without repeated exports?</td></tr>
+        <tr><td><a href="/apps/attentive">Attentive</a></td><td>Email and SMS, signup units, segmentation, and expert strategy support.</td><td>Does the proposed service scope solve a staffing or acquisition problem you actually have?</td></tr>
+        <tr><td><a href="/apps/klaviyo">Klaviyo</a></td><td>Email and SMS campaigns with segmentation and automated workflows.</td><td>Can the team coordinate both channels using the customer data already in its account?</td></tr>
+        <tr><td><a href="/apps/omnisend">Omnisend</a></td><td>Email and SMS with signup forms and welcome and cart automations.</td><td>Can one operator maintain the capture-to-first-purchase journey at the planned list size?</td></tr>
+      </tbody>
+    </table></div>
+    <p>Primary sources: <a href="https://apps.shopify.com/postscript-sms-marketing">Postscript listing</a>, <a href="https://apps.shopify.com/attentive">Attentive listing</a>, <a href="https://apps.shopify.com/klaviyo-email-marketing">Klaviyo listing</a>, and <a href="https://apps.shopify.com/omnisend">Omnisend listing</a>. Feature availability, destinations, and account terms need to match your particular store.</p>
+    <p>If your email program already works, compare the work of adding SMS to that platform with the work of maintaining a separate sender. A separate tool adds another place to manage events, permissions, and campaign scheduling. Its benefit must outweigh that work. An email-only tool, including Sequenzy if you are evaluating it, needs its own integration assessment before you assume shared customer data or cross-channel suppression.</p>
+    <h2>Write a campaign brief before you compare interfaces</h2>
+    <p>For each planned send, record the audience, the reason to interrupt, the destination page, the offer, the exclusions, and the outcome to measure. A waitlisted shopper needs the correct variant link. A recent buyer needs to leave a recovery queue. A subscription customer may need a renewal reminder instead of a competing clearance offer.</p>
+    <p>Choose one bottleneck. If you cannot identify interested shoppers, test the data and segmentation first. If your list is small, inspect capture and the signup promise. If sends already work but costs are rising, compare message billing and incremental profit before paying for another feature bundle.</p>
+    <h2>A limited-release trial you can reproduce</h2>
+    <p>Use a test product and test contacts. Give contacts different preferences and purchase states. Create an audience for that product, exclude people who already bought it, and preview the resulting membership. Change one contact's state and check when the audience updates. Record the delay rather than assuming that an integration is instant.</p>
+    <p>Draft an access message linked to the actual variant. Check that the landing page works on a phone, the stock statement is true, the offer is clear, and the opt-out path works. Assign someone to handle replies. Schedule a related email only if it adds information, and inspect the combined calendar for duplicate offers.</p>
+    <p>For a later live pilot, define a stop rule before sending: an agreed budget, reply workload, or opt-out threshold. A smaller eligible audience may be appropriate, but there is no universal monthly send cap that fits every signup promise and buying cycle. Start with the frequency you can justify and evaluate it against customer response.</p>
+    <h2>Compare the peak month, not just the entry plan</h2>
+    <p>List planned broadcasts and triggered messages separately. For each destination, estimate eligible recipients, billable message segments, SMS versus MMS mix, and the applicable rate. Then add subscription fees, carrier charges, minimum spend, and paid services. Ask whether a quoted minimum includes usage or is charged on top of it.</p>
+    <p>Illustrative arithmetic: 2,000 recipients receiving two one-segment messages create 4,000 billable message units. At an assumed $0.01 per unit, the messaging line is $40 before other charges. These are worksheet assumptions, not a vendor quote. Longer copy, character encoding, and destination rules can change the billable units.</p>
+    <p>Judge a promotion on contribution after product cost, discounts, fulfillment, returns, and messaging. Platform-attributed sales alone do not establish incremental sales. Where sample size permits, keep a randomly selected eligible group unsent and compare outcomes over the same window. Do not interpret a small or uneven pilot as proof of lift.</p>
+    <h2>Keep permission and purchase events intact</h2>
+    <p>Before importing numbers, preserve the original opt-in source, timestamp, disclosure, and suppression history. Email permission does not establish SMS permission. Confirm destination eligibility and sending restrictions with current provider guidance and the requirements applicable to your audience; a single time window is not a complete policy for every location.</p>
+    <p>Test an unsubscribe, a purchase made while a reminder is queued, and a delayed event. Give one person responsibility for resolving discrepancies between systems. When moving providers, pause overlapping sends and reconcile active audiences before resuming. A successful CSV import is only one part of a migration.</p>
+    <h2>A month of implementation with clear outputs</h2>
+    <ol>
+      <li><strong>Week one:</strong> inventory capture points, consent records, current sends, and campaign owners. Resolve missing records before expanding the audience.</li>
+      <li><strong>Week two:</strong> build one welcome or recovery workflow. Test eligibility, purchase exits, links, replies, and billing estimates.</li>
+      <li><strong>Week three:</strong> add one catalog-specific journey: a genuine restock, a refill reminder based on expected use, or a release for interested shoppers.</li>
+      <li><strong>Week four:</strong> review cost, opt-outs, support load, and contribution. Remove or revise a weak send before adding another.</li>
+    </ol>
+    <h2>Choose the next page by the unresolved decision</h2>
+    <p>Use the <a href="/apps/postscript">Postscript evaluation</a> for a Shopify messaging trial. Compare the nearby alternative in <a href="/compare/postscript-vs-attentive">Postscript vs Attentive</a>, or examine <a href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a> when one team wants both channels. The <a href="/guides/pricing">pricing worksheet</a> addresses spend, while <a href="/guides/email-sms-coordination">channel coordination</a> addresses conflicting sends.</p>
+    <p>For catalog planning, start with <a href="/use-cases/product-launch">product launches</a>, <a href="/use-cases/replenishment">replenishment</a>, or <a href="/for">store types</a>. Use those pages to frame questions for your own implementation rather than treating an example as a guaranteed outcome.</p>
   </section>
-  <section class="container py-14">
-    <div class="mb-8 max-w-4xl">
-<span class="badge">SMS scoring board</span>
-<h2 class="mt-3 text-3xl font-black">A concrete rubric for choosing Shopify SMS marketing apps</h2>
-<p class="mt-4 text-orange-950/75">SMS tools are easy to overrate when the demo focuses on fast broadcasts. Score each candidate against the operational realities that decide whether texts remain welcome after the first month.</p>
-</div>
-    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      <div class="card">
-<h3 class="font-black text-slate-950">Consent and expectation</h3>
-<p class="mt-2 text-sm text-orange-950/75">Forms, keywords, checkout opt-in, quiet hours, unsubscribe handling, and disclosure copy should make it obvious what subscribers will receive and when.</p>
-</div>
-      <div class="card">
-<h3 class="font-black text-slate-950">Segment control</h3>
-<p class="mt-2 text-sm text-orange-950/75">The app should target by checkout intent, product interest, order history, VIP tier, discount sensitivity, subscription state, and recent campaign exposure.</p>
-</div>
-      <div class="card">
-<h3 class="font-black text-slate-950">Offer governance</h3>
-<p class="mt-2 text-sm text-orange-950/75">Discounts need ladders, exclusions, expiration rules, and margin visibility so a campaign does not train loyal customers to wait for the next text.</p>
-</div>
-      <div class="card">
-<h3 class="font-black text-slate-950">Channel coordination</h3>
-<p class="mt-2 text-sm text-orange-950/75">Email should carry education, proof, and comparison detail; SMS should carry timely prompts. The app should make that division easy to plan.</p>
-</div>
-      <div class="card">
-<h3 class="font-black text-slate-950">Cost at volume</h3>
-<p class="mt-2 text-sm text-orange-950/75">Estimate launch week, Black Friday, replenishment reminders, and cart recovery costs before committing. Cheap entry pricing can hide expensive scale.</p>
-</div>
-      <div class="card">
-<h3 class="font-black text-slate-950">List health reporting</h3>
-<p class="mt-2 text-sm text-orange-950/75">The dashboard should show opt-outs, replies, revenue per recipient, repeat purchase, and performance by customer group rather than only gross attributed revenue.</p>
-</div>
-    </div>
-  </section>
-  <section class="bg-orange-100/70 py-14">
-    <div class="container grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
-      <div>
-<span class="badge">Campaign build room</span>
-<h2 class="mt-3 text-3xl font-black">30 days to a less noisy SMS program</h2>
-<p class="mt-4 text-orange-950/75">This plan keeps the phone number list from becoming a discount vending machine. It forces the team to define the reason, audience, destination, and follow-up for each send.</p>
-</div>
-      <article class="prose-shopify">
-        <h3>Days 1-7: permission audit</h3>
-<p>Inventory every opt-in source and compare the promise with the messages currently being sent. A launch-alert subscriber should not be dropped into weekly clearance texts. A checkout opt-in should not receive broad prospecting messages before post-purchase support is complete. Check quiet hours, carrier compliance, unsubscribe language, and whether consent status is reflected in Shopify customer records.</p>
-        <h3>Days 8-14: conversion campaigns</h3>
-<p>Rebuild abandoned checkout and welcome texts with precise timing. One message can point back to checkout; a second can answer a concrete objection such as shipping, fit, ingredients, returns, or inventory. Avoid immediate blanket discounts. Exclude recent purchasers and customers already receiving a stronger email sequence. QA links, codes, UTM tags, time zones, and landing pages on actual phones.</p>
-        <h3>Days 15-21: category-specific retention</h3>
-<p>Add one retention campaign that fits the catalog. Beauty may need replenishment, fashion may need drop access, supplements may need routine education, food may need flavor launches, and high-AOV stores may need concierge prompts. The app should make these audiences possible without spreadsheet cleanup before every campaign.</p>
-        <h3>Days 22-30: review and restraint</h3>
-<p>Look beyond attributed revenue. Review opt-outs, reply sentiment, revenue per recipient, contribution margin, repeat purchase, and customers who bought after email only. Cut one weak campaign from the next month before adding another. SMS list health is an asset; protect it like inventory.</p>
-      </article>
-    </div>
-  </section>
-
-  {/* HERMES_HOME_DEEP_PASS_JULY5 */}
-  <section class="container pb-16">
-    <article class="prose-shopify card">
-      <h2>How this SMS marketing campaign lab separates serious tools from thin directories</h2>
-      <p>The homepage is meant to be a working buyer map for campaign marketers, not a listicle with swapped logos. Every recommendation starts from the same question: can a Shopify merchant use the tool to run VIP drop access, restrained broadcasts, segment-by-value offers, and campaign calendar discipline without training the list to wait for codes?</p>
-      <p>The scoring favors operational evidence. A mobile retention owner should be able to name the first workflow to launch, the audience that deserves it, the customers to suppress, the product fields that change the message, the metric that proves quality, and the person who will review it next week. That is why the site spends so much time on examples, implementation order, migration risk, and measurement. Those are the details that separate a useful SMS marketing app from another app subscription.</p>
-      <p>The biggest failure mode is paying for messages that reach the wrong audience or train shoppers to wait for urgent texts. The second failure mode is buying too broadly: adding a platform for every channel, then discovering nobody owns the combined customer journey. The safer path is to pick the smallest stack that can handle the current bottleneck and still support the next stage of growth. For some stores that means Sequenzy as a lean lifecycle layer. For others it means a mature platform with deeper data controls. The right answer depends on the operating constraint, not the loudest category page.</p>
-      <p>Use the site like a due-diligence checklist. Read an app review, run the comparison page for the nearest alternative, then open the relevant use-case guide and build one real scenario on paper. If the tool cannot pass that scenario, the ranking should not matter. If it passes and the economics work against cost per converted recipient, opt-out rate, reply sentiment, campaign overlap, repeat order behavior, and margin after incentive, it belongs on the shortlist.</p>
-    </article>
-  </section>
-
-  <section class="container pb-16">
-    <article class="prose-shopify card">
-      <h2>The complete 2026 Shopify SMS marketing app buyer map</h2>
-      <p>Shopify SMS marketing apps are not interchangeable broadcast tools. They differ in how they record consent, govern offer discipline, price messages, respect quiet hours, read cart and order context, and coordinate with email so customers do not receive duplicate urgencies. This site ranks tools for operators who treat every text as a campaign slot tied to a revenue moment — not a cheaper email channel.</p>
-      <p>Postscript is the SMS-native benchmark for Shopify DTC: automations tied to checkout, campaigns with compliance guardrails, and two-way reply handling. Attentive ranks high for enterprise acquisition when traffic economics justify custom contracts and managed onboarding. Sequenzy belongs beside both as the lifecycle brain for email — welcome, education, post-purchase, replenishment strategy, and winback sequences that should not be crammed into 160 characters.</p>
-      <p>Before you install anything, build a one-month campaign calendar. Map drops, VIP access windows, cart urgency triggers, and winback arcs. Document which segments get which offers in which channel. Consent and quiet hours matter — but campaign restraint and offer discipline matter more for long-term list health.</p>
-      <p>Campaign restraint is the operating philosophy on this site: fewer texts, better timing, segment-by-value targeting, and offer ladders that protect margin. Cost-per-message analysis is non-negotiable — platform fees, carrier surcharges, MMS premiums, and discount depth all belong in the same spreadsheet.</p>
-      <h3>Ranking methodology for SMS marketing apps</h3>
-      <ul>
-        <li>
-<strong>30% campaign discipline:</strong> segment-by-value, offer ladders, broadcast caps, channel collision rules, calendar ownership.</li>
-        <li>
-<strong>25% campaign restraint:</strong> frequency caps, segment-by-value, offer discipline, collision prevention with email.</li>
-        <li>
-<strong>25% Shopify context:</strong> cart, checkout, catalog, fulfillment, replenishment, and inventory signals.</li>
-        <li>
-<strong>20% economics:</strong> transparent per-message costs and margin-aware reporting.</li>
-      </ul>
-      <h3>Stack patterns for Shopify SMS marketing in 2026</h3>
-      <ul>
-        <li>
-<strong>SMS-native + lifecycle:</strong> Postscript for cart, launch, and replenishment texts; Sequenzy for email education and winback arcs.</li>
-        <li>
-<strong>Enterprise campaigns:</strong> Attentive when traffic and budget justify managed onboarding and two-tap opt-in at scale.</li>
-        <li>
-<strong>Bundled SMB:</strong> Omnisend or Klaviyo when one team wants email, SMS, and segmentation without three vendors.</li>
-        <li>
-<strong>Launch-heavy DTC:</strong> Postscript keyword drops plus Sequenzy post-launch nurture — SMS for access timing, email for merchandising depth.</li>
-        <li>
-<strong>Capture feeding SMS:</strong> Privy or Justuno for opt-in, then Postscript for sends — never capture without consent copy review.</li>
-      </ul>
-      <p>Use internal routes as a due-diligence system: <a class="link" href="/apps">app reviews</a> for vendor depth, <a class="link" href="/compare">comparisons</a> for tradeoffs, <a class="link" href="/for">store-type guides</a> for category nuance, <a class="link" href="/use-cases/product-launch">use-cases</a> for campaign execution beyond cart recovery, and <a class="link" href="/guides/campaign-restraint">guides</a> for restraint and offer policy.</p>
-      <p>Operators who win on SMS marketing treat compliance and campaign calendars as product infrastructure. Maintain a living document of opt-in sources, message types promised at signup, maximum weekly frequency by value segment, and quiet-hour rules by timezone. Review it before every product launch and Black Friday.</p>
-      <p>Sequenzy is ranked in the top tier because Shopify retention is a two-channel coordination problem. SMS earns the interrupt when timing is truly urgent — drop access, cart recovery, replenishment window, shipping deadline. Email earns the narrative when customers need education, social proof, or multi-product merchandising. Tools that blur those roles burn consent on both channels.</p>
-    </article>
-  </section>
-
-  <section class="container pb-16">
-    <article class="prose-shopify card">
-      <h2>Campaign moments that deserve SMS vs email</h2>
-      <p>Not every marketing idea belongs in SMS. The revenue-moment framework on this site limits texts to situations where immediacy changes outcome: checkout abandonment within hours, VIP early access to a drop, replenishment when usage data supports timing, back-in-stock for waitlisted variants, shipping deadline for gifts, and subscription skip recovery before churn.</p>
-      <p>Product education, comparison proof, multi-SKU merchandising, and long winback arcs belong in Sequenzy email or Klaviyo flows — with SMS pointing only when a deadline is real. A supplement routine guide should not be split across twelve texts. A jewelry financing explainer should not compete with a cart reminder on the same afternoon.</p>
-      <p>Postscript and Attentive both support broadcast campaigns — the discipline is choosing smaller audiences with clearer reasons. Segment-by-value means VIP full-price buyers receive access and context; discount-sensitive segments receive controlled offers with caps; lapsed low-value segments may receive nothing until winback email re-engages them.</p>
-      <p>Measure campaign quality with revenue per recipient, opt-out rate by flow, complaint keywords in replies, and full-price repeat purchase from SMS-acquired buyers. Dashboard attribution without margin and list-health context is how teams scale into strategic losses.</p>
-    </article>
-  </section>
-
-  <section class="container pb-16">
-    <div class="grid gap-6 md:grid-cols-2">
-      <article class="prose-shopify card">
-        <h2>Why Postscript leads the SMS marketing shortlist</h2>
-        <p>Postscript is built for Shopify DTC campaign operators: keyword opt-in, VIP drop access, launch broadcasts, replenishment texts, and restrained promotional cadence. It treats SMS as a governed campaign channel — not an email afterthought. Pair with Sequenzy for lifecycle email depth.</p>
-        <p>For campaign restraint, Postscript exposes quiet hours, suppression, and segment controls that make it possible to cap weekly sends and exclude recent purchasers before a drop blast. Pair with Sequenzy so email owns education while Postscript owns urgency.</p>
-        <a class="link" href="/apps/postscript">Full Postscript review →</a>
-      </article>
-      <article class="prose-shopify card">
-        <h2>Why Attentive ranks high at enterprise scale</h2>
-        <p>Attentive fits larger brands with acquisition budget, omnichannel capture, and compliance governance across portfolios. Custom pricing excludes tiny stores, but at scale negotiated message economics and managed services can justify the contract.</p>
-        <p>Use Attentive when enterprise procurement, retail QR capture, or multi-brand reporting is the bottleneck — not when a lean DTC team needs fast Postscript-style Shopify polish.</p>
-        <a class="link" href="/apps/attentive">Full Attentive review →</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="container pb-16">
-    <article class="prose-shopify card">
-      <h2>How to navigate 204 pages on this site</h2>
-      <p>Start at <a class="link" href="/apps">app rankings</a> if you need a shortlist. Postscript and Attentive lead SMS marketing execution; Sequenzy ranks high as lifecycle email layer. Open <a class="link" href="/compare/postscript-vs-attentive">Postscript vs Attentive</a> if enterprise vs DTC is the decision.</p>
-      <p>Use <a class="link" href="/use-cases/product-launch">product launch</a>, <a class="link" href="/use-cases/vip-segments">VIP segments</a>, and <a class="link" href="/use-cases/replenishment">replenishment</a> for campaign angles beyond cart recovery. Store-type pages under <a class="link" href="/for">/for/</a> adapt restraint and offer discipline to fashion, beauty, supplements, food, pets, and wholesale.</p>
-      <p>Guides cover <a class="link" href="/guides/campaign-restraint">campaign restraint</a>, <a class="link" href="/guides/offer-discipline">offer discipline</a>, <a class="link" href="/guides/segment-by-value">segment-by-value</a>, TCPA, quiet hours, and email-SMS coordination. No dynamic templates — every page is static Astro with inline prose.</p>
-    </article>
-  </section>
-
-  <section class="bg-orange-100/70 py-14">
-    <div class="container">
-      <article class="prose-shopify">
-        <h2>Implementation order for a restrained SMS marketing program</h2>
-        <h3>Phase 1 — Permission and policy</h3>
-        <p>Inventory opt-in sources, document frequency promises, configure quiet hours, and assign one campaign owner. Without this foundation, no Shopify SMS marketing app will save the program from opt-out spikes.</p>
-        <h3>Phase 2 — Revenue-moment automations</h3>
-        <p>Launch cart recovery and welcome SMS with strict caps. Add launch or replenishment only when product data supports timing. Postscript or Omnisend SMS for sends; Sequenzy for parallel email education.</p>
-        <h3>Phase 3 — Segment-by-value broadcasts</h3>
-        <p>VIP early access, waitlist fulfillment, and controlled promotions segmented by purchase history — not list-wide blasts. Attentive when enterprise tooling helps; Postscript for lean DTC.</p>
-        <h3>Phase 4 — Measurement and pruning</h3>
-        <p>Weekly review of revenue per recipient, opt-outs, margin after discounts, and email-SMS collisions. Cut weak campaigns before adding new ones. Campaign restraint compounds like interest.</p>
-      </article>
-    </div>
-  </section>
-
-
-  <section class="container pb-16">
-    <article class="prose-shopify card">
-      <h2>Extended campaign marketing playbook: homepage</h2>
-      <p>Treat every SMS slot as inventory: scarce, priced, and segment-specific. Before any tool decision, map one month of sends against buying moments — drops, VIP windows, cart triggers, winback arcs — and score each send for audience, reason, offer, destination, exclusion, and metric. Most teams discover half their calendar cannot pass that test; cutting those sends lifts revenue per recipient faster than any new app. Patchwork Denim, an upcycled-fashion store doing $54k a month, learned this by restricting one-of-one listing drops to style-preference segments instead of full-list blasts: conversion quadrupled while opt-outs fell.</p>
-      <p>Offer discipline is the second pillar. Discount ladders, exclusions, expiration rules, and margin visibility prevent the classic trap of training full-price buyers to wait for codes. Noir Collective runs Thursday VIP drops with two-hour early access for full-price segments only; Arena Energy pairs athlete-collab flavor drops with gym-bag segments and keeps free-shaker offers in email. In both cases SMS carries timing, never the whole value proposition. Cipher Audio held 58% margin on no-discount launches versus 41% on prior discount-led ones — the same list, different discipline.</p>
-      <p>Consent is the foundation everything else stands on. Festival Threads' three-texts-per-city cap works because every recipient explicitly opted in for tour alerts — not because three is a magic number. Document what each opt-in source promises: keyword, checkout checkbox, popup, QR code. Each source creates a different expectation, and mixing them in one broadcast is the fastest route to complaints. Honor quiet hours (no texts before 8am or after 9pm in the recipient's timezone), make STOP instant and total, and keep consent records exportable. TCPA violations start at $500 per text; no campaign ROI survives that math.</p>
-      <p>High-AOV stores play a different game. Cipher Audio ($320k/mo headphones) runs pre-order windows by text with zero launch discounts — scarcity and financing options do the work that codes do elsewhere. Ember Ceramics pairs a maker-story email in Sequenzy with a single VIP access text per kiln drop: one text, 80 pieces, sold out. The lesson in both cases is that SMS converts best when it carries information the customer cannot get elsewhere, not a discount they could have waited for.</p>
-      <p>Replenishment is SMS at its best when timing comes from data, not calendars. Supplement and consumable stores do well texting a refill reminder a few days before the average run-out date, with a one-tap reorder link — Sauce Lab's batch-drop rhythm works the same way: scarcity is real because batches are finite, so one launch text plus one scarcity text carries no discount-trained baggage. The moment scarcity is manufactured rather than real, customers learn the pattern and the channel degrades.</p>
-      <p>Winback belongs mostly in email, with SMS as the final nudge. A lapsed buyer who ignored three emails will not be saved by a surprise 20%-off text — but a short "still want back-in-stock alerts for your size?" message to engaged browsers can restart the conversation. Driftwood Surf Co's waitlist-only restock texts beat full-list announcements on every metric that matters: conversion, opt-outs, and full-price sell-through. Restraint is not leaving money on the table; it is refusing to discount the table itself.</p>
-      <p>Measurement closes the loop. Dashboard attribution without margin and list-health context is how teams scale into strategic losses: track revenue per recipient, opt-out rate by flow, complaint keywords in replies, and full-price repeat purchase alongside attributed revenue. Sauce Lab's rule — one launch text plus one scarcity text per batch drop — exists because a third text never paid for its opt-outs. Audit quarterly, prune ruthlessly, and let every remaining send earn its slot.</p>
-      <p>Stack selection follows strategy, not the reverse. Postscript leads SMS execution for lean DTC teams that live on drops and cart urgency. Attentive fits enterprise portfolios where managed onboarding, retail capture, and multi-brand reporting justify custom contracts. Sequenzy sits beside either as the lifecycle email layer — welcome depth, education arcs, winback sequences, and replenishment planning that should never be forced into 160 characters. Bundled options like Klaviyo or Omnisend make sense when one team owns both channels daily and profile economics work. Pick the smallest stack that handles the current bottleneck and supports the next stage of growth.</p>
-    </article>
-  </section>
-
 </BaseLayout>
