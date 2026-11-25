@@ -3,228 +3,59 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const leaving = appBySlug('marsello')!;
 const path = '/alternatives/marsello-alternative';
-const title = `Best ${leaving.name} Alternatives for Shopify SMS Marketing (2026)`;
-const desc = 'Why Shopify merchants leave Marsello for campaign calendar fit — drop orchestration, offer discipline, segment-by-value.';
-
+const title = "Marsello alternatives: retain the benefits, change the right layer";
+const desc = "Decide whether to repair messaging, replace a channel, or move the loyalty program while honoring online and POS member benefits.";
 const faqs = [
-  { question: 'Why leave Marsello for campaign marketing?', answer: 'Stores leave when omnichannel loyalty breadth exceeds campaign depth needs — or when pure-play DTC growth makes POS-centric tooling dead weight. Arena Energy pairs flavor-drop timing by text with email depth; that pattern needs execution layers Marsello coordinates but does not lead. Leave for capability focus, not feature count.' },
-  { question: 'Best Marsello alternative for SMS campaigns?', answer: 'Postscript #1 for lean DTC SMS execution, Attentive #2 at enterprise scale, Sequenzy #3 as the lifecycle email layer. For loyalty-data depth without Marsello, Yotpo (reviews-plus-loyalty) or Klaviyo (data-rich lifecycle) depending on ecosystem gravity.' },
-  { question: 'Does Sequenzy replace Marsello SMS?', answer: 'Sequenzy is the email layer — VIP tier celebration email and winback at $19/month. Pair with Postscript or Attentive for promotional SMS. Keep the loyalty system of record wherever tiers live; migrate only messaging execution, never loyalty data lightly.' },
-  { question: 'How do I preserve loyalty data in migration?', answer: 'Export members with tiers, points balances, history, and consent timestamps; map tier logic explicitly to new segments; run parallel accrual for one full points cycle before cutover. Loyalty migrations fail on unmapped edge cases (expiries, returns, tier downgrades), not on contact counts.' },
-  { question: 'When should a store keep Marsello?', answer: 'While omnichannel POS-plus-Shopify loyalty drives targeting that pure-play tools cannot see — in-store behavior shaping online messages and vice versa. Pure DTC brands without stores should question what Marsello breadth actually contributes.' },
-  { question: 'Do loyalty programs improve SMS economics?', answer: 'Yes when tiers sharpen targeting — VIP early access converts higher with lower opt-outs. No when programs blast members indiscriminately; loyalty-labeled spam churns the most valuable segment first. Data must restrict sends, not justify them.' },
+  {
+    "question": "When should we keep Marsello?",
+    "answer": "Keep it when the supported POS and online loyalty program, staff process and marketing workflow serve the store well. Repair incorrect identity, earning rules or campaign ownership before replacing a working benefits system."
+  },
+  {
+    "question": "Can a customer export move the whole loyalty program?",
+    "answer": "Do not assume so. Reconcile balances, tier membership, earned and issued rewards, expiry and refund adjustments separately. Demonstrate the receiving system and a customer service fallback before retiring access."
+  },
+  {
+    "question": "Does another SMS sender replace Marsello loyalty?",
+    "answer": "A sender changes message execution. It does not establish equivalent earning, redemption, tiers or POS support. A partial replacement needs an agreed benefit source and one owner for each message queue."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
-  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <a href="/alternatives" class="link text-sm">← All alternatives</a>
-      <p class="badge mt-6">Alternatives</p>
-      <h1 class="hero-title mt-5">Best {leaving.name} alternatives for Shopify SMS marketing</h1>
-      <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">Merchants leave Marsello when campaign calendar fit changes. Arena Energy (sports nutrition, $130k/mo): flavor drop paired with athlete collab — sms to gym-bag segment.</p>
-    </div>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} dateModified="2026-11-25" />
+  <section class="container py-16">
+    <a class="link" href="/alternatives">All alternatives</a>
+    <p class="badge mt-6">Replacement decisions · November 25, 2026</p>
+    <h1 class="hero-title mt-5">{title}</h1>
+    <p class="mt-7 text-xl leading-9">{desc}</p>
   </section>
-
-  <section class="container pb-12">
-    <div class="prose-shopify mb-12 max-w-4xl">
-      <h2>Why merchants leave Marsello</h2>
-      <p>For Marsello alternatives, offer restraint ladders separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, segment-by-value targeting separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, VIP early access without codes separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, channel collision prevention separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, revenue per send economics separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, broadcast frequency caps separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-    </div>
-
-    <div class="prose-shopify card mb-12 max-w-4xl">
-      <h2>Migration playbook</h2>
-      <p>For Marsello alternatives, waitlist priority queues separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, holdout testing before scale separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, margin after incentive math separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, quarterly calendar planning separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-    </div>
-
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mb-12">
-          <a class="card" href="/apps/postscript">
-<h3 class="font-black">Postscript</h3>
-<p class="mt-2 text-sm text-orange-950/75">Campaign marketing alternative to Marsello.</p>
-</a>
-          <a class="card" href="/apps/attentive">
-<h3 class="font-black">Attentive</h3>
-<p class="mt-2 text-sm text-orange-950/75">Campaign marketing alternative to Marsello.</p>
-</a>
-          <a class="card" href="/apps/sequenzy">
-<h3 class="font-black">Sequenzy</h3>
-<p class="mt-2 text-sm text-orange-950/75">Campaign marketing alternative to Marsello.</p>
-</a>
-          <a class="card" href="/apps/klaviyo">
-<h3 class="font-black">Klaviyo</h3>
-<p class="mt-2 text-sm text-orange-950/75">Campaign marketing alternative to Marsello.</p>
-</a>
-          <a class="card" href="/apps/omnisend">
-<h3 class="font-black">Omnisend</h3>
-<p class="mt-2 text-sm text-orange-950/75">Campaign marketing alternative to Marsello.</p>
-</a>
-          <a class="card" href="/apps/yotpo-email-sms">
-<h3 class="font-black">Yotpo Email & SMS</h3>
-<p class="mt-2 text-sm text-orange-950/75">Campaign marketing alternative to Marsello.</p>
-</a>
-          <a class="card" href="/apps/privy">
-<h3 class="font-black">Privy</h3>
-<p class="mt-2 text-sm text-orange-950/75">Campaign marketing alternative to Marsello.</p>
-</a>
-          <a class="card" href="/apps/drip">
-<h3 class="font-black">Drip</h3>
-<p class="mt-2 text-sm text-orange-950/75">Campaign marketing alternative to Marsello.</p>
-</a>
-    </div>
-
-    <div class="prose-shopify card max-w-4xl">
-      <h2>Stack recommendation after leaving Marsello</h2>
-      <p>For Marsello alternatives, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Marsello alternatives, campaign calendar discipline separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-      <p>Postscript #1 SMS campaigns. Attentive #2 enterprise. Sequenzy lifecycle email layer.</p>
-    </div>
-
-    
-    <div class="prose-shopify card mt-8">
-      <h2>Campaign marketing depth: alternatives — marsello alternative</h2>
-      <p>
-<strong>Offer Discipline Ladders.</strong> SoleDrop ATX (limited sneaker releases, $180k/mo) plans 11-minute size-run sell-through with waitlist priority. Lesson: VIP early link; general list email after 70% sell-through. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating alternatives — marsello alternative should map quarterly revenue moments before choosing software.</p>
-      <p>
-<strong>Segment-By-Value Quartiles.</strong> Festival Threads Co (tour merch, $95k/mo seasonal) plans geo-segmented tour sms by venue timezone. Lesson: 3 texts per city max during sale week. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating alternatives — marsello alternative should map quarterly revenue moments before choosing software.</p>
-      <p>
-<strong>Vip Access Without Codes.</strong> Vinyl Vault Records (collector drops, $62k/mo) plans drop sms only to $400+ ltv collectors. Lesson: one-time discount buyers excluded from VIP text segments. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating alternatives — marsello alternative should map quarterly revenue moments before choosing software.</p>
-      <p>
-<strong>Channel Collision Rules.</strong> Bloom & Wick (candle gifting, $110k/mo) plans holiday campaign calendar built in august. Lesson: gift segments got bundle SMS; self-purchase got Sequenzy education email. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating alternatives — marsello alternative should map quarterly revenue moments before choosing software.</p>
-      <p>
-<strong>Broadcast Frequency Caps.</strong> Peak Trail Gear (outdoor flash sales, $155k/mo) plans clearance sms only to bargain-sensitive quartile. Lesson: 15% off to full-price loyalists destroyed margin in holdout test. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating alternatives — marsello alternative should map quarterly revenue moments before choosing software.</p>
-      <p>
-<strong>Waitlist Priority Queues.</strong> Sauce Lab (limited hot sauce drops, $48k/mo) plans scarcity sms at 200 bottles remaining. Lesson: third text per drop doubled opt-outs. Postscript ranks #1 for SMS campaign execution; Attentive #2 enterprise; Sequenzy lifecycle email layer. Campaign marketers evaluating alternatives — marsello alternative should map quarterly revenue moments before choosing software.</p>
-      <p>Build your campaign calendar before the next drop. Assign channel ownership: Sequenzy for welcome, education, winback email; Postscript or Attentive for drop access, cart urgency, shipping deadlines. Cap SMS slots at 2–4 per month for most DTC brands. Segment-by-value before every broadcast.</p>
-    </div>
-
-
-    
-    <div class="prose-shopify card mt-8">
-      <h2>Post-migration campaign operating model</h2>
-      <p>When replacing your current SMS marketing platform, SoleDrop ATX (limited sneaker releases) rebuilt segments around waitlist priority prevents sold-out reply storms. Postscript #1 for campaign SMS, Attentive #2 enterprise, Sequenzy lifecycle email. Document offer ladders and broadcast caps before migration cutover.</p>
-      <p>When replacing your current SMS marketing platform, Vinyl Vault Records (collector drops) rebuilt segments around ltv quartile gating before every drop broadcast. Postscript #1 for campaign SMS, Attentive #2 enterprise, Sequenzy lifecycle email. Document offer ladders and broadcast caps before migration cutover.</p>
-      <p>When replacing your current SMS marketing platform, Bloom & Wick (candle gifting) rebuilt segments around gift vs self-purchase channel split in holiday calendar. Postscript #1 for campaign SMS, Attentive #2 enterprise, Sequenzy lifecycle email. Document offer ladders and broadcast caps before migration cutover.</p>
-      <p>When replacing your current SMS marketing platform, Cipher Audio (high-AOV headphones) rebuilt segments around launch sms without discount preserves 58% margin. Postscript #1 for campaign SMS, Attentive #2 enterprise, Sequenzy lifecycle email. Document offer ladders and broadcast caps before migration cutover.</p>
-      <p>When replacing your current SMS marketing platform, Noir Collective (flash-sale streetwear) rebuilt segments around vip sms two hours before email to full-price segment only. Postscript #1 for campaign SMS, Attentive #2 enterprise, Sequenzy lifecycle email. Document offer ladders and broadcast caps before migration cutover.</p>
-      <p>When replacing your current SMS marketing platform, SoleDrop ATX (limited sneaker releases) rebuilt segments around waitlist priority prevents sold-out reply storms. Postscript #1 for campaign SMS, Attentive #2 enterprise, Sequenzy lifecycle email. Document offer ladders and broadcast caps before migration cutover.</p>
-      <p>When replacing your current SMS marketing platform, Vinyl Vault Records (collector drops) rebuilt segments around ltv quartile gating before every drop broadcast. Postscript #1 for campaign SMS, Attentive #2 enterprise, Sequenzy lifecycle email. Document offer ladders and broadcast caps before migration cutover.</p>
-      <p>When replacing your current SMS marketing platform, Bloom & Wick (candle gifting) rebuilt segments around gift vs self-purchase channel split in holiday calendar. Postscript #1 for campaign SMS, Attentive #2 enterprise, Sequenzy lifecycle email. Document offer ladders and broadcast caps before migration cutover.</p>
-    </div>
-
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Frequency governance and holdout discipline</h2>
-      <p>Frequency caps belong to the operator, not to whichever platform was bought last. Set a written cap per channel (most DTC brands hold promotional SMS to 2–4 sends per month), make purchase and support events exit every active queue immediately, and review opt-out rate per campaign type weekly — rising opt-outs on a stable list almost always means frequency, not creative, is the problem. Timezone-aware quiet hours (8am–9pm recipient-time) are part of the same contract; see the <a class="link" href="/guides/quiet-hours">quiet hours guide</a> for the edge cases.</p>
-      <p>Holdout discipline closes the loop. Reserve a small percentage of each segment from every major send, and judge programs on incremental margin against the holdout — not on platform-attributed revenue, which cannot distinguish a message that changed behavior from one that reached someone already on the way to checkout. The <a class="link" href="/guides/campaign-restraint">campaign restraint</a> and <a class="link" href="/guides/offer-discipline">offer discipline</a> guides cover the full ritual.</p>
-      <ol>
-        <li>Write the cap: promotional SMS slots, email sends, and combined touches per contact per week</li>
-        <li>Wire same-day purchase exits across both channels on shared profiles</li>
-        <li>Reserve a holdout slice from every broadcast above a set revenue threshold</li>
-        <li>Report opt-out rate and complaint keywords weekly by campaign type</li>
-        <li>Re-run the cost-and-margin worksheet quarterly at projected list size</li>
-      </ol>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Stack recipes by store stage</h2>
-      <p>There is no single best stack — there are stage-appropriate ones. These are the defaults this site recommends, always subject to your own volume, consent operations, and a current read of each vendor's official pricing page.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Store stage</th><th>Default stack</th><th>Why it works</th></tr></thead>
-          <tbody>
-            <tr><td>Under $20k/mo, one market</td><td>Postscript starter + Sequenzy email</td><td>Lowest fixed cost; clean channel ownership from day one</td></tr>
-            <tr><td>$20k–$100k/mo, growing list</td><td>Postscript or Klaviyo + Sequenzy</td><td>Segment-by-value before spend; see <a class="link" href="/guides/segment-by-value">segment-by-value</a></td></tr>
-            <tr><td>$100k+/mo, real SMS volume</td><td>Postscript for drops + Sequenzy lifecycle</td><td>Specialists per channel; caps enforced on a shared calendar</td></tr>
-            <tr><td>Enterprise, multi-brand</td><td>Attentive with managed services</td><td>Governance and acquisition at scale justify the contract</td></tr>
-            <tr><td>Subscriptions-heavy catalog</td><td>Any of the above + subscription-state suppression</td><td>Renewal timing owns the SMS slot; promos stay off renewal dates</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Operator checklist before the next send</h2>
-      <ul>
-        <li>Every recipient has a documented SMS opt-in source matching this message category</li>
-        <li>Recent purchasers, open support tickets, and holdouts are suppressed</li>
-        <li>Quiet hours pass for every destination timezone in the audience</li>
-        <li>STOP and HELP replies verified on the current sender ID this month</li>
-        <li>Margin worksheet updated: platform, carrier, discount, refund, support lines</li>
-        <li>Channel calendar checked — no email offer colliding with this text within 12 hours</li>
-        <li>Opt-out and complaint thresholds defined in advance with a stop rule</li>
-      </ul>
-      <p>For matchup-level decisions, the head-to-head pages (start with <a class="link" href="/compare/postscript-vs-attentive">Postscript vs Attentive</a> and <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a>) carry the same consent, suppression, and margin worksheets applied pairwise. If you are replacing a platform entirely, read the migration notes in <a class="link" href="/alternatives">the alternatives directory</a> first — consent evidence migrates before anything else.</p>
-    </div>
-    <FaqSection faqs={faqs} title="Marsello alternatives FAQ" />
-  </section>
+  <article class="container prose-shopify pb-16">
+    <h2>Start with what would be lost</h2>
+    <p>Marsello can be a useful incumbent for a retailer whose online and physical-store purchases feed one loyalty experience. Its <a class="link" href="https://www.marsello.com/shopify">Shopify integration page</a> describes connected ecommerce and POS loyalty. The reason to stay is a working customer promise: staff recognize a member, explain the balance and redeem the right benefit. A more specialized campaign tool is attractive only if the missing messaging job is worth the additional handoff.</p>
+    <p>Classify the problem from actual support tickets and workflow traces. Incorrect points after returns calls for loyalty-rule repair; duplicate reminders call for queue ownership repair. A channel execution gap may justify replacing only that channel. Full replacement is a different project, with member obligations, register training and benefit reconciliation as acceptance criteria. Store revenue alone selects none of these paths.</p>
+    <h2>Create a retained benefit ledger before comparing candidates</h2>
+    <p>Inventory each member identifier, source order, eligible spend, points entry, manual adjustment, reward issued, redemption and expiry. Record the tier qualification basis and period separately from the current points balance. Preserve the terms promised when the benefit was earned, the location allowed to honor it and the staff escalation owner. An outstanding reward is an obligation to resolve, not simply a segment label to copy.</p>
+    <p>Marsello’s <a class="link" href="https://help.marsello.com/vip-tiers-program-common-questions-marsello-help-center">VIP tier FAQ</a> says the standard customer export does not include VIP tier, while tier segments can be exported. That makes an actual field-by-field extraction rehearsal essential. Do not infer that a CSV includes reward history or that a candidate can import it. Where reconstruction is unsupported, agree a retained lookup, manual honoring process or explicit replacement benefit with accountable customer service coverage.</p>
+    <h2>Rehearse earning, redemption and refunds across locations</h2>
+    <p>Proposed fixture, not a merchant result: a cookware retailer has an online store and two registers. A member earns on a qualifying pan, uses a reward on a later purchase, then partially returns the first order. Record the expected earned-point reversal, spent points, remaining reward and tier treatment before the demonstration. Include a refund after the balance has been spent, expiry during a return dispute and a staff correction with an audit reason.</p>
+    <p>The <a class="link" href="https://help.marsello.com/how-do-i-automatically-remove-loyalty-points-for-shopify-orders-marsello-help-center">Shopify points removal guide</a> ties reversals to configured payment statuses, including proportional product value for a selected partial-refund status. Compare the actual account settings with receipt-level calculations. Separately, the <a class="link" href="https://help.marsello.com/shopify-pos-common-questions-marsello-help-center">POS FAQ</a> warns that removing a discount code does not refund points. Staff must know which action resolves a mistaken redemption.</p>
+    <p>Replay an order update and verify one earning entry. Try an unauthorized register and an excluded product; compare member portal, receipt and staff view. The <a class="link" href="https://help.marsello.com/how-do-i-connect-my-shopify-site-to-marsello-marsello-help-center">Shopify site setup guide</a> treats online and POS as separately enabled sites. A shared account does not authorize every franchise, location or staff role to redeem every benefit.</p>
+    <h2>Keep membership, identity and channel permission distinct</h2>
+    <p>Map Shopify customer ID, POS identity, email and phone to the member ledger. Exercise a changed email, shared household phone and duplicate customer merge without silently moving another person’s benefits. Keep evidence for marketing permission by channel and brand or store scope; loyalty enrollment and an order phone number are not sufficient SMS permission.</p>
+    <p>In a partial replacement, specify which system publishes points and tier changes, how the sender acknowledges them and what happens when the feed stops. Retain newer withdrawals even when an older member snapshot is replayed. At dispatch check permission, applicable local sending restrictions, benefit validity and suppression again. A reward reminder should stop after redemption or expiry; a cart message should stop after purchase. Test STOP and HELP routing for the chosen sender and a safe hold when timezone or permission is unresolved.</p>
+    <h2>Preserve campaign value without inventing results</h2>
+    <p>For the proposed cookware store, plan a quarterly calendar around a limited color release, gift deadline and replenishment accessory. Give interested members early access without automatically adding a discount. A first-time shopper on the exact product waitlist can be more relevant than a high-spend member with no interest in that item. Validate stock by variant and location before a scarcity message; do not reuse an old sell-through figure as urgency.</p>
+    <p>Use email for care instructions, product education and gift selection where that matches the capture promise. Reserve a text for a useful access or deadline alert to eligible recipients. Separate bargain-sensitive clearance audiences from full-price loyalists, and suppress active subscription customers from irrelevant replenishment offers. Agree contact-level collision rules across reward reminders, welcome, launch and winback; choose caps from the actual promise and response data, with a stop rule for complaints and mismatched offers rather than a universal monthly quota.</p>
+    <h2>Choose candidates by the layer being changed</h2>
+    <p>For an SMS-only replacement, take the exact reward-trigger-to-send trace to <a class="link" href="/apps/postscript">Postscript</a> or <a class="link" href="/apps/attentive">Attentive</a>. Ask each to demonstrate the necessary inbound fields, withdrawal handling, reply ownership and queue cancellation. These are candidate jobs, not claims that either tool inherits Marsello loyalty or that a larger store must buy a managed contract.</p>
+    <p>For a combined messaging replacement, evaluate <a class="link" href="/apps/omnisend">Omnisend</a> or <a class="link" href="/apps/klaviyo">Klaviyo</a> with the same member feed and actual team workflow. An email-only requirement may merit an <a class="link" href="/apps/sequenzy">email workflow evaluation</a>, but does not select Sequenzy by default. Full loyalty replacement additionally requires a demonstrated POS, refund and benefit ledger solution; no messaging candidate on this page is certified as that replacement.</p>
+    <h2>Count product cost and benefit obligations once</h2>
+    <p>Use a proposed order worksheet: $100 merchandise value less a $10 redeemed reward leaves $90 net sales; less $45 goods cost leaves $45 before fulfillment, payment, returns, messaging and service costs. Do not subtract the same $10 reward again. Track unredeemed points and issued benefits in a separate liability reconciliation with finance; their treatment is not necessarily cash face value or immediate profit.</p>
+    <p>Compare current <a class="link" href="https://www.marsello.com/pricing">Marsello pricing</a> and written candidate quotes for the same enabled sites, billable contacts, channel usage, destinations, connectors and peak month. Include temporary overlap, staff training, benefit honoring, failed-feed reconciliation and support. For a proposed controlled trial, allocate eligible members before sends and compare contribution per assigned member against a holdout over a relevant purchase window. Subtract fixed subscription and setup at program level. Attributed revenue and a higher redemption rate alone do not establish incremental margin.</p>
+    <h2>Accept partial and full replacement differently</h2>
+    <p>For a channel change, retain Marsello as the agreed benefit authority and give each reminder or campaign exactly one queue owner. Record checkpoint event IDs, remaining messages and completed sends. Pause outgoing entries for an exclusive cohort before enabling the replacement. Reconcile purchases, redemptions, expiries and withdrawals that occur between snapshot and dispatch; replay acknowledged missing events without duplicating points or sends. Accept only when the customer-facing balance remains consistent and staff can resolve an exception.</p>
+    <p>For a full change, additionally reconcile opening and closing ledger totals and member-level exceptions, tier qualification, issued rewards and every supported register. Communicate how customers access benefits and how staff honor disputed rewards. Keep a staffed lookup until unresolved obligations have an agreed resolution. Do not retire access simply because contact counts match.</p>
+    <p>Rollback means stopping new candidate sends and ledger writes, retaining completed transactions, then reconciling all changes since the checkpoint before restoring an owner. Never restore an old balance over a legitimate redemption or resubscribe a withdrawn member. Stay or repair if no candidate clears these checks. Continue with the <a class="link" href="/apps/marsello">Marsello evaluation</a> and <a class="link" href="/guides/offer-discipline">offer discipline guide</a>.</p>
+    <FaqSection faqs={faqs} />
+  </article>
 </BaseLayout>
