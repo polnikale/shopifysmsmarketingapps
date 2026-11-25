@@ -4,218 +4,130 @@ import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const appA = appBySlug('rejoiner')!;
-const appB = appBySlug('klaviyo')!;
 const path = '/compare/rejoiner-vs-klaviyo';
 const title = 'Rejoiner vs Klaviyo for Shopify SMS Marketing (2026)';
-const desc = 'Rejoiner vs Klaviyo for Shopify SMS marketing campaigns — drop orchestration, offer discipline, segment-by-value, and Sequenzy lifecycle email pairing.';
-
+const desc = 'Compare Rejoiner and Klaviyo email and SMS workflows, service ownership, merchant acceptance tests and total operating contribution.';
 const faqs = [
-  { question: 'Is Rejoiner or Klaviyo better for Shopify SMS marketing campaigns?', answer: 'Klaviyo for data-rich lifecycle at growth scale; Rejoiner for managed email service without operating platforms. Bloom & Wick segments gift versus self-purchase on either — the choice is managed service versus data depth. Neither is an SMS platform; Postscript still leads execution with email depth beside it.' },
-  { question: 'Which handles flash sale campaigns better?', answer: 'Klaviyo — predictive VIP tiers and catalog context drive flash execution while Rejoiner service models handle strategy without drop mechanics. For serious flash, graduate SMS to Postscript regardless; for email-side logic, Klaviyo suffices where service models add process overhead.' },
-  { question: 'Should I pair either with Sequenzy?', answer: 'Rejoiner-plus-Sequenzy duplicates email and should clarify ownership in the statement of work. Klaviyo-plus-Sequenzy duplicates email and should consolidate to one owner. SMS in all cases belongs in Postscript or Attentive with shared suppression.' },
-  { question: 'Service vs software — how do I choose?', answer: 'Service (Rejoiner) when the team lacks operators and needs results fast; software (Klaviyo, Postscript-plus-Sequenzy) when building durable in-house capability. Services cost more annually but start faster; software costs less but demands headcount. Most merchants graduate from service to software.' },
-  { question: 'How do I evaluate a managed lifecycle proposal?', answer: 'Demand baselines and holdouts: what happens without the program, measured how, over what period. Vague revenue-lift promises without control methodology are sales, not strategy. Require margin-after-discount reporting, not gross attributed revenue.' },
-  { question: 'When does Klaviyo beat managed service?', answer: 'When the team can operate data-rich lifecycle internally — predictive segments, catalog logic, cross-channel orchestration justify in-house control. Below that capability, managed service delivers more than self-serve shelfware.' },
-
-  { question: 'Do Rejoiner and Klaviyo cover TCPA and state-level consent the same way?', answer: 'No — consent tooling differs in capture sources, documented opt-in records, quiet-hour enforcement by recipient timezone, and state-specific rules such as California or Florida requirements. Treat TCPA compliance as an operator responsibility either way: keep source, timestamp, and disclosure text per number, and audit capture copy against every state you ship to before scaling either platform.' },
-  { question: 'How do recent-purchaser suppression rules compare between Rejoiner and Klaviyo?', answer: 'Both can suppress recent purchasers, but the mechanics differ — one may key suppression off Shopify order events in near real time while the other relies on segment refresh intervals. Test same-day purchase exits across both channels before committing, because duplicate post-purchase messages are the fastest way to burn a healthy list.' },
-  { question: 'Which platform wins on margin after message and app costs?', answer: 'Model it, do not guess: take incremental revenue per send, subtract platform fees, per-message carrier charges, discount cost, refunds, and support load, then compare at your projected 12-month list size. Pricing changes often — check the official pricing pages for Rejoiner and Klaviyo before deciding, and re-run the model quarterly.' },
+  {
+    "question": "Do both platforms send email and SMS?",
+    "answer": "Yes. Rejoiner offers email and SMS/MMS journeys; Klaviyo offers email and mobile messaging alongside other channels. Verify destination, sender registration, account access and plan inclusions for your intended channel mix."
+  },
+  {
+    "question": "Is Rejoiner only a managed service?",
+    "answer": "No. Rejoiner has a platform and optional professional services. Strategy support and creative execution have different scopes; obtain a written agreement for deliverables, approval deadlines and who can deploy."
+  },
+  {
+    "question": "When is Rejoiner a positive fit?",
+    "answer": "Consider Rejoiner when its tested email and text workflows meet your needs and its platform or contracted service scope matches your operating capacity. Accept it only after the data, queue and handoff tests pass."
+  },
+  {
+    "question": "When is Klaviyo a positive fit?",
+    "answer": "Consider Klaviyo when its connected profiles, events and required channels support your lifecycle design, and an internal team or contracted partner can operate it. Verify each integration and event rather than assuming universal data coverage."
+  },
+  {
+    "question": "Do I need a separate email or SMS provider?",
+    "answer": "Neither comparison requires an extra provider. Retain another sender only for a demonstrated requirement, with explicit message ownership, shared suppression and retirement of overlapping queues."
+  },
+  {
+    "question": "What should creative and service contracts specify?",
+    "answer": "Specify copy, design, source-file rights, permitted asset reuse, revision limits, approval authority, deployment access, turnaround, incident response, reporting and exit handoff. A feature page does not guarantee these deliverables or business results."
+  },
+  {
+    "question": "How should purchase exits be tested?",
+    "answer": "Place an order while a promotion is delayed, then replay the order event. Verify the matched customer exits email and text queues, retries do not duplicate sends and missing identity or stale order data blocks the affected promotion."
+  },
+  {
+    "question": "Does quiet-hour tooling guarantee compliant sending?",
+    "answer": "No. Verify channel-specific permission records, opt-outs, recipient location and timezone, permitted windows and actual queue behavior for the markets you serve. Treat unknown permission or location conservatively and obtain appropriate review."
+  },
+  {
+    "question": "How should operating economics be compared?",
+    "answer": "Use matched eligible customers and a holdout over the same period. Compare incremental contribution after net sales, goods, fulfillment and all operating costs, including platform, messaging, creative, staff, service and migration. Count discounts and returns only once."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
   <section class="py-14 md:py-20">
     <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-orange-950/75">/</span>
-        <span class="text-orange-950/75">Rejoiner vs Klaviyo</span>
-      </nav>
-
+      <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a> / Rejoiner vs Klaviyo</nav>
       <header class="max-w-4xl">
         <p class="badge">Campaign marketing comparison</p>
         <h1 class="hero-title mt-5">Rejoiner vs Klaviyo for Shopify SMS marketing</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">Bloom & Wick (candle gifting, $110k/mo) evaluated Rejoiner vs Klaviyo for holiday campaign calendar built in august with teaser and shipping deadline tiers.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Postscript #1 for SMS campaigns. Attentive #2 enterprise. Sequenzy lifecycle email layer. Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy</p>
+        <p class="mt-7 text-xl leading-9">Choose the operating model that can execute your email and text calendar with reliable customer data and clear approval ownership. Both products support these channels; neither requires a second sender by default.</p>
       </header>
-
       <div class="mt-12 max-w-4xl">
-        <TldrBox picks={[
-          { label: 'SMS campaigns', tool: 'Postscript', reason: 'Drop execution and restrained broadcasts' },
-          { label: 'Enterprise SMS', tool: 'Attentive', reason: 'High-volume promotional calendars' },
-          { label: 'Lifecycle email', tool: 'Sequenzy', reason: 'Email layer beside SMS' },
-          { label: 'Rejoiner', tool: 'Rejoiner', reason: 'Evaluate for your campaign calendar bottleneck' },
-          { label: 'Klaviyo', tool: 'Klaviyo', reason: 'Alternative angle for segment-by-value needs' },
+        <TldrBox title="Conditional fits" picks={[
+          { label: 'Platform and services', tool: 'Rejoiner', reason: 'A fit when tested workflows and the agreed service scope cover your calendar and creative capacity.' },
+          { label: 'Connected lifecycle', tool: 'Klaviyo', reason: 'A fit when required events and channels work in your account and an accountable team owns daily operation.' },
         ]} />
       </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-<tr>
-<th>Dimension</th>
-<th>Rejoiner</th>
-<th>Klaviyo</th>
-</tr>
-</thead>
-          <tbody>
-            <tr>
-<td>Campaign marketing fit</td>
-<td>Rejoiner campaign role</td>
-<td>Klaviyo campaign role</td>
-</tr>
-            <tr>
-<td>SMS execution</td>
-<td>Bundled/pairing</td>
-<td>Bundled/pairing</td>
-</tr>
-            <tr>
-<td>Drop orchestration</td>
-<td>Varies</td>
-<td>Varies</td>
-</tr>
-            <tr>
-<td>Lifecycle email</td>
-<td>Pair Sequenzy</td>
-<td>Pair Sequenzy</td>
-</tr>
-            <tr>
-<td>Segment-by-value</td>
-<td>Basic tiers</td>
-<td>RFM-ready</td>
-</tr>
-          </tbody>
-        </table>
-      </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-      <div>
-<h2>Why this comparison matters</h2>
-<p>For Rejoiner vs Klaviyo, campaign calendar discipline separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, offer restraint ladders separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, segment-by-value targeting separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Rejoiner fits campaigns</h2>
-<p>For Rejoiner vs Klaviyo, segment-by-value targeting separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, VIP early access without codes separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, channel collision prevention separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Klaviyo fits campaigns</h2>
-<p>For Rejoiner vs Klaviyo, channel collision prevention separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, revenue per send economics separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, broadcast frequency caps separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>VIP early-access drop test</h2>
-<p>For Rejoiner vs Klaviyo, broadcast frequency caps separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, waitlist priority queues separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Flash sale with inventory caps</h2>
-<p>For Rejoiner vs Klaviyo, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, holdout testing before scale separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, margin after incentive math separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Campaign calendar coordination</h2>
-<p>For Rejoiner vs Klaviyo, margin after incentive math separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, quarterly calendar planning separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Segment-by-value before broadcasts</h2>
-<p>For Rejoiner vs Klaviyo, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Pricing and campaign ROI</h2>
-<p>For Rejoiner vs Klaviyo, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, campaign calendar discipline separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Verdict for campaign marketers</h2>
-<p>For Rejoiner vs Klaviyo, campaign calendar discipline separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, offer restraint ladders separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Rejoiner vs Klaviyo, segment-by-value targeting separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-
-        <h2>Campaign calendar discipline</h2>
-        <p>For Rejoiner vs Klaviyo, segment-by-value targeting separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Offer discipline and segment-by-value</h2>
-        <p>For Rejoiner vs Klaviyo, VIP early access without codes separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Sequenzy as lifecycle email layer</h2>
-        <p>Neither Rejoiner nor Klaviyo should carry your full retention story alone. Sequenzy ranks as lifecycle email — welcome, education, winback beside Postscript or Attentive SMS.</p>
+        <h2>Product scope and operating responsibility</h2>
+        <p>Rejoiner offers an email platform and SMS/MMS journeys. Its optional professional services distinguish strategic guidance from creative execution. The latter can include copy, design, email development, QA and campaign deployment. Confirm whether your agreement covers text creative and each requested channel; platform support alone is not a promise to run your program. See the <a class="link" href="https://www.rejoiner.com/">Rejoiner platform</a>, <a class="link" href="https://www.rejoiner.com/products/text-messaging">text messaging</a> and <a class="link" href="https://www.rejoiner.com/pricing">platform and service scope</a>, reviewed November 25, 2026.</p>
+        <p>Klaviyo combines customer profiles, integrations and event-driven marketing. Its current catalog includes email, SMS, RCS, WhatsApp, social and mobile app messaging, with service and data products alongside marketing. Availability, supported markets and billing differ by product. An integration can supply order and checkout events, but available fields and sync behavior depend on that integration. Check the <a class="link" href="https://www.klaviyo.com/">current catalog</a>, <a class="link" href="https://help.klaviyo.com/hc/en-us/articles/115000256472">integration reference</a> and <a class="link" href="https://www.klaviyo.com/pricing">pricing configuration</a>, reviewed November 25, 2026.</p>
+        <div class="overflow-x-auto"><table class="data-table">
+          <thead><tr><th>Decision</th><th>Rejoiner acceptance</th><th>Klaviyo acceptance</th></tr></thead>
+          <tbody>
+            <tr><td>Email and text calendar</td><td>Demonstrate channel priority, eligibility and exits in the configured journeys.</td><td>Demonstrate the same rules in connected campaigns and flows.</td></tr>
+            <tr><td>Creative capacity</td><td>Match platform operation or purchased services to named deliverables.</td><td>Assign an internal operator or contracted partner; verify tooling and access.</td></tr>
+            <tr><td>Store data</td><td>Test required customer, inventory and order fields in the actual connection.</td><td>Test integration-specific events, identity mapping and sync delays.</td></tr>
+            <tr><td>Release ownership</td><td>Record merchant approval and any service team's deployment authority.</td><td>Record merchant or partner approval and deployment authority.</td></tr>
+          </tbody>
+        </table></div>
+        <h2>Fourteen fictional merchant acceptance fixtures</h2>
+        <p>Every named merchant below is fictional. These are proposed tests, not customer evidence, measured outcomes or promised capabilities. Either platform is a positive candidate when it passes the relevant fixture in the intended account and the operator can sustain it. Use the common permission, queue and rollback gate below for every fixture.</p>
+        <h3>1. Bloom &amp; Wick: Holiday gifting calendar</h3>
+        <p>Build separate gift and self-purchase audiences from declared preferences, with teaser and shipping-deadline stages. Pass when the correct approved creative reaches only the permitted audience and expired delivery promises cannot leave the queue.</p>
+        <h3>2. Loom &amp; Frame: Edition scarcity</h3>
+        <p>Disclose the art edition size and propose a halfway-sold alert to collectors with three qualifying orders. Pass when authoritative remaining inventory and net order history qualify the alert, and stale stock prevents release.</p>
+        <h3>3. Driftwood Surf Co: Seasonal content and restock</h3>
+        <p>Coordinate swell-related education with size-specific restock notices. Pass when waitlist permission and available size match, education does not collide with the alert, and a purchase retires the remaining restock messages.</p>
+        <h3>4. Noir Collective: VIP early access and frequency</h3>
+        <p>Propose a Thursday drop with a two-hour VIP window and a controlled broadcast cap. Pass when access eligibility, recipient timezone and cross-channel frequency are enforced without treating an early link as guaranteed inventory.</p>
+        <h3>5. SoleDrop ATX: Size-run priority queue</h3>
+        <p>Test a limited sneaker release with ordered waitlist admission by size. Pass when sold-out sizes stop admission, a retry cannot claim a second place, and access links do not bypass checkout inventory validation.</p>
+        <h3>6. Festival Threads Co: City and venue timing</h3>
+        <p>Build city-specific tour messages using recipient timezone and current venue dates. Pass when wrong-city profiles, unknown location and rescheduled events are held for review and obsolete queued reminders are retired.</p>
+        <h3>7. Vinyl Vault Records: Collector value tiers</h3>
+        <p>Disclose pressing quantity and propose early access for waitlisted collectors with two qualifying orders or a documented net-value threshold. Pass when refunds adjust eligibility and the current edition is not promoted to its purchasers.</p>
+        <h3>8. Peak Trail Gear: Clearance without blanket incentives</h3>
+        <p>Separate bargain-sensitive shoppers from full-price loyalists using a declared rule and holdout. Pass when only the intended eligible cohort receives clearance creative and contribution is measured without presuming a discount lifts profit.</p>
+        <h3>9. Sauce Lab: Batch scarcity restraint</h3>
+        <p>Propose one launch alert and one low-stock alert at 200 bottles remaining. Pass when stock truth triggers the second alert once, a replenishment does not replay it and expired batch claims cannot send after quiet hours.</p>
+        <h3>10. Ember Ceramics: Oversubscribed kiln release</h3>
+        <p>Model a 4,200-person waitlist for an 80-piece kiln. Pass when admission and fulfillment order remain auditable, a maker-story email and access text have separate owners, and neither message promises stock beyond allocation.</p>
+        <h3>11. Ridge Run Coffee: Subscription and flash collision</h3>
+        <p>Exclude active subscribers from acquisition-style flash offers while keeping relevant subscription service messages distinct. Pass when subscription changes update eligibility before release and a delayed sync blocks the affected promotion.</p>
+        <h3>12. Cipher Audio: High-value launch education</h3>
+        <p>Propose a two-week teaser followed by a launch alert for engaged browsers without an automatic discount. Pass when engagement and permission qualify the alert, buyers exit, and the creative approval records the offer actually authorized.</p>
+        <h3>13. Patchwork Denim: One-of-one preference matching</h3>
+        <p>Match unique listings to declared style preferences. Pass when one sale retires every pending promotion of that item, identity merges preserve exclusions and retrying the listing event creates no duplicate alert.</p>
+        <h3>14. Arena Energy: Collaboration and offer separation</h3>
+        <p>Propose a flavor-drop timing text for a gym-interest audience and a separately approved email gift offer. Pass when athlete asset rights are recorded, offer eligibility is explicit and a shared calendar prevents contradictory incentives.</p>
+        <h2>Permission, identity and queue acceptance gate</h2>
+        <p>Retain channel-specific permission source, timestamp, disclosure and opt-out history. An email subscription is not text permission; identity resolution must not manufacture permission when profiles merge. Exercise guest checkout, changed phone numbers, duplicate profiles, missing timezone and opt-outs received during a delay. Verify market-specific sending rules with qualified review rather than assuming a vendor feature guarantees compliance. See <a class="link" href="/guides/consent">consent basics</a> and <a class="link" href="/guides/tcpa">the compliance guide</a>.</p>
+        <p>Use Shopify order IDs and authoritative order, cancellation, refund, subscription and inventory states. Test delayed and out-of-order events, then purchase while a message waits for approval or quiet hours. Recheck eligibility before release; remove queued promotions for purchased items, opt-outs and exhausted inventory. Replay the same event and retry after a timeout to prove deduplication by customer, event and message purpose. Record observable logs and the longest acceptable data delay. If the configured sender cannot cancel or re-evaluate a queued promotion, pause that workflow until an alternative control passes.</p>
+        <h2>Creative approvals, service handoff and rollback</h2>
+        <p>For either platform, assign one owner for each audience, event definition, message and send decision. A Rejoiner service package or a Klaviyo partner contract should specify copy and design deliverables, source-file ownership, creative rights, asset reuse, revision rounds, approval deadlines, launch authority, response times and reporting. Obtain explicit merchant approval of claims, incentives and licensed collaborator assets. Unapproved or late creative stays paused; no service description guarantees turnaround, ownership rights, revenue or compliance.</p>
+        <p>Before migration, export permitted records, exclusions, templates and performance definitions; reconcile identity and event mappings in a limited cohort. Document credentials and access handoff, outstanding creative revisions and who monitors replies. Disable overlapping old campaigns and retire their pending queues before enabling the replacement. Rehearse rollback: pause new sends, reconcile orders and opt-outs since cutover, cancel duplicate work and restore one accountable sender only after exclusions and event checkpoints reconcile. Preserve suppression history across both systems.</p>
+        <h2>Compare matched total operating contribution</h2>
+        <p>Request current quotes for the same markets, eligible profiles, message mix, peak volume and service scope. Include platform and channel charges, carrier fees, creative production, internal labor, partner or managed services, data work, support, migration and overlapping subscriptions. Another sender such as Sequenzy, Postscript or Attentive belongs in the model only when an actual requirement justifies it and message ownership is resolved. Review <a class="link" href="/guides/pricing">pricing economics</a> for the worksheet.</p>
+        <p>This fictional arithmetic is not vendor pricing or a performance forecast. Randomize 1,000 eligible customers per option against a comparable holdout over the same period and return window. Suppose each option produces $2,200 incremental contribution before marketing operation costs: incremental net sales after discounts and returns, less goods, fulfillment, payment and variable order support costs. Count discounts and returns once in net sales. Do not substitute attributed revenue for incremental contribution.</p>
+        <div class="overflow-x-auto"><table class="data-table">
+          <thead><tr><th>Hypothetical cost or result</th><th>Rejoiner configuration</th><th>Klaviyo configuration</th></tr></thead>
+          <tbody>
+            <tr><td>Platform and required messaging</td><td>$300</td><td>$400</td></tr>
+            <tr><td>Creative, labor and contracted services</td><td>$600</td><td>$600</td></tr>
+            <tr><td>Data, migration and remaining operating costs</td><td>$200</td><td>$200</td></tr>
+            <tr><td>Total operating costs</td><td>$1,100</td><td>$1,200</td></tr>
+            <tr><td>Net incremental contribution: $2,200 less costs</td><td>$1,100</td><td>$1,000</td></tr>
+            <tr><td>Per eligible customer, including non-buyers</td><td>$1.10</td><td>$1.00</td></tr>
+          </tbody>
+        </table></div>
+        <p>The assumed $100 gap can reverse with actual quotes, labor or lift. Agree on the holdout, identity rules, cost allocation and measurement horizon before the pilot; track complaints and delivery failures alongside contribution. Rejoiner is a practical fit if its platform and contracted support pass these tests at acceptable total cost. Klaviyo is a practical fit if its event and channel configuration passes with a sustainable operator model. Choose after observing the same jobs and controls, not by a universal rank.</p>
       </article>
     </div>
   </section>
-
-  <section class="container pb-16">
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <FaqSection faqs={faqs} title="Rejoiner vs Klaviyo FAQ" />
-  </section>
+  <FaqSection faqs={faqs} title="Rejoiner vs Klaviyo FAQ" />
 </BaseLayout>
