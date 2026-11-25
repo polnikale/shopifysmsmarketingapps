@@ -4,218 +4,111 @@ import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const appA = appBySlug('drip')!;
-const appB = appBySlug('attentive')!;
 const path = '/compare/drip-vs-attentive';
 const title = 'Drip vs Attentive for Shopify SMS Marketing (2026)';
-const desc = 'Drip vs Attentive for Shopify SMS marketing campaigns — drop orchestration, offer discipline, segment-by-value, and Sequenzy lifecycle email pairing.';
-
+const desc = 'Compare Drip and Attentive for Shopify email and SMS: account access, identity, permissions, event handling, drop workflows and contribution economics.';
 const faqs = [
-  { question: 'Is Drip or Attentive better for Shopify SMS marketing campaigns?', answer: 'Attentive for SMS itself — enterprise promotional calendars with managed onboarding beat email-platform SMS add-ons decisively. Drip contributes visual email automation beside it, not instead of it. Ridge Run Coffee learned this via collision audit: flash SMS hitting active subscribers stopped only when channels got separate owners. Different jobs, different tools.' },
-  { question: 'Which handles flash sale campaigns better?', answer: 'Attentive exclusively — VIP segmentation, broadcast caps, and volume-tested infrastructure are built for drops. Drip handles the email side (education, post-purchase, winback) while Attentive fires urgency. Flash success needs both layers with documented handoffs, never one platform pretending to do both.' },
-  { question: 'Should I pair either with Sequenzy?', answer: 'Yes — Sequenzy is the lifecycle email layer for education and winback depth. Keep SMS in Postscript or Attentive for urgency. The Attentive-plus-Sequenzy enterprise stack is legitimate; Drip-plus-Sequenzy duplicates email and should consolidate to one.' },
-  { question: 'How do I prevent email-SMS collisions?', answer: 'Written channel ownership per journey, shared suppression lists, purchase exits honored same-day on both platforms, and frequency caps spanning channels. Ridge Run suppresses subscribers from flash promos entirely — collision audits should run quarterly like financial audits.' },
-  { question: 'When does Drip beat Attentive?', answer: 'Never for SMS execution — only on email workflow control per dollar at mid-market, and only before enterprise scale justifies Attentive contracts. Compare Drip against Sequenzy or Klaviyo for email; compare Attentive against Postscript for SMS.' },
-  { question: 'What does the full stack cost?', answer: 'Attentive custom contracts plus Drip or Sequenzy email plus operator time — model platform fees, message volume, carrier surcharges, and discount depth together. Enterprise stacks earn their cost only when SMS revenue and email depth both clear their respective bars.' },
-
-  { question: 'Do Drip and Attentive cover TCPA and state-level consent the same way?', answer: 'No — consent tooling differs in capture sources, documented opt-in records, quiet-hour enforcement by recipient timezone, and state-specific rules such as California or Florida requirements. Treat TCPA compliance as an operator responsibility either way: keep source, timestamp, and disclosure text per number, and audit capture copy against every state you ship to before scaling either platform.' },
-  { question: 'How do recent-purchaser suppression rules compare between Drip and Attentive?', answer: 'Both can suppress recent purchasers, but the mechanics differ — one may key suppression off Shopify order events in near real time while the other relies on segment refresh intervals. Test same-day purchase exits across both channels before committing, because duplicate post-purchase messages are the fastest way to burn a healthy list.' },
-  { question: 'Which platform wins on margin after message and app costs?', answer: 'Model it, do not guess: take incremental revenue per send, subtract platform fees, per-message carrier charges, discount cost, refunds, and support load, then compare at your projected 12-month list size. Pricing changes often — check the official pricing pages for Drip and Attentive before deciding, and re-run the model quarterly.' },
+  {
+    "question": "When does Drip fit?",
+    "answer": "Drip can fit an email-led Shopify team that wants coordinated workflows and qualifies for its staged US SMS access. Confirm account approval, SAP eligibility, email-linked phone identity and supported sending scope before designing a text journey."
+  },
+  {
+    "question": "When does Attentive fit?",
+    "answer": "Attentive can fit a Shopify team evaluating email and SMS journeys with store events and subscriber synchronization. Confirm purchased channels, sending markets, integration settings and required event access in the actual account."
+  },
+  {
+    "question": "Does Shopify synchronization establish permission?",
+    "answer": "No. Keep email, promotional SMS and transactional purposes separate. Retain capture source, timestamp, disclosure and revocation evidence; a phone number, order or imported customer record alone does not authorize a promotion."
+  },
+  {
+    "question": "How should purchase exits work?",
+    "answer": "Verify order identity and event latency, then cancel queued cart and promotional follow-ups across every sending system. Test delayed events, duplicate delivery and replay after reconnection before releasing a journey."
+  },
+  {
+    "question": "Should I add Sequenzy?",
+    "answer": "Only if a separate lifecycle email workflow fills a demonstrated gap. Drip and Attentive both offer email capabilities; another sender needs explicit journey ownership, permission mapping and shared suppression controls."
+  },
+  {
+    "question": "How do I compare costs and results?",
+    "answer": "Obtain account-specific quotes for the intended channels, contacts, segments, carrier charges and services. Compare contribution per eligible customer against a comparable holdout after discounts, returns, goods, fulfillment, messaging and operating costs, counting each cost once."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
   <section class="py-14 md:py-20">
     <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-orange-950/75">/</span>
-        <span class="text-orange-950/75">Drip vs Attentive</span>
-      </nav>
-
+      <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a><span class="mx-2">/</span><span>Drip vs Attentive</span></nav>
       <header class="max-w-4xl">
         <p class="badge">Campaign marketing comparison</p>
         <h1 class="hero-title mt-5">Drip vs Attentive for Shopify SMS marketing</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">Ridge Run Coffee (subscription plus flash offers, $72k/mo) evaluated Drip vs Attentive for subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Postscript #1 for SMS campaigns. Attentive #2 enterprise. Sequenzy lifecycle email layer. Campaign collision audit caught flash SMS hitting active subscribers</p>
+        <p class="mt-7 text-xl leading-9">Start with the journeys your Shopify team needs to own. Drip offers email-led workflows with staged SMS access; Attentive offers email and SMS programs with Shopify integration. Account eligibility, event quality and permission controls determine which setup can support your calendar.</p>
       </header>
-
       <div class="mt-12 max-w-4xl">
-        <TldrBox picks={[
-          { label: 'SMS campaigns', tool: 'Postscript', reason: 'Drop execution and restrained broadcasts' },
-          { label: 'Enterprise SMS', tool: 'Attentive', reason: 'High-volume promotional calendars' },
-          { label: 'Lifecycle email', tool: 'Sequenzy', reason: 'Email layer beside SMS' },
-          { label: 'Drip', tool: 'Drip', reason: 'Evaluate for your campaign calendar bottleneck' },
-          { label: 'Attentive', tool: 'Attentive', reason: 'Alternative angle for segment-by-value needs' },
+        <TldrBox title="Conditional fits" picks={[
+          { label: 'Email-led coordination', tool: 'Drip', reason: 'Consider when existing workflows fit and your account qualifies for the required SMS scope.' },
+          { label: 'Store-connected messaging', tool: 'Attentive', reason: 'Consider when the purchased email and SMS capabilities and Shopify settings support your journeys.' },
         ]} />
       </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-<tr>
-<th>Dimension</th>
-<th>Drip</th>
-<th>Attentive</th>
-</tr>
-</thead>
-          <tbody>
-            <tr>
-<td>Campaign marketing fit</td>
-<td>Drip campaign role</td>
-<td>Attentive campaign role</td>
-</tr>
-            <tr>
-<td>SMS execution</td>
-<td>Bundled/pairing</td>
-<td>Primary</td>
-</tr>
-            <tr>
-<td>Drop orchestration</td>
-<td>Varies</td>
-<td>Strong</td>
-</tr>
-            <tr>
-<td>Lifecycle email</td>
-<td>Pair Sequenzy</td>
-<td>Pair Sequenzy</td>
-</tr>
-            <tr>
-<td>Segment-by-value</td>
-<td>Basic tiers</td>
-<td>RFM-ready</td>
-</tr>
-          </tbody>
-        </table>
-      </div>
-
       <article class="prose-shopify mt-14 max-w-4xl">
-      <div>
-<h2>Why this comparison matters</h2>
-<p>For Drip vs Attentive, offer restraint ladders separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, segment-by-value targeting separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, VIP early access without codes separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Drip fits campaigns</h2>
-<p>For Drip vs Attentive, VIP early access without codes separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, channel collision prevention separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, revenue per send economics separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Attentive fits campaigns</h2>
-<p>For Drip vs Attentive, revenue per send economics separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, broadcast frequency caps separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, waitlist priority queues separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>VIP early-access drop test</h2>
-<p>For Drip vs Attentive, waitlist priority queues separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, holdout testing before scale separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Flash sale with inventory caps</h2>
-<p>For Drip vs Attentive, holdout testing before scale separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, margin after incentive math separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, quarterly calendar planning separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Campaign calendar coordination</h2>
-<p>For Drip vs Attentive, quarterly calendar planning separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Segment-by-value before broadcasts</h2>
-<p>For Drip vs Attentive, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Pricing and campaign ROI</h2>
-<p>For Drip vs Attentive, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, campaign calendar discipline separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, offer restraint ladders separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Verdict for campaign marketers</h2>
-<p>For Drip vs Attentive, offer restraint ladders separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, segment-by-value targeting separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Drip vs Attentive, VIP early access without codes separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-
-        <h2>Campaign calendar discipline</h2>
-        <p>For Drip vs Attentive, VIP early access without codes separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Offer discipline and segment-by-value</h2>
-        <p>For Drip vs Attentive, channel collision prevention separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Sequenzy as lifecycle email layer</h2>
-        <p>Neither Drip nor Attentive should carry your full retention story alone. Sequenzy ranks as lifecycle email — welcome, education, winback beside Postscript or Attentive SMS.</p>
+        <h2>Confirm the actual sending scope</h2>
+        <p>Drip is a plausible fit for a team already using its subscriber data and email workflows. Its <a class="link" href="https://www.drip.com/sms">current SMS page</a> describes staged access for existing US-based paid customers with Support All People enabled. Phone records require email identity. It describes toll-free, one-way sending without keyword-to-join, short codes, two-way replies or RCS at launch. Confirm access in your account; do not plan an SMS-only audience or reply workflow around it.</p>
+        <p>The <a class="link" href="https://help.drip.com/hc/en-us/articles/48924286539661-Quick-Glance-SMS-with-Drip">Drip SMS overview</a> and activation guidance should be checked against your account approval when rollout information differs. An existing email plan does not establish SMS activation or its billed scope.</p>
+        <p>Attentive can fit a team evaluating store-connected email and SMS together. Its <a class="link" href="https://help.attentive.com/hc/en-us/articles/360041854231-Shopify">Shopify integration guide</a> documents subscriber synchronization, Shopify segments, discounts and transactional journeys. The tag supplies browsing, cart and purchase signals. Confirm installation, event visibility, sending regions, channel entitlements and service scope rather than inferring them from an integration listing.</p>
+        <p>Attentive's <a class="link" href="https://help.attentive.com/hc/en-us/articles/4434114124564-Collect-email-subscribers-from-Shopify">Shopify email collection guide</a> distinguishes collecting subscribers from arranging email sending access. Its <a class="link" href="https://help.attentive.com/hc/en-us/articles/4408058397588-Set-up-marketing-subscriber-collection-for-Shopify">subscriber collection settings</a> vary with account channels. Neither product requires a separate email tool by default.</p>
+        <h2>Comparison at a glance</h2>
+        <div class="overflow-x-auto"><table class="data-table">
+          <thead><tr><th>Decision</th><th>Drip</th><th>Attentive</th></tr></thead>
+          <tbody>
+            <tr><td>Conditional fit</td><td>Email-led workflows with approved SMS access</td><td>Shopify-connected email and SMS within purchased scope</td></tr>
+            <tr><td>Identity check</td><td>Phone requires email identity for SMS</td><td>Verify customer matching and channel subscriber sync</td></tr>
+            <tr><td>Launch check</td><td>Account eligibility and supported sender capabilities</td><td>Channel entitlements, tag and integration settings</td></tr>
+            <tr><td>Shared responsibility</td><td>Permission, queued exits and external senders</td><td>Permission, queued exits and external senders</td></tr>
+          </tbody>
+        </table></div>
+        <h2>Identity, purpose and purchase exits</h2>
+        <p>Map Shopify customer and order identifiers to each messaging profile. Test guest checkout, changed email, shared phone and duplicate profiles before relying on lifetime-value segments. Record the event source, occurrence time and processing time; distinguish a product view from a cart update and a paid order from an abandoned checkout.</p>
+        <p>Maintain permission by channel and purpose with capture source, timestamp, disclosure version and revocation history. Order notifications do not grant promotional permission. Apply opt-outs to the affected scope and propagate restrictions to every relevant sender; do not silently infer that an SMS opt-out means an email unsubscribe. Preserve broader suppression where the customer's request requires it. Review <a class="link" href="/guides/consent">consent controls</a> and the <a class="link" href="/guides/tcpa">compliance guide</a> with qualified advice for the intended market.</p>
+        <p>Assign a named owner to each journey, its send-time eligibility gate and its exception queue. Before a send, recheck permission, subscription status, recent purchases, holdout membership and inventory. Verify recipient-aware quiet-hour settings for the applicable market rather than relying on the store clock. Test opt-out handling and escalation without assuming a one-way product supports general conversations.</p>
+        <p>For cart recovery, an order must cancel queued messages wherever that journey runs. Simulate a purchase after queue entry, a delayed event, duplicate delivery and an integration outage. Reconcile Shopify orders against journey enrollments and sends after reconnection. Replay must preserve original event identity and time, deduplicate processing, respect current suppression and avoid reopening an expired promotion. Give an operator authority to pause sends while discrepancies are resolved.</p>
+        <h2>Merchant workflow proposals</h2>
+        <p>The following named scenarios retain campaign ideas from this comparison as proposed tests. They are illustrative briefs, with no verified merchant results, revenue figures or demonstrated lift. Choose exposure and evaluation windows from traffic, purchase lag and the decision being tested.</p>
+        <h3>Ridge Run Coffee</h3>
+        <p>Exclude active coffee subscribers from acquisition flash offers; test engaged non-subscribers separately. Reconcile subscription updates before each send to detect channel collisions.</p>
+        <h3>Arena Energy</h3>
+        <p>Coordinate a flavor drop with an athlete collaboration and a gym-bag interest segment. Keep any shaker incentive in the designated email journey and use SMS for eligible drop timing; compare margin with and without the incentive.</p>
+        <h3>Loom & Frame</h3>
+        <p>Disclose the real art edition size and test a verified sell-through milestone against launch timing among repeat collectors. Stop the scarcity branch when inventory no longer supports the claim.</p>
+        <h3>Driftwood Surf Co</h3>
+        <p>Use email for seasonal surf and swell-forecast content, then test restock alerts to an explicit waitlist against a broader eligible audience. Keep VIP access independent of discount codes.</p>
+        <h3>Noir Collective</h3>
+        <p>Coordinate a recurring streetwear drop and a VIP early-access window. Test a restrained broadcast cadence against the current cadence, with a shared email and SMS contact budget.</p>
+        <h3>SoleDrop ATX</h3>
+        <p>Prioritize a sneaker waitlist by requested size and available stock. Release general email access only at a predeclared inventory milestone; check that queued messages cannot promote sold-out sizes.</p>
+        <h3>Festival Threads Co</h3>
+        <p>Tie tour-merch campaigns to city and venue dates. Verify recipient timezone separately from venue timezone and test a city-specific contact cap before adding reminders.</p>
+        <h3>Vinyl Vault Records</h3>
+        <p>Disclose pressing quantity and test waitlist or repeat-collector access. Validate the lifetime-value segment against returns-adjusted orders rather than treating an imported value field as authoritative.</p>
+        <h3>Bloom & Wick</h3>
+        <p>Plan holiday teaser, bundle and shipping-deadline stages. Separate gift intent from self-purchase interest so bundle texts and scent-education email serve distinct purposes.</p>
+        <h3>Peak Trail Gear</h3>
+        <p>Limit clearance tests to demonstrated bargain interest and retain a comparable full-price loyalist holdout. Check whether extra orders offset lost contribution from unnecessary incentives.</p>
+        <h3>Sauce Lab</h3>
+        <p>Use batch inventory to gate a launch message and a later scarcity reminder. Test the reminder only while the stock claim remains true and suppress purchasers before release.</p>
+        <h3>Ember Ceramics</h3>
+        <p>Pair maker-story email with a waitlist access text for a limited kiln batch. Preserve queue order and fulfillment capacity rather than promising every waitlisted person stock.</p>
+        <h3>Cipher Audio</h3>
+        <p>Sequence product education before a launch message to eligible engaged browsers. Test a no-discount launch against the current offer while excluding purchasers and accounting for high-value returns.</p>
+        <h3>Patchwork Denim</h3>
+        <p>Match one-of-one listings to stated style preferences. Test tailored drops against a comparable generic-message group; invalidate queued links once the unique item sells.</p>
+        <h2>Price the whole operating model</h2>
+        <p>Request current quotes for each intended channel: platform and contact tiers, billable SMS segments, carrier fees, sender setup, onboarding, services and any integration work. Check message encoding and concatenation rules with representative copy. Forecast both ordinary and peak drops, including list growth and duplicate contacts. Published entry prices do not establish your contract or entitlement.</p>
+        <p>For a proposed experiment, define eligible customers and a comparable holdout before exposure. Compute contribution from net sales after discounts and returns, less goods, fulfillment, payment, messaging and allocated platform and operating costs. Deduct each cost once; do not subtract discounts or refunds again when already included in net sales. Compare contribution per eligible customer between groups, accounting for different observation windows. Platform-attributed revenue alone cannot establish incremental lift. See <a class="link" href="/guides/pricing">pricing economics</a>.</p>
+        <h2>Choose an owner before adding another sender</h2>
+        <p>Choose Drip when its email workflow model and approved SMS scope match the work. Choose Attentive when its entitled channel capabilities and verified Shopify event paths match the program. A constrained release should pass permission, purchase-exit, replay and reconciliation checks before wider exposure; no fixed pilot length proves fit.</p>
+        <p>If considering <a class="link" href="/apps/sequenzy">Sequenzy</a> for a separate lifecycle task, first document a specific gap, an accountable journey owner and suppression propagation between systems. Review <a class="link" href="/guides/campaign-restraint">campaign restraint</a> and the <a class="link" href="/apps">app directory</a> as further evaluation material, not evidence of a universal ranking.</p>
       </article>
     </div>
   </section>
-
-  <section class="container pb-16">
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <FaqSection faqs={faqs} title="Drip vs Attentive FAQ" />
-  </section>
+  <FaqSection faqs={faqs} title="Drip vs Attentive FAQ" />
 </BaseLayout>
