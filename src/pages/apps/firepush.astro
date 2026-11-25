@@ -2,11 +2,9 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-const app = appBySlug('firepush')!;
 const path = '/apps/firepush';
-const title = 'Firepush for Shopify: coordinate web push and SMS';
-const desc = 'Evaluate Firepush as an SMS and browser notification tool by testing independent permissions, cart exits and alert expiry.';
+const title = 'Firepush for Shopify: evaluate web push alongside other senders';
+const desc = 'Evaluate Firepush web push through browser permissions, purchase exits and alert expiry, with separate email and SMS ownership.';
 ---
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
@@ -18,10 +16,11 @@ const desc = 'Evaluate Firepush as an SMS and browser notification tool by testi
   </section>
   <article class="container prose-shopify pb-16">
 
-    <h2>Two delivery paths, two permission states</h2>
-    <p>The <a class="link" href="https://apps.shopify.com/firepush">current Firepush Shopify listing</a> advertises SMS and web push, automated cart recovery, price alerts and delivery updates. That scope makes it a candidate for event-driven notifications; it does not establish a full email lifecycle offering.</p>
-    <p>The operating question is whether your store can use both paths without confusing permission or doubling reminders. Browser permission applies to a browser context. An SMS subscription belongs to a phone-number permission record. A shopper may qualify for one, both or neither. Do not convert a browser opt-in into permission to text.</p>
-    <h2>A proposed permission matrix</h2>
+    <h2>Current web push scope and separate sender ownership</h2>
+    <p>The <a class="link" href="https://getfirepush.com/">current Firepush product page</a> presents web push automations for welcome, cart recovery, price changes, stock and order updates. Its <a class="link" href="https://getfirepush.com/web-push-apps-compared/">current channel comparison</a> explicitly states that Firepush sends web push only. Older SMS or email listings and help material do not establish current sending entitlement.</p>
+    <p>The operating question is whether Firepush and a separate email or SMS sender can coordinate without confusing permission or doubling reminders. Browser permission applies to a browser context. An SMS subscription belongs to a phone-number permission record. A shopper may qualify for one, both or neither. Do not convert a browser opt-in into permission to text.</p>
+    <h2>A proposed cross-sender permission matrix</h2>
+    <p>The SMS cases below belong to your separately selected texting service, not a current Firepush SMS feature. Validate the handoff and suppression contract between systems; a shared shopper does not prove a supported integration.</p>
     <table class="data-table">
       <thead><tr><th>Test state</th><th>Expected routing rule to configure</th><th>Inspect</th></tr></thead>
       <tbody>
@@ -42,13 +41,13 @@ const desc = 'Evaluate Firepush as an SMS and browser notification tool by testi
     <h2>Separate service updates from promotions</h2>
     <p>A delivery notification and a sale announcement have different purposes. Map each template to its trigger, permission basis and owner. Confirm which delivery events your installation actually receives before replacing a working order-update process. Have support review the reply path so shoppers with a delivery problem reach a person or a monitored queue.</p>
     <h2>Cost and measurement by channel</h2>
-    <p>Get the current push allowance and SMS rates for the destination markets you serve. Do not interpret included web pushes as included text messages. Model the expected notifications from each trigger, failed or repeated sends, SMS message segmentation and support workload. Keep email costs separate if another platform still handles email.</p>
-    <p>Track eligible audience, attempted delivery, reachable browsers, SMS opt-outs and purchases as separate measures. A larger browser subscriber count is not automatically a larger reachable phone audience. To evaluate incremental value, propose a holdout that avoids overlapping reminders from other senders and compare contribution after message costs, discounts and returns. No measured lift is asserted here.</p>
+    <p>Get Firepush’s current push allowance and usage rules. Quote a separate texting service for destination rates, message segmentation and any carrier charges if that channel is needed. Model each trigger, retry and support task without treating included pushes as included texts; include email and retained systems in the combined budget.</p>
+    <p>Track Firepush browser eligibility, attempted delivery, reachable subscriptions and purchases separately from the other sender’s SMS opt-outs and delivery records. A larger browser subscriber count is not automatically a larger reachable phone audience. To evaluate incremental value, propose a holdout that avoids overlapping reminders from other senders and compare contribution after message costs, discounts and returns. No measured lift is asserted here.</p>
     <h2>When Firepush belongs on the shortlist</h2>
-    <p>Consider it when SMS plus browser alerts solve a defined event-notification job and you can assign someone to maintain those rules. If the requirement is email education, complex cross-platform profiles or an existing service desk workflow, specify those dependencies separately. Keep the tool only if the demonstrated installation can satisfy the routing matrix and cancellation tests you need.</p>
+    <p>Consider it when browser alerts solve a defined event-notification job and someone can maintain the rules alongside any separate email or SMS sender. If the requirement is email education, complex cross-platform profiles or an existing service desk workflow, specify those dependencies separately. Keep the tool only if the demonstrated installation can satisfy the routing matrix and cancellation tests you need.</p>
 
     <h2>Catalog acceptance brief</h2>
-    <p>{app.shopifyFit}</p>
+    <p>Ask for evidence that the current push installation can handle your permission, purchase-exit and expiry fixtures. For legacy SMS or email records, confirm account access and recovery options with support before disabling an existing sender; do not assume those records or browser subscriptions transfer automatically.</p>
     <p>This is a proposed evaluation, not an observed merchant test or a claim that the platform passed it. Save the evidence, unresolved exceptions and responsible owner before approving a change.</p>
     <h2>Continue the decision</h2>
     <p>Return to the <a class="link" href="/apps">procurement directory</a> to compare operating requirements. Use the <a class="link" href="/guides/pricing">pricing worksheet</a> for your actual quote and the <a class="link" href="/guides/email-sms-coordination">channel coordination guide</a> when more than one sender remains active.</p>
