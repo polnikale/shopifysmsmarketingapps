@@ -4,218 +4,53 @@ import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const appA = appBySlug('klaviyo')!;
-const appB = appBySlug('drip')!;
 const path = '/compare/klaviyo-vs-drip';
-const title = 'Klaviyo vs Drip for Shopify SMS Marketing (2026)';
-const desc = 'Klaviyo vs Drip for Shopify SMS marketing campaigns — drop orchestration, offer discipline, segment-by-value, and Sequenzy lifecycle email pairing.';
-
+const title = 'Klaviyo vs Drip: Shopify events, workflows and SMS access';
+const desc = 'Compare Klaviyo and Drip through account eligibility, Shopify identity, catalog events, purchase exits and maintainable campaign queues.';
 const faqs = [
-  { question: 'Is Klaviyo or Drip better for Shopify SMS marketing campaigns?', answer: 'Klaviyo for data depth — predictive CLV, catalog-driven segments, and unified profiles beat Drip operator-built workflows at growth scale. Drip for hands-on workflow control at mid-market cost without data overhead. Sauce Lab restraint (one launch plus one scarcity text per drop) works on either; the choice is data depth versus operator control.' },
-  { question: 'Which handles flash sale campaigns better?', answer: 'Klaviyo — predictive segments identify VIPs worth early access while Drip executes solid but simpler flash branches. Neither matches Postscript drop tooling for SMS execution itself. For serious flash calendars, graduate SMS to Postscript and keep email depth wherever the team operates better.' },
-  { question: 'Should I pair either with Sequenzy?', answer: 'Rarely as permanent stacks — both overlap Sequenzy on email with different philosophies. Choose one email owner (Klaviyo for data, Drip for control, Sequenzy for lifecycle at $19/month unlimited), then pair with Postscript for SMS. Stacking email layers duplicates cost with split reporting.' },
-  { question: 'How do costs compare at scale?', answer: 'Klaviyo profile-plus-message billing compounds fast; Drip contact pricing stays flatter at mid-market. Model 12-month TCO at projected profiles and send mix — Klaviyo justifies premiums only when predictive segmentation generates measurable lift over Drip workflows.' },
-  { question: 'When should a store migrate Drip to Klaviyo?', answer: 'When catalog-driven logic, predictive churn, or cross-channel orchestration become load-bearing — typically well into seven figures. Migrate segments and flows in parallel over a quarter; never big-bang a working Drip program on Klaviyo promises.' },
-  { question: 'Can they run together?', answer: 'Pointlessly in most cases — overlapping email with different philosophies. Consolidate in one within a quarter; keep the survivor paired with Postscript for SMS urgency.' },
-
-  { question: 'Do Klaviyo and Drip cover TCPA and state-level consent the same way?', answer: 'No — consent tooling differs in capture sources, documented opt-in records, quiet-hour enforcement by recipient timezone, and state-specific rules such as California or Florida requirements. Treat TCPA compliance as an operator responsibility either way: keep source, timestamp, and disclosure text per number, and audit capture copy against every state you ship to before scaling either platform.' },
-  { question: 'How do recent-purchaser suppression rules compare between Klaviyo and Drip?', answer: 'Both can suppress recent purchasers, but the mechanics differ — one may key suppression off Shopify order events in near real time while the other relies on segment refresh intervals. Test same-day purchase exits across both channels before committing, because duplicate post-purchase messages are the fastest way to burn a healthy list.' },
-  { question: 'Which platform wins on margin after message and app costs?', answer: 'Model it, do not guess: take incremental revenue per send, subtract platform fees, per-message carrier charges, discount cost, refunds, and support load, then compare at your projected 12-month list size. Pricing changes often — check the official pricing pages for Klaviyo and Drip before deciding, and re-run the model quarterly.' },
+  { question: 'When does Klaviyo fit?', answer: 'Consider Klaviyo when a team can maintain its Shopify event and catalog mappings and coordinate eligible email and SMS journeys. Confirm destination coverage, sender approval, purchased features and data requirements before depending on a branch or predictive segment.' },
+  { question: 'When does Drip fit?', answer: 'Drip can fit an email-led team that values maintaining its existing workflows. Native SMS requires confirmed account access; its current rollout has US, paid-plan, Support All People and email-linked identity restrictions. An SMS-only audience needs a different design.' },
+  { question: 'Does a shared profile grant permission for both channels?', answer: 'No. Keep permission by channel and purpose, with capture source, disclosure and timestamp. Reconcile opt-outs and pending sends without treating an email subscription or purchase as promotional SMS consent.' },
+  { question: 'How should a migration be tested?', answer: 'Use controlled profiles to trace multi-item orders, returning identities, opt-outs, delayed purchases and replayed events. Keep one live sender per message job, inspect pending queues and reconcile orders and suppressions before transferring ownership.' },
+  { question: 'Which costs less?', answer: 'Obtain account-specific quotes for the same audience and send mix. Compare contribution per eligible customer against a holdout after product costs, messaging, platform and operating costs; count discounts and returns once in net sales.' },
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
-  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-orange-950/75">/</span>
-        <span class="text-orange-950/75">Klaviyo vs Drip</span>
-      </nav>
-
-      <header class="max-w-4xl">
-        <p class="badge">Campaign marketing comparison</p>
-        <h1 class="hero-title mt-5">Klaviyo vs Drip for Shopify SMS marketing</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">Sauce Lab (limited hot sauce drops, $48k/mo) evaluated Klaviyo vs Drip for batch-number scarcity campaigns — sms when 200 bottles left.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Postscript #1 for SMS campaigns. Attentive #2 enterprise. Sequenzy lifecycle email layer. Restraint: one launch SMS plus one scarcity SMS per drop</p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox picks={[
-          { label: 'SMS campaigns', tool: 'Postscript', reason: 'Drop execution and restrained broadcasts' },
-          { label: 'Enterprise SMS', tool: 'Attentive', reason: 'High-volume promotional calendars' },
-          { label: 'Lifecycle email', tool: 'Sequenzy', reason: 'Email layer beside SMS' },
-          { label: 'Klaviyo', tool: 'Klaviyo', reason: 'Evaluate for your campaign calendar bottleneck' },
-          { label: 'Drip', tool: 'Drip', reason: 'Alternative angle for segment-by-value needs' },
-        ]} />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-<tr>
-<th>Dimension</th>
-<th>Klaviyo</th>
-<th>Drip</th>
-</tr>
-</thead>
-          <tbody>
-            <tr>
-<td>Campaign marketing fit</td>
-<td>Klaviyo campaign role</td>
-<td>Drip campaign role</td>
-</tr>
-            <tr>
-<td>SMS execution</td>
-<td>Bundled/pairing</td>
-<td>Bundled/pairing</td>
-</tr>
-            <tr>
-<td>Drop orchestration</td>
-<td>Varies</td>
-<td>Varies</td>
-</tr>
-            <tr>
-<td>Lifecycle email</td>
-<td>Pair Sequenzy</td>
-<td>Pair Sequenzy</td>
-</tr>
-            <tr>
-<td>Segment-by-value</td>
-<td>RFM-ready</td>
-<td>Basic tiers</td>
-</tr>
-          </tbody>
-        </table>
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-      <div>
-<h2>Why this comparison matters</h2>
-<p>For Klaviyo vs Drip, waitlist priority queues separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, holdout testing before scale separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Klaviyo fits campaigns</h2>
-<p>For Klaviyo vs Drip, holdout testing before scale separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, margin after incentive math separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, quarterly calendar planning separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Drip fits campaigns</h2>
-<p>For Klaviyo vs Drip, quarterly calendar planning separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>VIP early-access drop test</h2>
-<p>For Klaviyo vs Drip, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Flash sale with inventory caps</h2>
-<p>For Klaviyo vs Drip, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, campaign calendar discipline separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, offer restraint ladders separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Campaign calendar coordination</h2>
-<p>For Klaviyo vs Drip, offer restraint ladders separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, segment-by-value targeting separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, VIP early access without codes separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Segment-by-value before broadcasts</h2>
-<p>For Klaviyo vs Drip, VIP early access without codes separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, channel collision prevention separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, revenue per send economics separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Pricing and campaign ROI</h2>
-<p>For Klaviyo vs Drip, revenue per send economics separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, broadcast frequency caps separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, waitlist priority queues separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Verdict for campaign marketers</h2>
-<p>For Klaviyo vs Drip, waitlist priority queues separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Drip, holdout testing before scale separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-
-        <h2>Campaign calendar discipline</h2>
-        <p>For Klaviyo vs Drip, holdout testing before scale separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Offer discipline and segment-by-value</h2>
-        <p>For Klaviyo vs Drip, margin after incentive math separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Sequenzy as lifecycle email layer</h2>
-        <p>Neither Klaviyo nor Drip should carry your full retention story alone. Sequenzy ranks as lifecycle email — welcome, education, winback beside Postscript or Attentive SMS.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="container pb-16">
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <FaqSection faqs={faqs} title="Klaviyo vs Drip FAQ" />
-  </section>
+  <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} dateModified="2026-11-25" />
+  <article class="container py-16 prose-shopify">
+    <nav><a href="/compare">Comparisons</a> / Klaviyo vs Drip</nav>
+    <h1>Klaviyo vs Drip: compare the event-to-send workflow</h1>
+    <p>Choose with a Shopify order that contains products with different replenishment needs, then changes before a reminder leaves the queue. This comparison proposes acceptance checks; it reports no merchant results or universal winner.</p>
+    <TldrBox title="Conditional fits" picks={[
+      { label: 'Klaviyo', tool: 'Event-led coordination', reason: 'Consider when the team can maintain profile, catalog and flow contracts and its required channels are enabled.' },
+      { label: 'Drip', tool: 'Email-led workflow continuity', reason: 'Consider when existing journeys remain maintainable and any required SMS access is confirmed.' },
+    ]} />
+    <h2>Start with actual channel access</h2>
+    <p><a href="https://www.drip.com/sms">Drip’s SMS rollout page</a>, checked November 25, 2026, limits requests to existing US-based paid customers with Support All People enabled. Phone records require email; SMS-only subscribers are unsupported. It describes staged access, toll-free one-way sending and no keyword-to-join, short codes, two-way replies or RCS at launch. Confirm activation in your account before planning around native SMS. Older help pages still describe SMS as unavailable to new users; a phone field does not prove sending access.</p>
+    <p><a href="https://help.klaviyo.com/hc/en-us/articles/4402914866843">Klaviyo’s country guide</a> makes SMS availability destination-dependent. Check recipient country, sender type, registration and your account’s rates separately. Email availability does not establish SMS coverage, and a broader channel menu does not establish entitlement to every feature. Verify purchased plans, usage limits and data eligibility for predictive or catalog-dependent features instead of buying on a feature label.</p>
+    <h2>Compare the same Shopify contract</h2>
+    <p>In <a href="/apps/klaviyo">Klaviyo</a>, inspect the actual profile, event properties and flow entry; in <a href="/apps/drip">Drip</a>, inspect the person record, incoming event and workflow branch. A shared business label such as “purchased” is insufficient. Record the Shopify customer and order identifiers, event time, product and variant identifiers, quantity, currency and subscription state. Check which fields your installed integration actually supplies and how refunds, cancellations and guest checkouts update them.</p>
+    <table class="data-table"><thead><tr><th>Acceptance task</th><th>Klaviyo inspection</th><th>Drip inspection</th></tr></thead><tbody>
+      <tr><td>Returning shopper changes email</td><td>Profile association and duplicate flow entries</td><td>Person association and email-linked phone record</td></tr>
+      <tr><td>Multi-item order</td><td>Line-item properties and catalog lookup used by each branch</td><td>Event fields and product rules used by each branch</td></tr>
+      <tr><td>Purchase during delay</td><td>Pending flow messages and dispatch eligibility</td><td>Pending workflow messages and dispatch eligibility</td></tr>
+      <tr><td>Replayed event after reconnect</td><td>Entry history and duplicate-message prevention</td><td>Workflow history and duplicate-message prevention</td></tr>
+    </tbody></table>
+    <h2>Keep distinct campaign jobs distinct</h2>
+    <p>For limited sauce batches or art editions, propose a launch notice followed by a stock-based notice only if inventory still supports it. For pottery or size-specific sneaker waitlists, preserve signup priority and variant availability; a marketing queue is not an inventory reservation. For one-of-one denim, test style preferences and remove sold listings before dispatch.</p>
+    <p>For coffee subscriptions, suppress active subscribers from acquisition discounts while evaluating replenishment separately. For audio launches, compare an education sequence with a discount offer using contribution, rather than assuming an incentive is necessary. For sports-nutrition collaborations, keep an email bundle offer and an SMS timing notice within the same offer and frequency policy.</p>
+    <p>For surfwear restocks, use the requested product waitlist rather than a full-list announcement. For streetwear drops, test early access against fulfillment capacity and cumulative contact pressure. For tour merchandise, validate city and recipient timezone instead of using venue time as a proxy for customer location.</p>
+    <p>For record collectors, distinguish repeat purchases from genuine category interest before assigning early access. For candle gifting, distinguish gifts from self-purchases and use real shipping cutoffs. For outdoor clearance, compare bargain-sensitive audiences with full-price loyalists under a holdout. These are proposed scenarios, not named customer case studies or measured gains.</p>
+    <h2>Permission, suppression and purchase exits</h2>
+    <p>A profile join must preserve channel and purpose permissions. Retain capture source, timestamp and disclosure version; a purchase, email opt-in or imported phone number does not authorize promotional texts. Apply the relevant recipient rules and quiet hours with qualified review, including uncertain timezone cases. See <a href="/guides/consent">consent</a> and <a href="/guides/tcpa">messaging requirements</a>.</p>
+    <p>Test an opt-out while a message is waiting, a purchase before a cart reminder, a refund after a replenishment event and a subscription change before a flash offer. Confirm the intended exit at dispatch as well as at entry. Record channel-specific opt-outs separately from broader suppression requests, and verify each destination receives the required update. Do not erase valid email permission merely to model SMS status, or retain promotional SMS eligibility after withdrawal.</p>
+    <h2>One queue owner through migration and failure</h2>
+    <p>Assign a named owner to each live campaign and automation, its pending queue, reply route and suppression sync. Where Drip’s one-way SMS scope is insufficient for support, supply a clearly owned support path rather than promising conversational service. Adding Postscript, Attentive or Sequenzy is a separate architecture decision, not a default requirement; retain one owner for each message job and verify connectors before duplicating journeys.</p>
+    <p>Rehearse connector downtime, duplicate events, late orders and out-of-order updates with controlled records. Preserve event identifiers and timestamps, reconcile source orders to destination histories and establish a restart watermark. Before replay, determine which events are already processed and which queued notices are obsolete. Pause the affected job if eligibility cannot be established; transferring ownership must not release both old and rebuilt queues.</p>
+    <h2>Cost and evidence before a decision</h2>
+    <p>Request quotes for the same audience, destinations, peak send mix, encoding, message segments and required features. Include email and SMS subscriptions, overages, applicable carrier charges, connectors, support and migration labor. Confirm what is included rather than assuming every fee applies to both products. See <a href="/guides/pricing">pricing economics</a>.</p>
+    <p>For a controlled comparison, calculate contribution as net sales after discounts and returns, minus product, fulfillment, messaging, platform and operating costs. Avoid subtracting discounts or returns again. Compare contribution per eligible customer with the same denominator in treatment and holdout; platform-attributed revenue alone does not establish lift. Choose the observation window for the buying and return cycle and sufficient evidence, rather than a fixed pilot duration.</p>
+    <p>Choose Klaviyo if its verified data contracts and enabled channels make your journeys easier to maintain. Choose Drip if workflow continuity and confirmed access meet the brief with less operating effort. Keep the current setup when neither candidate passes identity, permission, queue and reconciliation checks. Preserve the traces and unresolved gaps so a future feature or plan change can be evaluated against the same brief.</p>
+  </article>
+  <FaqSection faqs={faqs} title="Klaviyo vs Drip FAQ" />
 </BaseLayout>
