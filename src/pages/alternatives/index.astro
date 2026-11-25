@@ -2,256 +2,82 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import { site } from '../../content';
-
-const path = '/alternatives';
-const title = 'Shopify SMS marketing app alternatives: 14 tools compared';
-const desc = 'A practical Shopify SMS alternatives guide for stores moving from an SMS specialist, email suite, popup tool, or native app. Compare fit, consent workflows, cost drivers, and a safe pilot.';
-
-const tools = [
-  { name: 'Postscript', fit: 'SMS-first Shopify campaigns', cost: 'Plan plus message usage; check country rates and carrier fees', link: 'https://postscript.io/pricing', url: 'https://postscript.io/' },
-  { name: 'Attentive', fit: 'Larger teams needing managed SMS', cost: 'Usually sales-led; request a written volume and commitment quote', link: 'https://www.attentive.com/pricing', url: 'https://www.attentive.com/' },
-  { name: 'SMSBump / Yotpo SMS', fit: 'SMS automation with a broader retention suite', cost: 'Plan and message charges vary by destination', link: 'https://www.yotpo.com/pricing/', url: 'https://www.yotpo.com/smsbump/' },
-  { name: 'Omnisend', fit: 'Email and SMS for ecommerce teams', cost: 'Subscriber tier plus SMS credits; confirm included sends', link: 'https://www.omnisend.com/pricing/', url: 'https://www.omnisend.com/' },
-  { name: 'Klaviyo', fit: 'Deep event data and cross-channel segmentation', cost: 'Profiles, email, and SMS can each affect the bill', link: 'https://www.klaviyo.com/pricing', url: 'https://www.klaviyo.com/' },
-  { name: 'Sendlane', fit: 'Email/SMS lifecycle ownership for lean teams', cost: 'Current tiers and SMS availability depend on account and region', link: 'https://www.sendlane.com/pricing', url: 'https://www.sendlane.com/' },
-  { name: 'Brevo', fit: 'Email-first teams adding transactional or SMS sends', cost: 'Email and SMS are separate usage dimensions; verify country pricing', link: 'https://www.brevo.com/pricing/', url: 'https://www.brevo.com/' },
-  { name: 'Shopify Messaging', fit: 'Native, simple marketing sends', cost: 'Review Shopify’s current promotional messaging allowance and eligibility', link: 'https://www.shopify.com/pricing', url: 'https://www.shopify.com/' },
-  { name: 'Shopify Email', fit: 'Stores that mainly need low-complexity email', cost: 'Allowance and overage rules can change with Shopify plan policy', link: 'https://www.shopify.com/email', url: 'https://www.shopify.com/email' },
-  { name: 'Privy', fit: 'Capture, onsite conversion, and basic messaging', cost: 'Confirm contact, feature, and SMS usage limits in the current plan', link: 'https://www.privy.com/pricing', url: 'https://www.privy.com/' },
-  { name: 'Justuno', fit: 'Onsite personalization before sending SMS elsewhere', cost: 'Traffic, contacts, and advanced onsite features may be separate', link: 'https://www.justuno.com/pricing', url: 'https://www.justuno.com/' },
-  { name: 'Drip', fit: 'Email-led ecommerce segmentation', cost: 'Contact-based pricing; SMS may require another provider', link: 'https://www.drip.com/pricing', url: 'https://www.drip.com/' },
-  { name: 'Mailchimp', fit: 'Familiar email workflows and broad integrations', cost: 'Contacts, seats, and add-ons can change total cost', link: 'https://mailchimp.com/pricing/', url: 'https://mailchimp.com/' },
-  { name: 'ActiveCampaign', fit: 'Complex email automation and CRM handoffs', cost: 'Plan, contacts, users, and add-ons need a like-for-like quote', link: 'https://www.activecampaign.com/pricing', url: 'https://www.activecampaign.com/' },
-];
+const path = "/alternatives";
+const title = "Shopify marketing alternatives: choose the job to replace";
+const desc = "Route a capture, email, SMS or event-ownership problem to the right replacement investigation, then prove the handover on controlled records.";
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <header class="max-w-4xl">
-        <p class="badge">Migration guide · updated July 2026</p>
-        <h1 class="hero-title mt-5">Shopify SMS marketing app alternatives</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">The right replacement depends on why you are leaving: SMS cost, weak consent records, an overloaded profile model, limited event data, or a team that only needs a dependable native send. This page compares 14 realistic options without pretending that one platform wins every store.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Use the app-specific pages for deeper migration notes, then run the pilot below against your own list, destinations, Shopify events, and support capacity. Prices and messaging rules change, so official pricing pages are the source of truth before signing. And wherever the search is really about email depth beside a specialist SMS sender, shortlist Sequenzy — the lifecycle email layer this site ranks in the top tier for welcome, education, and winback.</p>
-      </header>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="font-serif text-3xl font-black text-slate-950">Shortlist by migration trigger</h2>
-        <table class="mt-6 w-full min-w-[760px] text-left text-sm">
-          <thead>
-<tr class="border-b border-cyan-300/20/15 text-xs font-black uppercase tracking-wider text-orange-700">
-<th class="py-3 pr-4">If the problem is…</th>
-<th class="py-3 pr-4">Start with</th>
-<th class="py-3">Check before moving</th>
-</tr>
-</thead>
-          <tbody class="text-orange-950/80">
-            <tr class="border-b border-cyan-300/20/8">
-<td class="py-3 pr-4 font-bold text-white">SMS execution and consent operations</td>
-<td class="py-3 pr-4">Postscript, Attentive, Yotpo SMS</td>
-<td class="py-3">Opt-in source, quiet hours, country coverage, carrier fees, STOP handling</td>
-</tr>
-            <tr class="border-b border-cyan-300/20/8">
-<td class="py-3 pr-4 font-bold text-white">Email + SMS event orchestration</td>
-<td class="py-3 pr-4">Klaviyo, Omnisend, Sendlane</td>
-<td class="py-3">Profile counting, event latency, suppression precedence, attribution window</td>
-</tr>
-            <tr class="border-b border-cyan-300/20/8">
-<td class="py-3 pr-4 font-bold text-white">Simple or native sending</td>
-<td class="py-3 pr-4">Shopify Messaging, Shopify Email, Brevo</td>
-<td class="py-3">Feature eligibility, allowance, automation depth, export and reporting</td>
-</tr>
-            <tr>
-<td class="py-3 pr-4 font-bold text-white">Onsite capture plus lifecycle handoff</td>
-<td class="py-3 pr-4">Privy, Justuno, then a sending platform</td>
-<td class="py-3">Consent language, field mapping, double opt-in, and who owns the audience</td>
-</tr>
-          </tbody>
-        </table>
-      </div>
-
-      <section class="mt-16">
-        <div class="flex flex-wrap items-end justify-between gap-4">
-<div>
-<p class="badge">14 options</p>
-<h2 class="mt-3 font-serif text-4xl font-black text-slate-950">Profiles for the search behind “alternatives”</h2>
-</div>
-<a class="link" href="/compare">See head-to-head comparisons →</a>
-</div>
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          {tools.map((tool, index) => (
-            <article class="card">
-              <p class="text-xs font-black uppercase tracking-wider text-orange-700">{String(index + 1).padStart(2, '0')} · {tool.fit}</p>
-              <h3 class="mt-3 font-serif text-2xl font-black text-slate-950">
-<a class="link" href={tool.url}>{tool.name}</a>
-</h3>
-              <p class="mt-4 text-orange-950/80">{tool.name} is a sensible alternative when the store’s main job matches its stated fit: <strong>{tool.fit.toLowerCase()}</strong>. The important question is not whether it has an SMS checkbox, but whether Shopify events, consent fields, segments, and replies arrive where the operator can act on them.</p>
-              <p class="mt-3 text-orange-950/80">Before migration, export the exact flows you use, identify which messages are promotional versus transactional, and test one welcome or replenishment path. Keep the existing sender authoritative until the replacement proves suppression, unsubscribe processing, link tracking, and failure alerts on real test records.</p>
-              <div class="mt-4 flex flex-wrap gap-2 text-sm">
-<span class="rounded-full bg-orange-100 px-3 py-1 text-orange-950">
-<strong>Best for:</strong> {tool.fit}</span>
-<span class="rounded-full bg-orange-100 px-3 py-1 text-orange-950">
-<strong>Cost:</strong> {tool.cost}</span>
-</div>
-              <div class="mt-4 grid gap-3 text-sm sm:grid-cols-2">
-<div>
-<strong class="text-emerald-800">Pros</strong>
-<p class="mt-1 text-orange-950/75">Purpose-built workflow or data fit; established Shopify integration path; official documentation to validate.</p>
-</div>
-<div>
-<strong class="text-rose-800">Cons</strong>
-<p class="mt-1 text-orange-950/75">Final cost and capability depend on list size, destinations, events, contract terms, and the rest of the stack.</p>
-</div>
-</div>
-              <p class="mt-4 text-sm">
-<a class="link" href={tool.link}>Official pricing / plan details ↗</a>
-</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <div class="mt-16 card overflow-x-auto">
-        <h2 class="font-serif text-3xl font-black text-slate-950">Cost questions that change the shortlist</h2>
-        <table class="mt-6 w-full min-w-[760px] text-left text-sm">
-<thead>
-<tr class="border-b border-cyan-300/20/15 text-xs font-black uppercase tracking-wider text-orange-700">
-<th class="py-3 pr-4">Cost driver</th>
-<th class="py-3 pr-4">Ask for a like-for-like answer</th>
-<th class="py-3">Why a headline price misleads</th>
-</tr>
-</thead>
-<tbody class="text-orange-950/80">
-          <tr class="border-b border-cyan-300/20/8">
-<td class="py-3 pr-4 font-bold text-white">SMS volume</td>
-<td class="py-3 pr-4">What does one message to one destination cost, including carrier or pass-through fees?</td>
-<td class="py-3">Country, encoding, long-code, toll-free, and carrier rules vary.</td>
-</tr>
-          <tr class="border-b border-cyan-300/20/8">
-<td class="py-3 pr-4 font-bold text-white">Profiles and contacts</td>
-<td class="py-3 pr-4">Are unsubscribed, suppressed, duplicate, or email-only profiles billable?</td>
-<td class="py-3">A migration can recreate the billing problem with a different definition.</td>
-</tr>
-          <tr class="border-b border-cyan-300/20/8">
-<td class="py-3 pr-4 font-bold text-white">Automation and data</td>
-<td class="py-3 pr-4">Which Shopify events, segments, webhooks, and historical fields are included?</td>
-<td class="py-3">A cheap sender may require paid middleware or manual exports.</td>
-</tr>
-          <tr>
-<td class="py-3 pr-4 font-bold text-white">Support and contract</td>
-<td class="py-3 pr-4">What is included in onboarding, response time, annual commitment, and cancellation?</td>
-<td class="py-3">Managed services and negotiated plans are not comparable to self-serve tiers.</td>
-</tr>
-        </tbody>
-</table>
-      </div>
-
-      <section class="prose-shopify mt-16 max-w-4xl">
-        <h2>Pros and cons of switching an SMS app</h2>
-        <p>
-<strong>Pros:</strong> a move can reduce duplicated tools, restore visibility into consent, simplify ownership, or align sends with the events your store actually has. It can also make a neglected journey testable again. <strong>Cons:</strong> migration introduces identity mismatches, duplicate sends, lost historical context, new opt-out behavior, and a temporary support burden. Treat those as launch risks, not footnotes.</p>
-        <p>Do not assume consent transfers because a phone number transferred. Preserve the original source, timestamp, country or jurisdiction, disclosure text where available, and suppression state. Have counsel or your compliance owner confirm the applicable rules; this guide is an implementation checklist, not legal advice.</p>
-        <h2>30-day implementation pilot</h2>
-        <p>Week one: inventory every SMS flow, audience, sender identity, link domain, webhook, and suppression rule. Export a small test cohort and map each field. Week two: connect a sandbox or internal test store, then send only to staff-approved numbers. Verify opt-in, STOP/HELP behavior, quiet hours, personalization fallback, checkout links, and Shopify order status handling.</p>
-        <p>Weeks three and four: move one low-risk journey—usually welcome, replenishment, or back-in-stock—while the old journey is disabled for that cohort. Keep a holdout if the platform supports it. Compare deliverability, opt-outs, delivered-message cost, incremental orders, contribution margin after discounts, and support tickets. Expand only when the replacement can be paused cleanly and the team can explain every message.</p>
-      </section>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="font-serif text-3xl font-black text-slate-950">Pilot acceptance table</h2>
-        <table class="mt-6 w-full min-w-[760px] text-left text-sm">
-<thead>
-<tr class="border-b border-cyan-300/20/15 text-xs font-black uppercase tracking-wider text-orange-700">
-<th class="py-3 pr-4">Test</th>
-<th class="py-3 pr-4">Pass condition</th>
-<th class="py-3">Evidence to keep</th>
-</tr>
-</thead>
-<tbody class="text-orange-950/80">
-          <tr class="border-b border-cyan-300/20/8">
-<td class="py-3 pr-4 font-bold text-white">Consent and suppression</td>
-<td class="py-3 pr-4">Only intended test numbers receive messages; opt-out suppresses future promotional sends.</td>
-<td class="py-3">Exported consent fields, event log, and test screenshots.</td>
-</tr>
-          <tr class="border-b border-cyan-300/20/8">
-<td class="py-3 pr-4 font-bold text-white">Shopify event path</td>
-<td class="py-3 pr-4">A test order, refund, restock, or subscription event enters the right flow once.</td>
-<td class="py-3">Event ID, timestamp, recipient state, and duplicate check.</td>
-</tr>
-          <tr class="border-b border-cyan-300/20/8">
-<td class="py-3 pr-4 font-bold text-white">Economics</td>
-<td class="py-3 pr-4">Delivered cost and incremental margin are calculated from your own cohort.</td>
-<td class="py-3">Provider invoice/usage export, holdout result, and discount cost.</td>
-</tr>
-          <tr>
-<td class="py-3 pr-4 font-bold text-white">Operations</td>
-<td class="py-3 pr-4">A named owner can pause, edit, approve, and roll back without vendor help.</td>
-<td class="py-3">Runbook, approval record, and rollback test.</td>
-</tr>
-        </tbody>
-</table>
-      </div>
-
-      <section class="prose-shopify mt-16 max-w-4xl">
-        <h2>Useful internal paths</h2>
-        <p>Start with the <a class="link" href="/guides/consent">consent guide</a>, then review <a class="link" href="/guides/tcpa">SMS compliance questions</a>, <a class="link" href="/guides/deliverability">deliverability checks</a>, and the <a class="link" href="/use-cases">Shopify use-case playbooks</a>. For a narrower decision, compare <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo and Omnisend</a> or inspect the <a class="link" href="/apps">app directory</a>.</p>
-        <p>Official links are included beside each profile so you can verify current plan names, regional availability, usage charges, and contract terms. If an official page does not state a feature or rate, treat it as unverified until the vendor confirms it in writing.</p>
-      </section>
-    </div>
+  <section class="container py-16">
+    <p class="badge">Replacement planning · November 25, 2026</p>
+    <h1 class="hero-title mt-5">{title}</h1>
+    <p class="mt-6 text-xl leading-9">{desc}</p>
   </section>
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <article class="container prose-shopify pb-16">
+    <h2>Name the broken job before choosing a replacement</h2>
+    <p>Start with a failure you can reproduce: a capture field lost at sync, a purchase arriving after a cart reminder, a bill driven by inactive profiles, or an unowned reply queue. Repairing a working incumbent can preserve templates, consent history and trained operators. Replacing it can remove duplicate work or supply a missing capability, provided the new owner can demonstrate that job. This directory routes an investigation; it does not rank vendors or claim that every listed tool sends SMS.</p>
+    <h2>Replacement, comparison or a sending-layer repair?</h2>
+    <p>Use an app-specific replacement page when you already know what you are leaving. Use <a class="link" href="/compare">head-to-head comparisons</a> when two candidates must answer the same brief, including <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo versus Omnisend</a>. Use the <a class="link" href="/apps">app directory</a> for initial capability research. A failed welcome after a successful quiz may require repairing the destination sender rather than replacing capture. Adding another sender without resolving queue ownership can multiply the failure.</p>
+    <h2>Route by the operating job</h2>
+    <table class="data-table"><thead><tr><th>Job under review</th><th>Investigation path</th><th>Evidence needed</th></tr></thead><tbody>
+      <tr><td>SMS dispatch and replies</td><td><a href="/apps/postscript">Postscript</a> or <a href="/apps/attentive">Attentive</a></td><td>Destination coverage, sender access, opt-out propagation, reply staffing and delivered-segment charges.</td></tr>
+      <tr><td>Cross-channel event ownership</td><td><a href="/apps/klaviyo">Klaviyo</a>, Omnisend or Sendlane research</td><td>One order ID must cancel the relevant queued reminder; decide who owns email and SMS collisions.</td></tr>
+      <tr><td>Capture, quiz and identity handoff</td><td><a href="/alternatives/justuno-alternative">Replacing Justuno</a>; inspect Privy as a capture candidate</td><td>Compare required fields, targeting and supported installation before considering downstream sends.</td></tr>
+      <tr><td>Email education beside an existing text sender</td><td><a href="/apps/sequenzy">Sequenzy email review</a> or an existing email platform</td><td>Template and event fit, maintainable consent boundaries, and the added integration cost; no default second platform.</td></tr>
+      <tr><td>Native or simpler messaging</td><td>Shopify Messaging and Shopify Email official resources below</td><td>Current eligibility, actual channel scope and the events needed; a simpler editor is useful only if the journey remains operable.</td></tr>
+      <tr><td>Replenishment or stock timing</td><td><a href="/use-cases">Use-case playbooks</a></td><td>Stock expiry, subscription state, purchase exits and support ownership before the tool decision.</td></tr>
+    </tbody></table>
+    <h2>App-specific exit notes</h2>
+    <p>Choose the incumbent below for its handover questions. These links are navigation, not an assurance that every destination has completed editorial review. Separate capture, email, SMS and web push requirements in your brief.</p>
+    <ul>
+      <li><a class="link" href="/alternatives/activecampaign-alternative">Activecampaign replacement notes</a></li>
+      <li><a class="link" href="/alternatives/aftership-email-alternative">Aftership Email replacement notes</a></li>
+      <li><a class="link" href="/alternatives/attentive-alternative">Attentive replacement notes</a></li>
+      <li><a class="link" href="/alternatives/brevo-alternative">Brevo replacement notes</a></li>
+      <li><a class="link" href="/alternatives/drip-alternative">Drip replacement notes</a></li>
+      <li><a class="link" href="/alternatives/firepush-alternative">Firepush replacement notes</a></li>
+      <li><a class="link" href="/alternatives/justuno-alternative">Justuno replacement notes</a></li>
+      <li><a class="link" href="/alternatives/klaviyo-alternative">Klaviyo replacement notes</a></li>
+      <li><a class="link" href="/alternatives/mailchimp-alternative">Mailchimp replacement notes</a></li>
+      <li><a class="link" href="/alternatives/marsello-alternative">Marsello replacement notes</a></li>
+      <li><a class="link" href="/alternatives/omnisend-alternative">Omnisend replacement notes</a></li>
+      <li><a class="link" href="/alternatives/postscript-alternative">Postscript replacement notes</a></li>
+      <li><a class="link" href="/alternatives/privy-alternative">Privy replacement notes</a></li>
+      <li><a class="link" href="/alternatives/recart-alternative">Recart replacement notes</a></li>
+      <li><a class="link" href="/alternatives/rejoiner-alternative">Rejoiner replacement notes</a></li>
+      <li><a class="link" href="/alternatives/sendlane-alternative">Sendlane replacement notes</a></li>
+      <li><a class="link" href="/alternatives/sequenzy-alternative">Sequenzy replacement notes</a></li>
+      <li><a class="link" href="/alternatives/shopify-email-alternative">Shopify Email replacement notes</a></li>
+      <li><a class="link" href="/alternatives/smsbump-alternative">Smsbump replacement notes</a></li>
+      <li><a class="link" href="/alternatives/tinyemail-alternative">Tinyemail replacement notes</a></li>
+      <li><a class="link" href="/alternatives/yotpo-email-sms-alternative">Yotpo Email Sms replacement notes</a></li>
+    </ul>
+    <h2>Retain every official research destination</h2>
+    <p>The original directory’s supplier and pricing links remain below so an existing research path is not lost. Read the current vendor documentation for the specific job, supported connector and written quote. A marketing homepage or pricing link alone does not prove market coverage, an included integration, or account entitlement.</p>
+    <ul>
+      <li>Postscript: <a class="link" href="https://postscript.io/">official product scope</a>; <a class="link" href="https://postscript.io/pricing">plan and commercial questions</a></li>
+      <li>Attentive: <a class="link" href="https://www.attentive.com/">official product scope</a>; <a class="link" href="https://www.attentive.com/pricing">plan and commercial questions</a></li>
+      <li>SMSBump / Yotpo SMS: <a class="link" href="https://www.yotpo.com/smsbump/">official product scope</a>; <a class="link" href="https://www.yotpo.com/pricing/">plan and commercial questions</a></li>
+      <li>Omnisend: <a class="link" href="https://www.omnisend.com/">official product scope</a>; <a class="link" href="https://www.omnisend.com/pricing/">plan and commercial questions</a></li>
+      <li>Klaviyo: <a class="link" href="https://www.klaviyo.com/">official product scope</a>; <a class="link" href="https://www.klaviyo.com/pricing">plan and commercial questions</a></li>
+      <li>Sendlane: <a class="link" href="https://www.sendlane.com/">official product scope</a>; <a class="link" href="https://www.sendlane.com/pricing">plan and commercial questions</a></li>
+      <li>Brevo: <a class="link" href="https://www.brevo.com/">official product scope</a>; <a class="link" href="https://www.brevo.com/pricing/">plan and commercial questions</a></li>
+      <li>Shopify Messaging: <a class="link" href="https://www.shopify.com/">official product scope</a>; <a class="link" href="https://www.shopify.com/pricing">plan and commercial questions</a></li>
+      <li>Shopify Email: <a class="link" href="https://www.shopify.com/email">official product scope</a>; <a class="link" href="https://www.shopify.com/email">plan and commercial questions</a></li>
+      <li>Privy: <a class="link" href="https://www.privy.com/">official product scope</a>; <a class="link" href="https://www.privy.com/pricing">plan and commercial questions</a></li>
+      <li>Justuno: <a class="link" href="https://www.justuno.com/">official product scope</a>; <a class="link" href="https://www.justuno.com/pricing">plan and commercial questions</a></li>
+      <li>Drip: <a class="link" href="https://www.drip.com/">official product scope</a>; <a class="link" href="https://www.drip.com/pricing">plan and commercial questions</a></li>
+      <li>Mailchimp: <a class="link" href="https://mailchimp.com/">official product scope</a>; <a class="link" href="https://mailchimp.com/pricing/">plan and commercial questions</a></li>
+      <li>ActiveCampaign: <a class="link" href="https://www.activecampaign.com/">official product scope</a>; <a class="link" href="https://www.activecampaign.com/pricing">plan and commercial questions</a></li>
+    </ul>
+    <h2>Permission and purchase exits come before dispatch</h2>
+    <p>Preserve the source, timestamp, disclosure version and channel-specific subscription and suppression history. Unknown permission is not permission. The receiving sender must enforce current eligibility and applicable destination/timezone rules at dispatch, including opt-outs received after import. A purchase should cancel the matching recovery job without silently canceling every unrelated service message. Assign an owner to unresolved identities and contradictory records. Review <a class="link" href="/guides/consent">consent</a>, <a class="link" href="/guides/tcpa">compliance questions</a>, <a class="link" href="/guides/quiet-hours">quiet hours</a> and <a class="link" href="/guides/deliverability">deliverability</a> for the implementation brief.</p>
+    <h2>Compare economics on the same workload</h2>
+    <p>Request the same normal and peak-month audience, message mix, destinations, encoding, support and contract assumptions from each candidate. Include billable suppressed profiles, segments and carrier charges, middleware, migration labor and retained subscriptions. Compare incremental contribution against a suitable holdout after merchandise costs, incentives, refunds, messaging and support; count a discount once. Platform-attributed revenue alone is not incremental lift. The <a class="link" href="/guides/pricing">pricing worksheet</a> helps expose a cheap base plan with expensive handoffs.</p>
+    <h2>Proposed acceptance and rollback gates</h2>
+    <p>Inventory flows, sender identities, links, templates, events and waiting people first. On controlled records, demonstrate capture to destination, one welcome, a retried event without duplicate dispatch, purchase-before-send cancellation, opt-out-before-send suppression and a visible failed delivery queue. Keep IDs, timestamps and expected versus actual states. These are proposed exercises, not tests performed for this directory. Set the observation window to the journey and billing cycle rather than an arbitrary migration deadline. Release a bounded cohort only when the named operator can pause it; keep one live owner per job, preserve a rollback export, and reconcile waiting people before either system resumes.</p>
+    <h2>The campaign calendar remains an operating responsibility</h2>
+    <p>A new app does not decide how many offers a subscriber should receive. Keep a shared calendar, offer eligibility, stock truth and stop thresholds across channels. Preserve meaningful VIP access without requiring a discount, and isolate an incentive experiment from routine full-price communication. See <a class="link" href="/guides/campaign-restraint">campaign restraint</a> and <a class="link" href="/guides/offer-discipline">offer discipline</a>. Choose the smallest change that resolves the documented job with a supportable owner.</p>
+
+  </article>
 </BaseLayout>
