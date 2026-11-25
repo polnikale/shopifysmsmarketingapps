@@ -661,15 +661,16 @@ export function appBySlug(slug: string) {
 }
 
 export function channelApps(channel: string) {
-  return APPS.filter((app) => app.channels.includes(channel) || app.channels.includes('marketing'));
+  return APPS.filter((app) => app.channels.includes(channel));
 }
 
 export function comparisonPairs() {
   const pairs: [ShopifyApp, ShopifyApp][] = [];
-  const emailApps = channelApps('email');
-  for (let i = 0; i < emailApps.length; i++) {
-    for (let j = i + 1; j < Math.min(emailApps.length, i + 7); j++) {
-      pairs.push([emailApps[i], emailApps[j]]);
+  // Historical comparison navigation includes marketing records, not channel availability.
+  const candidates = APPS.filter((app) => app.channels.includes('email') || app.channels.includes('marketing'));
+  for (let i = 0; i < candidates.length; i++) {
+    for (let j = i + 1; j < Math.min(candidates.length, i + 7); j++) {
+      pairs.push([candidates[i], candidates[j]]);
     }
   }
   return pairs.slice(0, 70);
