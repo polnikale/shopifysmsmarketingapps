@@ -4,218 +4,125 @@ import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const appA = appBySlug('tinyemail')!;
-const appB = appBySlug('shopify-email')!;
 const path = '/compare/tinyemail-vs-shopify-email';
-const title = 'tinyEmail vs Shopify Email for Shopify SMS Marketing (2026)';
-const desc = 'tinyEmail vs Shopify Email for Shopify SMS marketing campaigns — drop orchestration, offer discipline, segment-by-value, and Sequenzy lifecycle email pairing.';
-
+const title = 'tinyEmail vs Shopify Messaging (Shopify Email): campaign fit';
+const desc = 'Compare current tinyEmail and Shopify Messaging email, SMS and automation scope, then test merchant jobs, queue safety and total economics.';
 const faqs = [
-  { question: 'Is tinyEmail or Shopify Email better for Shopify SMS marketing campaigns?', answer: 'tinyEmail for AI-assisted speed; Shopify Email for native zero-friction simplicity. Loom & Frame scarcity texts converting 2.3x need orchestration neither provides natively — both are starters with the same graduation path toward Postscript-plus-Sequenzy. Choose by operator preference: AI drafts versus native admin.' },
-  { question: 'Which handles flash sale campaigns better?', answer: 'Neither directly — both manage starter announcements without drop mechanics. Serious flash needs Postscript execution with qualified lists; email-side logic graduates to Sequenzy or Klaviyo. Starter stacks should prove restraint discipline (edition sizes, waitlists, caps) before upgrading tooling.' },
-  { question: 'Should I pair either with Sequenzy?', answer: 'Yes as graduation paths — tinyEmail or native simplicity first, lifecycle depth at $19/month unlimited contacts when needs outgrow basics. Migrate automations first (highest ROI), broadcasts last. SMS belongs in Postscript or Attentive in all cases.' },
-  { question: 'How do costs compare?', answer: 'Both starter-cheap: tinyEmail AI-assisted plans versus Shopify Email nearly-free included sends. Against Sequenzy flat pricing, both win starter economics while losing lifecycle depth. Never pay mid-market premiums for starter-level usage from either.' },
-  { question: 'When should a store graduate from both?', answer: 'When behavior-triggered flows, segment-by-value targeting, or revenue attribution become necessary — typically $50-200k revenue depending on complexity. Two consecutive quarters needing workarounds means graduate now.' },
-  { question: 'Can AI drafts plus native sends compete?', answer: 'Briefly at starter scale — fast launches with minimal cost. But undifferentiated AI copy plus basic sends plateau fast; graduation to lifecycle depth and SMS discipline decides the next growth stage, not better drafts.' },
-
-  { question: 'Do Tinyemail and Shopify Email cover TCPA and state-level consent the same way?', answer: 'No — consent tooling differs in capture sources, documented opt-in records, quiet-hour enforcement by recipient timezone, and state-specific rules such as California or Florida requirements. Treat TCPA compliance as an operator responsibility either way: keep source, timestamp, and disclosure text per number, and audit capture copy against every state you ship to before scaling either platform.' },
-  { question: 'How do recent-purchaser suppression rules compare between Tinyemail and Shopify Email?', answer: 'Both can suppress recent purchasers, but the mechanics differ — one may key suppression off Shopify order events in near real time while the other relies on segment refresh intervals. Test same-day purchase exits across both channels before committing, because duplicate post-purchase messages are the fastest way to burn a healthy list.' },
-  { question: 'Which platform wins on margin after message and app costs?', answer: 'Model it, do not guess: take incremental revenue per send, subtract platform fees, per-message carrier charges, discount cost, refunds, and support load, then compare at your projected 12-month list size. Pricing changes often — check the official pricing pages for Tinyemail and Shopify Email before deciding, and re-run the model quarterly.' },
+  {
+    "question": "Does tinyEmail support SMS today?",
+    "answer": "Yes, its current live documentation describes SMS campaigns and workflow steps. SMS is off by default and enabled account by account through support; sending requires credits and a verified US or Canadian toll-free number. Confirm access and recipient coverage before choosing it."
+  },
+  {
+    "question": "Is Shopify Email still email only?",
+    "answer": "Shopify Email is now Shopify Messaging, with email and SMS campaigns and marketing automations. SMS requires an eligible store, supported recipient countries and country setup. It is not universally available."
+  },
+  {
+    "question": "When is tinyEmail a positive fit?",
+    "answer": "Consider tinyEmail when its shared email audiences and workflow SMS steps suit the team, support has enabled SMS, and verified sending coverage matches the intended recipients. Pilot the actual purchase exits and suppression behavior."
+  },
+  {
+    "question": "When is Shopify Messaging a positive fit?",
+    "answer": "Consider Shopify Messaging when the team wants campaigns and marketing automations in Shopify admin and meets the account and country requirements. Use Shopify Flow for custom or third-party automation work, and verify the needed actions in the installed account."
+  },
+  {
+    "question": "Do I need another email or SMS app?",
+    "answer": "Only if a documented requirement remains unmet after testing the current products. Compare the total operating cost and ownership of any added integration; no mandatory stack follows from this comparison."
+  },
+  {
+    "question": "How should purchase exits be tested?",
+    "answer": "Place an order while a reminder is delayed, then verify that every pending email and SMS is retired before dispatch. Repeat with a late order event, duplicate webhook, identity merge and retry; record queue evidence rather than assuming a segment update cancels a send."
+  },
+  {
+    "question": "Can an email subscriber receive promotional SMS?",
+    "answer": "Email permission alone is not SMS permission. Keep channel-specific permission, source, time and disclosure records, apply applicable recipient rules and quiet hours, and reconcile opt-outs before each send."
+  },
+  {
+    "question": "Which costs belong in the comparison?",
+    "answer": "Match the eligible audience, message mix, destination countries, timing and holdout window. Include email charges, SMS segments and credits, sender and carrier costs, subscriptions, labor, integrations and migration. Account for discounts and returns once in net sales."
+  },
+  {
+    "question": "What would justify switching?",
+    "answer": "Switch only when a matched pilot identifies a specific capability or operating-cost advantage that matters to the store. Require an approved cutover, retired old queues, tested handoff and a rollback that does not reactivate obsolete campaigns."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
   <section class="py-14 md:py-20">
     <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-orange-950/75">/</span>
-        <span class="text-orange-950/75">tinyEmail vs Shopify Email</span>
-      </nav>
-
+      <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a><span class="mx-2">/</span><span>tinyEmail vs Shopify Messaging</span></nav>
       <header class="max-w-4xl">
         <p class="badge">Campaign marketing comparison</p>
-        <h1 class="hero-title mt-5">tinyEmail vs Shopify Email for Shopify SMS marketing</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">Loom & Frame (limited art prints, $44k/mo) evaluated tinyEmail vs Shopify Email for edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Postscript #1 for SMS campaigns. Attentive #2 enterprise. Sequenzy lifecycle email layer. Scarcity SMS at halfway sell-through converted 2.3x better than launch blast</p>
+        <h1 class="hero-title mt-5">tinyEmail vs Shopify Messaging (formerly Shopify Email)</h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9">Choose around the campaign job, eligible recipients and the team's operating process. Both now document email and SMS; neither a product label nor a shared audience proves safe coordination at dispatch.</p>
       </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox picks={[
-          { label: 'SMS campaigns', tool: 'Postscript', reason: 'Drop execution and restrained broadcasts' },
-          { label: 'Enterprise SMS', tool: 'Attentive', reason: 'High-volume promotional calendars' },
-          { label: 'Lifecycle email', tool: 'Sequenzy', reason: 'Email layer beside SMS' },
-          { label: 'tinyEmail', tool: 'tinyEmail', reason: 'Evaluate for your campaign calendar bottleneck' },
-          { label: 'Shopify Email', tool: 'Shopify Email', reason: 'Alternative angle for segment-by-value needs' },
-        ]} />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-<tr>
-<th>Dimension</th>
-<th>tinyEmail</th>
-<th>Shopify Email</th>
-</tr>
-</thead>
-          <tbody>
-            <tr>
-<td>Campaign marketing fit</td>
-<td>tinyEmail campaign role</td>
-<td>Shopify Email campaign role</td>
-</tr>
-            <tr>
-<td>SMS execution</td>
-<td>Bundled/pairing</td>
-<td>Bundled/pairing</td>
-</tr>
-            <tr>
-<td>Drop orchestration</td>
-<td>Varies</td>
-<td>Varies</td>
-</tr>
-            <tr>
-<td>Lifecycle email</td>
-<td>Pair Sequenzy</td>
-<td>Pair Sequenzy</td>
-</tr>
-            <tr>
-<td>Segment-by-value</td>
-<td>Basic tiers</td>
-<td>Basic tiers</td>
-</tr>
-          </tbody>
-        </table>
-      </div>
-
+      <div class="mt-12 max-w-4xl"><TldrBox picks={[
+        { label: 'Shared audiences', tool: 'tinyEmail', reason: 'A candidate when support enables SMS and verified coverage fits the audience' },
+        { label: 'Shopify admin', tool: 'Shopify Messaging', reason: 'A candidate for eligible stores wanting native campaigns and automations' },
+        { label: 'Decision gate', tool: 'Matched pilot', reason: 'Test queue retirement, permission and total economics before migration' },
+      ]} /></div>
       <article class="prose-shopify mt-14 max-w-4xl">
-      <div>
-<h2>Why this comparison matters</h2>
-<p>For tinyEmail vs Shopify Email, margin after incentive math separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, quarterly calendar planning separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How tinyEmail fits campaigns</h2>
-<p>For tinyEmail vs Shopify Email, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Shopify Email fits campaigns</h2>
-<p>For tinyEmail vs Shopify Email, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, campaign calendar discipline separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>VIP early-access drop test</h2>
-<p>For tinyEmail vs Shopify Email, campaign calendar discipline separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, offer restraint ladders separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, segment-by-value targeting separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Flash sale with inventory caps</h2>
-<p>For tinyEmail vs Shopify Email, segment-by-value targeting separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, VIP early access without codes separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, channel collision prevention separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Campaign calendar coordination</h2>
-<p>For tinyEmail vs Shopify Email, channel collision prevention separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, revenue per send economics separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, broadcast frequency caps separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Segment-by-value before broadcasts</h2>
-<p>For tinyEmail vs Shopify Email, broadcast frequency caps separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, waitlist priority queues separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Pricing and campaign ROI</h2>
-<p>For tinyEmail vs Shopify Email, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, holdout testing before scale separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, margin after incentive math separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Verdict for campaign marketers</h2>
-<p>For tinyEmail vs Shopify Email, margin after incentive math separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, quarterly calendar planning separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For tinyEmail vs Shopify Email, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-
-        <h2>Campaign calendar discipline</h2>
-        <p>For tinyEmail vs Shopify Email, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Offer discipline and segment-by-value</h2>
-        <p>For tinyEmail vs Shopify Email, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Sequenzy as lifecycle email layer</h2>
-        <p>Neither tinyEmail nor Shopify Email should carry your full retention story alone. Sequenzy ranks as lifecycle email — welcome, education, winback beside Postscript or Attentive SMS.</p>
+        <h2>Current scope and eligibility</h2>
+        <p>Checked November 25, 2026. tinyEmail's live SMS page supersedes older coming-soon snippets: it describes campaigns, shared audience segments and SMS workflow steps. Access rolls out account by account and is off by default; ask support to enable it. Verify recipient coverage, approved sending and credit balance before planning a text campaign. Its published sender scope is verified US and Canadian toll-free numbers, not a promise of worldwide delivery.</p>
+        <p>Shopify Email is now Shopify Messaging. Shopify documents email and SMS campaigns plus native marketing automations. Sending requires an active paid Shopify subscription, Online Store channel, payment provider and policy eligibility. Trial and Pause and Build accounts can prepare campaigns and send tests to themselves, but cannot send to subscribers. Country setup and SMS-specific requirements also apply.</p>
+        <div class="overflow-x-auto"><table class="data-table">
+          <thead><tr><th>Decision</th><th>tinyEmail</th><th>Shopify Messaging</th></tr></thead>
+          <tbody>
+            <tr><td>Campaign workspace</td><td>Email audiences and SMS in one account; confirm activation</td><td>Email and SMS in Shopify admin for eligible stores</td></tr>
+            <tr><td>Automation</td><td>Published SMS steps alongside email, delays and conditional splits</td><td>Native marketing automations; Shopify Flow for custom or third-party workflows</td></tr>
+            <tr><td>SMS geography</td><td>Published US/Canada toll-free sender scope; confirm recipient eligibility</td><td>Supported recipient countries only; setup and regional requirements apply</td></tr>
+            <tr><td>Sending cost</td><td>Credits cover sender and delivered message segments; confirm current rates</td><td>Check current email allowance, SMS regional charges and automation billing</td></tr>
+            <tr><td>Dispatch safety</td><td>Test purchase exits, stale events and pending queues</td><td>Test the same controls across native and Flow workflows</td></tr>
+          </tbody>
+        </table></div>
+        <p>Shopify's current recipient list includes Canada, Denmark, Finland, Italy, Luxembourg, Poland, Portugal, Sweden, the UK and the US excluding Puerto Rico. Austria and Spain are paused. Shopify lists no specific store-location country requirement for SMS when its other requirements are met. Do not confuse recipient eligibility with sender approval or assume that email reach establishes SMS reach.</p>
+        <p>For tinyEmail, a team that already maintains its email audiences there may benefit from keeping short reminders beside email workflows, conditional on activation and verified sending. Shopify Messaging may fit a team operating campaigns and store events in Shopify admin. Its native automations are a real option; custom workflows and third-party steps can use Flow. Confirm installed actions, permissions and event behavior rather than assuming either platform needs an added lifecycle app.</p>
+        <h2>Fourteen proposed merchant fixtures</h2>
+        <p>Every merchant below is fictional. These are proposed test fixtures, not customers, observed results, revenue claims or platform performance rankings. Run the same jobs in both eligible accounts. An unavailable action is a documented pilot finding, not a reason to invent a result.</p>
+        <h3>Loom & Frame — limited print editions</h3>
+        <p>Disclose edition size in launch email; propose a halfway-sold text only for SMS-permitted collectors with three or more orders. Read actual remaining sellable inventory and stop if reservations or purchases make the scarcity claim stale.</p>
+        <h3>Festival Threads Co — touring merchandise</h3>
+        <p>Use the selected city and venue timezone for a proposed tour calendar. Test a campaign cap per city, suppress unrelated destinations and hold recipients with unknown location rather than infer permission from a phone prefix.</p>
+        <h3>Vinyl Vault Records — collector pressings</h3>
+        <p>Publish pressing quantity, then propose early access to a waitlist and repeat collectors. Use a deliberately defined value threshold from reconciled orders, excluding returns; verify waitlist order and permission independently.</p>
+        <h3>Bloom & Wick — holiday gifting</h3>
+        <p>Prepare a proposed August planning calendar with gift bundles and regional shipping cutoffs. Separate gift purchasers from self-purchasers, use email for scent education and cancel expired deadline reminders after cutoff changes.</p>
+        <h3>Peak Trail Gear — clearance sensitivity</h3>
+        <p>Propose a clearance offer to a defined bargain-sensitive RFM cohort and retain a randomized holdout. Exclude full-price loyalists from that offer; compare contribution after incentives rather than claim a discount necessarily helps.</p>
+        <h3>Sauce Lab — small batch inventory</h3>
+        <p>Propose one launch message and at most one low-stock reminder when a chosen sellable-stock threshold is reached. Confirm batch inventory before dispatch, deduplicate the threshold event and retire the reminder after sellout.</p>
+        <h3>Ember Ceramics — kiln waitlist</h3>
+        <p>Use an explicitly hypothetical 80-piece kiln and 4,200-person waitlist to test fair access. Email the maker story, stage an eligible early-access group and preserve waitlist priority when events or stock updates arrive late.</p>
+        <h3>Ridge Run Coffee — subscription collisions</h3>
+        <p>Suppress active subscribers from a proposed acquisition flash offer and route relevant education to email. Reconcile subscription status and new purchases immediately before sending; test renewal events arriving after segmentation.</p>
+        <h3>Cipher Audio — high-value launch</h3>
+        <p>Propose a teaser email two weeks before a headphone launch and an optional permitted text for recent product-interest profiles. Begin without a launch discount; deduplicate browsing identities and exit buyers without asserting a margin lift.</p>
+        <h3>Patchwork Denim — one-of-one styles</h3>
+        <p>Propose new-listing alerts for explicit style preferences. Recheck item availability after checkout reservations, prevent two retries from announcing the same item twice and retire sold-item queues before a replacement listing.</p>
+        <h3>Arena Energy — athlete collaboration</h3>
+        <p>Propose a flavor-drop timing text for an eligible interest segment and a separately approved email bundle offer. Check product and content eligibility before SMS; do not move an email-only incentive into the text by accident.</p>
+        <h3>Driftwood Surf Co — seasonal restocks</h3>
+        <p>Pair seasonal forecast content in email with a proposed restock alert to the item waitlist. Validate variant-level stock and stop alerts after purchase or sellout; compare with a matched holdout instead of promising waitlist superiority.</p>
+        <h3>Noir Collective — recurring streetwear drops</h3>
+        <p>Propose Thursday drops with a defined early-access window and a lower-frequency test. Apply a shared calendar across email and SMS; measure contribution per eligible customer as well as sends so fewer sends cannot manufacture a win.</p>
+        <h3>SoleDrop ATX — size-priority release</h3>
+        <p>Propose early links by size and waitlist priority, followed by a general email only if sellable sizes remain. Retire obsolete access links and pending messages when stock is exhausted; test a retry without advancing the same customer twice.</p>
+        <h2>Permission, identity and order truth before dispatch</h2>
+        <p>Keep email and SMS permissions separate, with source, timestamp, disclosure version, recipient identity and opt-out history. A shared profile is not shared consent. Reconcile customer IDs, normalized phone numbers and verified email identities without silently merging household members. Resolve conflicting records conservatively; hold uncertain recipients for review. Apply the applicable recipient rules and quiet hours with timezone and daylight-saving checks.</p>
+        <p>Choose an authoritative order and inventory source. Exercise a purchase during a delay, a late order webhook, a refund, an opt-out, an identity merge and a duplicate event. Verify both the profile state and actual pending email/SMS queues. Require a fresh eligibility check at dispatch, retirement of obsolete queued work and a durable deduplication key for each recipient, campaign and event. Retry failed work only after rechecking permission, stock, expiry and order truth. Public workflow descriptions do not establish these guarantees.</p>
+        <h2>Approvals, handoff and rollback</h2>
+        <p>Name a campaign owner and backup, obtain approval for audience, timing, inventory claim, offer and budget, and record the version approved. Handoff should include the suppression ledger, queue status, sender access, credit alerts and reply ownership. Test an urgent pause across native, Flow and any connected workflows. A second app is justified only by an identified requirement and a named integration owner.</p>
+        <p>Before cutover, export permission and suppression evidence, map identities, freeze old scheduled campaigns and retire old automation queues. Prove cancellation with queue records and test recipients. Roll back to a reviewed snapshot with old queues still disabled; restoring settings must not replay obsolete events or trigger duplicate welcomes. Stop the pilot if purchase exits, opt-outs or deduplication fail.</p>
+        <h2>Matched total economics</h2>
+        <p>Use matched eligible audiences, the same country mix, campaign window, content, offer and a randomized holdout. Compare the current email allowance and overages, subscriptions, contact tiers, sender costs, SMS credits or regional message charges, carrier charges, encoded segments, labor, integrations and migration. Model peak-month volume and growth as well as the present month. Confirm all current rates and allowance eligibility in the account; email allowances do not make SMS free.</p>
+        <p>Calculate contribution as net sales minus goods, fulfillment, payment, messaging, platform and operating costs. Discounts and returns belong in net sales exactly once. Estimate incremental contribution against a comparable holdout and divide by eligible customers over the same window. Platform-attributed sales and revenue per send alone do not establish lift. Include setup and migration on the same amortization basis for both choices; avoid subtracting a fee twice if it is already included in the quoted total.</p>
+        <h2>Choose from the pilot evidence</h2>
+        <p>Keep tinyEmail on the shortlist when its enabled campaigns, shared audiences and workflow steps cover the job with manageable operations. Keep Shopify Messaging on the shortlist when account eligibility, supported countries and native or Flow automation cover it within Shopify. If either pilot exposes an unmet requirement, document that requirement and compare alternatives without assigning a universal rank or mandatory stack.</p>
+        <p>Review <a class="link" href="/guides/campaign-restraint">campaign restraint</a>, <a class="link" href="/guides/consent">permission records</a> and <a class="link" href="/guides/pricing">pricing economics</a> alongside the <a class="link" href="/apps/tinyemail">tinyEmail profile</a> and <a class="link" href="/apps/shopify-email">Shopify Messaging profile</a>.</p>
+        <h2>Primary sources and limits</h2>
+        <p>Read the current <a class="link" href="https://www.tinyemail.com/features/sms-marketing">tinyEmail SMS documentation</a>, <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/requirements">Shopify account requirements</a>, <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/sms/requirements">Shopify SMS country requirements</a> and <a class="link" href="https://help.shopify.com/en/manual/promoting-marketing/create-marketing/shopify-messaging/marketing-automations">Shopify marketing automations</a>. Features and eligibility can change. These public sources establish advertised scope, not verified account access, carrier approval, dispatch guarantees or pilot outcomes. No account pilot was performed for this comparison.</p>
       </article>
     </div>
   </section>
-
-  <section class="container pb-16">
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <FaqSection faqs={faqs} title="tinyEmail vs Shopify Email FAQ" />
-  </section>
+  <section class="container pb-16"><FaqSection faqs={faqs} title="tinyEmail vs Shopify Messaging FAQ" /></section>
 </BaseLayout>
