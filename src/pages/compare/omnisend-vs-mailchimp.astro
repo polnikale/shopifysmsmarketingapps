@@ -4,218 +4,123 @@ import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const appA = appBySlug('omnisend')!;
-const appB = appBySlug('mailchimp')!;
 const path = '/compare/omnisend-vs-mailchimp';
 const title = 'Omnisend vs Mailchimp for Shopify SMS Marketing (2026)';
-const desc = 'Omnisend vs Mailchimp for Shopify SMS marketing campaigns — drop orchestration, offer discipline, segment-by-value, and Sequenzy lifecycle email pairing.';
-
+const desc = 'Compare conditional Shopify fits, SMS eligibility, lifecycle ownership and a controlled merchant pilot for Omnisend and Mailchimp.';
 const faqs = [
-  { question: 'Is Omnisend or Mailchimp better for Shopify SMS marketing campaigns?', answer: 'Omnisend decisively for anything beyond starter broadcasts — ecommerce workflows, push inclusion, and SMS coordination versus Mailchimp generic blasts. Loom & Frame scarcity texts converting 2.3x over launch blasts needs Omnisend-level orchestration minimum. Mailchimp is a starter Mailchimp-plus-Sequenzy cannot fix; migrate, do not stack.' },
-  { question: 'Which handles flash sale campaigns better?', answer: 'Omnisend — prebuilt flash flows with product context beat Mailchimp generic blasts that train full-price buyers to wait. Neither matches Postscript drop tooling. For serious flash, graduate SMS regardless; for email-side logic, Omnisend suffices where Mailchimp fails structurally.' },
-  { question: 'Should I pair either with Sequenzy?', answer: 'Mailchimp-plus-Sequenzy is a migration path: move lifecycle depth to Sequenzy at $19/month unlimited contacts, sunset Mailchimp. Omnisend-plus-Sequenzy overlaps on email and should consolidate to one owner. SMS in all cases belongs in Postscript or Attentive.' },
-  { question: 'How do costs compare?', answer: 'Mailchimp contact tiers punish growth while Omnisend SMB pricing stays flatter — but both lose to Sequenzy flat economics on pure email. Model 12 months with growth: Mailchimp familiarity is the most expensive feature once lists pass a few thousand.' },
-  { question: 'When must a store leave Mailchimp?', answer: 'When automation needs outgrow journey basics, contact bills exceed specialist-stack costs, or SMS becomes revenue-critical. All three arrive together for healthy growing stores — plan the migration quarter instead of drifting.' },
-  { question: 'Does Mailchimp integrate well with Shopify?', answer: 'Adequately for basics — order sync, basic flows, product blocks. Deep behavior, predictive segments, and SMS coordination lag Omnisend meaningfully, let alone Klaviyo or Postscript. Fine until growth demands more.' },
-
-  { question: 'Do Omnisend and Mailchimp cover TCPA and state-level consent the same way?', answer: 'No — consent tooling differs in capture sources, documented opt-in records, quiet-hour enforcement by recipient timezone, and state-specific rules such as California or Florida requirements. Treat TCPA compliance as an operator responsibility either way: keep source, timestamp, and disclosure text per number, and audit capture copy against every state you ship to before scaling either platform.' },
-  { question: 'How do recent-purchaser suppression rules compare between Omnisend and Mailchimp?', answer: 'Both can suppress recent purchasers, but the mechanics differ — one may key suppression off Shopify order events in near real time while the other relies on segment refresh intervals. Test same-day purchase exits across both channels before committing, because duplicate post-purchase messages are the fastest way to burn a healthy list.' },
-  { question: 'Which platform wins on margin after message and app costs?', answer: 'Model it, do not guess: take incremental revenue per send, subtract platform fees, per-message carrier charges, discount cost, refunds, and support load, then compare at your projected 12-month list size. Pricing changes often — check the official pricing pages for Omnisend and Mailchimp before deciding, and re-run the model quarterly.' },
+  {
+    "question": "Can either platform own lifecycle email?",
+    "answer": "Yes. Evaluate welcome, cart, post-purchase and winback flows with your Shopify data and plan. Neither requires an additional email provider by default."
+  },
+  {
+    "question": "When is Omnisend a positive fit?",
+    "answer": "Consider it when one ecommerce team wants email, eligible SMS and permissioned web push in coordinated workflows, and the account passes the channel and budget checks."
+  },
+  {
+    "question": "When is Mailchimp a positive fit?",
+    "answer": "Consider it when an established Mailchimp team can reuse its audience operations and connected Shopify data, with the required automation plan and approved SMS programs."
+  },
+  {
+    "question": "Is SMS included automatically?",
+    "answer": "No. Omnisend current SMS access generally requires Pro plus a separate credits subscription, with qualifying legacy exceptions. Mailchimp offers an Essentials-or-higher SMS add-on subject to application approval and supported countries."
+  },
+  {
+    "question": "Does an email subscriber permit a text?",
+    "answer": "No. Keep channel-specific permissions and evidence. A phone number on an order is not by itself permission for promotional SMS."
+  },
+  {
+    "question": "How should purchase exits work?",
+    "answer": "Recheck canonical Shopify order state before dispatch, retire queued cart or drop reminders after purchase, and test delayed events and retries. Do not assume a segment refresh cancels a queued message."
+  },
+  {
+    "question": "Should Sequenzy or a specialist SMS app be added?",
+    "answer": "Only for a demonstrated unmet job. Assign one sender per lifecycle stage, synchronize suppressions and test handoff before adding another tool."
+  },
+  {
+    "question": "Which is cheaper?",
+    "answer": "Obtain matched quotes for contacts, email sends, SMS destinations and segments, credits, fees and migration work. Use the same holdout design and net contribution definition for both."
+  },
+  {
+    "question": "What does this comparison prove?",
+    "answer": "It provides a proposed evaluation plan and fictional merchant fixtures, not measured merchant results, a ranking or a guarantee of account eligibility."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
   <section class="py-14 md:py-20">
     <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-orange-950/75">/</span>
-        <span class="text-orange-950/75">Omnisend vs Mailchimp</span>
-      </nav>
-
+      <nav class="mb-8 text-sm" aria-label="Breadcrumb"><a class="link" href="/compare">Comparisons</a><span class="mx-2">/</span><span>Omnisend vs Mailchimp</span></nav>
       <header class="max-w-4xl">
-        <p class="badge">Campaign marketing comparison</p>
+        <p class="badge">Shopify lifecycle comparison</p>
         <h1 class="hero-title mt-5">Omnisend vs Mailchimp for Shopify SMS marketing</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">Loom & Frame (limited art prints, $44k/mo) evaluated Omnisend vs Mailchimp for edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Postscript #1 for SMS campaigns. Attentive #2 enterprise. Sequenzy lifecycle email layer. Scarcity SMS at halfway sell-through converted 2.3x better than launch blast</p>
+        <p class="mt-7 text-xl leading-9">Choose by verified channel eligibility, event quality and the team's operating workflow. Both can support lifecycle email; SMS requires its own account, destination and permission checks.</p>
+        <p class="mt-5">Reviewed November 25, 2026. The merchant examples below are explicitly fictional proposed tests. No conversion lifts, revenue outcomes or universal rankings are asserted.</p>
       </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox picks={[
-          { label: 'SMS campaigns', tool: 'Postscript', reason: 'Drop execution and restrained broadcasts' },
-          { label: 'Enterprise SMS', tool: 'Attentive', reason: 'High-volume promotional calendars' },
-          { label: 'Lifecycle email', tool: 'Sequenzy', reason: 'Email layer beside SMS' },
-          { label: 'Omnisend', tool: 'Omnisend', reason: 'Evaluate for your campaign calendar bottleneck' },
-          { label: 'Mailchimp', tool: 'Mailchimp', reason: 'Alternative angle for segment-by-value needs' },
-        ]} />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-<tr>
-<th>Dimension</th>
-<th>Omnisend</th>
-<th>Mailchimp</th>
-</tr>
-</thead>
-          <tbody>
-            <tr>
-<td>Campaign marketing fit</td>
-<td>Omnisend campaign role</td>
-<td>Mailchimp campaign role</td>
-</tr>
-            <tr>
-<td>SMS execution</td>
-<td>Bundled/pairing</td>
-<td>Bundled/pairing</td>
-</tr>
-            <tr>
-<td>Drop orchestration</td>
-<td>Varies</td>
-<td>Varies</td>
-</tr>
-            <tr>
-<td>Lifecycle email</td>
-<td>Pair Sequenzy</td>
-<td>Pair Sequenzy</td>
-</tr>
-            <tr>
-<td>Segment-by-value</td>
-<td>Basic tiers</td>
-<td>Basic tiers</td>
-</tr>
-          </tbody>
-        </table>
-      </div>
-
+      <div class="mt-12 max-w-4xl"><TldrBox picks={[
+        { label: 'Coordinated ecommerce channels', tool: 'Omnisend', reason: 'A candidate for one team managing email, eligible SMS and opted-in web push.' },
+        { label: 'Existing audience operations', tool: 'Mailchimp', reason: 'A candidate when the team can reuse its Mailchimp workflows and connected Shopify data.' },
+      ]} /></div>
       <article class="prose-shopify mt-14 max-w-4xl">
-      <div>
-<h2>Why this comparison matters</h2>
-<p>For Omnisend vs Mailchimp, waitlist priority queues separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, holdout testing before scale separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Omnisend fits campaigns</h2>
-<p>For Omnisend vs Mailchimp, holdout testing before scale separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, margin after incentive math separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, quarterly calendar planning separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Mailchimp fits campaigns</h2>
-<p>For Omnisend vs Mailchimp, quarterly calendar planning separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>VIP early-access drop test</h2>
-<p>For Omnisend vs Mailchimp, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Flash sale with inventory caps</h2>
-<p>For Omnisend vs Mailchimp, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, campaign calendar discipline separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, offer restraint ladders separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Campaign calendar coordination</h2>
-<p>For Omnisend vs Mailchimp, offer restraint ladders separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, segment-by-value targeting separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, VIP early access without codes separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Segment-by-value before broadcasts</h2>
-<p>For Omnisend vs Mailchimp, VIP early access without codes separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, channel collision prevention separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, revenue per send economics separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Pricing and campaign ROI</h2>
-<p>For Omnisend vs Mailchimp, revenue per send economics separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, broadcast frequency caps separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, waitlist priority queues separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Verdict for campaign marketers</h2>
-<p>For Omnisend vs Mailchimp, waitlist priority queues separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Omnisend vs Mailchimp, holdout testing before scale separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-
-        <h2>Campaign calendar discipline</h2>
-        <p>For Omnisend vs Mailchimp, holdout testing before scale separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Offer discipline and segment-by-value</h2>
-        <p>For Omnisend vs Mailchimp, margin after incentive math separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Sequenzy as lifecycle email layer</h2>
-        <p>Neither Omnisend nor Mailchimp should carry your full retention story alone. Sequenzy ranks as lifecycle email — welcome, education, winback beside Postscript or Attentive SMS.</p>
+        <h2>Channel and account checks before a pilot</h2>
+        <p>Omnisend offers email automation and can combine SMS and push blocks in workflows. Current Free and Standard accounts cannot generally add SMS: Pro requires a separately purchased SMS credits subscription. Accounts retaining an eligible active SMS setup from before May 4, 2026 have legacy exceptions. Verify the actual account rather than assuming that a paid email plan includes texts. See <a class="link" href="https://support.omnisend.com/en/articles/3533018-omnisend-pricing-plans-2026">Omnisend plan rules</a> and <a class="link" href="https://support.omnisend.com/en/articles/1740886-add-sms-to-your-omnisend-automations">SMS workflow prerequisites</a>.</p>
+        <p>Web push is a separate permissioned browser channel. Check the store setup, supported browser/device and an actual opt-in before treating it as reachable audience; email or SMS consent does not create browser permission. Use the <a class="link" href="https://support.omnisend.com/en/articles/2608314-get-started-with-push-notification-channel">Omnisend push setup guide</a>.</p>
+        <p>Mailchimp SMS is an add-on for Essentials or higher, with application approval and credits. Its supported-country table includes the US, Canada, Australia and European markets; register the required sending program/number for each intended country. This is not worldwide access for every account. MMS has additional Standard/Premium and US/Canada restrictions. Check the live country table and your approval in <a class="link" href="https://mailchimp.com/help/about-sms-marketing/">Mailchimp SMS availability</a> and <a class="link" href="https://mailchimp.com/help/set-up-sms-marketing/">SMS setup</a>.</p>
+        <p>Mailchimp supports Shopify customer/order synchronization and marketing automation flows, including supported cart triggers; calling it only a broadcast tool misses those jobs. Plan, integration version and flow features still need validation. Connecting a store can require pausing welcome flows and recreating existing cart automations. Follow <a class="link" href="https://mailchimp.com/help/connect-shopify/">Shopify connection instructions</a> and test <a class="link" href="https://mailchimp.com/help/create-abandoned-cart-customer-journey/">cart flow requirements</a> before activation.</p>
+        <div class="overflow-x-auto"><table class="data-table"><thead><tr><th>Merchant requirement</th><th>Omnisend conditional fit</th><th>Mailchimp conditional fit</th></tr></thead><tbody>
+          <tr><td>One ecommerce channel calendar</td><td>Test combined email, eligible SMS and permissioned push workflows.</td><td>Test email and approved SMS programs with existing audience operations.</td></tr>
+          <tr><td>Lifecycle continuity</td><td>Choose if Shopify events and exits work reliably in the pilot.</td><td>Choose if the connected store and selected plan support the required flow map.</td></tr>
+          <tr><td>Limited inventory drops</td><td>Candidate when the team can enforce stock checks and queue retirement.</td><td>Candidate when the existing team can operate the same stock and approval controls.</td></tr>
+          <tr><td>Cost control</td><td>Quote billable contacts, email tier and separate SMS subscription.</td><td>Quote email plan, contact/sending limits and country-specific SMS credits.</td></tr>
+        </tbody></table></div>
+        <h2>Proposed fictional merchant fixtures</h2>
+        <p>These names and scenarios preserve useful merchant jobs as test fixtures, not testimonials. Every fit below is conditional on the shared dispatch controls that follow. Do not treat inventory thresholds or segment rules as native features until the implementation has passed a live account test.</p>
+        <h3>Loom &amp; Frame: limited art prints</h3>
+        <p>Proposed fictional fixture: Disclose edition size; invite collectors with three paid orders only when verified sell-through reaches halfway. Omnisend is a candidate for coordinated story email and one eligible text; Mailchimp is a candidate if the collector audience already operates there. Never infer stock from message clicks.</p>
+        <h3>Ember Ceramics: pottery drops</h3>
+        <p>Proposed fictional fixture: Propose a 4,200-person waitlist for an 80-piece kiln batch; allocate access in recorded queue order. Mailchimp can be a fit for maker-story email plus approved SMS access; Omnisend can fit a combined workflow. A message is not an inventory reservation.</p>
+        <h3>Ridge Run Coffee: subscription coffee</h3>
+        <p>Proposed fictional fixture: Exclude active subscribers from acquisition flash offers and send education separately. Omnisend fits a proposed cross-channel exclusion test; Mailchimp fits an established audience with reliable subscription-state sync. Shopify orders alone may not reveal current subscription status.</p>
+        <h3>Cipher Audio: high-value headphones</h3>
+        <p>Proposed fictional fixture: Send teaser email two weeks before launch; consider one text only to identified, permitted interested shoppers. Mailchimp is a positive candidate for the planned email narrative and approved SMS follow-up; Omnisend is a candidate for a combined sequence. Compare a no-discount holdout without claiming margin lift.</p>
+        <h3>Patchwork Denim: one-of-one apparel</h3>
+        <p>Proposed fictional fixture: Use volunteered style preferences and reserve-aware listing checks. Omnisend can fit a narrow segmented drop workflow; Mailchimp can fit a maintained preference audience. Retire every queued reminder when its unique item sells.</p>
+        <h3>Arena Energy: nutrition flavor launch</h3>
+        <p>Proposed fictional fixture: Separate athlete collaboration storytelling from drop timing; test a gift offer only in the chosen email arm. Mailchimp can fit reusable creative and audience operations; Omnisend can fit channel coordination. Approve product claims and record gift cost before dispatch.</p>
+        <h3>Driftwood Surf Co: seasonal boardshorts</h3>
+        <p>Proposed fictional fixture: Tie editorial timing to seasonal content and restock messages to a specific waitlist. Omnisend can fit email plus eligible push or SMS; Mailchimp can fit an existing content calendar. Recheck size availability before each invite.</p>
+        <h3>Noir Collective: streetwear</h3>
+        <p>Proposed fictional fixture: Propose a Thursday launch with VIP access two hours earlier and a lower-frequency test arm. Mailchimp fits a team able to run its existing calendar and SMS programs; Omnisend fits a team consolidating channels. Measure contribution per eligible customer rather than declaring a frequency win.</p>
+        <h3>SoleDrop ATX: sneakers</h3>
+        <p>Proposed fictional fixture: Preserve size-specific queue priority and release the general audience only against remaining stock. Omnisend or Mailchimp is a candidate if its tested integration can enforce size availability. Neither messaging workflow substitutes for checkout allocation.</p>
+        <h3>Festival Threads Co: tour merchandise</h3>
+        <p>Proposed fictional fixture: Set city and venue-timezone windows with a proposed cap of three promotional texts per city. Mailchimp fits existing geographic audiences and approved destination programs; Omnisend fits a coordinated tour calendar. Do not infer location solely from a phone prefix.</p>
+        <h3>Vinyl Vault Records: collector pressings</h3>
+        <p>Proposed fictional fixture: Disclose pressing quantity and test early access for repeat buyers or a defined net-spend cohort. Omnisend fits a proposed segment-and-channel test; Mailchimp fits an established collector audience. Calculate value after returns and avoid overlapping cohorts.</p>
+        <h3>Bloom &amp; Wick: candle gifting</h3>
+        <p>Proposed fictional fixture: Plan holiday bundles, scent education and shipping deadlines as separate jobs. Mailchimp fits a creative team reusing its email operations; Omnisend fits coordinated channel timing. Stop deadline messages when fulfillment can no longer meet the promise.</p>
+        <h3>Peak Trail Gear: outdoor clearance</h3>
+        <p>Proposed fictional fixture: Test an incentive only with a defined bargain-sensitive cohort and retain a comparable full-price holdout. Omnisend or Mailchimp can fit if cohort identity and offer exclusions persist across channels. No claimed discount benefit precedes the experiment.</p>
+        <h3>Sauce Lab: limited hot sauce</h3>
+        <p>Proposed fictional fixture: Propose one launch text and one stock-threshold reminder when 200 sellable bottles remain. Omnisend fits a combined lifecycle pilot; Mailchimp fits an approved SMS program alongside existing email. Verify stock atomically and cancel scarcity copy when stale.</p>
+        <h2>Permission, identity and order truth</h2>
+        <p>Record channel-specific status, capture source, timestamp and disclosure version. Keep opt-outs and broader do-not-contact instructions at their proper scope; an SMS opt-out must not be silently treated as permission elsewhere. Validate sender registration, recipient geography, quiet-hour policies and STOP/HELP behavior for the actual program. Have the accountable owner review applicable requirements rather than treating one time window as a universal legal rule. See <a class="link" href="/guides/consent">consent controls</a>.</p>
+        <p>Use a canonical Shopify customer/order mapping and normalized phone/email identifiers. Quarantine ambiguous merges and guest identities. Reconcile cancellations, refunds, subscription state and variant stock from their authoritative systems. A delivery receipt, browse cookie or platform-attributed sale is not order truth.</p>
+        <h2>Dispatch, exits and queue retirement</h2>
+        <p>Before every delayed send, recheck permission, eligibility, order state, stock, offer expiry and recipient-time window. A purchase exits cart recovery and retires relevant queued reminders across all senders; it can separately begin an approved post-purchase sequence. A sold-out variant, revoked permission or ended drop retires its pending jobs. Test purchases immediately before dispatch and during event-sync delays; if freshness cannot be established, hold the send.</p>
+        <p>Deduplicate with a stable customer, event/order, campaign stage and channel key. Store dispatch outcomes; replaying a webhook must not recreate a completed send. Retry transient failures within a bounded lifetime, rechecking all conditions. Investigate uncertain delivery before retrying instead of assuming the message failed. Expired jobs go to an operator exception queue, not an indefinite backlog.</p>
+        <h2>Approvals, handoff and rollback</h2>
+        <p>Assign named owners for data, consent, creative, sending and support. Require approval of audience counts, inventory promises, offers, sender identity and a small seed test. Support needs access to the message history and a documented escalation path. Pause on duplicate sends, stale stock, broken purchase exits or unexplained suppression loss.</p>
+        <p>During migration, export consent evidence, suppressions, current flow positions and outstanding jobs. Pause old enrollment and cancel or explicitly drain old queues before enabling the replacement. Give each lifecycle stage one active sender. On rollback, pause new entry, retire new pending jobs, reconcile orders and delivery logs, then restore only validated unsent stages. Never replay the entire audience.</p>
+        <p>Neither platform requires Sequenzy, Postscript or Attentive by default. Add another provider only for a documented unmet requirement after testing a single owner. Separate email and SMS tools introduce suppression synchronization and handoff costs; include those in the pilot.</p>
+        <h2>Matched hypothetical economics</h2>
+        <p>This worksheet is invented for evaluation, not supplier pricing or a merchant outcome. Give each candidate a comparable 10,000-customer eligible cohort and a separate randomized 10,000-customer holdout, with the same offer, destination mix, observation window and order reconciliation. Test permissioned customers only; use customer-level assignment to prevent channel crossover.</p>
+        <p>Assume either candidate's cohort produces $12,000 net sales versus $10,000 in its matched holdout. Net sales already deduct discounts and returns. Incremental net sales are $2,000; at an assumed 60% variable contribution rate, incremental contribution before messaging is $1,200. Subtract hypothetical allocated platform fees of $200, message/carrier costs of $250, incremental support of $100 and setup allocation of $150: $500 remains, or $0.05 per eligible customer. The same assumptions yield the same result for both. Do not subtract discounts or refunds again.</p>
+        <p>Replace every assumption with measured costs and current written quotes. At twice the $250 messaging cost, the residual becomes $250, or $0.025 per eligible customer. Include contact-tier changes, credit expiry, encoding/segment count, country mix, sender fees, overages and migration labor. Check <a class="link" href="https://www.omnisend.com/pricing/">Omnisend pricing</a>, <a class="link" href="https://mailchimp.com/pricing/marketing/">Mailchimp email pricing</a> and <a class="link" href="https://mailchimp.com/help/about-sms-marketing-credits/">Mailchimp credit rules</a>. Do not assume unlimited contacts, included SMS or equal attributed revenue means equal lift.</p>
+        <h2>Decision after the pilot</h2>
+        <p>Choose Omnisend if verified multichannel workflow operation reduces the team's work and meets its permission, stock and purchase-exit requirements at the quoted cost. Choose Mailchimp if its existing audience practices and Shopify flows meet those same requirements with approved SMS programs and acceptable cost. Keep the pilot paused if either fails identity or queue controls. Use <a class="link" href="/guides/campaign-restraint">campaign restraint</a> and <a class="link" href="/guides/pricing">pricing economics</a> as operating worksheets, then compare the measured result.</p>
       </article>
+      <FaqSection faqs={faqs} title="Omnisend vs Mailchimp FAQ" />
     </div>
-  </section>
-
-  <section class="container pb-16">
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <FaqSection faqs={faqs} title="Omnisend vs Mailchimp FAQ" />
   </section>
 </BaseLayout>
