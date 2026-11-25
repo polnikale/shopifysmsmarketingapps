@@ -1,221 +1,118 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const appA = appBySlug('yotpo-email-sms')!;
-const appB = appBySlug('mailchimp')!;
 const path = '/compare/yotpo-email-sms-vs-mailchimp';
-const title = 'Yotpo Email & SMS vs Mailchimp for Shopify SMS Marketing (2026)';
-const desc = 'Yotpo Email & SMS vs Mailchimp for Shopify SMS marketing campaigns — drop orchestration, offer discipline, segment-by-value, and Sequenzy lifecycle email pairing.';
-
+const title = 'Yotpo Email & SMS vs Mailchimp: Shopify continuity (2026)';
+const desc = 'A historical Yotpo Email & SMS comparison: continuity controls, conditional Mailchimp fit and fourteen proposed Shopify acceptance fixtures.';
 const faqs = [
-  { question: 'Is Yotpo Email & SMS or Mailchimp better for Shopify SMS marketing campaigns?', answer: 'Yotpo when reviews, loyalty, and UGC already drive messaging; Mailchimp for familiar broadcasts before the calendar outgrows it. Driftwood waitlist-only restocks win on either backend — the difference is suite consolidation versus starter simplicity. Neither is an SMS platform; Postscript still leads execution.' },
-  { question: 'Which handles flash sale campaigns better?', answer: 'Neither directly — Yotpo handles loyalty-adjacent triggers while Mailchimp manages generic blasts both should avoid. Serious flash needs Postscript execution with qualified lists; email-side logic graduates to Sequenzy or Klaviyo. This pairing is a starter stack, not a flash solution.' },
-  { question: 'Should I pair either with Sequenzy?', answer: 'Yotpo-plus-Sequenzy can work when suite email depth proves insufficient — audit overlap first. Mailchimp-plus-Sequenzy is a migration path: move depth to Sequenzy at $19/month unlimited contacts, sunset Mailchimp. SMS belongs in Postscript or Attentive.' },
-  { question: 'How do costs compare?', answer: 'Yotpo module pricing versus Mailchimp contact tiers — both punish the wrong growth patterns (module sprawl, contact bloat). Model 12 months with growth: familiarity and bundling both lose to Sequenzy flat economics on pure email past starter scale.' },
-  { question: 'When must a store leave Mailchimp?', answer: 'When automation needs outgrow journey basics, contact bills exceed specialist-stack costs, or SMS becomes revenue-critical. All three arrive together for healthy growing stores — plan the migration quarter instead of drifting.' },
-  { question: 'Does Yotpo replace Mailchimp entirely?', answer: 'Only if reviews, loyalty, and messaging consolidation cover all Mailchimp jobs — broadcasts, basic flows, and integrations. Otherwise migrate email depth to Sequenzy and keep Yotpo for loyalty data, not as a general ESP.' },
-
-  { question: 'Do Yotpo Email Sms and Mailchimp cover TCPA and state-level consent the same way?', answer: 'No — consent tooling differs in capture sources, documented opt-in records, quiet-hour enforcement by recipient timezone, and state-specific rules such as California or Florida requirements. Treat TCPA compliance as an operator responsibility either way: keep source, timestamp, and disclosure text per number, and audit capture copy against every state you ship to before scaling either platform.' },
-  { question: 'How do recent-purchaser suppression rules compare between Yotpo Email Sms and Mailchimp?', answer: 'Both can suppress recent purchasers, but the mechanics differ — one may key suppression off Shopify order events in near real time while the other relies on segment refresh intervals. Test same-day purchase exits across both channels before committing, because duplicate post-purchase messages are the fastest way to burn a healthy list.' },
-  { question: 'Which platform wins on margin after message and app costs?', answer: 'Model it, do not guess: take incremental revenue per send, subtract platform fees, per-message carrier charges, discount cost, refunds, and support load, then compare at your projected 12-month list size. Pricing changes often — check the official pricing pages for Yotpo Email Sms and Mailchimp before deciding, and re-run the model quarterly.' },
+  {
+    "question": "Can I still choose Yotpo Email & SMS?",
+    "answer": "No. Yotpo announced full Email and SMS deprecation for December 31, 2025. The current SMS notice says its dashboard and background services are inactive. Reviews and Loyalty are separate products."
+  },
+  {
+    "question": "When is Mailchimp a positive fit?",
+    "answer": "Mailchimp is a candidate when one team can coordinate email and eligible SMS with validated customer and order data. Test the required journeys, account access, permissions and total operating costs before choosing it."
+  },
+  {
+    "question": "Does connecting Shopify make SMS ready?",
+    "answer": "No. Mailchimp SMS requires an eligible plan, application approval, credits and supported countries. Confirm account role and registration for each enabled audience, sending number and country before a pilot."
+  },
+  {
+    "question": "What should I test in Shopify lifecycle automation?",
+    "answer": "Check the selected store, account and audience, sync completion, available triggers and plan access. Test welcome, cart, post-purchase and winback jobs with purchase exits; customer sync alone does not prove permission or complete event coverage."
+  },
+  {
+    "question": "Can I export from the retired Yotpo dashboard?",
+    "answer": "Do not assume access or export availability. Inventory records already held and ask support what, if anything, remains recoverable. Exclude contacts whose required permission evidence cannot be established."
+  },
+  {
+    "question": "Will Shopify sync establish SMS consent?",
+    "answer": "No. A customer record or marketing field alone is insufficient evidence of permission for every channel and purpose. Reconcile identity and channel-specific evidence before activation."
+  },
+  {
+    "question": "Do I need an additional email or SMS platform?",
+    "answer": "Only if a tested requirement remains unmet. Compare a single eligible platform with a split arrangement, including duplicate subscriptions, integration work, suppression ownership and support."
+  },
+  {
+    "question": "How should purchase exits work?",
+    "answer": "Define qualifying order states from Shopify, then test exits before dispatch across channels. A proposed control is to hold messages when order data is stale and reconcile delayed or replayed events."
+  },
+  {
+    "question": "How should economics be compared?",
+    "answer": "Use matched eligible cohorts and the same time horizon. Compare net sales less product, fulfillment, messaging and operating costs, counting discounts and returns once. Include migration, overlap and staff time."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-orange-950/75">/</span>
-        <span class="text-orange-950/75">Yotpo Email & SMS vs Mailchimp</span>
-      </nav>
-
-      <header class="max-w-4xl">
-        <p class="badge">Campaign marketing comparison</p>
-        <h1 class="hero-title mt-5">Yotpo Email & SMS vs Mailchimp for Shopify SMS marketing</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">Driftwood Surf Co (seasonal boardshort drops, $88k/mo) evaluated Yotpo Email & SMS vs Mailchimp for summer drop calendar tied to swell forecast content in sequenzy.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Postscript #1 for SMS campaigns. Attentive #2 enterprise. Sequenzy lifecycle email layer. Restock SMS to waitlist beat full-list restock announcement</p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox picks={[
-          { label: 'SMS campaigns', tool: 'Postscript', reason: 'Drop execution and restrained broadcasts' },
-          { label: 'Enterprise SMS', tool: 'Attentive', reason: 'High-volume promotional calendars' },
-          { label: 'Lifecycle email', tool: 'Sequenzy', reason: 'Email layer beside SMS' },
-          { label: 'Yotpo Email & SMS', tool: 'Yotpo Email & SMS', reason: 'Evaluate for your campaign calendar bottleneck' },
-          { label: 'Mailchimp', tool: 'Mailchimp', reason: 'Alternative angle for segment-by-value needs' },
-        ]} />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-<tr>
-<th>Dimension</th>
-<th>Yotpo Email & SMS</th>
-<th>Mailchimp</th>
-</tr>
-</thead>
-          <tbody>
-            <tr>
-<td>Campaign marketing fit</td>
-<td>Yotpo Email & SMS campaign role</td>
-<td>Mailchimp campaign role</td>
-</tr>
-            <tr>
-<td>SMS execution</td>
-<td>Bundled/pairing</td>
-<td>Bundled/pairing</td>
-</tr>
-            <tr>
-<td>Drop orchestration</td>
-<td>Varies</td>
-<td>Varies</td>
-</tr>
-            <tr>
-<td>Lifecycle email</td>
-<td>Pair Sequenzy</td>
-<td>Pair Sequenzy</td>
-</tr>
-            <tr>
-<td>Segment-by-value</td>
-<td>Basic tiers</td>
-<td>Basic tiers</td>
-</tr>
-          </tbody>
-        </table>
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-      <div>
-<h2>Why this comparison matters</h2>
-<p>For Yotpo Email & SMS vs Mailchimp, quarterly calendar planning separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Yotpo Email & SMS fits campaigns</h2>
-<p>For Yotpo Email & SMS vs Mailchimp, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Mailchimp fits campaigns</h2>
-<p>For Yotpo Email & SMS vs Mailchimp, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, campaign calendar discipline separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, offer restraint ladders separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>VIP early-access drop test</h2>
-<p>For Yotpo Email & SMS vs Mailchimp, offer restraint ladders separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, segment-by-value targeting separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, VIP early access without codes separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Flash sale with inventory caps</h2>
-<p>For Yotpo Email & SMS vs Mailchimp, VIP early access without codes separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, channel collision prevention separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, revenue per send economics separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Campaign calendar coordination</h2>
-<p>For Yotpo Email & SMS vs Mailchimp, revenue per send economics separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, broadcast frequency caps separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, waitlist priority queues separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Segment-by-value before broadcasts</h2>
-<p>For Yotpo Email & SMS vs Mailchimp, waitlist priority queues separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, holdout testing before scale separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Pricing and campaign ROI</h2>
-<p>For Yotpo Email & SMS vs Mailchimp, holdout testing before scale separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, margin after incentive math separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, quarterly calendar planning separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Verdict for campaign marketers</h2>
-<p>For Yotpo Email & SMS vs Mailchimp, quarterly calendar planning separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Yotpo Email & SMS vs Mailchimp, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-
-        <h2>Campaign calendar discipline</h2>
-        <p>For Yotpo Email & SMS vs Mailchimp, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Offer discipline and segment-by-value</h2>
-        <p>For Yotpo Email & SMS vs Mailchimp, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Sequenzy as lifecycle email layer</h2>
-        <p>Neither Yotpo Email & SMS nor Mailchimp should carry your full retention story alone. Sequenzy ranks as lifecycle email — welcome, education, winback beside Postscript or Attentive SMS.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="container pb-16">
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <FaqSection faqs={faqs} title="Yotpo Email & SMS vs Mailchimp FAQ" />
+  <section class="container py-14 md:py-20">
+    <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a> / Yotpo Email &amp; SMS vs Mailchimp</nav>
+    <header class="max-w-4xl">
+      <p class="badge">Historical comparison · checked November 25, 2026</p>
+      <h1 class="hero-title mt-5">Yotpo Email &amp; SMS vs Mailchimp for Shopify continuity</h1>
+      <p class="mt-7 text-xl leading-9">The decision is how to continue a former Yotpo messaging program safely. Yotpo Email &amp; SMS is retired; Mailchimp is a current candidate whose email, eligible SMS and Shopify data scope must match your account and operating needs.</p>
+    </header>
+    <article class="prose-shopify mt-12 max-w-4xl">
+      <h2>Retired messaging and separate current Yotpo products</h2>
+      <p>Yotpo’s <a class="link" href="https://www.yotpo.com/blog/email-sms-migration-partners/">September 2025 migration announcement</a> scheduled full Email and SMS deprecation for December 31, 2025. Its <a class="link" href="https://email-and-sms.yotpo.com/">current decommissioning notice</a> confirms that the SMS dashboard and associated background services are inactive. Historical suite descriptions are not present buying options. Yotpo’s Reviews &amp; UGC and Loyalty &amp; Referrals are separate products; retaining those can be sensible if their own jobs and costs still fit.</p>
+      <p>Yotpo’s historical migration article named Attentive and Omnisend. That does not establish that an old incentive, automated transfer, support program or export remains available today. Start with records already held; ask support about any missing evidence without promising recovery, live dashboard access, sender portability or intact automation history.</p>
+      <h2>Where Mailchimp can fit</h2>
+      <p>Mailchimp is a positive candidate for a team that wants email campaigns and Shopify-driven lifecycle automation in a familiar workspace, with SMS where eligible. Validate the actual welcome, cart, post-purchase and winback jobs against available triggers, plan limits and account permissions. A store does not need to leave merely because it grows or adds SMS.</p>
+      <p>Mailchimp’s <a class="link" href="https://mailchimp.com/help/about-sms-marketing/">SMS guide</a> describes an add-on for Essentials or higher, requiring application approval, credits and an authorized account role. Sending countries are restricted; registration is required for each enabled audience, sending number and country. Confirm the current supported business and recipient locations, plan and sender approvals in your account before promising launch dates. Email access does not establish SMS readiness or permission.</p>
+      <p>The <a class="link" href="https://mailchimp.com/help/connect-shopify/">Shopify connection guide</a> and <a class="link" href="https://mailchimp.com/help/mailchimp-shopify-syncing/">syncing guide</a> cover store data and customer events for automation. Choose the correct store, account and audience; review initial sync, marketing status mapping and tracking settings. Pause existing welcome automations before connecting as the guide advises, then reconcile historical records before enabling new journeys. Validate event coverage, identity matching and purchase exits in the actual store. The syncing guide says SMS subscriber sync is enabled after initial sync and requires an approved SMS program; SMS subscribers sync from Shopify to Mailchimp only. Existing Mailchimp marketing status can update Shopify status during initial sync, so audit permission evidence rather than trusting a mapped field. App embed and privacy settings affect tracking and event availability. A synced customer or order is not proof of channel permission, and the integration does not promise immediate delivery or universal browse identification.</p>
+      <p>Separately retained Yotpo Reviews or Loyalty requires a verified current integration and tested event mapping. Evaluate Mailchimp alone first when it meets the required jobs; a second tool is justified only by a demonstrated gap and a workable handoff.</p>
+      <div class="overflow-x-auto"><table class="data-table">
+        <thead><tr><th>Continuity choice</th><th>Conditional fit</th><th>Acceptance boundary</th></tr></thead>
+        <tbody>
+          <tr><td>Keep useful Yotpo Reviews or Loyalty</td><td>Those separate products still meet their own requirements</td><td>Validate the selected messaging integration and exact events; no retired messaging dependency</td></tr>
+          <tr><td>Use Mailchimp email and eligible SMS</td><td>The account has required access and approvals for SMS and required journeys, destinations and ownership work</td><td>Prove channel permissions, Shopify event handling and dispatch controls</td></tr>
+          <tr><td>Use another messaging arrangement</td><td>A required route or workflow fails the candidate pilot</td><td>Compare complete costs and suppression handoff before adding a second tool</td></tr>
+        </tbody>
+      </table></div>
+      <p>No additional email layer is mandatory. If a team already uses Sequenzy or a separate SMS provider, compare retaining it with consolidation using the same fixtures. Avoid duplicate welcome flows and assign one owner to each message. See the <a class="link" href="/apps/mailchimp">Mailchimp profile</a> and <a class="link" href="/apps/yotpo-email-sms">historical Yotpo profile</a> for context.</p>
+      <h2>Fourteen fictional proposed acceptance fixtures</h2>
+      <p>Every named merchant below is fictional. These are proposed tests, not customer results, completed pilots or vendor guarantees. Apply each relevant job to the chosen replacement and to any retained Reviews or Loyalty integration. A failed control requires an approved workaround or a different candidate.</p>
+      <h3>Noir Collective: Streetwear launch cadence</h3>
+      <p>Propose a weekly drop calendar with VIP access followed by a general launch. Accept only if a recipient-level cap across campaigns and flows blocks the extra reminder; a purchase during the delay cancels the pending promotion.</p>
+      <h3>SoleDrop ATX: Sneaker size waitlist fairness</h3>
+      <p>Propose a size-specific queue ordered by recorded signup time. Accept only if sold-out sizes halt invitations, retries preserve queue position and one customer cannot receive duplicate allocation links.</p>
+      <h3>Festival Threads Co: Tour-city timing</h3>
+      <p>Propose venue-specific messages with recipient-local scheduling. Accept only if an unknown timezone holds the send for review, city changes invalidate old queued invitations and purchase exits survive a reschedule.</p>
+      <h3>Vinyl Vault Records: Collector access without blanket coupons</h3>
+      <p>Propose early access using validated completed-order value and pressing preference. Accept only if returns change eligibility, uncertain identities are excluded and permission is checked independently of collector status.</p>
+      <h3>Bloom & Wick: Gift versus self-purchase education</h3>
+      <p>Propose separate gifting deadlines and scent education. Accept only if a gift purchase ends acquisition reminders without silently enrolling its recipient; one approved owner coordinates email and SMS.</p>
+      <h3>Peak Trail Gear: Clearance offer restraint</h3>
+      <p>Propose clearance offers for a declared eligible segment with a holdout. Accept only if full-price loyalists remain outside the offer, code eligibility is enforced and net contribution includes redemptions and returns once.</p>
+      <h3>Sauce Lab: Batch scarcity grounded in inventory</h3>
+      <p>Propose a batch-specific availability alert. Accept only if stock is checked again before dispatch, reservations are deducted and a stale inventory feed stops scarcity copy rather than guessing quantities.</p>
+      <h3>Ember Ceramics: Kiln release reservations</h3>
+      <p>Propose invitations for a small pottery release without implying a guaranteed piece. Accept only if reservation expiry releases capacity fairly and duplicate checkout identities cannot consume multiple invitations.</p>
+      <h3>Ridge Run Coffee: Subscription collision prevention</h3>
+      <p>Propose flash offers only for eligible non-subscribers. Accept only if a subscription started after segmentation cancels its queued offer and the current subscription source can be reconciled with Shopify orders.</p>
+      <h3>Cipher Audio: High-value launch education</h3>
+      <p>Propose product education followed by an optional launch alert for interested shoppers. Accept only if purchase closes the sales sequence, support cases pause pressure and no launch discount is added without margin approval.</p>
+      <h3>Patchwork Denim: One-of-one style targeting</h3>
+      <p>Propose new-listing messages tied to volunteered style preferences. Accept only if the sold SKU invalidates pending alerts, preference changes affect future sends and retries cannot relaunch an obsolete listing.</p>
+      <h3>Arena Energy: Collaboration offer separation</h3>
+      <p>Propose a collaboration timing message and a separately approved email bundle. Accept only if channel permissions and offer promises stay distinct, bundle stock is verified and a purchaser is removed from both promotional queues.</p>
+      <h3>Loom & Frame: Edition sell-through alerts</h3>
+      <p>Propose a collector alert at a preapproved edition threshold. Accept only if Shopify-backed sell-through supports the claim, canceled orders are reconciled and a replayed threshold event produces no second alert.</p>
+      <h3>Driftwood Surf Co: Seasonal restock and holdout</h3>
+      <p>Propose preference-based restock alerts with a randomized eligible-customer holdout. Accept only if weather editorial does not override permission, holdouts remain suppressed and the same net contribution horizon is used for both groups.</p>
+      <h2>Permission, identity and order truth before dispatch</h2>
+      <p>Inventory channel-specific consent evidence, disclosure version, source, timestamp, purpose, opt-outs and suppression history. Resolve normalized phone numbers, email changes, shared numbers and guest checkouts against stable customer identifiers; quarantine conflicts. Missing permission evidence means no promotional send. Review applicable recipient-local scheduling and quiet-hour requirements, unknown timezones and daylight-saving transitions; do not rely on a single universal sending window. See <a class="link" href="/guides/consent">consent controls</a> and <a class="link" href="/guides/quiet-hours">quiet-hour planning</a>.</p>
+      <p>Use Shopify as the order and inventory source of truth, with explicit treatment of pending, paid, canceled, refunded and returned orders. Proposed acceptance: a qualifying purchase exits pending acquisition messages before dispatch in every channel. Inject delayed, duplicated and out-of-order events; check freshness again after a queue delay. If data is stale or identity unresolved, hold the message. Define opt-out propagation per channel and any broader requested suppression; never interpret an email unsubscribe as permission to move pressure to SMS.</p>
+      <h2>Queue retirement, approvals and handoff</h2>
+      <p>Assign an operator to inventory old flow definitions, scheduled campaigns, integration retries, external jobs and any queues in the current replacement. Do not assume the retired service provides a queue to inspect or drain. Record what is known and unresolved; retire duplicate routes under your control and reconcile delivery evidence before enabling replacements. Use a stable customer/job/event key and a send ledger to test retry deduplication, including an ambiguous provider timeout; do not blindly resend an unconfirmed submission.</p>
+      <p>Require named approval of capture copy, template, offer, eligible segment, inventory claim, sender registration, local scheduling and suppression rules. Hand off the runbook, support inbox, failed-event queue and escalation owner. Pilot a small permissioned cohort after dry runs. Rollback means pausing new dispatch, retaining suppression and the ledger, reconciling in-flight work and restoring the last approved current workflow only after checks. It cannot mean reactivating retired Yotpo Email &amp; SMS. Treat these as proposed controls until proven in the actual account.</p>
+      <h2>Matched total operating economics</h2>
+      <p>Compare the same eligible population, destinations, send mix and observation horizon with a holdout where feasible. Define net sales as gross sales less discounts and returns once; subtract cost of goods, variable fulfillment, payment fees, message and carrier charges, subscriptions, contracted products, integration fees, support labor and operator time. Include migration, training, overlap months and any separately retained Reviews or Loyalty charges. Do not subtract discounts or returns again from net sales.</p>
+      <p>For each arm, calculate contribution per eligible customer after the same allocated operating costs; compare the difference rather than platform-attributed revenue or unequal send denominators. A fictional worksheet with 1,000 eligible customers in each arm and net sales of $12,000 versus $10,000, variable costs of $5,000 versus $4,000, and operating costs of $1,000 versus $500 yields $6.00 versus $5.50 per eligible customer, a $0.50 difference. These are arithmetic fixtures, not measured lift.</p>
+      <p>Request current written quotes for the exact account, contacts, destinations, message volumes, seats and integrations; include minimum commitments, service charges and peak-month usage. Compare steady-state and transition totals over a common horizon. Choose the arrangement that passes required jobs at acceptable total cost and staffing burden. See <a class="link" href="/guides/pricing">pricing economics</a> and <a class="link" href="/guides/campaign-restraint">campaign restraint</a>.</p>
+    </article>
+    <FaqSection faqs={faqs} title="Yotpo Email &amp; SMS vs Mailchimp FAQ" />
   </section>
 </BaseLayout>
