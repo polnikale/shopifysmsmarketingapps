@@ -1,221 +1,118 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
-import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const appA = appBySlug('klaviyo')!;
-const appB = appBySlug('postscript')!;
 const path = '/compare/klaviyo-vs-postscript';
 const title = 'Klaviyo vs Postscript for Shopify SMS Marketing (2026)';
-const desc = 'Klaviyo vs Postscript for Shopify SMS marketing campaigns — drop orchestration, offer discipline, and segment-by-value decisions.';
-
+const desc = 'Compare Klaviyo and Postscript for Shopify launches: current channel availability, inventory, access, purchaser exits and campaign economics.';
 const faqs = [
-  { question: 'Is Klaviyo or Postscript better for Shopify SMS marketing campaigns?', answer: 'Postscript for SMS execution itself — drop mechanics, VIP tiers, and broadcast caps purpose-built for releases. Klaviyo for everything around SMS: browse abandonment, post-purchase, replenishment, winback on shared data. Cipher Audio defines VIPs by Klaviyo CLV but fires drop texts from Postscript — the industry-standard split. Different jobs, best together.' },
-  { question: 'Which handles flash sale campaigns better?', answer: 'Postscript owns flash execution (teaser email week-minus-two in Klaviyo, launch SMS to engaged browse-abandon only from Postscript). Klaviyo owns flash-adjacent email depth. Flash success needs both layers with documented handoffs — size-run sell-through in minutes cannot run on email timing.' },
-  { question: 'Should I pair either with Sequenzy?', answer: 'Postscript-plus-Sequenzy is the default stack this site recommends: Postscript for SMS urgency, Sequenzy for email depth at $19/month unlimited contacts. Klaviyo-plus-Sequenzy duplicates email and should consolidate to one owner — choose Klaviyo for data or Sequenzy for lifecycle economics, not both.' },
-  { question: 'How should email and SMS divide flash work?', answer: 'Email: teaser, education, post-purchase, winback. SMS: VIP early access, launch moment, scarcity alerts, shipping deadlines. Never the same urgency on both channels simultaneously — collision rules written before launch season decide which channel speaks when.' },
-  { question: 'What does the full flash stack cost?', answer: 'Klaviyo profiles plus Postscript platform plus message volume plus operator time — model all four with carrier surcharges and discount depth. Cipher Audio held 58% margin on no-discount launches versus 41% on discount-led ones; stack costs are trivial next to margin discipline.' },
-  { question: 'Can Klaviyo replace Postscript entirely?', answer: 'Technically yes, strategically no for drop-heavy brands — Klaviyo SMS lacks Postscript drop-native mechanics (keyword flows, VIP isolation, release-tested caps). Stores with occasional SMS do fine unified; stores living on drops need the specialist.' },
-
-  { question: 'Do Klaviyo and Postscript cover TCPA and state-level consent the same way?', answer: 'No — consent tooling differs in capture sources, documented opt-in records, quiet-hour enforcement by recipient timezone, and state-specific rules such as California or Florida requirements. Treat TCPA compliance as an operator responsibility either way: keep source, timestamp, and disclosure text per number, and audit capture copy against every state you ship to before scaling either platform.' },
-  { question: 'How do recent-purchaser suppression rules compare between Klaviyo and Postscript?', answer: 'Both can suppress recent purchasers, but the mechanics differ — one may key suppression off Shopify order events in near real time while the other relies on segment refresh intervals. Test same-day purchase exits across both channels before committing, because duplicate post-purchase messages are the fastest way to burn a healthy list.' },
-  { question: 'Which platform wins on margin after message and app costs?', answer: 'Model it, do not guess: take incremental revenue per send, subtract platform fees, per-message carrier charges, discount cost, refunds, and support load, then compare at your projected 12-month list size. Pricing changes often — check the official pricing pages for Klaviyo and Postscript before deciding, and re-run the model quarterly.' },
+  {
+    "question": "Is Klaviyo or Postscript better for Shopify SMS marketing campaigns?",
+    "answer": "Shortlist Klaviyo when the team wants email and SMS managed around the same customer data and workflows. Shortlist Postscript when its Shopify messaging workflow, response handling and campaign operations fit the SMS team. Test the actual account configuration before choosing; a product-drop calendar alone does not establish a winner."
+  },
+  {
+    "question": "Which handles flash sale campaigns better?",
+    "answer": "Use the same inventory, access and suppression exercise in both accounts. A useful result is a message that reaches the eligible subscriber while the correct variant is available, and stops after purchase or withdrawal. Compare the work needed to achieve that result, including replies and failed event delivery."
+  },
+  {
+    "question": "Should I pair either with Sequenzy?",
+    "answer": "Add another platform only for an unmet requirement that justifies another customer-data and dispatch boundary. Compare Sequenzy as an alternative against the same email workflows and current account capabilities. Neither a Klaviyo nor a Postscript deployment automatically requires a separate lifecycle email provider."
+  },
+  {
+    "question": "How should email and SMS divide flash work?",
+    "answer": "Assign each campaign step by its purpose and the subscriber permission, then name one dispatch owner. Email can carry the product story and SMS can carry an opted-in access notice, but this is a proposed design rather than a required division. Keep the offer, access window and purchase exits consistent across channels."
+  },
+  {
+    "question": "What does the full flash stack cost?",
+    "answer": "Request quotes for the same billable profiles, email sends, SMS destinations, message mix and peak volume. Include platform fees, carrier charges, add-ons, reply handling, migration and operator time. Model discounts and returns separately from software cost, and avoid counting either twice."
+  },
+  {
+    "question": "Can Klaviyo replace Postscript entirely?",
+    "answer": "It can be a candidate for consolidating email and SMS, subject to destination, sender and account eligibility. Confirm that the existing capture, automation, response handling and access workflows can be reproduced. Postscript may still fit a team whose required SMS operations are easier to manage there; demonstrate that in the actual accounts."
+  },
+  {
+    "question": "Do Klaviyo and Postscript cover consent and sending restrictions the same way?",
+    "answer": "Do not assume identical controls or that software configuration establishes compliance. Verify capture evidence, purpose and channel scope, withdrawal handling, destination eligibility and applicable sending restrictions for the planned audience. Hold messages when the required permission or configuration is unresolved."
+  },
+  {
+    "question": "How should recent-purchaser suppression be compared?",
+    "answer": "Replay a purchase before scheduling, while a message is queued and after a retry begins. Check the event identifier, customer match, processing delay and cancellation acknowledgement. An already accepted delivery may not be recallable, so document the boundary and reconcile it rather than promising instant cancellation."
+  },
+  {
+    "question": "Which platform wins on margin after message and app costs?",
+    "answer": "Compare net contribution over the same eligible audience and observation period, including software, delivery and operating costs. Separate platform-attributed orders from causal lift. Where a suitable holdout is feasible, define allocation and exclusions before sending; otherwise report an observational comparison with its limitations."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
-  <section class="py-14 md:py-20">
-    <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-orange-950/75">/</span>
-        <span class="text-orange-950/75">Klaviyo vs Postscript</span>
-      </nav>
-
-      <header class="max-w-4xl">
-        <p class="badge">Campaign marketing comparison</p>
-        <h1 class="hero-title mt-5">Klaviyo vs Postscript for Shopify SMS marketing</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">Cipher Audio (high-AOV headphones, $320k/mo) evaluated Klaviyo vs Postscript for product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Postscript #1 for SMS campaigns. Attentive #2 enterprise. Sequenzy lifecycle email layer. No launch discount — margin held at 58% vs 41% on prior discount launches</p>
-      </header>
-
-      <div class="mt-12 max-w-4xl">
-        <TldrBox picks={[
-          { label: 'SMS campaigns', tool: 'Postscript', reason: 'Drop execution and restrained broadcasts' },
-          { label: 'Enterprise SMS', tool: 'Attentive', reason: 'High-volume promotional calendars' },
-          { label: 'Lifecycle email', tool: 'Sequenzy', reason: 'Email layer beside SMS' },
-          { label: 'Klaviyo', tool: 'Klaviyo', reason: 'Evaluate for your campaign calendar bottleneck' },
-          { label: 'Postscript', tool: 'Postscript', reason: 'Alternative angle for segment-by-value needs' },
-        ]} />
-      </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Comparison at a glance</h2>
-        <table class="data-table">
-          <thead>
-<tr>
-<th>Dimension</th>
-<th>Klaviyo</th>
-<th>Postscript</th>
-</tr>
-</thead>
-          <tbody>
-            <tr>
-<td>Campaign marketing fit</td>
-<td>Klaviyo campaign role</td>
-<td>Postscript campaign role</td>
-</tr>
-            <tr>
-<td>SMS execution</td>
-<td>Bundled/pairing</td>
-<td>Primary</td>
-</tr>
-            <tr>
-<td>Drop orchestration</td>
-<td>Varies</td>
-<td>Strong</td>
-</tr>
-            <tr>
-<td>Lifecycle email</td>
-<td>Pair Sequenzy</td>
-<td>Pair Sequenzy</td>
-</tr>
-            <tr>
-<td>Segment-by-value</td>
-<td>RFM-ready</td>
-<td>RFM-ready</td>
-</tr>
-          </tbody>
-        </table>
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-      <div>
-<h2>Why this comparison matters</h2>
-<p>For Klaviyo vs Postscript, margin after incentive math separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, quarterly calendar planning separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Klaviyo fits campaigns</h2>
-<p>For Klaviyo vs Postscript, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Postscript fits campaigns</h2>
-<p>For Klaviyo vs Postscript, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, campaign calendar discipline separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>VIP early-access drop test</h2>
-<p>For Klaviyo vs Postscript, campaign calendar discipline separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, offer restraint ladders separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, segment-by-value targeting separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Flash sale with inventory caps</h2>
-<p>For Klaviyo vs Postscript, segment-by-value targeting separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, VIP early access without codes separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, channel collision prevention separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Campaign calendar coordination</h2>
-<p>For Klaviyo vs Postscript, channel collision prevention separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, revenue per send economics separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, broadcast frequency caps separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Segment-by-value before broadcasts</h2>
-<p>For Klaviyo vs Postscript, broadcast frequency caps separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, waitlist priority queues separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Pricing and campaign ROI</h2>
-<p>For Klaviyo vs Postscript, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, holdout testing before scale separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, margin after incentive math separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Verdict for campaign marketers</h2>
-<p>For Klaviyo vs Postscript, margin after incentive math separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, quarterly calendar planning separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Klaviyo vs Postscript, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-
-        <h2>Campaign calendar discipline</h2>
-        <p>For Klaviyo vs Postscript, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Offer discipline and segment-by-value</h2>
-        <p>For Klaviyo vs Postscript, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Sequenzy as lifecycle email layer</h2>
-        <p>Neither Klaviyo nor Postscript should carry your full retention story alone. Sequenzy ranks as lifecycle email — welcome, education, winback beside Postscript or Attentive SMS.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="container pb-16">
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <FaqSection faqs={faqs} title="Klaviyo vs Postscript FAQ" />
-  </section>
+  <section class="py-14 md:py-20"><div class="container">
+    <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a><span class="mx-2">/</span>Klaviyo vs Postscript</nav>
+    <header class="max-w-4xl"><p class="badge">Campaign workflow comparison</p>
+      <h1 class="hero-title mt-5">Klaviyo vs Postscript for Shopify SMS marketing</h1>
+      <p class="mt-7 text-xl leading-9">Choose around the launch your team must operate: who qualifies, what is available, which message owns the moment and when the next message must stop. Both deserve an account-level evaluation; product drops do not automatically require two platforms.</p>
+    </header>
+    <article class="prose-shopify mt-12 max-w-4xl">
+      <h2>Current scope before the comparison</h2>
+      <p>Klaviyo offers <a href="https://www.klaviyo.com/products/email-marketing">email marketing</a> and <a href="https://www.klaviyo.com/products/sms-marketing">SMS marketing</a>. It is a useful shortlist candidate when one team wants customer data and cross-channel work in a common platform. Verify supported destinations, sender setup and the workflows included in your account.</p>
+      <p>Postscript presents SMS campaigns and automations, segmentation and response management on its <a href="https://postscript.io/pricing">pricing page</a>. Its <a href="https://postscript.io/launch">launch page announces Postscript Email</a>, while the pricing page still directs email prospects to a waitlist. Treat email availability, inclusion and migration support as account-specific questions. Calling Postscript categorically SMS-only, or assuming email is available to every merchant, would both miss that distinction.</p>
+      <div class="overflow-x-auto"><table class="data-table"><thead><tr><th>Operating choice</th><th>Klaviyo evaluation</th><th>Postscript evaluation</th></tr></thead><tbody>
+        <tr><td>One team owns email and SMS</td><td>Reproduce both channels and their exits in the account.</td><td>Confirm Email access first; otherwise include the existing email owner in the design.</td></tr>
+        <tr><td>An SMS team owns launches and replies</td><td>Test campaign scheduling, segmentation and the response workflow the team needs.</td><td>Test the advertised SMS campaign and response tools with the same release fixture.</td></tr>
+        <tr><td>Keep an existing email platform</td><td>Document any customer-data and dispatch boundary before adding another sender.</td><td>Make the handoff explicit; a shared calendar alone does not synchronize suppression.</td></tr>
+        <tr><td>Consolidate an existing stack</td><td>Prove the required capture, journeys, replies and reporting before cutover.</td><td>Confirm account access and feature coverage, then run the same acceptance cases.</td></tr>
+      </tbody></table></div>
+      <h2>Build one launch record before scheduling</h2>
+      <p>Name the campaign, product variants, inventory source, access window, channel permissions, offer and dispatch owner. Keep the teaser, VIP notice, general launch and restock as separate steps with explicit eligibility. An email story followed by an opted-in SMS access notice is one possible design; a second channel is useful only when it adds a distinct job.</p>
+      <p>Before each dispatch, recheck permission, purchase status, stock and whether another channel has already completed the same job. Record a stable campaign-step identifier so a delayed webhook or a retry cannot create another send. If two platforms remain, demonstrate the transfer and acknowledgement of exclusions rather than assuming that a common Shopify connection makes every queue consistent.</p>
+      <h2>Proposed merchant exercises, not reported case studies</h2>
+      <p>The following names are hypothetical planning fixtures retained from this comparison. They are not verified customers, completed tests or evidence of supplier performance. Use the same inputs in each candidate account and record the expected result, actual result, exception and responsible operator.</p>
+      <h3>Sauce Lab: batch scarcity</h3>
+      <p>Use the original planning input of 200 bottles remaining to test an inventory alert. Confirm the count is current at dispatch, excludes unavailable stock and cancels when the batch sells out. A threshold is a merchant choice, not evidence that scarcity texts improve sales.</p>
+      <h3>Ember Ceramics: a constrained kiln release</h3>
+      <p>Model 4,200 waitlist entries for 80 pieces. Resolve duplicates, publish the access rule and test that the link follows the announced allocation. A waitlist entry is not a reservation; the product story and access notice must make that distinction clear.</p>
+      <h3>Ridge Run Coffee: subscription collisions</h3>
+      <p>Create an active subscriber, a cancelled subscriber and an ordinary buyer. Run the same flash-offer eligibility checks against current subscription status, then repeat after a delayed update. Route the disputed record for review instead of treating every coffee purchaser as a subscriber.</p>
+      <h3>Cipher Audio: a launch without automatic discounts</h3>
+      <p>Draft a teaser and a launch notice with the same price and access conditions. Compare a no-discount plan with a separately defined incentive plan using net contribution and an appropriate comparison design. The earlier margin figures on this page were unsupported; no measured outcome is asserted here.</p>
+      <h3>Patchwork Denim: one-of-one stock</h3>
+      <p>Use declared style preferences and variant availability to select a proposed audience. Sell the only item between scheduling and dispatch. The acceptance case is a cancelled or updated message, not a stale link to an unavailable piece.</p>
+      <h3>Arena Energy: an offer with a single meaning</h3>
+      <p>If the email includes a shaker bundle while SMS announces a flavor launch, state which audience qualifies for the bundle. Check both landing pages and coupon rules. Use declared interests rather than inferring a health condition from purchases.</p>
+      <h3>Loom & Frame: edition access</h3>
+      <p>A merchant may propose collector access after half an edition sells, but must define the collector rule and source inventory count. Test a customer whose purchase count changes and a delayed stock update. Report who received access under the rule, without claiming an unmeasured conversion advantage.</p>
+      <h3>Driftwood Surf: restock intent</h3>
+      <p>Give a subscriber a waitlist entry for one size and an unrelated prior purchase. Verify that the correct restocked variant drives the notification and that purchase or withdrawal ends that episode. General product interest should not silently become a reservation or a promise of stock.</p>
+      <h3>Noir Collective: an early-access calendar</h3>
+      <p>Define the proposed VIP window, store timezone, recipient eligibility and expiry. Compare a lower-frequency calendar only after naming the eligible audience and observation period. A change in revenue per send alone does not show higher total contribution or better retention.</p>
+      <h3>SoleDrop ATX: sneaker size runs</h3>
+      <p>Replay a subscriber opening an early-access link after their size sells out, and another after general access begins. The destination should show current stock and current access rules. Do not imply a completed fast sell-through or lower unsubscribe rate from this planning exercise.</p>
+      <h3>Festival Threads: tour stops</h3>
+      <p>Use explicit city interest, a current venue date and the intended timezone. Cancel a stop and move another across a daylight-saving boundary. Confirm that queued notices update or stop; set a frequency policy for this tour rather than presenting a universal number of texts per city.</p>
+      <h3>Vinyl Vault: collectors and pressing quantities</h3>
+      <p>Disclose the actual pressing quantity and distinguish a waitlist from paid priority. Decide whether an announced collector program uses purchase history, declared membership or another documented rule. A click or high lifetime value does not by itself confer access rights.</p>
+      <h3>Bloom & Wick: gift buyer versus recipient</h3>
+      <p>Keep the purchaser and gift recipient distinct. Test scent education, order notices and a proposed gift offer against the intended person and channel permission. Do not enroll a recipient in marketing merely because a buyer supplied a delivery address.</p>
+      <h3>Peak Trail Gear: clearance and full-price buyers</h3>
+      <p>Define the proposed clearance audience without treating a segment label as proof of price sensitivity. Compare incentives with a suitable control where feasible, allocate each order once and include returns and discount cost. No claim that a particular discount destroyed margin is supported by this fixture.</p>
+      <h2>Exercise the failure path as well as the happy path</h2>
+      <ol>
+        <li>Capture a subscriber with channel, purpose, source, timestamp and the presented disclosure. Test a changed preference and an unresolved identity match. Hold an ambiguous record rather than treating the presence of a number as permission.</li>
+        <li>Queue a launch, then inject a purchase, an opt-out and a stock change as separate cases. Check the processing delay and cancellation acknowledgement. Document the point after which the delivery provider has accepted a message and recall is no longer available.</li>
+        <li>Replay the same event and interrupt the acknowledgement. The same campaign step should reconcile to one disposition; a retry must not reopen a completed or withdrawn episode.</li>
+        <li>Test the applicable sending schedule with a known timezone, an unknown timezone and a clock change. Verify the required destination and sender controls for the intended audience; this comparison does not prescribe a universal legal sending window.</li>
+        <li>Have another operator reconstruct eligibility, exclusions, replies and the final outcome from the records. A workflow that depends on its original builder remembering an exception has not completed the handoff.</li>
+      </ol>
+      <p>Keep channel and purpose scope explicit when applying withdrawals. Do not silently convert a channel-specific preference into another permission, or lose an existing broader suppression during migration. The <a href="/guides/consent">consent guide</a> and <a href="/guides/tcpa">TCPA guide</a> provide further context; confirm the requirements applicable to the actual deployment.</p>
+      <h2>Compare peak-month cost and contribution</h2>
+      <p>Obtain current quotes for the same billable audience, email volume, SMS destinations and message mix. Include base tiers, overages, carrier charges, sender setup, optional features, response handling and operator time. Check how the actual text and encoding affect billable message segments rather than assuming every text has one fixed character allowance. Include migration and overlapping subscriptions in a switching decision.</p>
+      <p>For campaign contribution, start with net sales after discounts and returns, subtract product and fulfillment costs, then delivery, allocated software and operating costs. If net sales already deduct discounts and returns, do not subtract them again. Allocate each order once. Compare the same eligible-customer denominator and observation period, including customers who received no message; revenue per send can rise while total contribution falls.</p>
+      <p>Platform attribution is a reporting rule, not proof of incremental lift. Where feasible, define a suitable holdout and exclusion policy before sending. Otherwise label the result observational and explain differences in audience, stock and offers. Continue evaluation until the relevant queues, returns and measurement window have matured, rather than declaring success after a fixed number of days. See the <a href="/guides/pricing">pricing worksheet</a>.</p>
+      <h2>Make the final architecture earn its extra boundary</h2>
+      <p>Choose Klaviyo when the demonstrated email and SMS workflow, data model and daily operating burden fit the team. Choose Postscript when the demonstrated SMS workflow and response operations fit better, with Email access and any separate email owner explicitly accounted for. Keep both only if a specific unmet requirement outweighs the cost of customer matching, suppression transfer, queue ownership and reporting reconciliation.</p>
+      <p>A third provider is not a default requirement. If Sequenzy or another alternative is under consideration, test it against the same required jobs and current account capabilities instead of assigning it a guaranteed lifecycle role. The <a href="/apps/klaviyo">Klaviyo</a>, <a href="/apps/postscript">Postscript</a>, <a href="/apps/sequenzy">Sequenzy</a> and <a href="/apps/attentive">Attentive</a> profiles can support further shortlisting. Use the <a href="/guides/campaign-restraint">campaign restraint guide</a> to document ownership and collision rules, and the <a href="/apps">app directory</a> for other candidates.</p>
+    </article>
+    <div class="mt-12"><FaqSection faqs={faqs} title="Klaviyo vs Postscript FAQ" /></div>
+  </div></section>
 </BaseLayout>
