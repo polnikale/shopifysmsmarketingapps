@@ -3,210 +3,63 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleSchema from '../../components/ArticleSchema.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-const path = '/alternatives/postscript-alternative';
-const title = 'Best Postscript Alternatives for Shopify SMS Marketing in 2026';
-const desc = 'Compare Postscript alternatives for Shopify by SMS-native workflows, email depth, consent, message economics, and cross-channel ownership.';
-const tools = [
-  { name: 'Klaviyo', best: 'Stores coordinating SMS with detailed email and product behavior', pros: 'Rich Shopify events and cross-channel segmentation', cons: 'Profile cost and consent governance grow with complexity', price: 'Verify current contact and feature pricing', source: 'https://www.klaviyo.com/pricing' },
-  { name: 'Attentive', best: 'Larger brands with managed SMS acquisition', pros: 'Scale-oriented SMS operations and segmentation', cons: 'Contract and operating model may exceed smaller teams', price: 'Verify current contract pricing', source: 'https://www.attentive.com/pricing' },
-  { name: 'Omnisend', best: 'SMB stores wanting bundled email, SMS, and push', pros: 'Fast multichannel ecommerce workflows', cons: 'Frequency and channel economics need monitoring', price: 'Verify current contact and channel pricing', source: 'https://www.omnisend.com/pricing/' },
-  { name: 'Brevo', best: 'Teams combining SMS with email and transactional messaging', pros: 'Broad messaging coverage', cons: 'Shopify event depth needs validation', price: 'Verify current send and channel pricing', source: 'https://www.brevo.com/pricing/' },
-  { name: 'Sequenzy', best: 'Email lifecycle beside a specialist SMS sender', pros: 'Focused welcome, education, post-purchase, and winback sequences', cons: 'Not a direct SMS replacement', price: 'Verify current plan and integration coverage', source: 'https://sequenzy.io/' },
-];
+const path = "/alternatives/postscript-alternative";
+const title = "Postscript alternatives: preserve the sender, keywords and release queue";
+const desc = "Compare replacing a live Postscript program with repairing it or moving only one channel. Start with the number and every place customers use it.";
 const faqs = [
-  { question: 'Why replace Postscript?', answer: 'Legitimate reasons only: need for deeper email lifecycle (add Sequenzy rather than replacing), a single cross-channel data model (Klaviyo), larger managed programs (Attentive), or broader transactional coverage (Brevo). Never migrate on pricing alone without modeling message economics — Postscript costs track revenue directly at disciplined volumes.' },
-  { question: 'Can Sequenzy replace Postscript SMS?', answer: 'No — Sequenzy is the lifecycle email layer, not an SMS sender. Treat it as the complement unless SMS needs truly disappear: welcome depth, education, winback at $19/month beside specialist texts. A deliberate Postscript-plus-Sequenzy stack beats either alone and beats most unified substitutes.' },
-  { question: 'What should be tested?', answer: 'Consent evidence, STOP handling, quiet hours, purchase exits, product availability, cross-channel suppression, message costs, and reporting reconciled against Shopify orders. Any replacement must pass every test with real segments before cutover — SMS migrations fail on untested edge cases, never on headline features.' },
-  { question: 'How do alternatives compare on drop mechanics?', answer: 'Attentive matches with managed scale; Klaviyo approximates with data depth; Omnisend and Brevo cover basics only. Nothing replicates Postscript keyword flows, VIP isolation, and release-tested caps exactly — verify each mechanic in trial rather than trusting comparison tables.' },
-  { question: 'When should a store keep Postscript?', answer: 'While SMS-native Shopify execution remains the actual requirement — drops, VIP access, cart urgency with restraint controls. Keep it when the team uses its depth weekly; the switching cost of rebuilding drop discipline elsewhere exceeds any plausible savings.' },
-  { question: 'What is the most common replacement regret?', answer: 'Migrating to save platform fees while losing drop discipline — cheaper sends with worse targeting destroy more margin than they save in fees. Model revenue per recipient before and after with holdouts; fee savings without performance parity are losses disguised as wins.' },
+  {
+    "question": "When is keeping Postscript sensible?",
+    "answer": "Keep it when its acquisition, segmentation and reply workflow meet the requirement and the team can maintain them. Repair a specific data or scheduling defect before rebuilding the whole program. Current email access should be checked in the account rather than assumed absent."
+  },
+  {
+    "question": "Can the phone number and keywords move together?",
+    "answer": "Do not assume so. Obtain provider-specific instructions for the number, registration, keyword responses and timing. A subscriber CSV does not transfer a sender or reroute a printed keyword. Keep an owner for replies throughout the change."
+  },
+  {
+    "question": "Can a separate email tool replace the SMS program?",
+    "answer": "An email-only scope leaves the SMS sender, reply handling and acquisition routes unresolved. If evaluating Sequenzy for email, demonstrate its required data exchange and suppression first; no integration, price advantage or SMS replacement is established here."
+  }
 ];
 ---
 <BaseLayout title={title} description={desc} site={site} path={path}>
 <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
 <main class="container py-14 md:py-20">
-<a href="/alternatives" class="link text-sm">← All alternatives</a>
-<p class="badge mt-6">Shopify SMS migration</p>
-<h1 class="hero-title mt-5 max-w-5xl">{title}</h1>
-<p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">Postscript is SMS-focused. An alternative is justified only when the store needs a different division of labor: deeper email lifecycle, one cross-channel data model, managed enterprise scale, or broader transactional coverage.</p>
-<section class="mt-12 max-w-5xl overflow-x-auto rounded-2xl border border-orange-950/15 bg-white">
-<table class="w-full text-left">
-<thead>
-<tr>
-<th>Platform</th>
-<th>Best fit</th>
-<th>Pros</th>
-<th>Tradeoff</th>
-</tr>
-</thead>
-<tbody>{tools.map((tool, i) => <tr class={i === 0 ? 'highlight-row' : ''}>
-<td class="font-semibold">{tool.name}</td>
-<td>{tool.best}</td>
-<td>{tool.pros}</td>
-<td>{tool.cons}</td>
-</tr>)}</tbody>
-</table>
-</section>
-<article class="prose-shopify mt-14 max-w-4xl">
-<h2>Decide what Postscript is no longer doing</h2>
-<p>Do not migrate simply because another platform has more features. Identify whether the gap is email education, product-event segmentation, SMS scale, transactional separation, or reporting. Then rebuild one complete journey and compare its operational behavior.</p>
-<p>Model message fees, carrier fees, discount depth, opt-outs, complaints, and operator time. Use incremental orders and margin where possible; an attributed revenue total alone does not prove that SMS caused a purchase.</p>
-<h2>Platform notes</h2>{tools.map((tool, i) => <section>
-<h3>{i + 1}. {tool.name}</h3>
-<p>
-<strong>Best for:</strong> {tool.best}. <strong>Pros:</strong> {tool.pros}. <strong>Cons:</strong> {tool.cons}. <strong>Pricing:</strong> {tool.price}. Review the <a href={tool.source} target="_blank" rel="noopener noreferrer">official source</a> and include message volume, contacts, seats, consent tooling, and integration work.</p>
-<table>
-<tbody>
-<tr>
-<th>Consent test</th>
-<td>Can the team prove opt-in, honor STOP, enforce quiet hours, and preserve exclusions?</td>
-</tr>
-<tr>
-<th>Ownership test</th>
-<td>Can the team explain whether SMS, email, or transactional messaging owns each customer state?</td>
-</tr>
-</tbody>
-</table>
-</section>)}<h2>Migration checklist</h2>
-<ol>
-<li>Export SMS consent, opt-outs, timestamps, source, quiet hours, segments, templates, and flow logic.</li>
-<li>Map Shopify product, cart, order, subscription, and service events to each channel.</li>
-<li>Rebuild cart recovery and test purchase exits, STOP behavior, and out-of-stock suppression.</li>
-<li>Add post-purchase, replenishment, and winback only after cross-channel exclusions work.</li>
-<li>Compare incremental outcomes, margin, opt-outs, complaints, message cost, and repeat quality.</li>
-</ol>
-<h2>Verdict</h2>
-<p>Choose Klaviyo for deep cross-channel behavior, Attentive for managed scale, Omnisend for accessible multichannel operations, Brevo for broad messaging, and Sequenzy when email lifecycle should sit beside a specialist SMS sender. Keep Postscript when SMS-native Shopify execution remains the actual requirement.</p>
+<a class="link" href="/alternatives">All alternatives</a>
+<p class="badge mt-6">Replacement planning · November 25, 2026</p>
+<h1 class="hero-title mt-5">{title}</h1>
+<p class="mt-6 text-xl leading-9">{desc}</p>
+<article class="prose-shopify mt-12 max-w-4xl">
+
+<h2>Keep the working parts before choosing a substitute</h2>
+<p>The <a href="https://apps.shopify.com/postscript-sms-marketing">current Postscript listing</a> advertises Shopify-data segmentation, automations and two-way messaging, and describes SMS, RCS and phased email availability. These are positive reasons to retain an established account if they fit the work. An email gap may be an access or workflow question rather than a reason to replace SMS. Confirm what is enabled in your account.</p>
+<p>This page addresses an existing program; the <a href="/apps/postscript">Postscript app review</a> provides an initial release trial. Here the decision is what must survive departure: the number customers recognize, keyword promises, permission history, replies and messages already waiting. Identify the actual defect and its owner. Fix an incorrect Shopify field or conflicting calendar before concluding that a new vendor will fix it.</p>
+<h2>Make the number and keyword register the first deliverable</h2>
+<p>Postscript's <a href="https://help.postscript.io/en/articles/13564366-what-is-my-phone-number-subscribers-can-text-to-opt-into-my-sms">number guide</a> describes a brand-specific toll-free number and incoming subscriber replies. Its <a href="https://help.postscript.io/en/articles/13564129-create-a-keyword">keyword guide</a> describes acquisition from banners, social, printed material and other placements. Moving contacts does not establish continuity for those entry routes.</p>
+<table class="data-table"><thead><tr><th>Existing asset</th><th>Record before departure</th><th>Acceptance question</th></tr></thead><tbody>
+<tr><td>Sending number</td><td>Provider, type, registration owner and reply destination</td><td>Who confirms transfer or replacement, and when may it send?</td></tr>
+<tr><td>Keyword and response</td><td>Exact text, promise, eligibility and linked journey</td><td>What happens to a new and a returning subscriber?</td></tr>
+<tr><td>Physical and digital placements</td><td>Packaging, QR destinations, social links, forms and printed stock</td><td>Can it be changed, redirected or serviced while old stock remains?</td></tr>
+<tr><td>Reply queue</td><td>Open requests, assignment and escalation path</td><td>Who sees an incoming help request during the handover?</td></tr>
+</tbody></table>
+<p>Ask both providers for written instructions for your exact sender and destinations. Do not treat a guide about migration into Postscript as proof of the reverse process. If a new number is required, plan how customers and staff will recognize it. Keep the existing route serviced or retire its placements deliberately; do not promise that old printed keywords will route to the new provider.</p>
+<h2>Reconcile permission separately from segment membership</h2>
+<p>The <a href="https://help.postscript.io/en/articles/13563865-understanding-subscriber-opt-in-sources">opt-in-source guide</a> distinguishes keyword, form, manual upload and checkout sources; its analytics count excludes people who joined and opted out within the selected period. The <a href="https://help.postscript.io/en/articles/13563863-view-subscribers-included-in-a-segment">segment guide</a> describes exporting segment members. Neither makes a campaign audience an exhaustive permission ledger.</p>
+<p>Request the available evidence, exclusions and historical statuses with field definitions. Reconcile active, withdrawn, unknown and duplicate records separately using stable identifiers and channel-specific permissions. Keep disclosure versions, capture source and timestamps where available; document missing evidence instead of reconstructing it. A phone number, email subscription or past order alone is not authority to import someone as SMS subscribed.</p>
+<p>In a proposed test fixture, include an active keyword signup, a withdrawn contact, an email-only buyer, a changed phone number and two records sharing an identifier. Show the import disposition and eligible audience for each. Then withdraw permission after the export checkpoint and show that the destination receives the change before any send. Review <a href="/guides/consent">consent planning</a> for the evidence record.</p>
+<h2>Shortlist by the job that is moving</h2>
+<p>Use an unranked demonstration brief. Ask <a href="/apps/klaviyo">Klaviyo</a> and <a href="/apps/omnisend">Omnisend</a> to demonstrate an email/SMS audience with the same purchase exit and ownership rules. Ask <a href="/apps/attentive">Attentive</a> to demonstrate the required acquisition and reply service and state who performs the work. For broader message requirements, ask <a href="/apps/brevo">Brevo</a> to show the exact Shopify events and destinations. These are procurement tasks, not claims of feature parity or superior outcomes.</p>
+<p>If moving only email, leave the accepted SMS operation in scope with a named owner. Evaluate <a href="/apps/sequenzy">Sequenzy</a> or another email candidate against education, welcome and winback requirements without assuming a native connection. Require a field map, withdrawal path and collision test. A partial replacement should not accidentally change the sender or reactivate a welcome journey.</p>
+<h2>Carry the remaining release work, not every historical trigger</h2>
+<p>For an illustrative limited release, preserve size or style interest, waitlist priority and VIP access without automatically adding a discount. Snapshot who has already received access, who purchased and who is still waiting. A pending release message is a remaining obligation, not a reason to replay its entire flow. Link to the exact variant and verify availability immediately before the owned send; a scheduled scarcity claim can become false.</p>
+<p>Exercise a purchase during a wait, a sold-out variant, a withdrawn subscriber and a delayed order event. Confirm cancellation and inspect the next eligible action. Coordinate email education and SMS access through one calendar owner. Subscription renewals, open support requests and gift versus self-purchase messages need explicit treatment rather than a universal monthly cap. Use <a href="/guides/email-sms-coordination">channel coordination</a>, <a href="/use-cases/back-in-stock">waitlist planning</a> and <a href="/guides/offer-discipline">offer discipline</a>.</p>
+<h2>Compare complete costs and contribution</h2>
+<p>Obtain current terms from <a href="https://postscript.io/pricing">Postscript pricing</a> and each candidate. Separate subscription, minimum-spend treatment, SMS/MMS units, carrier charges, destinations, number work, reply staffing and migration labor. Preview actual copy, links and characters to determine billable units; one recipient does not necessarily equal one billed message. Model the peak release month and projected list growth.</p>
+<p>Illustrative order math: $100 merchandise value less $10 incentive gives $90 collected; less $45 goods cost leaves $45 before messaging, fulfillment, returns and support. Do not subtract the same discount again from already discounted net sales. Compare a suitable eligible holdout over the same window where feasible, noting that sold-out inventory affects later purchase opportunity. Attributed revenue alone does not establish incremental benefit. Keep the <a href="/guides/pricing">cost worksheet</a> alongside the quote.</p>
+<h2>Approve one sender per job and a recoverable checkpoint</h2>
+<ol><li>Save the asset register, permission reconciliation and remaining-step queue with an explicit checkpoint.</li><li>Agree which system owns acquisition, replies, each flow and each scheduled broadcast. Pause outgoing jobs and verify what happened to queued messages.</li><li>With test contacts, exercise new signup, purchase exit, withdrawal, reply handling and recipient-time sending restrictions. Confirm current market rules with the provider; no single time window covers every destination.</li><li>At activation, replay only verified changes since the checkpoint, including purchases and withdrawals. Keep duplicate jobs disabled.</li><li>If reverting, reconcile completed sends and new changes before resuming the old system. Reverting a configuration is not permission to resend completed access messages.</li></ol>
+<p>Keep an exception log and a named pause owner. These are proposed acceptance checks, not observed migration results or a promise of uninterrupted transfer. If the number, evidence or remaining queue cannot be reconciled, retain the accepted operation while resolving that specific issue. Continue with <a href="/compare/postscript-vs-attentive">Postscript and Attentive decision work</a> or <a href="/guides/campaign-restraint">campaign restraint</a> according to the unresolved job.</p>
+
 </article>
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Frequency governance and holdout discipline</h2>
-      <p>Frequency caps belong to the operator, not to whichever platform was bought last. Set a written cap per channel (most DTC brands hold promotional SMS to 2–4 sends per month), make purchase and support events exit every active queue immediately, and review opt-out rate per campaign type weekly — rising opt-outs on a stable list almost always means frequency, not creative, is the problem. Timezone-aware quiet hours (8am–9pm recipient-time) are part of the same contract; see the <a class="link" href="/guides/quiet-hours">quiet hours guide</a> for the edge cases.</p>
-      <p>Holdout discipline closes the loop. Reserve a small percentage of each segment from every major send, and judge programs on incremental margin against the holdout — not on platform-attributed revenue, which cannot distinguish a message that changed behavior from one that reached someone already on the way to checkout. The <a class="link" href="/guides/campaign-restraint">campaign restraint</a> and <a class="link" href="/guides/offer-discipline">offer discipline</a> guides cover the full ritual.</p>
-      <ol>
-        <li>Write the cap: promotional SMS slots, email sends, and combined touches per contact per week</li>
-        <li>Wire same-day purchase exits across both channels on shared profiles</li>
-        <li>Reserve a holdout slice from every broadcast above a set revenue threshold</li>
-        <li>Report opt-out rate and complaint keywords weekly by campaign type</li>
-        <li>Re-run the cost-and-margin worksheet quarterly at projected list size</li>
-      </ol>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Stack recipes by store stage</h2>
-      <p>There is no single best stack — there are stage-appropriate ones. These are the defaults this site recommends, always subject to your own volume, consent operations, and a current read of each vendor's official pricing page.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Store stage</th><th>Default stack</th><th>Why it works</th></tr></thead>
-          <tbody>
-            <tr><td>Under $20k/mo, one market</td><td>Postscript starter + Sequenzy email</td><td>Lowest fixed cost; clean channel ownership from day one</td></tr>
-            <tr><td>$20k–$100k/mo, growing list</td><td>Postscript or Klaviyo + Sequenzy</td><td>Segment-by-value before spend; see <a class="link" href="/guides/segment-by-value">segment-by-value</a></td></tr>
-            <tr><td>$100k+/mo, real SMS volume</td><td>Postscript for drops + Sequenzy lifecycle</td><td>Specialists per channel; caps enforced on a shared calendar</td></tr>
-            <tr><td>Enterprise, multi-brand</td><td>Attentive with managed services</td><td>Governance and acquisition at scale justify the contract</td></tr>
-            <tr><td>Subscriptions-heavy catalog</td><td>Any of the above + subscription-state suppression</td><td>Renewal timing owns the SMS slot; promos stay off renewal dates</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Operator checklist before the next send</h2>
-      <ul>
-        <li>Every recipient has a documented SMS opt-in source matching this message category</li>
-        <li>Recent purchasers, open support tickets, and holdouts are suppressed</li>
-        <li>Quiet hours pass for every destination timezone in the audience</li>
-        <li>STOP and HELP replies verified on the current sender ID this month</li>
-        <li>Margin worksheet updated: platform, carrier, discount, refund, support lines</li>
-        <li>Channel calendar checked — no email offer colliding with this text within 12 hours</li>
-        <li>Opt-out and complaint thresholds defined in advance with a stop rule</li>
-      </ul>
-      <p>For matchup-level decisions, the head-to-head pages (start with <a class="link" href="/compare/postscript-vs-attentive">Postscript vs Attentive</a> and <a class="link" href="/compare/klaviyo-vs-omnisend">Klaviyo vs Omnisend</a>) carry the same consent, suppression, and margin worksheets applied pairwise. If you are replacing a platform entirely, read the migration notes in <a class="link" href="/alternatives">the alternatives directory</a> first — consent evidence migrates before anything else.</p>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Where this fits on the site</h2>
-      <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email–SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
-      <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists — each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Related reading and next steps</h2>
-      <ul>
-        <li>Rankings and tradeoffs: <a class="link" href="/apps">every app review</a>, refreshed for current pricing posture</li>
-        <li>Pairwise decisions: <a class="link" href="/compare/postscript-vs-attentive">Postscript vs Attentive</a> and <a class="link" href="/compare/klaviyo-vs-mailchimp">Klaviyo vs Mailchimp</a> worksheets</li>
-        <li>Policy floor: <a class="link" href="/guides/consent">consent</a>, <a class="link" href="/guides/tcpa">TCPA and state law</a>, and <a class="link" href="/guides/quiet-hours">quiet hours</a></li>
-        <li>Economics: <a class="link" href="/guides/pricing">SMS pricing math</a> and <a class="link" href="/guides/offer-discipline">offer discipline</a></li>
-        <li>Execution: <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a>, <a class="link" href="/use-cases/back-in-stock">back in stock</a>, and <a class="link" href="/use-cases/vip-segments">VIP segments</a> playbooks</li>
-        <li>Store types: <a class="link" href="/for">segment-adjusted defaults</a> for catalog economics and buying cycles</li>
-      </ul>
-      <p>Re-verify any pricing or feature claim against the vendor's official pricing page before you commit budget — this site deliberately hedges those numbers because they change quarterly. Verify that every internal link above resolves on your deployed domain before shipping template changes.</p>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Where this fits on the site</h2>
-      <p>Work through the operating pages in order when the send calendar, the stack, or the offer structure changes: the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a>, the <a class="link" href="/guides/list-growth">list growth guide</a>, and the <a class="link" href="/guides/email-sms-coordination">email-SMS coordination guide</a>. Use-case playbooks such as <a class="link" href="/use-cases/abandoned-cart">abandoned cart</a> and <a class="link" href="/use-cases/winback">winback</a> show the same controls applied to specific revenue moments, and the store-type pages under <a class="link" href="/for">for stores</a> adjust the defaults for catalog economics.</p>
-      <p>When two tools are genuinely close on this page, decide with the pairwise worksheets in <a class="link" href="/compare">comparisons</a> rather than feature lists - each carries consent, suppression, and margin math applied to both platforms. And when the honest answer is that a tool no longer fits, the migration notes in <a class="link" href="/alternatives">alternatives</a> start with consent evidence, because that is the asset that cannot be rebuilt.</p>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Before you migrate the list</h2>
-      <ul>
-        <li>Export consent evidence first: source, timestamp, disclosure text, opt-outs</li>
-        <li>Re-verify current pricing on each vendor&#39;s official pricing page before signing</li>
-        <li>Run both platforms in parallel for one full campaign cycle with a holdout</li>
-        <li>Keep suppression and frequency caps synchronized across the whole stack</li>
-      </ul>
-      <p>These are the steps that separate a clean platform switch from a complaint spike. The <a class="link" href="/guides/consent">consent guide</a> and <a class="link" href="/guides/pricing">pricing worksheet</a> cover both in depth.</p>
-    </div>
-<FaqSection faqs={faqs} title="Postscript alternatives FAQ" />
-<p class="mt-12 text-orange-950/75">Continue with <a class="link" href="/apps">app profiles</a>, <a class="link" href="/compare">comparisons</a>, and <a class="link" href="/guides">SMS operator guides</a>.</p>
+<FaqSection faqs={faqs} />
 </main>
 </BaseLayout>
