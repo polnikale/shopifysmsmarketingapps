@@ -1,6 +1,2 @@
-export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};
+// @astrojs/tailwind supplies Tailwind CSS and Autoprefixer.
+export default { plugins: {} };

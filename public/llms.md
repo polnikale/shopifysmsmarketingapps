@@ -1,7 +1,16 @@
 # Shopify SMS Marketing Apps
 
-Agent-readable SMS marketing research guide.
+A guide to evaluating Shopify marketing apps for SMS-related workflows, including cart recovery, product launches, replenishment, and post-purchase messaging. Product coverage includes email and multichannel tools; inclusion does not establish SMS support for a particular destination or plan.
 
-Start with the job—cart recovery, launch, replenishment, or post-purchase—then verify opt-in evidence, quiet hours, frequency, purchase suppression, carrier costs, and the separation of marketing from operational messages. Include compliance work, integrations, and message fees in pricing.
+## Navigation
 
-Use official sources for current claims. Measure incremental behavior and margin alongside delivery, opt-outs, complaints, and fatigue. A focused comparison names two products; the directory and listicles are broader shortlists.
+- [App directory](/apps): individual product pages.
+- [Comparisons](/compare): two-product evaluation pages.
+- [Alternatives](/alternatives): starting points for replacing a product.
+- [Use cases](/use-cases): workflow-specific considerations.
+- [Store types](/for): considerations for different store models.
+- [Guides](/guides): consent, pricing, coordination, delivery, and campaign planning.
+
+Choose a workflow before comparing suppliers. Check current channel availability, Shopify event handling, destination coverage, consent requirements, suppression behavior, and total message costs in official documentation and the proposed contract. Use these pages as research starting points.
+
+For a proposed evaluation, define the eligible audience, permission evidence, exclusions, timing, and success measure before sending. Keep provider delivery status separate from purchase attribution, and account for discounts and message costs when assessing margin.
