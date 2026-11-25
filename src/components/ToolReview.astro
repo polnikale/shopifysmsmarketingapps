@@ -6,12 +6,11 @@ export interface Props {
   badge?: string;
   paragraphs: string[];
 }
-const { app, rank, badge, paragraphs } = Astro.props;
+const { app, badge, paragraphs } = Astro.props;
 ---
 <section class="card" id={app.slug}>
   <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
     <div class="flex items-center gap-4">
-      <span class="rank-pill">{rank}</span>
       <div>
         {badge && <span class="badge mb-2">{badge}</span>}
         <h2 class="font-serif text-3xl font-black tracking-tight text-[#24170f]">{app.name}</h2>

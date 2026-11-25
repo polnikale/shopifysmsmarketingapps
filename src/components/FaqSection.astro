@@ -18,7 +18,7 @@ const faqSchema = {
   })),
 };
 ---
-<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema).replace(/</g, '\\u003c')} />
 <section class="container pb-16">
   <div class="card">
     <p class="editorial-kicker">FAQ</p>
