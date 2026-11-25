@@ -7,7 +7,7 @@ export async function GET(): Promise<Response> {
     .map((p) => {
       let route = p.replace(/^\.\//, '/').replace(/\.astro$/, '');
       if (route.endsWith('/index')) route = route.slice(0, -'/index'.length);
-      return route;
+      return route || '/';
     })
     .sort();
   const body =
