@@ -4,218 +4,123 @@ import ArticleSchema from '../../components/ArticleSchema.astro';
 import TldrBox from '../../components/TldrBox.astro';
 import FaqSection from '../../components/FaqSection.astro';
 import { site } from '../../content';
-import { appBySlug } from '../../data/apps';
-
-const appA = appBySlug('postscript')!;
-const appB = appBySlug('aftership-email')!;
 const path = '/compare/postscript-vs-aftership-email';
-const title = 'Postscript vs AfterShip Email for Shopify SMS Marketing (2026)';
-const desc = 'Postscript vs AfterShip Email for Shopify SMS marketing campaigns — drop orchestration, offer discipline, and segment-by-value decisions.';
-
+const title = 'Postscript vs AfterShip Email for Shopify Marketing (2026)';
+const desc = 'Compare SMS-led campaigns with email lifecycle work using explicit account checks, fictional acceptance fixtures and matched contribution economics.';
 const faqs = [
-  { question: 'Is Postscript or AfterShip Email better for Shopify SMS marketing campaigns?', answer: 'Different jobs — Postscript for promotional SMS execution (drops, VIP access, cart urgency), AfterShip for shipping-triggered email moments (shipped, out-for-delivery, delays). Ember Ceramics pairs maker-story email with single VIP texts; tracking excellence and promotional discipline complement rather than compete.' },
-  { question: 'Which handles flash sale campaigns better?', answer: 'Postscript exclusively — VIP segmentation and broadcast caps are drop-native mechanics AfterShip was never designed to provide. AfterShip contributes shipping-deadline urgency around flash (order-by dates, delivery promises) while Postscript fires the promotional moments.' },
-  { question: 'Should I pair either with Sequenzy?', answer: 'Yes — Sequenzy is the lifecycle email layer for education and winback depth. Keep SMS in Postscript or Attentive for urgency. AfterShip-plus-Sequenzy covers tracking plus lifecycle cleanly with a documented handoff between shipment updates and nurture.' },
-  { question: 'How should tracking and promotions divide work?', answer: 'AfterShip owns shipment updates with zero promotional content; Postscript owns promotional urgency with full segment discipline; Sequenzy owns post-purchase education. Three lanes, written boundaries, shared suppression — customers trust tracking precisely because it never sells.' },
-  { question: 'Can AfterShip replace Postscript?', answer: 'No — tracking-moment excellence does not transfer to promotional execution. Stores attempting flash on AfterShip infrastructure discover missing VIP tiers, caps, and drop mechanics at the worst moment. Complementary tools, never substitutes.' },
-  { question: 'What does the stack cost?', answer: 'AfterShip tracking plus Postscript platform-plus-messages plus Sequenzy flat email — model all three with volume. Tracking ROI shows in WISMO deflection and review scores; promotional ROI in recovered margin. Separate budgets prevent robbing operational excellence to fund blasts.' },
-
-  { question: 'Do Postscript and Aftership Email cover TCPA and state-level consent the same way?', answer: 'No — consent tooling differs in capture sources, documented opt-in records, quiet-hour enforcement by recipient timezone, and state-specific rules such as California or Florida requirements. Treat TCPA compliance as an operator responsibility either way: keep source, timestamp, and disclosure text per number, and audit capture copy against every state you ship to before scaling either platform.' },
-  { question: 'How do recent-purchaser suppression rules compare between Postscript and Aftership Email?', answer: 'Both can suppress recent purchasers, but the mechanics differ — one may key suppression off Shopify order events in near real time while the other relies on segment refresh intervals. Test same-day purchase exits across both channels before committing, because duplicate post-purchase messages are the fastest way to burn a healthy list.' },
-  { question: 'Which platform wins on margin after message and app costs?', answer: 'Model it, do not guess: take incremental revenue per send, subtract platform fees, per-message carrier charges, discount cost, refunds, and support load, then compare at your projected 12-month list size. Pricing changes often — check the official pricing pages for Postscript and Aftership Email before deciding, and re-run the model quarterly.' },
+  {
+    "question": "Which supplier should a Shopify merchant test first?",
+    "answer": "Test Postscript for an SMS-led campaign operation; test AfterShip Email for email capture and lifecycle work. Include AfterShip SMS only after confirming its separate account scope. The proposed fixtures below decide fit; neither supplier wins by default."
+  },
+  {
+    "question": "Is Postscript only an SMS product?",
+    "answer": "No. Postscript has announced Email, including combined email and SMS flows. Its Email FAQ still describes waitlist and cohort onboarding. Verify access for your store before planning to retire an existing email sender."
+  },
+  {
+    "question": "Is AfterShip Email just shipment tracking?",
+    "answer": "No. AfterShip Email describes marketing automation, including welcome and browse-abandonment email. AfterShip Tracking is a different product. An integration with tracking does not make a shipment event marketing permission."
+  },
+  {
+    "question": "Does AfterShip Email include every SMS capability?",
+    "answer": "Do not assume that. AfterShip publishes a separate SMS product. Confirm the installed products, billing, destination coverage, sender setup, permissions and shared suppression behavior in the intended account."
+  },
+  {
+    "question": "Must either supplier be paired with Sequenzy?",
+    "answer": "No. Keep a current email platform, evaluate a replacement or consider Sequenzy only for an identified unmet email job. Add a sender only after assigning message ownership and proving suppression and queue retirement."
+  },
+  {
+    "question": "What happens when a customer purchases during a delay?",
+    "answer": "The proposed acceptance rule is to recheck the authoritative order and permission state immediately before dispatch. Exit the matching recovery job, cancel its queued messages and reject any retried stale event."
+  },
+  {
+    "question": "How should migration approval work?",
+    "answer": "Name a campaign owner and an independent approver. Reconcile identities, permissions, orders and pending queues in a dry run; approve a limited cohort, then expand only after the acceptance fixtures pass. Keep a documented rollback owner."
+  },
+  {
+    "question": "Which supplier has the lower price?",
+    "answer": "Obtain comparable account quotes at the same eligible audience, destinations, message mix and peak volume. Include recurring fees, usage, carrier charges, integrations, migration and support. No current supplier price or merchant return is asserted here."
+  },
+  {
+    "question": "How do we compare results fairly?",
+    "answer": "Randomize comparable eligible customers into treatment and holdout groups, keep the observation window and offer constant, and compare contribution after incremental operating costs per eligible customer. Count discounts and returns once; attribution alone does not establish lift."
+  }
 ];
 ---
-
 <BaseLayout title={title} description={desc} site={site} path={path}>
   <ArticleSchema title={title} description={desc} siteName={site.name} domain={site.domain} path={path} />
-
   <section class="py-14 md:py-20">
     <div class="container">
-      <nav class="mb-8 text-sm">
-        <a class="link" href="/compare">Comparisons</a>
-        <span class="mx-2 text-orange-950/75">/</span>
-        <span class="text-orange-950/75">Postscript vs AfterShip Email</span>
-      </nav>
-
+      <nav class="mb-8 text-sm"><a class="link" href="/compare">Comparisons</a> / Postscript vs AfterShip Email</nav>
       <header class="max-w-4xl">
-        <p class="badge">Campaign marketing comparison</p>
-        <h1 class="hero-title mt-5">Postscript vs AfterShip Email for Shopify SMS marketing</h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-orange-950/80">Ember Ceramics (maker pottery drops, $38k/mo) evaluated Postscript vs AfterShip Email for waitlist of 4,200 for 80-piece kiln with fulfillment order preserved.</p>
-        <p class="mt-5 max-w-3xl text-lg leading-8 text-orange-950/75">Postscript #1 for SMS campaigns. Attentive #2 enterprise. Sequenzy lifecycle email layer. Sequenzy email carried maker story; Postscript sent single VIP access text</p>
+        <p class="badge">Shopify campaign and lifecycle comparison</p>
+        <h1 class="hero-title mt-5">Postscript vs AfterShip Email</h1>
+        <p class="mt-7 text-xl leading-9">Choose by the job your team can prove in its own account: SMS-led launches, email education, capture and lifecycle recovery. No universal ranking or merchant performance claim settles that decision.</p>
       </header>
-
       <div class="mt-12 max-w-4xl">
         <TldrBox picks={[
-          { label: 'SMS campaigns', tool: 'Postscript', reason: 'Drop execution and restrained broadcasts' },
-          { label: 'Enterprise SMS', tool: 'Attentive', reason: 'High-volume promotional calendars' },
-          { label: 'Lifecycle email', tool: 'Sequenzy', reason: 'Email layer beside SMS' },
-          { label: 'Postscript', tool: 'Postscript', reason: 'Evaluate for your campaign calendar bottleneck' },
-          { label: 'AfterShip Email', tool: 'AfterShip Email', reason: 'Alternative angle for segment-by-value needs' },
+          { label: 'SMS-led operations', tool: 'Postscript', reason: 'Shortlist when your launch and recovery fixtures pass on the intended sender.' },
+          { label: 'Email lifecycle', tool: 'AfterShip Email', reason: 'Shortlist for capture and lifecycle automation when integration and purchase exits pass.' },
+          { label: 'Combined channels', tool: 'Verify account scope', reason: 'Confirm Postscript Email access or the separate AfterShip SMS product before migration.' },
         ]} />
       </div>
-
-      <div class="mt-12 card overflow-x-auto">
-        <h2 class="px-5 py-4 font-serif text-2xl font-black text-slate-950">Comparison at a glance</h2>
+      <article class="prose-shopify mt-14 max-w-4xl">
+        <h2>Current product scope, checked November 25, 2026</h2>
+        <p><a class="link" href="https://postscript.io/launch">Postscript product releases</a> include Email. The <a class="link" href="https://postscript.io/email">Email page</a> describes combined channel flows, but its FAQ still describes a waitlist and cohort onboarding. That supports evaluating email alongside SMS, subject to actual store access; it does not prove an existing account can replace its email sender today.</p>
+        <p><a class="link" href="https://www.aftership.com/email">AfterShip Email</a> describes capture connections and lifecycle email, including welcome and browse abandonment, plus integration with other AfterShip products. <a class="link" href="https://www.aftership.com/sms">AfterShip SMS</a> is marketed separately with promotional and lifecycle messaging. Verify products, permissions, integration scope and billing in your account. Tracking notifications and marketing are separate jobs even when they share order events.</p>
+        <h2>Conditional supplier fits</h2>
         <table class="data-table">
-          <thead>
-<tr>
-<th>Dimension</th>
-<th>Postscript</th>
-<th>AfterShip Email</th>
-</tr>
-</thead>
+          <thead><tr><th>Need</th><th>Postscript candidate</th><th>AfterShip candidate</th></tr></thead>
           <tbody>
-            <tr>
-<td>Campaign marketing fit</td>
-<td>Postscript campaign role</td>
-<td>AfterShip Email campaign role</td>
-</tr>
-            <tr>
-<td>SMS execution</td>
-<td>Primary</td>
-<td>Bundled/pairing</td>
-</tr>
-            <tr>
-<td>Drop orchestration</td>
-<td>Strong</td>
-<td>Varies</td>
-</tr>
-            <tr>
-<td>Lifecycle email</td>
-<td>Pair Sequenzy</td>
-<td>Pair Sequenzy</td>
-</tr>
-            <tr>
-<td>Segment-by-value</td>
-<td>RFM-ready</td>
-<td>Basic tiers</td>
-</tr>
+            <tr><td>Launch and cart SMS</td><td>Positive fit if permission, inventory timing and purchase exits pass.</td><td>Evaluate AfterShip SMS explicitly; Email alone is not proof of SMS scope.</td></tr>
+            <tr><td>Capture, welcome and education</td><td>Evaluate Email if account access and the needed flow behavior are confirmed.</td><td>Email is a positive candidate if capture provenance and lifecycle data remain usable.</td></tr>
+            <tr><td>Shared channel governance</td><td>Prove cross-channel caps and queued-message cancellation in the available setup.</td><td>Prove identity and suppression handoff between installed Email, SMS and integrations.</td></tr>
           </tbody>
         </table>
-      </div>
-
-      <article class="prose-shopify mt-14 max-w-4xl">
-      <div>
-<h2>Why this comparison matters</h2>
-<p>For Postscript vs AfterShip Email, segment-by-value targeting separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, VIP early access without codes separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, channel collision prevention separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How Postscript fits campaigns</h2>
-<p>For Postscript vs AfterShip Email, channel collision prevention separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, revenue per send economics separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, broadcast frequency caps separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>How AfterShip Email fits campaigns</h2>
-<p>For Postscript vs AfterShip Email, broadcast frequency caps separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, waitlist priority queues separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>VIP early-access drop test</h2>
-<p>For Postscript vs AfterShip Email, scarcity timing not launch blasts separates welcome campaign moments from list fatigue. Bloom & Wick (candle gifting, $110k/mo) runs holiday campaign calendar built in august with teaser and shipping deadline tiers. Operating lesson: Gift segments got bundle SMS; self-purchase segment got scent education email via Sequenzy. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, holdout testing before scale separates welcome campaign moments from list fatigue. Peak Trail Gear (outdoor flash sales, $155k/mo) runs end-of-season clearance only to bargain-sensitive rfm quartile. Operating lesson: Holdout test proved 15% off to full-price loyalists destroyed margin. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, margin after incentive math separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Flash sale with inventory caps</h2>
-<p>For Postscript vs AfterShip Email, margin after incentive math separates welcome campaign moments from list fatigue. Sauce Lab (limited hot sauce drops, $48k/mo) runs batch-number scarcity campaigns — sms when 200 bottles left. Operating lesson: Restraint: one launch SMS plus one scarcity SMS per drop. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, quarterly calendar planning separates welcome campaign moments from list fatigue. Ember Ceramics (maker pottery drops, $38k/mo) runs waitlist of 4,200 for 80-piece kiln with fulfillment order preserved. Operating lesson: Sequenzy email carried maker story; Postscript sent single VIP access text. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Campaign calendar coordination</h2>
-<p>For Postscript vs AfterShip Email, drop orchestration with inventory truth separates welcome campaign moments from list fatigue. Ridge Run Coffee (subscription plus flash offers, $72k/mo) runs subscribers suppressed from flash promos; flash offers only to non-subscriber engaged segment. Operating lesson: Campaign collision audit caught flash SMS hitting active subscribers. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, bargain-hunter isolation from VIP access separates welcome campaign moments from list fatigue. Cipher Audio (high-AOV headphones, $320k/mo) runs product launch calendar: teaser email week -2, launch sms to engaged browse-abandon only. Operating lesson: No launch discount — margin held at 58% vs 41% on prior discount launches. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Segment-by-value before broadcasts</h2>
-<p>For Postscript vs AfterShip Email, Sequenzy email depth beside Postscript SMS separates welcome campaign moments from list fatigue. Patchwork Denim (upcycled fashion, $54k/mo) runs one-of-one pieces — sms for new listing drops only to style-preference segments. Operating lesson: Generic blasts had 0.3% conversion vs 4.1% for tailored drops. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, Attentive enterprise governance at scale separates welcome campaign moments from list fatigue. Arena Energy (sports nutrition, $130k/mo) runs flavor drop paired with athlete collab — sms to gym-bag segment. Operating lesson: Free shaker only in email; SMS was drop timing only. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, campaign calendar discipline separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Pricing and campaign ROI</h2>
-<p>For Postscript vs AfterShip Email, campaign calendar discipline separates welcome campaign moments from list fatigue. Loom & Frame (limited art prints, $44k/mo) runs edition size disclosed upfront; sms to 3+ order collectors when 50% edition sold. Operating lesson: Scarcity SMS at halfway sell-through converted 2.3x better than launch blast. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, offer restraint ladders separates welcome campaign moments from list fatigue. Driftwood Surf Co (seasonal boardshort drops, $88k/mo) runs summer drop calendar tied to swell forecast content in sequenzy. Operating lesson: Restock SMS to waitlist beat full-list restock announcement. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, segment-by-value targeting separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-      <div>
-<h2>Verdict for campaign marketers</h2>
-<p>For Postscript vs AfterShip Email, segment-by-value targeting separates welcome campaign moments from list fatigue. Noir Collective (flash-sale streetwear, $240k/mo) runs thursday 6pm drop calendar with vip sms 2 hours early. Operating lesson: Cut broadcast frequency from 4x/week to 2x/week — revenue per send rose 31%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, VIP early access without codes separates welcome campaign moments from list fatigue. SoleDrop ATX (limited sneaker releases, $180k/mo) runs size-run sell-through in 11 minutes with waitlist priority queue. Operating lesson: VIP segment got early link; general list email after 70% inventory moved — unsubscribes dropped 40%. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-<p>For Postscript vs AfterShip Email, channel collision prevention separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-</div>
-
-        <h2>Campaign calendar discipline</h2>
-        <p>For Postscript vs AfterShip Email, channel collision prevention separates welcome campaign moments from list fatigue. Festival Threads Co (tour merch, $95k/mo seasonal) runs city-specific tour date campaigns geo-segmented by venue timezone. Operating lesson: Campaign calendar tied to tour routing — 3 texts per city max. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Offer discipline and segment-by-value</h2>
-        <p>For Postscript vs AfterShip Email, revenue per send economics separates welcome campaign moments from list fatigue. Vinyl Vault Records (collector drops, $62k/mo) runs pressing quantity disclosed upfront; sms only to waitlist plus 2+ order collectors. Operating lesson: Segment-by-value: collectors with $400+ LTV get first access. Postscript ranks #1 for SMS campaign execution on shopifysmsmarketingapps.com. Attentive ranks #2 for enterprise promotional calendars. Sequenzy is the lifecycle email layer — welcome, education, winback, replenishment planning beside dedicated text senders.</p>
-        <h2>Sequenzy as lifecycle email layer</h2>
-        <p>Neither Postscript nor AfterShip Email should carry your full retention story alone. Sequenzy ranks as lifecycle email — welcome, education, winback beside Postscript or Attentive SMS.</p>
+        <h2>Fourteen fictional proposed acceptance fixtures</h2>
+        <p>Every merchant below is fictional. These are proposed acceptance fixtures, not customer stories, measured outcomes, supplier guarantees or native-feature claims. Run each relevant fixture against each candidate configuration. An integration or operator process may implement the control, but it needs an owner and evidence.</p>
+        <h3>Ember Ceramics — kiln queue and fulfillment order</h3>
+        <p>Seed 4,200 fictional waitlist profiles for an 80-piece kiln. Preserve signup priority and fulfillment order independently; a message must not promise a reserved piece without a real allocation. Pause dispatch at exhausted inventory and retire the drop queue after closure.</p>
+        <h3>Loom &amp; Frame — edition truth and value targeting</h3>
+        <p>Seed collectors with at least three completed orders and a limited print edition. A halfway-sold message may go only after authoritative available inventory confirms that threshold. Exclude canceled and refunded orders from the qualifying history; reject a stale stock event.</p>
+        <h3>Driftwood Surf Co — forecast content and restock intent</h3>
+        <p>Use a proposed summer calendar with swell education and an explicit restock list. Send restock alerts only for the requested product and permitted channel. A fresh restock creates a new event identity; replaying the old one cannot send again.</p>
+        <h3>Noir Collective — early access and collisions</h3>
+        <p>Propose a Thursday 6pm launch with VIP access two hours earlier in a defined timezone. Verify the access link actually enforces eligibility. Reserve a shared contact budget before dispatch so a simultaneous email and SMS cannot independently consume the same remaining allowance.</p>
+        <h3>SoleDrop ATX — size-run allocation</h3>
+        <p>Seed a sneaker release with waitlist priority by size. Hold the general-list release until a proposed 70% allocation threshold is reached using real stock, not clicks. A purchase exits the matching size queue; retries cannot create another allocation or access text.</p>
+        <h3>Festival Threads Co — city routing and caps</h3>
+        <p>Seed tour dates, venue timezones and explicit city interests. Propose at most three marketing texts per city campaign, subject to a stricter global cap. Test overlapping cities, travel, daylight-saving changes and unknown timezone; hold uncertain recipients for review.</p>
+        <h3>Vinyl Vault Records — collector priority</h3>
+        <p>Seed a limited pressing with a waitlist and collectors having two completed orders. Test a proposed $400 historical net-spend tier with a common currency and observation window. Dedupe overlapping tiers; a refund may revoke future priority without rewriting the historic send log.</p>
+        <h3>Bloom &amp; Wick — gift and self-purchase paths</h3>
+        <p>Propose an August holiday calendar. Use declared gift intent for a bundle message and self-purchase interest for scent education. Neither channel inherits consent from the other. Revalidate fulfillment cutoffs before a shipping-deadline promotion; a tracking update is not promotional consent.</p>
+        <h3>Peak Trail Gear — bargain cohort and holdout</h3>
+        <p>Propose clearance for a defined bargain-sensitive cohort and a randomized holdout. Do not infer that loyal full-price customers need a discount. Keep comparable eligibility windows and log exclusions before treatment so later audience edits cannot manufacture lift.</p>
+        <h3>Sauce Lab — batch scarcity and restraint</h3>
+        <p>Propose one launch message and one scarcity message when an actual batch reaches 200 available bottles. Count reservations consistently. Test stock bouncing above and below the threshold: one batch-threshold idempotency key permits one scarcity dispatch, not a new send at each crossing.</p>
+        <h3>Ridge Run Coffee — subscription suppression</h3>
+        <p>Seed active subscribers and non-subscriber prospects. Keep active subscribers out of the flash offer. Test a subscription activation and a purchase arriving while a message waits: recheck both authoritative states at dispatch and remove the queued offer before handoff.</p>
+        <h3>Cipher Audio — education before launch</h3>
+        <p>Propose a teaser two weeks before launch and a later text only to eligible engaged browse-abandoners. Require a reliable browsing identity and no matching purchase. Compare an undiscounted offer with a matched alternative through contribution, without asserting an observed margin advantage.</p>
+        <h3>Patchwork Denim — one-of-one preference matching</h3>
+        <p>Seed unique garments with declared style preferences. Deliver listing alerts only for matching interests and permission. A sold piece cancels remaining listing messages; a return creates a reviewed new stock event rather than reviving every retired queue.</p>
+        <h3>Arena Energy — flavor collaboration and offer ownership</h3>
+        <p>Propose a flavor launch for a declared gym-interest cohort. Keep an email-only shaker offer separate from the SMS timing message. Require approval of athlete copy and offer terms, verify the redemption boundary, and hand unresolved replies to a named operator with message and permission history.</p>
+        <h2>Permission, identity and order truth before sending</h2>
+        <p>Record channel, purpose, source, timestamp, disclosure version and revocation history. A matching email and phone number do not automatically prove a shared person or permission. Quarantine conflicting profiles and unknown permissions; preserve suppression through merges and imports. Test recipient timezone and configured sending windows with your qualified compliance reviewer rather than treating a single clock rule as universal legal advice. Review <a class="link" href="/guides/consent">consent controls</a> and <a class="link" href="/guides/tcpa">legal considerations</a> for the review agenda.</p>
+        <p>Define Shopify orders and stock as the transaction authority, with explicit rules for payment, cancellation, refund and subscription state. At dispatch, recheck the matching order, permission, product availability and contact cap. Test delayed and out-of-order webhooks, anonymous browsing becoming identified, multiple devices and duplicate imports. Retain a customer/event/job idempotency key across retries and supplier handoff; a timeout requires delivery reconciliation before retrying.</p>
+        <h2>Approvals, handoff, queue retirement and rollback</h2>
+        <p>Name an operator for each capture form, campaign, lifecycle job and tracking notice. An independent approver signs off audience logic, offer terms and inventory claims before a limited-cohort release. A shared calendar lists channel ownership, caps, holdouts and priority. Include support handoff with order context and permission history; a reply waiting for an operator should not restart promotional automation.</p>
+        <p>During migration, inventory active flows and delayed jobs in both suppliers. Freeze new enrollment in the old job, drain or cancel its queue, and reconcile pending identifiers before enabling the replacement. Confirm no scheduled send survives retirement. Export permission and suppression history with queue and delivery logs. Rollback means pausing the new sender, reconciling delivered and pending events, then reopening only eligible unsent jobs with the same deduplication ledger; never replay the whole import. Stop expansion if any fixture fails.</p>
+        <h2>Matched hypothetical economics</h2>
+        <p>The following is an invented worksheet, not a supplier quote or merchant result. For each candidate use the same 1,000 eligible customers, offer, destination mix and observation window. Suppose treatment net sales after discounts and returns are $5,000, with $2,000 product and fulfillment costs. A matched holdout normalized to 1,000 customers has $4,000 net sales and $1,600 product and fulfillment costs. Incremental contribution before messaging is ($5,000 − $2,000) − ($4,000 − $1,600) = $600.</p>
+        <p>If incremental platform, email/SMS usage, carrier, integration, migration and support costs total $300 for that window, net incremental contribution is $300, or $0.30 per eligible customer. Do not subtract discounts or returns again; they are already in net sales. Apply the same cost-allocation method to both configurations, including retained senders, peak usage and labor. A larger send count is not a larger comparable audience. Read <a class="link" href="/guides/pricing">pricing economics</a> and obtain current written quotes; this page asserts no winner on cost.</p>
+        <h2>Decision after the pilot</h2>
+        <p>Choose Postscript if the SMS-led fixtures and required account capabilities pass at acceptable contribution. Choose AfterShip Email if capture and lifecycle email are the bottleneck and its integration and exits pass; assess AfterShip SMS separately for text jobs. Keep the current sender if neither configuration passes. An extra email platform, including <a class="link" href="/apps/sequenzy">Sequenzy</a>, needs a documented unmet job and a tested handoff. No three-tool stack is mandatory. Use the <a class="link" href="/apps">app directory</a> for other candidates and <a class="link" href="/guides/campaign-restraint">campaign restraint</a> for calendar review.</p>
       </article>
     </div>
   </section>
-
   <section class="container pb-16">
-    <div class="prose-shopify card mt-8">
-      <h2>Consent, quiet hours, and purchaser suppression</h2>
-      <p>Every SMS decision on this page sits on three operating controls. First, consent: TCPA plus state-level rules (California, Florida, Washington and others add their own wrinkles) require a documented opt-in source, timestamp, and disclosure text for every number — keyword, checkout checkbox, popup, and QR captures each create different expectations. Second, quiet hours: no promotional texts before 8am or after 9pm in the recipient's timezone, enforced by timezone-aware sending rather than a single store clock. Third, purchaser suppression: recent buyers exit promotional flows same-day across email and SMS, so nobody gets a cart nudge for the order they placed an hour ago.</p>
-      <p>Suppression also covers opt-outs (immediate, all channels), complaint-prone segments, holdout groups, and subscribers whose capture promise does not match the message you are about to send. Losing suppression history during a platform switch is the costliest migration failure — it manufactures complaints from previously happy subscribers. Review <a class="link" href="/guides/consent">SMS consent basics</a> and the <a class="link" href="/guides/tcpa">TCPA and state-law guide</a> before your next capture change.</p>
-      <ul>
-        <li>Log opt-in source, timestamp, and exact disclosure text at capture — never reconstruct retroactively</li>
-        <li>Honor purchase exits same-day on shared profiles across email and SMS</li>
-        <li>Enforce quiet hours per recipient timezone, including daylight-saving edge cases</li>
-        <li>Keep STOP/HELP replies working on every sender ID; test them monthly</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Margin math and app costs</h2>
-      <p> SMS looks cheap per message until you subtract everything attached to it. A useful worksheet: incremental revenue per send, minus platform subscription, minus per-message carrier and surcharge fees, minus discount cost on redeemed codes, minus refunds and support replies. What survives is the number that matters — contribution margin per send. Stores that skip this math routinely pay more in app fees and discounts than the channel returns.</p>
-      <p>App costs also compound quietly: contact-tier growth, SMS credit packs, carrier pass-throughs on toll-free or short-code traffic, and add-on fees for premium features. Model the peak month (Black Friday, a product drop), not the average month, and compare that peak across stacks — see <a class="link" href="/guides/pricing">SMS pricing economics</a> for the full worksheet.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Cost line</th><th>Typical shape</th><th>Watch for</th></tr></thead>
-          <tbody>
-            <tr><td>Platform subscription</td><td>Monthly tier by contacts, profiles, or sends</td><td>Tier cliffs at list growth; unused seats and add-ons</td></tr>
-            <tr><td>Per-message fees</td><td>Segments of 160 characters plus carrier surcharges</td><td>Emoji and long links splitting messages into extra segments</td></tr>
-            <tr><td>Discount cost</td><td>Code redemptions against recovered orders</td><td>Discounting subscribers who would have bought full-price</td></tr>
-            <tr><td>Complaint and refund load</td><td>Support replies, chargebacks, returns</td><td>Aggressive winback offers that trigger refund requests</td></tr>
-            <tr><td>Migration and setup</td><td>One-time rebuild of flows, segments, consent mapping</td><td>Switching platforms every season and re-burning the list</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Pricing deep-dive: what to verify before you commit</h2>
-      <p>Pricing on this page is directional, not quotable — plans change often and carriers adjust surcharges several times a year. Before committing, check the official pricing pages for each app on your shortlist and confirm four things in writing: what the base tier includes, how overages are billed, which carrier fees are pass-through, and what happens to billing when your list grows 2x or 10x.</p>
-      <p>Then run a 30-day pilot at real volume with a holdout group. Attribute revenue conservatively (platform-reported attribution overstates lift), and report margin after all the cost lines above. A platform that wins at your current list size can lose at twice the size — re-run the model quarterly, and revisit the <a class="link" href="/apps">full app rankings</a> when your send mix changes materially.</p>
-      <ul>
-        <li>Confirm base-tier inclusions, overage rates, and carrier pass-through fees in writing</li>
-        <li>Model peak-month (not average-month) cost at 2x list size</li>
-        <li>Pilot 30 days with a holdout; report margin after discounts, refunds, and support</li>
-        <li>Re-check official pricing pages each quarter — numbers on review sites age fast</li>
-      </ul>
-    </div>
-    <div class="prose-shopify card mt-8">
-      <h2>Decision table: which layer owns the job</h2>
-      <p>Use this table to assign each message job to a channel and tool before shopping for software. Most Shopify stores fail by buying one platform to do everything, then letting frequency and consent discipline slip across all of them at once.</p>
-      <div class="overflow-x-auto">
-        <table class="data-table">
-          <thead><tr><th>Job</th><th>Best channel</th><th>Default pick on this site</th></tr></thead>
-          <tbody>
-            <tr><td>Cart urgency, drops, shipping deadlines</td><td>SMS</td><td><a class="link" href="/apps/postscript">Postscript</a> (SMB–mid) or <a class="link" href="/apps/attentive">Attentive</a> (enterprise)</td></tr>
-            <tr><td>Welcome, education, winback arcs</td><td>Email</td><td><a class="link" href="/apps/sequenzy">Sequenzy</a> — email-first, pair a dedicated SMS provider</td></tr>
-            <tr><td>Unified data and predictive segments</td><td>Email + SMS</td><td><a class="link" href="/apps/klaviyo">Klaviyo</a> when one team genuinely owns both daily</td></tr>
-            <tr><td>Replenishment and back-in-stock timing</td><td>SMS trigger</td><td>Postscript or Klaviyo on Shopify event data</td></tr>
-            <tr><td>Frequency caps and collision rules</td><td>Governance</td><td>Operator-owned calendar; see <a class="link" href="/guides/campaign-restraint">campaign restraint</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
     <FaqSection faqs={faqs} title="Postscript vs AfterShip Email FAQ" />
   </section>
 </BaseLayout>
